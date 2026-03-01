@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/comune/layout,_N_T_/comune/[slug]/layout,_N_T_/comune/[slug]/page,_N_T_/comune/recale/"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/comune/$d$slug/__PAGE__",
+    "/comune/$d$slug",
+    "/comune",
+    "/_index",
+    "/_head"
+  ]
+}

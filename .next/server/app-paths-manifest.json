@@ -1,0 +1,18 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/bonus-ristrutturazione/page": "app/bonus-ristrutturazione/page.js",
+  "/caserta/page": "app/caserta/page.js",
+  "/comune/[slug]/page": "app/comune/[slug]/page.js",
+  "/cookie-policy/page": "app/cookie-policy/page.js",
+  "/napoli/page": "app/napoli/page.js",
+  "/page": "app/page.js",
+  "/privacy-policy/page": "app/privacy-policy/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/servizi/[slug]/page": "app/servizi/[slug]/page.js",
+  "/servizi/page": "app/servizi/page.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/zone-servite/page": "app/zone-servite/page.js"
+}

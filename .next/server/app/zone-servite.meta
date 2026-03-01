@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/zone-servite/layout,_N_T_/zone-servite/page,_N_T_/zone-servite/"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/zone-servite/__PAGE__",
+    "/zone-servite",
+    "/_index",
+    "/_head"
+  ]
+}

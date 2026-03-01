@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/napoli/layout,_N_T_/napoli/page,_N_T_/napoli/"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/napoli/__PAGE__",
+    "/napoli",
+    "/_index",
+    "/_head"
+  ]
+}

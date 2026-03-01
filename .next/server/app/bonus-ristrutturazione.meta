@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/bonus-ristrutturazione/layout,_N_T_/bonus-ristrutturazione/page,_N_T_/bonus-ristrutturazione/"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/bonus-ristrutturazione/__PAGE__",
+    "/bonus-ristrutturazione",
+    "/_index",
+    "/_head"
+  ]
+}

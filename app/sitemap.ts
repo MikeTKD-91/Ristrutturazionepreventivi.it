@@ -3,6 +3,8 @@ import { comuni } from '@/data/comuni'
 import { servizi } from '@/data/servizi'
 import { articoli } from '@/data/blog'
 
+export const dynamic = 'force-static'   // ← Questa riga risolve l'errore di export statico
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.ristrutturazionepreventivi.it'
   

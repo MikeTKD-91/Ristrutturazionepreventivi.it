@@ -1,20 +1,15 @@
 import { MetadataRoute } from 'next'
 
+export const dynamic = 'force-static'
+
+const baseUrl = 'https://ristrutturazionepreventivi.it'
+
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/_next/', '/private/'],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/api/'],
-      },
-    ],
-    sitemap: 'https://www.ristrutturazionepreventivi.it/sitemap.xml',
-    host: 'https://www.ristrutturazionepreventivi.it',
+    rules: {
+      userAgent: '*',
+      allow: '/',
+    },
+    sitemap: `${baseUrl}/sitemap.xml`,
   }
 }
