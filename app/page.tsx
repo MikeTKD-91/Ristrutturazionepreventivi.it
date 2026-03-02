@@ -1,28 +1,29 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, MapPin, Shield, Clock, Award } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, Check, MapPin, Wrench, Shield, Clock, Award } from "lucide-react";
 import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
 import { servizi } from "@/data/servizi";
 import { comuniNapoli, comuniCaserta, comuniAgroAversano } from "@/data/comuni";
 import { getDataAggiornamento } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Ristrutturazioni nell'Agro Aversano, Napoli, Caserta e Provincia | Preventivi Gratis",
-  description: "Ristrutturazioni nell'Agro Aversano, Napoli, Caserta e provincia. +33 comuni serviti. Stima indicativa immediata e gratuita in 30 secondi. 7 servizi professionali - Russo FE Costruzione SRL.",
+  title: "Ristrutturazione Preventivi - Stima Indicativa Gratuita | Napoli Caserta",
+  description: "Stima indicativa immediata e gratuita per ristrutturazioni a Napoli, Caserta e provincia. 7 servizi, 33 comuni serviti. Russo FE Costruzione SRL.",
   alternates: {
     canonical: "https://ristrutturazionepreventivi.it/",
   },
   openGraph: {
-    title: "Ristrutturazioni nell'Agro Aversano, Napoli, Caserta e Provincia | +33 Comuni",
-    description: "Stima indicativa gratuita per ristrutturazioni nell'Agro Aversano, Napoli, Caserta e provincia. +33 comuni serviti.",
+    title: "Ristrutturazione Preventivi - Stima Indicativa Gratuita",
+    description: "Stima indicativa immediata e gratuita per ristrutturazioni a Napoli, Caserta e provincia.",
     url: "https://ristrutturazionepreventivi.it/",
     images: [
       {
-        url: "https://ristrutturazionepreventivi.it/images/servizi/ristrutturazione-appartamento-completo.jpg",
+        url: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200",
         width: 1200,
         height: 630,
-        alt: "Ristrutturazioni nell'Agro Aversano, Napoli, Caserta e provincia - Russo FE Costruzione SRL",
+        alt: "Ristrutturazione Preventivi",
       },
     ],
   },
@@ -69,12 +70,12 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - OTTIMIZZATO SEO */}
+      {/* Hero Section */}
       <section className="relative bg-navy overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/servizi/ristrutturazione-appartamento-completo.jpg"
-            alt="Ristrutturazioni nell'Agro Aversano, Napoli, Caserta e provincia"
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920"
+            alt="Ristrutturazione appartamento"
             fill
             className="object-cover opacity-20"
             priority
@@ -87,17 +88,16 @@ export default function HomePage() {
             <div className="text-white">
               <div className="inline-flex items-center gap-2 bg-orange/20 text-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Check className="h-4 w-4" />
-                Costi aggiornati a {dataAggiornamento} • +33 Comuni serviti
+                Costi aggiornati a {dataAggiornamento}
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Ristrutturazioni nell&apos;<span className="text-orange">Agro Aversano</span>,{" "}
-                <span className="text-orange">Napoli</span>,{" "}
-                <span className="text-orange">Caserta</span> e provincia
+                Ristrutturazioni a{" "}
+                <span className="text-orange">Napoli</span> e{" "}
+                <span className="text-orange">Caserta</span>
               </h1>
               <p className="text-xl text-white/80 mb-8 max-w-xl">
                 Stima indicativa immediata e gratuita per la tua ristrutturazione. 
-                7 servizi professionali • +33 comuni serviti nell&apos;Agro Aversano, Napoli, Caserta e provincia. 
-                Russo FE Costruzione SRL.
+                7 servizi, 33 comuni serviti. Russo FE Costruzione SRL.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
@@ -115,6 +115,16 @@ export default function HomePage() {
                 >
                   Scopri i Servizi
                 </Link>
+              </div>
+              <div className="mt-8 flex items-center gap-6 text-sm text-white/60">
+                <div className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-orange" />
+                  <span>Garanzia decennale</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-orange" />
+                  <span>33 comuni serviti</span>
+                </div>
               </div>
             </div>
             
@@ -168,7 +178,7 @@ export default function HomePage() {
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={servizio.immagine}
-                    alt={servizio.alt}
+                    alt={servizio.titolo}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
