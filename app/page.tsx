@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, MapPin } from "lucide-react";
+import { ArrowRight, Check, MapPin, Shield, Clock, Award } from "lucide-react";
 import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
 import { servizi } from "@/data/servizi";
 import { comuniNapoli, comuniCaserta, comuniAgroAversano } from "@/data/comuni";
@@ -168,7 +168,7 @@ export default function HomePage() {
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={servizio.immagine}
-                    alt={servizio.alt}   {/* ← ALT SEO ottimizzato */}
+                    alt={servizio.alt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
