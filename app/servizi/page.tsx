@@ -72,8 +72,7 @@ export default function ServiziPage() {
                 <div className="relative h-64">
                   <Image
                     src={servizio.immagine}
-                    alt={servizio.alt}                    {/* ← AGGIORNATO CON IL TUO ALT SEO */}
-                    fill
+                    alt={servizio.alt}                     fill
                     className="object-cover"
                     priority={index === 0}                {/* prima immagine più veloce */}
                   />
