@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { ArrowRight, Check, MapPin, Wrench, Shield, Clock, Award } from "lucide-react";
+import { ArrowRight, Check, MapPin, Shield, Clock, Award } from "lucide-react";
 import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
 import { servizi } from "@/data/servizi";
 import { comuniNapoli, comuniCaserta, comuniAgroAversano } from "@/data/comuni";
