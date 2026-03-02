@@ -4,9 +4,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check, MapPin, MessageCircle, Star } from "lucide-react";
 import { comuni, getComuneBySlug } from "@/data/comuni";
-
 import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
-import { getDataAggiornamento, formatPrezzo, generaLinkWhatsApp } from "@/lib/utils";
+import { getDataAggiornamento } from "@/lib/utils";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -29,21 +28,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `Ristrutturazioni ${comune.nome} | Preventivi e Stime`,
-    description: `Stima indicativa immediata e gratuita per ristrutturazioni a ${comune.nome}. Russo FE Costruzione SRL - 7 servizi, 33 comuni serviti.`,
+    title: `Ristrutturazione a ${comune.nome} | Preventivo, costi e impresa edile`,
+    description: `Ristrutturazione a ${comune.nome}: stima gratuita immediata in 30 secondi. Impresa edile locale con 7 servizi professionali, pratiche e permessi edilizi. Russo FE Costruzione SRL.`,
     alternates: {
       canonical: `https://ristrutturazionepreventivi.it/comune/${slug}/`,
     },
     openGraph: {
-      title: `Ristrutturazioni ${comune.nome} | Preventivi e Stime`,
-      description: `Stima indicativa immediata e gratuita per ristrutturazioni a ${comune.nome}.`,
+      title: `Ristrutturazione a ${comune.nome} | Preventivo, costi e impresa edile`,
+      description: `Stima gratuita immediata per ristrutturazioni a ${comune.nome}.`,
       url: `https://ristrutturazionepreventivi.it/comune/${slug}/`,
       images: [
         {
           url: comune.immagine,
           width: 1200,
           height: 630,
-          alt: `Ristrutturazioni ${comune.nome}`,
+          alt: `Ristrutturazione a ${comune.nome}`,
         },
       ],
     },
@@ -70,7 +69,7 @@ export default async function ComunePage({ params }: Props) {
       <section className="relative h-[50vh] min-h-[400px]">
         <Image
           src={comune.immagine}
-          alt={`${comune.nome}`}
+          alt={`Ristrutturazione a ${comune.nome}`}
           fill
           className="object-cover"
           priority
@@ -83,7 +82,7 @@ export default async function ComunePage({ params }: Props) {
               <span>Provincia di {comune.provincia === "napoli" ? "Napoli" : "Caserta"}</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Ristrutturazioni a {comune.nome}
+              Ristrutturazione a {comune.nome}
             </h1>
             <div className="inline-flex items-center gap-2 bg-orange/20 text-orange backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
               <Check className="h-4 w-4" />
@@ -97,7 +96,6 @@ export default async function ComunePage({ params }: Props) {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-12">
-            {/* Main Content */}
             <div className="lg:col-span-2 space-y-12">
               {/* Descrizione */}
               <div>
@@ -119,7 +117,7 @@ export default async function ComunePage({ params }: Props) {
                 </p>
               </div>
 
-              {/* Perché sceglierci */}
+              {/* Perché sceglierci - FRASE UNIFICATA E MIGLIORATA */}
               <div>
                 <h2 className="text-2xl font-bold text-navy mb-6">
                   Perché Scegliere Russo FE Costruzione SRL a {comune.nome}
@@ -130,7 +128,7 @@ export default async function ComunePage({ params }: Props) {
                     "Conoscenza delle caratteristiche locali",
                     "Tempi rapidi di intervento",
                     "Materiali di qualità certificata",
-                    "Garanzia decennale sui lavori",
+                    "Pratiche, permessi edilizi e direzione completa dei lavori",
                     "Preventivi trasparenti e dettagliati",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -254,10 +252,8 @@ export default async function ComunePage({ params }: Props) {
 
             {/* Sidebar */}
             <div className="space-y-8">
-              {/* Calcolatore */}
               <CalcolatoreStima comuneDefault={comune.nome} />
 
-              {/* CTA */}
               <div className="bg-navy p-6 rounded-2xl text-white">
                 <h3 className="text-xl font-bold mb-4">
                   Richiedi una Stima
@@ -277,7 +273,6 @@ export default async function ComunePage({ params }: Props) {
                 </a>
               </div>
 
-              {/* Info */}
               <div className="bg-gray-50 p-6 rounded-2xl">
                 <h3 className="text-lg font-bold text-navy mb-4">
                   Russo FE Costruzione SRL
