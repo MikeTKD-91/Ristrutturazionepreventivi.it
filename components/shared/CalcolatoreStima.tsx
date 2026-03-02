@@ -183,6 +183,7 @@ export default function CalcolatoreStima({ comuneDefault = "il tuo comune" }: Ca
               </p>
             </div>
 
+            {/* PULSANTE WHATSAPP CORRETTO (icona non esce più fuori) */}
             <div className="space-y-3">
               <a
                 href={generaLinkWhatsApp(
@@ -194,11 +195,12 @@ export default function CalcolatoreStima({ comuneDefault = "il tuo comune" }: Ca
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-orange hover:bg-orange-600 text-white py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
+                className="w-full bg-orange hover:bg-orange-600 text-white py-4 px-6 rounded-xl font-semibold transition-colors flex items-center justify-center gap-3"
               >
-                <MessageCircle className="h-5 w-5" />
+                <MessageCircle className="h-5 w-5 flex-shrink-0" />
                 Richiedi preventivo via WhatsApp
               </a>
+
               <button
                 onClick={handleReset}
                 className="w-full bg-gray-100 hover:bg-gray-200 text-navy py-3 rounded-xl font-medium transition-colors"
