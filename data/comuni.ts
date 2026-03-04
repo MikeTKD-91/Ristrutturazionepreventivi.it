@@ -12,15 +12,15 @@ export interface Comune {
 export const comuni: Comune[] = [
   // Napoli e provincia
   {
-    slug: "napoli",
-    nome: "Napoli",
-    provincia: "napoli",
-    zona: "napoli",
-    descrizione: "Napoli, capoluogo della Campania, è una città ricca di storia, arte e tradizioni. Dall'affascinante centro storico UNESCO ai quartieri collinari come Vomero e Posillipo, offre una varietà architettonica unica.",
-    caratteristiche: "Napoli presenta un tessuto urbano antico con palazzi storici, chiese barocche e strade strette nel centro antico, affiancati a zone residenziali più moderne nelle periferie. La città offre numerose opportunità di ristrutturazione, dal recupero di immobili storici alla modernizzazione di appartamenti.",
-    immagine: "https://images.unsplash.com/photo-1534307250431-ef8930a71230?w=1200",
-    vicini: ["giugliano-in-campania", "portici", "ercolano"],
-  },
+  slug: "napoli",
+  nome: "Napoli",
+  provincia: "napoli",
+  zona: "napoli",
+  descrizione: "Napoli, capoluogo della Campania, è una città ricca di storia, arte e tradizioni. Dall'affascinante centro storico UNESCO ai quartieri collinari come Vomero e Posillipo, offre una varietà architettonica unica.",
+  caratteristiche: "Napoli presenta un tessuto urbano antico con palazzi storici, chiese barocche e strade strette nel centro antico, affiancati a zone residenziali più moderne nelle periferie. La città offre numerose opportunità di ristrutturazione, dal recupero di immobili storici alla modernizzazione di appartamenti.",
+  immagine: "/images/comuni/napoli.jpg",   // ← SOLO QUESTA RIGA CAMBIA
+  vicini: ["giugliano-in-campania", "portici", "ercolano"],
+},
   {
     slug: "giugliano-in-campania",
     nome: "Giugliano in Campania",
