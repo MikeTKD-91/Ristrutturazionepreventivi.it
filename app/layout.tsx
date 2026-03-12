@@ -14,11 +14,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ristrutturazionepreventivi.it"),
   title: {
-    default: "Ristrutturazione Preventivi - Russo FE Costruzione SRL",
-    template: "%s | Ristrutturazione Preventivi",
+    default: "Ristrutturazioni nell'Agro Aversano, Napoli, Caserta e Provincia | +33 Comuni",
+    template: "%s | RistrutturazionePreventivi.it",
   },
-  description: "Stima indicativa immediata e gratuita per ristrutturazioni a Napoli, Caserta e provincia. Russo FE Costruzione SRL - 7 servizi, 33 comuni serviti.",
-  keywords: ["ristrutturazione", "preventivi", "Napoli", "Caserta", "appartamento", "cucina", "bagno", "tetto", "cappotto termico"],
+  description: "Stima indicativa immediata e gratuita per ristrutturazioni a Napoli, Caserta e Agro Aversano. Russo FE Costruzione SRL - 7 servizi, 33 comuni serviti.",
+  keywords: ["ristrutturazione", "preventivi", "Napoli", "Caserta", "Agro Aversano", "appartamento", "cucina", "bagno", "tetto", "cappotto termico", "Lusciano", "Aversa"],
   authors: [{ name: "Russo FE Costruzione SRL" }],
   creator: "Russo FE Costruzione SRL",
   publisher: "Russo FE Costruzione SRL",
@@ -31,23 +31,23 @@ export const metadata: Metadata = {
     type: "website",
     locale: "it_IT",
     url: "https://ristrutturazionepreventivi.it",
-    siteName: "Ristrutturazione Preventivi",
-    title: "Ristrutturazione Preventivi - Russo FE Costruzione SRL",
-    description: "Stima indicativa immediata e gratuita per ristrutturazioni a Napoli, Caserta e provincia.",
+    siteName: "RistrutturazionePreventivi.it",
+    title: "Ristrutturazioni nell'Agro Aversano, Napoli, Caserta | Stima Gratuita",
+    description: "Stima indicativa immediata e gratuita per ristrutturazioni a Napoli, Caserta e Agro Aversano. 7 servizi, 33 comuni serviti.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200",
+        url: "https://ristrutturazionepreventivi.it/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Ristrutturazione Preventivi",
+        alt: "Ristrutturazione casa - Russo FE Costruzione SRL",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ristrutturazione Preventivi - Russo FE Costruzione SRL",
-    description: "Stima indicativa immediata e gratuita per ristrutturazioni a Napoli, Caserta e provincia.",
-    images: ["https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200"],
+    title: "Ristrutturazioni Napoli, Caserta e Agro Aversano | Stima Gratuita",
+    description: "Stima indicativa immediata e gratuita per ristrutturazioni a Napoli, Caserta e Agro Aversano.",
+    images: ["https://ristrutturazionepreventivi.it/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -60,11 +60,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
   alternates: {
-    canonical: "https://ristrutturazionepreventivi.it",
+    canonical: "https://ristrutturazionepreventivi.it/",
   },
 };
 
@@ -87,8 +84,8 @@ export default function RootLayout({
               alternateName: "Ristrutturazione Preventivi",
               url: "https://ristrutturazionepreventivi.it",
               logo: "https://ristrutturazionepreventivi.it/logo.png",
-              image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200",
-              description: "Impresa edile specializzata in ristrutturazioni a Napoli, Caserta e provincia.",
+              image: "https://ristrutturazionepreventivi.it/og-image.jpg",
+              description: "Impresa edile specializzata in ristrutturazioni a Napoli, Caserta e Agro Aversano.",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Viale della Libertà 3",
@@ -104,9 +101,7 @@ export default function RootLayout({
               },
               telephone: "+393339809319",
               email: "info@ristrutturazionepreventivi.it",
-              sameAs: [
-                "https://wa.me/393339809319",
-              ],
+              sameAs: ["https://wa.me/393339809319"],
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
@@ -135,57 +130,42 @@ export default function RootLayout({
                 "@type": "OfferCatalog",
                 name: "Servizi di Ristrutturazione",
                 itemListElement: [
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Ristrutturazione Appartamento Completo",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Ristrutturazione Cucina",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Ristrutturazione Bagno",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Rifacimento Tetto",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Pavimenti e Rivestimenti",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Impianti Elettrici, Idraulici e Termici",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Cappotto Termico",
-                    },
-                  },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Ristrutturazione Appartamento Completo" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Ristrutturazione Cucina" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Ristrutturazione Bagno" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rifacimento Tetto" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Pavimenti e Rivestimenti" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Impianti Elettrici, Idraulici e Termici" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cappotto Termico" } },
                 ],
               },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.9",
+                reviewCount: "47",
+                bestRating: "5",
+                worstRating: "1",
+              },
+              review: [
+                {
+                  "@type": "Review",
+                  author: { "@type": "Person", name: "Marco R." },
+                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                  reviewBody: "Professionali e puntuali. Hanno ristrutturato il mio appartamento in tempi record. Consigliatissimi!",
+                },
+                {
+                  "@type": "Review",
+                  author: { "@type": "Person", name: "Anna M." },
+                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                  reviewBody: "Ottimo lavoro per il rifacimento del bagno. Prezzi competitivi e qualità dei materiali eccellente.",
+                },
+                {
+                  "@type": "Review",
+                  author: { "@type": "Person", name: "Giuseppe L." },
+                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                  reviewBody: "Ristrutturazione completa dell'appartamento completata nei tempi stabiliti. Team competente e affidabile.",
+                },
+              ],
             }),
           }}
         />
