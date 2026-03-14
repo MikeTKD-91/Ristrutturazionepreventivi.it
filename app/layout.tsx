@@ -3,14 +3,15 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
-import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import CookieBanner from "@/components/shared/CookieBanner";
+
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ristrutturazionepreventivi.it"),
@@ -66,6 +67,7 @@ export const metadata: Metadata = {
     canonical: "https://ristrutturazionepreventivi.it/",
   },
 };
+
 
 export default function RootLayout({
   children,
@@ -147,7 +149,6 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
-        <WhatsAppButton />
         <CookieBanner />
       </body>
     </html>
