@@ -2,6 +2,8 @@
 // Sitemap nativa Next.js — NON usa next-sitemap
 // Aggiornata con pagine servizio×comune (ristrutturazione-bagno)
 
+export const dynamic = "force-static";
+
 import { MetadataRoute } from "next";
 import { comuni } from "@/data/comuni";
 
