@@ -134,7 +134,7 @@ export default async function ComunePage({ params }: PageProps) {
                 {[
                   { label: "Ristrutturazione Bagno", prezzo: "da ~450 €/mq", href: `/comune/${slug}/ristrutturazione-bagno/`, attivo: true },
                   { label: "Ristrutturazione Cucina", prezzo: "da ~400 €/mq", href: `/servizi/ristrutturazione-cucina/`, attivo: false },
-                  { label: "Ristrutturazione Appartamento", prezzo: "da ~550 €/mq", href: `/servizi/ristrutturazione-appartamento-completo/`, attivo: false },
+                  { label: "Ristrutturazione Appartamento", prezzo: "da ~550 €/mq", href: `/comune/${slug}/`, attivo: true },
                   { label: "Cappotto Termico", prezzo: "da ~80 €/mq", href: `/servizi/cappotto-termico/`, attivo: false },
                   { label: "Impianti", prezzo: "da ~150 €/mq", href: `/servizi/impianti-elettrici-idraulici-termici/`, attivo: false },
                   { label: "Pavimenti e Rivestimenti", prezzo: "da ~60 €/mq", href: `/servizi/pavimenti-rivestimenti/`, attivo: false },
