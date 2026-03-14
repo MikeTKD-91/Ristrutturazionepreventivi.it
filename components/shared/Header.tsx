@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Home, Wrench, MapPin, Gift, Newspaper } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Home", icon: Home },
