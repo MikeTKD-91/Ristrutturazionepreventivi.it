@@ -234,7 +234,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <p className="text-orange text-sm font-semibold uppercase tracking-widest mb-2">Dove operiamo</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">33 Comuni Serviti</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">+33 Comuni Serviti</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Clicca sul tuo comune per vedere costi orientativi, criticità locali e FAQ specifiche.
             </p>
