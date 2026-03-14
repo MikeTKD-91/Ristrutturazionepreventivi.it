@@ -8,13 +8,13 @@ import { getDataAggiornamento } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Zone Servite | Ristrutturazioni Napoli e Provincia, Caserta e Agro Aversano",
-  description: "Operiamo in 33 comuni di Napoli e Provincia, Caserta e Provincia e Agro Aversano. Trova il tuo comune e richiedi una stima gratuita immediata.",
+  description: "Operiamo in tutti i comuni delle Province di Napoli e Caserta, con specializzazione nell'Agro Aversano. Richiedi una stima gratuita immediata.",
   alternates: {
     canonical: "https://ristrutturazionepreventivi.it/zone-servite/",
   },
   openGraph: {
     title: "Zone Servite | Ristrutturazioni Napoli e Provincia, Caserta e Agro Aversano",
-    description: "33 comuni serviti tra Napoli, Caserta e Agro Aversano. Stima gratuita immediata.",
+    description: "Province di Napoli e Caserta · Agro Aversano. Stima gratuita immediata.",
     url: "https://ristrutturazionepreventivi.it/zone-servite/",
     images: [
       {
@@ -44,7 +44,7 @@ export default function ZoneServitePage() {
               Zone Servite
             </h1>
             <p className="text-xl text-white/80">
-              Operiamo in <span className="text-orange font-bold">33 comuni</span> tra Napoli e Provincia, Caserta e Provincia e Agro Aversano.
+              Operiamo in tutta la <span className="text-orange font-bold">Provincia di Napoli e Caserta</span>, con specializzazione nell'<span className="text-orange font-bold">Agro Aversano</span>.
             </p>
             
             {/* PULSANTE "Stima gratuita immediata" SUBITO DOPO IL TITOLO */}

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | RistrutturazionePreventivi.it",
   },
   description:
-    "Ristrutturazioni residenziali a Napoli, Caserta e Agro Aversano. Stima orientativa gratuita basata sul Prezzario Regionale Campania. Russo FE Costruzione SRL — 33 comuni serviti.",
+    "Ristrutturazioni residenziali a Napoli, Caserta e Agro Aversano. Stima orientativa gratuita basata sul Prezzario Regionale Campania. Russo FE Costruzione SRL — Province di Napoli e Caserta, specialisti Agro Aversano.",
   keywords: [
     "ristrutturazione", "preventivi", "Napoli", "Caserta", "Agro Aversano",
     "appartamento", "cucina", "bagno", "tetto", "cappotto termico", "Lusciano", "Aversa",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "RistrutturazionePreventivi.it",
     title: "Ristrutturazioni Agro Aversano, Napoli e Caserta | Preventivi Gratis",
     description:
-      "Stima orientativa gratuita per ristrutturazioni a Napoli, Caserta e Agro Aversano. 7 servizi, 33 comuni. Russo FE Costruzione SRL.",
+      "Stima orientativa gratuita per ristrutturazioni a Napoli, Caserta e Agro Aversano. 7 servizi · Province di Napoli e Caserta · Agro Aversano. Russo FE Costruzione SRL.",
     images: [
       {
         url: "https://ristrutturazionepreventivi.it/og-image.jpg",

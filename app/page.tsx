@@ -56,7 +56,7 @@ const faqHome = [
   },
   {
     q: "Operate solo nell'Agro Aversano?",
-    a: "No, operiamo in 33 comuni tra Napoli e provincia, Caserta e provincia e Agro Aversano.",
+    a: "No, operiamo in tutti i comuni delle Province di Napoli e Caserta, con particolare specializzazione nell'Agro Aversano.",
   },
   {
     q: "Posso usare il Bonus Ristrutturazione 50%?",
@@ -89,7 +89,7 @@ export default function HomePage() {
             <div className="text-white">
               <div className="inline-flex items-center gap-2 bg-orange/20 text-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Check className="h-4 w-4" />
-                Prezzario Campania aggiornato a {dataAggiornamento} · 33 comuni
+                Prezzario Campania aggiornato a {dataAggiornamento} · Province NA e CE
               </div>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
                 Ristrutturazioni nell&apos;

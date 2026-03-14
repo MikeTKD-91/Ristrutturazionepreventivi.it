@@ -182,7 +182,7 @@ export default async function ServizioPage({ params }: Props) {
                   Dove Operiamo
                 </h2>
                 <p className="text-gray-600 mb-4">
-                  Offriamo il servizio di {servizio.titolo.toLowerCase()} in 33 comuni 
+                  Offriamo il servizio di {servizio.titolo.toLowerCase()} nelle Province di Napoli e Caserta 
                   di Napoli, Caserta e Agro Aversano:
                 </p>
                 <div className="flex flex-wrap gap-2">
