@@ -1,6 +1,8 @@
+// app/comune/[slug]/page.tsx
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { MapPin, ArrowRight, TriangleAlert, CheckCircle } from "lucide-react";
 import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
 import { comuni, getComuneBySlug } from "@/data/comuni";
@@ -95,8 +97,9 @@ export default async function ComunePage({ params }: PageProps) {
               <span className="text-white/80">{comune.nome}</span>
             </nav>
 
-            <div className="grid lg:grid-cols-3 gap-10 items-start">
-              <div className="lg:col-span-2">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
+              {/* Testo */}
+              <div>
                 <div className="flex items-center gap-2 mb-3">
                   <MapPin className="h-4 w-4 text-orange" />
                   <p className="text-orange text-sm font-semibold uppercase tracking-widest">
@@ -108,14 +111,30 @@ export default async function ComunePage({ params }: PageProps) {
                   <span className="text-orange">Costi Orientativi e Preventivo</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">{comune.descrizione}</p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 mb-8">
                   {["Prezzario Regionale Campania", "Garanzia decennale", "Bonus 50% applicabile"].map((t) => (
                     <span key={t} className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">{t}</span>
                   ))}
                 </div>
+                {/* Scroll verso calcolatore */}
+                <a
+                  href="#calcolatore"
+                  className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
+                >
+                  Calcola la tua stima gratuita
+                  <ArrowRight className="h-4 w-4" />
+                </a>
               </div>
-              <div className="hidden lg:block">
-                <CalcolatoreStima comuneDefault={comune.nome} />
+
+              {/* Foto */}
+              <div className="hidden lg:block relative h-72 rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/ristrutturazione-appartamento-completo.jpg"
+                  alt={`Ristrutturazione appartamento a ${comune.nome}`}
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -272,26 +291,30 @@ export default async function ComunePage({ params }: PageProps) {
 
           </div>
 
-          {/* SIDEBAR */}
-          <div className="hidden lg:block">
-            <CalcolatoreStima comuneDefault={comune.nome} />
-            <div className="mt-6 bg-gray-50 rounded-2xl p-5">
-              <p className="text-sm font-semibold text-navy mb-3">Pagina servizio disponibile</p>
-              <Link href={`/comune/${slug}/ristrutturazione-bagno/`}
-                className="flex items-center justify-between text-sm text-gray-700 hover:text-orange transition-colors py-2"
-              >
-                Ristrutturazione Bagno <ArrowRight className="h-4 w-4" />
-              </Link>
-              <p className="text-xs text-gray-400 mt-3 pt-3 border-t border-gray-200">Altre pagine servizio in arrivo</p>
-            </div>
-            <div className="mt-6 bg-orange/5 border border-orange/20 rounded-2xl p-5">
-              <div className="space-y-2">
-                {["Garanzia decennale sui lavori", "Materiali certificati CE", "Supporto pratiche Bonus 50%"].map((t) => (
-                  <div key={t} className="flex items-center gap-2 text-sm text-gray-700">
-                    <CheckCircle className="h-4 w-4 text-orange flex-shrink-0" />
-                    {t}
-                  </div>
-                ))}
+          {/* SIDEBAR STICKY */}
+          <div className="hidden lg:block lg:col-span-1">
+            <div className="sticky top-6 space-y-6">
+              <div id="calcolatore">
+                <CalcolatoreStima comuneDefault={comune.nome} />
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-5">
+                <p className="text-sm font-semibold text-navy mb-3">Pagina servizio disponibile</p>
+                <Link href={`/comune/${slug}/ristrutturazione-bagno/`}
+                  className="flex items-center justify-between text-sm text-gray-700 hover:text-orange transition-colors py-2"
+                >
+                  Ristrutturazione Bagno <ArrowRight className="h-4 w-4" />
+                </Link>
+                <p className="text-xs text-gray-400 mt-3 pt-3 border-t border-gray-200">Altre pagine servizio in arrivo</p>
+              </div>
+              <div className="bg-orange/5 border border-orange/20 rounded-2xl p-5">
+                <div className="space-y-2">
+                  {["Garanzia decennale sui lavori", "Materiali certificati CE", "Supporto pratiche Bonus 50%"].map((t) => (
+                    <div key={t} className="flex items-center gap-2 text-sm text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-orange flex-shrink-0" />
+                      {t}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
