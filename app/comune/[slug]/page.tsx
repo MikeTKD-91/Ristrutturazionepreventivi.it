@@ -13,7 +13,7 @@ import { notFound } from "next/navigation";
 import { comuni, getComuneBySlug } from "@/data/comuni";
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 // ─── Prezzi per livello finitura (con fonte) ──────────────────────────────────
@@ -45,7 +45,8 @@ export async function generateStaticParams() {
 // ─── generateMetadata ─────────────────────────────────────────────────────────
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const comune = getComuneBySlug(params.slug);
+  const { slug } = await params;
+  const comune = getComuneBySlug(slug);
   if (!comune) return {};
 
   // metaTitle da comuni.ts — nessun anno, nessuna promessa commerciale aggressiva
@@ -197,8 +198,9 @@ function CalcolatoreStimaSidebar({
 
 // ─── Pagina principale ────────────────────────────────────────────────────────
 
-export default function ComunePage({ params }: PageProps) {
-  const comune = getComuneBySlug(params.slug);
+export default async function ComunePage({ params }: PageProps) {
+  const { slug } = await params;
+  const comune = getComuneBySlug(slug);
   if (!comune) notFound();
 
   const jsonLd = buildJsonLd(comune);
