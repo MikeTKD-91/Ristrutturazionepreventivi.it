@@ -1,66 +1,26 @@
 // app/comune/[slug]/ristrutturazione-bagno/page.tsx
-// Genera 33 pagine statiche: /comune/[slug]/ristrutturazione-bagno/
-// Ogni pagina è unica grazie ai campi caratteristicheBagni, criticalita, faq del comune
 
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { comuni, getComuneBySlug } from "@/data/comuni";
-
-// ─── Tipi ────────────────────────────────────────────────────────────────────
+import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// ─── Dati statici per tabella costi ──────────────────────────────────────────
-
 const COSTI_BAGNO = [
-  {
-    dimensione: "Bagno piccolo (fino a 4 mq)",
-    base: "3.800 – 5.200 €",
-    standard: "5.200 – 7.500 €",
-    premium: "7.500 – 10.000 €",
-  },
-  {
-    dimensione: "Bagno standard (4–6 mq)",
-    base: "5.000 – 6.500 €",
-    standard: "6.500 – 9.000 €",
-    premium: "9.000 – 13.000 €",
-  },
-  {
-    dimensione: "Bagno grande (6–9 mq)",
-    base: "6.500 – 8.500 €",
-    standard: "8.500 – 12.000 €",
-    premium: "12.000 – 17.000 €",
-  },
-  {
-    dimensione: "Bagno padronale (oltre 9 mq)",
-    base: "8.500 – 11.000 €",
-    standard: "11.000 – 15.000 €",
-    premium: "15.000 – 22.000 €",
-  },
+  { dimensione: "Bagno piccolo (fino a 4 mq)", base: "3.800 – 5.200 €", standard: "5.200 – 7.500 €", premium: "7.500 – 10.000 €" },
+  { dimensione: "Bagno standard (4–6 mq)", base: "5.000 – 6.500 €", standard: "6.500 – 9.000 €", premium: "9.000 – 13.000 €" },
+  { dimensione: "Bagno grande (6–9 mq)", base: "6.500 – 8.500 €", standard: "8.500 – 12.000 €", premium: "12.000 – 17.000 €" },
+  { dimensione: "Bagno padronale (oltre 9 mq)", base: "8.500 – 11.000 €", standard: "11.000 – 15.000 €", premium: "15.000 – 22.000 €" },
 ];
 
 const LIVELLI_FINITURA = [
-  {
-    livello: "Base",
-    descrizione:
-      "Ceramica standard, sanitari di primo livello, rubinetteria entry-level. Funzionale, senza ricerca estetica.",
-    colore: "bg-gray-100 text-gray-700",
-  },
-  {
-    livello: "Standard",
-    descrizione:
-      "Gres porcellanato o grandi formati, sanitari sospesi, rubinetteria miscelatore. Il livello più richiesto.",
-    colore: "bg-blue-50 text-navy",
-  },
-  {
-    livello: "Premium",
-    descrizione:
-      "Grandi lastre, sanitari di design, doccia walk-in, riscaldamento a pavimento, domotica. Nessun compromesso.",
-    colore: "bg-orange-50 text-orange",
-  },
+  { livello: "Base", descrizione: "Ceramica standard, sanitari di primo livello, rubinetteria entry-level. Funzionale, senza ricerca estetica.", colore: "bg-gray-100 text-gray-700" },
+  { livello: "Standard", descrizione: "Gres porcellanato o grandi formati, sanitari sospesi, rubinetteria miscelatore. Il livello più richiesto.", colore: "bg-blue-50 text-navy" },
+  { livello: "Premium", descrizione: "Grandi lastre, sanitari di design, doccia walk-in, riscaldamento a pavimento, domotica. Nessun compromesso.", colore: "bg-orange-50 text-orange" },
 ];
 
 const COSA_INCLUDE_RIFACIMENTO = [
@@ -73,7 +33,6 @@ const COSA_INCLUDE_RIFACIMENTO = [
   { voce: "Rifacimento impianto elettrico bagno (IP44 obbligatorio)", incluso: true },
   { voce: "Sostituzione vasca / box doccia", incluso: true },
   { voce: "Nuova porta e telaio", incluso: false, nota: "opzionale, preventivata separatamente" },
-  { voce: "Bonifica amianto canna fumaria", incluso: false, nota: "se presente, da ditta certificata" },
   { voce: "Riscaldamento a pavimento", incluso: false, nota: "disponibile su richiesta, preventivato separatamente" },
 ];
 
@@ -87,47 +46,28 @@ const TEMPISTICHE = [
   { fase: "Stuccatura, sigillatura, rifinitura", giorni: "1–2 gg", nota: "attesa essicazione inclusa" },
 ];
 
-// ─── generateStaticParams ─────────────────────────────────────────────────────
-
 export async function generateStaticParams() {
   return comuni.map((c) => ({ slug: c.slug }));
 }
-
-// ─── generateMetadata ─────────────────────────────────────────────────────────
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
-
   const title = `Ristrutturazione Bagno a ${comune.nome} | Costi Reali e Preventivo`;
   const description = `Quanto costa rifare il bagno a ${comune.nome}? Costi orientativi da Prezzario Regionale Campania, criticità locali, tempistiche reali. Stima gratuita senza impegno.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-bagno/`;
-
   return {
     title,
     description,
-    alternates: {
-      canonical: url,
-    },
-    openGraph: {
-      title,
-      description,
-      url,
-      siteName: "ristrutturazionepreventivi.it",
-      locale: "it_IT",
-      type: "article",
-    },
+    alternates: { canonical: url },
+    openGraph: { title, description, url, siteName: "ristrutturazionepreventivi.it", locale: "it_IT", type: "article" },
   };
 }
 
-// ─── JSON-LD ──────────────────────────────────────────────────────────────────
-
 function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
   if (!comune) return null;
-
   const pageUrl = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-bagno/`;
-
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -138,120 +78,36 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
       { "@type": "ListItem", position: 4, name: "Ristrutturazione Bagno", item: pageUrl },
     ],
   };
-
   const localBusiness = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     name: "Russo FE Costruzione SRL",
     url: "https://ristrutturazionepreventivi.it",
     telephone: "+393339809319",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Viale della Libertà 3",
-      addressLocality: "Lusciano",
-      addressRegion: "CE",
-      postalCode: "81030",
-      addressCountry: "IT",
-    },
-    areaServed: {
-      "@type": "City",
-      name: comune.nome,
-    },
-    description: `Ristrutturazione bagno a ${comune.nome}. Preventivi con sopralluogo, stime orientativi gratuite.`,
+    address: { "@type": "PostalAddress", streetAddress: "Viale della Libertà 3", addressLocality: "Lusciano", addressRegion: "CE", postalCode: "81030", addressCountry: "IT" },
+    areaServed: { "@type": "City", name: comune.nome },
+    description: `Ristrutturazione bagno a ${comune.nome}. Preventivi con sopralluogo, stime orientative gratuite.`,
   };
-
   const faqSchema = comune.faq.length > 0
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: comune.faq.map((f) => ({
-          "@type": "Question",
-          name: f.domanda,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: f.risposta,
-          },
-        })),
-      }
+    ? { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: comune.faq.map((f) => ({ "@type": "Question", name: f.domanda, acceptedAnswer: { "@type": "Answer", text: f.risposta } })) }
     : null;
-
   return { breadcrumb, localBusiness, faqSchema };
 }
-
-// ─── Componente CalcolatoreStima (stub — da collegare al componente reale) ────
-
-function CalcolatoreStimaSidebar({ comune }: { comune: NonNullable<ReturnType<typeof getComuneBySlug>> }) {
-  return (
-    <div className="bg-navy rounded-2xl p-6 sticky top-8">
-      <p className="text-xs font-semibold uppercase tracking-widest text-orange mb-2">
-        Stima gratuita
-      </p>
-      <h3 className="text-xl font-bold text-white mb-3">
-        Quanto costa il tuo bagno a {comune.nome}?
-      </h3>
-      <p className="text-sm text-white/70 mb-6">
-        Inserisci i dati e ottieni una stima orientativa immediata, basata sul Prezzario Regionale Campania.
-        Nessun impegno.
-      </p>
-
-      {/* Il componente CalcolatoreStima reale va importato qui */}
-      {/* <CalcolatoreStima comune={comune.nome} servizio="bagno" /> */}
-
-      {/* Placeholder CTA in attesa del componente */}
-      <a
-        href={`https://wa.me/393339809319?text=Salve%2C%20vorrei%20un%20preventivo%20per%20la%20ristrutturazione%20del%20bagno%20a%20${encodeURIComponent(comune.nome)}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block w-full bg-orange text-white text-center font-semibold py-3 px-4 rounded-xl hover:opacity-90 transition-opacity mb-3"
-      >
-        Richiedi stima su WhatsApp
-      </a>
-      <p className="text-xs text-white/50 text-center">
-        Risposta entro poche ore • Sopralluogo gratuito
-      </p>
-
-      <div className="mt-6 pt-6 border-t border-white/10 space-y-2">
-        <div className="flex items-center gap-2 text-sm text-white/70">
-          <span className="text-orange">✓</span> Garanzia decennale sui lavori
-        </div>
-        <div className="flex items-center gap-2 text-sm text-white/70">
-          <span className="text-orange">✓</span> Materiali certificati CE
-        </div>
-        <div className="flex items-center gap-2 text-sm text-white/70">
-          <span className="text-orange">✓</span> Supporto pratiche Bonus 50%
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── Pagina principale ────────────────────────────────────────────────────────
 
 export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) notFound();
-
   const jsonLd = buildJsonLd(comune);
 
   return (
     <>
-      {/* JSON-LD */}
       {jsonLd && (
         <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.breadcrumb) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.localBusiness) }}
-          />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.breadcrumb) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.localBusiness) }} />
           {jsonLd.faqSchema && (
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.faqSchema) }}
-            />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.faqSchema) }} />
           )}
         </>
       )}
@@ -261,7 +117,6 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
         {/* ── HERO ── */}
         <section className="bg-navy py-14 px-4">
           <div className="max-w-6xl mx-auto">
-            {/* Breadcrumb */}
             <nav className="text-sm text-white/50 mb-6 flex flex-wrap gap-1 items-center">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
@@ -286,24 +141,15 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                   del patrimonio edilizio di {comune.nome}, tempistiche reali di cantiere.
                   Nessun prezzo inventato: quello definitivo emerge solo dal sopralluogo.
                 </p>
-
-                {/* Pill zone */}
                 <div className="flex flex-wrap gap-3">
-                  <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">
-                    Prezzario Regionale Campania
-                  </span>
-                  <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">
-                    Garanzia decennale
-                  </span>
-                  <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">
-                    Bonus 50% applicabile
-                  </span>
+                  <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>
+                  <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Garanzia decennale</span>
+                  <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Bonus 50% applicabile</span>
                 </div>
               </div>
 
-              {/* Sidebar sticky — desktop */}
               <div className="hidden lg:block">
-                <CalcolatoreStimaSidebar comune={comune} />
+                <CalcolatoreStima comuneDefault={comune.nome} />
               </div>
             </div>
           </div>
@@ -312,19 +158,15 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto px-4 py-12 grid lg:grid-cols-3 gap-10 items-start">
           <div className="lg:col-span-2 space-y-16">
 
-            {/* ── SEZIONE 1: TABELLA COSTI ── */}
+            {/* ── TABELLA COSTI ── */}
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">
-                Quanto costa rifare il bagno a {comune.nome}?
-              </h2>
+              <h2 className="text-2xl font-bold text-navy mb-2">Quanto costa rifare il bagno a {comune.nome}?</h2>
               <p className="text-gray-600 mb-6">
                 Le forbici di costo che trovi qui sotto sono orientative e si basano sul{" "}
                 <strong>Prezzario Regionale Campania</strong>. Il prezzo reale del tuo bagno
                 emerge solo dopo il sopralluogo, che permette di rilevare lo stato degli impianti
                 esistenti, eventuali criticità strutturali e le scelte di materiale.
               </p>
-
-              {/* Tabella desktop */}
               <div className="hidden md:block overflow-x-auto rounded-xl border border-gray-200 mb-4">
                 <table className="w-full text-sm">
                   <thead>
@@ -337,10 +179,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                   </thead>
                   <tbody>
                     {COSTI_BAGNO.map((row, i) => (
-                      <tr
-                        key={row.dimensione}
-                        className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}
-                      >
+                      <tr key={row.dimensione} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                         <td className="py-4 px-5 font-medium text-navy">{row.dimensione}</td>
                         <td className="py-4 px-4 text-center text-gray-700">{row.base}</td>
                         <td className="py-4 px-4 text-center text-gray-700">{row.standard}</td>
@@ -350,8 +189,6 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                   </tbody>
                 </table>
               </div>
-
-              {/* Card mobile */}
               <div className="md:hidden space-y-4 mb-4">
                 {COSTI_BAGNO.map((row) => (
                   <div key={row.dimensione} className="border border-gray-200 rounded-xl p-4">
@@ -373,8 +210,6 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                   </div>
                 ))}
               </div>
-
-              {/* Disclaimer prezzi */}
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
                 <span className="text-amber-500 text-lg flex-shrink-0 mt-0.5">⚠</span>
                 <p className="text-sm text-amber-900">
@@ -386,11 +221,9 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               </div>
             </section>
 
-            {/* ── SEZIONE 2: LIVELLI DI FINITURA ── */}
+            {/* ── LIVELLI FINITURA ── */}
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">
-                Cosa cambia tra finitura Base, Standard e Premium?
-              </h2>
+              <h2 className="text-2xl font-bold text-navy mb-2">Cosa cambia tra finitura Base, Standard e Premium?</h2>
               <p className="text-gray-600 mb-6">
                 Il livello di finitura è il principale fattore che sposta il costo verso l&apos;alto o
                 verso il basso. Ecco cosa include ciascun livello nella pratica.
@@ -405,66 +238,39 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               </div>
             </section>
 
-            {/* ── SEZIONE 3: COSA È INCLUSO ── */}
+            {/* ── COSA INCLUDE ── */}
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">
-                Cosa include il rifacimento completo del bagno
-              </h2>
+              <h2 className="text-2xl font-bold text-navy mb-2">Cosa include il rifacimento completo del bagno</h2>
               <p className="text-gray-600 mb-6">
                 Un rifacimento completo non è solo "cambiare le piastrelle". Ecco cosa
                 comprende un intervento eseguito a regola d&apos;arte.
               </p>
               <div className="space-y-3">
                 {COSA_INCLUDE_RIFACIMENTO.map((item) => (
-                  <div
-                    key={item.voce}
-                    className={`flex items-start gap-3 p-4 rounded-xl ${
-                      item.incluso ? "bg-green-50" : "bg-gray-50"
-                    }`}
-                  >
-                    <span
-                      className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 ${
-                        item.incluso
-                          ? "bg-green-500 text-white"
-                          : "bg-gray-300 text-gray-600"
-                      }`}
-                    >
+                  <div key={item.voce} className={`flex items-start gap-3 p-4 rounded-xl ${item.incluso ? "bg-green-50" : "bg-gray-50"}`}>
+                    <span className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 ${item.incluso ? "bg-green-500 text-white" : "bg-gray-300 text-gray-600"}`}>
                       {item.incluso ? "✓" : "○"}
                     </span>
                     <div>
-                      <p className={`text-sm font-medium ${item.incluso ? "text-gray-800" : "text-gray-500"}`}>
-                        {item.voce}
-                      </p>
-                      {item.nota && (
-                        <p className="text-xs text-gray-400 mt-0.5">{item.nota}</p>
-                      )}
+                      <p className={`text-sm font-medium ${item.incluso ? "text-gray-800" : "text-gray-500"}`}>{item.voce}</p>
+                      {item.nota && <p className="text-xs text-gray-400 mt-0.5">{item.nota}</p>}
                     </div>
                   </div>
                 ))}
               </div>
             </section>
 
-            {/* ── SEZIONE 4: CRITICITÀ LOCALI ── */}
+            {/* ── CRITICITÀ LOCALI ── */}
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">
-                Criticità tipiche degli immobili a {comune.nome}
-              </h2>
+              <h2 className="text-2xl font-bold text-navy mb-2">Criticità tipiche degli immobili a {comune.nome}</h2>
               <p className="text-gray-600 mb-6">
                 {comune.tipoEdilizio}. Prima di ogni sopralluogo, teniamo conto delle
                 caratteristiche specifiche del patrimonio edilizio locale.
               </p>
-
-              {/* Caratteristiche bagni locali */}
               <div className="bg-blue-50 border border-blue-100 rounded-xl p-5 mb-6">
-                <p className="text-sm font-semibold text-navy mb-2">
-                  Bagni tipici a {comune.nome}
-                </p>
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  {comune.caratteristicheBagni}
-                </p>
+                <p className="text-sm font-semibold text-navy mb-2">Bagni tipici a {comune.nome}</p>
+                <p className="text-sm text-gray-700 leading-relaxed">{comune.caratteristicheBagni}</p>
               </div>
-
-              {/* Lista criticità */}
               <div className="space-y-3">
                 {comune.criticalita.map((c, i) => (
                   <div key={i} className="flex gap-3 items-start bg-amber-50 border border-amber-100 rounded-xl p-4">
@@ -473,18 +279,15 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                   </div>
                 ))}
               </div>
-
               <p className="text-sm text-gray-500 mt-4">
                 Queste criticità emergono spesso solo durante il sopralluogo. Il nostro tecnico
                 le verifica sistematicamente prima di emettere qualsiasi stima definitiva.
               </p>
             </section>
 
-            {/* ── SEZIONE 5: TEMPISTICHE ── */}
+            {/* ── TEMPISTICHE ── */}
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">
-                Quanto dura il cantiere?
-              </h2>
+              <h2 className="text-2xl font-bold text-navy mb-2">Quanto dura il cantiere?</h2>
               <p className="text-gray-600 mb-6">
                 Un bagno standard (4–6 mq) richiede mediamente <strong>2–3 settimane lavorative</strong>{" "}
                 per il rifacimento completo. Le fasi si susseguono nell&apos;ordine indicato — alcune
@@ -493,9 +296,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               <div className="space-y-2">
                 {TEMPISTICHE.map((t, i) => (
                   <div key={i} className="flex items-center gap-4 py-3 border-b border-gray-100 last:border-0">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-navy text-white text-xs font-bold flex items-center justify-center">
-                      {i + 1}
-                    </span>
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-navy text-white text-xs font-bold flex items-center justify-center">{i + 1}</span>
                     <div className="flex-1">
                       <p className="text-sm font-medium text-gray-800">{t.fase}</p>
                       {t.nota && <p className="text-xs text-gray-400">{t.nota}</p>}
@@ -511,36 +312,17 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               </p>
             </section>
 
-            {/* ── SEZIONE 6: IL PROCESSO ── */}
+            {/* ── COME FUNZIONA ── */}
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">
-                Come funziona con noi
-              </h2>
-              <p className="text-gray-600 mb-8">
-                Tre passaggi, nessuna sorpresa.
-              </p>
+              <h2 className="text-2xl font-bold text-navy mb-2">Come funziona con noi</h2>
+              <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  {
-                    step: "01",
-                    titolo: "Stima orientativa gratuita",
-                    testo:
-                      "Inserisci i dati del tuo bagno nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno.",
-                  },
-                  {
-                    step: "02",
-                    titolo: "Sopralluogo tecnico",
-                    testo:
-                      "Il nostro tecnico visita l'immobile, verifica lo stato degli impianti, rileva eventuali criticità e raccoglie tutte le informazioni per il preventivo definitivo.",
-                  },
-                  {
-                    step: "03",
-                    titolo: "Preventivo dettagliato",
-                    testo:
-                      "Ricevi un preventivo scritto con prezzi unitari, materiali specificati, tempistiche e condizioni di garanzia. Trasparente, senza voci generiche.",
-                  },
+                  { step: "01", titolo: "Stima orientativa gratuita", testo: "Inserisci i dati del tuo bagno nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno." },
+                  { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico visita l'immobile, verifica lo stato degli impianti, rileva eventuali criticità e raccoglie tutte le informazioni per il preventivo definitivo." },
+                  { step: "03", titolo: "Preventivo dettagliato", testo: "Ricevi un preventivo scritto con prezzi unitari, materiali specificati, tempistiche e condizioni di garanzia. Trasparente, senza voci generiche." },
                 ].map((s) => (
-                  <div key={s.step} className="relative">
+                  <div key={s.step}>
                     <p className="text-5xl font-black text-gray-100 mb-3 leading-none">{s.step}</p>
                     <h3 className="text-base font-bold text-navy mb-2">{s.titolo}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed">{s.testo}</p>
@@ -549,7 +331,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               </div>
             </section>
 
-            {/* ── SEZIONE 7: FAQ DINAMICHE ── */}
+            {/* ── FAQ ── */}
             {comune.faq.length > 0 && (
               <section>
                 <h2 className="text-2xl font-bold text-navy mb-2">
@@ -560,17 +342,10 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                 </p>
                 <div className="space-y-4">
                   {comune.faq.map((faq, i) => (
-                    <details
-                      key={i}
-                      className="group border border-gray-200 rounded-xl overflow-hidden"
-                    >
+                    <details key={i} className="group border border-gray-200 rounded-xl overflow-hidden">
                       <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none hover:bg-gray-50 transition-colors">
-                        <span className="font-medium text-navy text-sm leading-snug">
-                          {faq.domanda}
-                        </span>
-                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-orange/10 text-orange flex items-center justify-center text-sm group-open:rotate-45 transition-transform">
-                          +
-                        </span>
+                        <span className="font-medium text-navy text-sm leading-snug">{faq.domanda}</span>
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-orange/10 text-orange flex items-center justify-center text-sm group-open:rotate-45 transition-transform">+</span>
                       </summary>
                       <div className="px-5 pb-5 pt-1">
                         <p className="text-sm text-gray-700 leading-relaxed">{faq.risposta}</p>
@@ -581,7 +356,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               </section>
             )}
 
-            {/* ── SEZIONE 8: COMUNI VICINI (Internal linking) ── */}
+            {/* ── COMUNI VICINI ── */}
             {comune.vicini.length > 0 && (
               <section>
                 <h2 className="text-xl font-bold text-navy mb-4">
@@ -592,19 +367,12 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                     const vicino = getComuneBySlug(slug);
                     if (!vicino) return null;
                     return (
-                      <Link
-                        key={slug}
-                        href={`/comune/${slug}/ristrutturazione-bagno/`}
-                        className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-navy hover:text-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full transition-colors"
-                      >
+                      <Link key={slug} href={`/comune/${slug}/ristrutturazione-bagno/`} className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-navy hover:text-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full transition-colors">
                         Bagno a {vicino.nome}
                       </Link>
                     );
                   })}
-                  <Link
-                    href={`/comune/${comune.slug}/`}
-                    className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-navy hover:text-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full transition-colors"
-                  >
+                  <Link href={`/comune/${comune.slug}/`} className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-navy hover:text-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full transition-colors">
                     Tutti i servizi a {comune.nome} →
                   </Link>
                 </div>
@@ -613,31 +381,25 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
 
           </div>
 
-          {/* Sidebar sticky — desktop (ripete sotto il fold) */}
+          {/* ── SIDEBAR STICKY ── */}
           <div className="hidden lg:block">
-            <CalcolatoreStimaSidebar comune={comune} />
-
-            {/* Box altri servizi */}
-            <div className="mt-6 bg-gray-50 rounded-2xl p-5">
-              <p className="text-sm font-semibold text-navy mb-3">
-                Altri servizi a {comune.nome}
-              </p>
-              <div className="space-y-2">
-                {[
-                  { label: "Ristrutturazione Cucina", href: `/comune/${comune.slug}/ristrutturazione-cucina/` },
-                  { label: "Ristrutturazione Appartamento", href: `/comune/${comune.slug}/ristrutturazione-appartamento/` },
-                  { label: "Cappotto Termico", href: `/comune/${comune.slug}/cappotto-termico/` },
-                  { label: "Impianti", href: `/comune/${comune.slug}/impianti/` },
-                ].map((s) => (
-                  <Link
-                    key={s.href}
-                    href={s.href}
-                    className="flex items-center justify-between text-sm text-gray-700 hover:text-navy py-2 border-b border-gray-200 last:border-0 transition-colors"
-                  >
-                    {s.label}
-                    <span className="text-gray-400">→</span>
-                  </Link>
-                ))}
+            <div className="sticky top-6 space-y-6">
+              <CalcolatoreStima comuneDefault={comune.nome} />
+              <div className="bg-gray-50 rounded-2xl p-5">
+                <p className="text-sm font-semibold text-navy mb-3">Altri servizi a {comune.nome}</p>
+                <div className="space-y-2">
+                  {[
+                    { label: "Ristrutturazione Appartamento", href: `/comune/${comune.slug}/` },
+                    { label: "Ristrutturazione Cucina", href: `/comune/${comune.slug}/ristrutturazione-cucina/` },
+                    { label: "Cappotto Termico", href: `/comune/${comune.slug}/cappotto-termico/` },
+                    { label: "Impianti", href: `/comune/${comune.slug}/impianti/` },
+                  ].map((s) => (
+                    <Link key={s.href} href={s.href} className="flex items-center justify-between text-sm text-gray-700 hover:text-navy py-2 border-b border-gray-200 last:border-0 transition-colors">
+                      {s.label}
+                      <span className="text-gray-400">→</span>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -663,10 +425,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               >
                 Richiedi stima su WhatsApp
               </a>
-              <a
-                href={`tel:+393339809319`}
-                className="bg-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors text-center"
-              >
+              <a href="tel:+393339809319" className="bg-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors text-center">
                 Chiama +39 333 980 9319
               </a>
             </div>
