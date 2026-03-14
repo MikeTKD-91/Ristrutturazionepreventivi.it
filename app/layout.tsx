@@ -9,31 +9,33 @@ import CookieBanner from "@/components/shared/CookieBanner";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ristrutturazionepreventivi.it"),
   title: {
-    default: "Ristrutturazioni nell'Agro Aversano, Napoli, Caserta e Provincia | +33 Comuni",
+    default: "Ristrutturazioni Agro Aversano, Napoli e Caserta | Preventivi Gratis",
     template: "%s | RistrutturazionePreventivi.it",
   },
-  description: "Stima indicativa immediata e gratuita per ristrutturazioni a Napoli, Caserta e Agro Aversano. Russo FE Costruzione SRL - 7 servizi, 33 comuni serviti.",
-  keywords: ["ristrutturazione", "preventivi", "Napoli", "Caserta", "Agro Aversano", "appartamento", "cucina", "bagno", "tetto", "cappotto termico", "Lusciano", "Aversa"],
+  description:
+    "Ristrutturazioni residenziali a Napoli, Caserta e Agro Aversano. Stima orientativa gratuita basata sul Prezzario Regionale Campania. Russo FE Costruzione SRL — 33 comuni serviti.",
+  keywords: [
+    "ristrutturazione", "preventivi", "Napoli", "Caserta", "Agro Aversano",
+    "appartamento", "cucina", "bagno", "tetto", "cappotto termico", "Lusciano", "Aversa",
+  ],
   authors: [{ name: "Russo FE Costruzione SRL" }],
   creator: "Russo FE Costruzione SRL",
   publisher: "Russo FE Costruzione SRL",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  formatDetection: { email: false, address: false, telephone: false },
   openGraph: {
     type: "website",
     locale: "it_IT",
     url: "https://ristrutturazionepreventivi.it",
     siteName: "RistrutturazionePreventivi.it",
-    title: "Ristrutturazioni nell'Agro Aversano, Napoli, Caserta | Stima Gratuita",
-    description: "Stima indicativa immediata e gratuita per ristrutturazioni a Napoli, Caserta e Agro Aversano. 7 servizi, 33 comuni serviti.",
+    title: "Ristrutturazioni Agro Aversano, Napoli e Caserta | Preventivi Gratis",
+    description:
+      "Stima orientativa gratuita per ristrutturazioni a Napoli, Caserta e Agro Aversano. 7 servizi, 33 comuni. Russo FE Costruzione SRL.",
     images: [
       {
         url: "https://ristrutturazionepreventivi.it/og-image.jpg",
@@ -45,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ristrutturazioni Napoli, Caserta e Agro Aversano | Stima Gratuita",
-    description: "Stima indicativa immediata e gratuita per ristrutturazioni a Napoli, Caserta e Agro Aversano.",
+    title: "Ristrutturazioni Napoli, Caserta e Agro Aversano",
+    description: "Stima orientativa gratuita per ristrutturazioni in Campania.",
     images: ["https://ristrutturazionepreventivi.it/og-image.jpg"],
   },
   robots: {
@@ -67,9 +69,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="it" className={inter.variable}>
       <head>
@@ -81,11 +81,11 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "Russo FE Costruzione SRL",
-              alternateName: "Ristrutturazione Preventivi",
+              alternateName: "RistrutturazionePreventivi.it",
               url: "https://ristrutturazionepreventivi.it",
-              logo: "https://ristrutturazionepreventivi.it/logo.png",
               image: "https://ristrutturazionepreventivi.it/og-image.jpg",
-              description: "Impresa edile specializzata in ristrutturazioni a Napoli, Caserta e Agro Aversano.",
+              description:
+                "Impresa edile specializzata in ristrutturazioni residenziali a Napoli, Caserta e Agro Aversano.",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Viale della Libertà 3",
@@ -139,33 +139,6 @@ export default function RootLayout({
                   { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cappotto Termico" } },
                 ],
               },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.9",
-                reviewCount: "12",
-                bestRating: "5",
-                worstRating: "1",
-              },
-              review: [
-                {
-                  "@type": "Review",
-                  author: { "@type": "Person", name: "Marco R." },
-                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-                  reviewBody: "Professionali e puntuali. Hanno ristrutturato il mio appartamento in tempi record. Consigliatissimi!",
-                },
-                {
-                  "@type": "Review",
-                  author: { "@type": "Person", name: "Anna M." },
-                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-                  reviewBody: "Ottimo lavoro per il rifacimento del bagno. Prezzi competitivi e qualità dei materiali eccellente.",
-                },
-                {
-                  "@type": "Review",
-                  author: { "@type": "Person", name: "Giuseppe L." },
-                  reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-                  reviewBody: "Ristrutturazione completa dell'appartamento completata nei tempi stabiliti. Team competente e affidabile.",
-                },
-              ],
             }),
           }}
         />

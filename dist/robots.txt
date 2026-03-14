@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://ristrutturazionepreventivi.it/sitemap.xml
