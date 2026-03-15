@@ -32,7 +32,7 @@ export default function Header() {
                 Ristrutturazione
               </span>
               <span className="text-orange text-sm font-semibold leading-tight">
-                Preventivi
+                Preventivi.it
               </span>
             </div>
           </Link>
