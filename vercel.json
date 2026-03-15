@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/napoli/",
+      "destination": "/comune/napoli/",
+      "permanent": true
+    },
+    {
+      "source": "/caserta/",
+      "destination": "/comune/caserta/",
+      "permanent": true
+    }
+  ]
+}
