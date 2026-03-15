@@ -9,10 +9,12 @@ const BASE_URL = "https://ristrutturazionepreventivi.it";
 
 const SERVIZI_ATTIVI_PER_COMUNE = [
   "ristrutturazione-bagno",
-  // "ristrutturazione-cucina",
-  // "ristrutturazione-appartamento",
-  // "cappotto-termico",
-  // "impianti",
+  "ristrutturazione-appartamento-completo",
+  "ristrutturazione-cucina",
+  "rifacimento-tetto",
+  "pavimenti-rivestimenti",
+  "impianti-elettrici-idraulici-termici",
+  "cappotto-termico",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -139,6 +139,10 @@ export default async function ComunePage({ params }: PageProps) {
             </div>
           </div>
         </section>
+        {/* Calcolatore mobile */}
+        <div className="lg:hidden px-4 pt-6">
+          <CalcolatoreStima comuneDefault={comune.nome} />
+        </div>
 
         <div className="max-w-6xl mx-auto px-4 py-12 grid lg:grid-cols-3 gap-10 items-start">
           <div className="lg:col-span-2 space-y-16">

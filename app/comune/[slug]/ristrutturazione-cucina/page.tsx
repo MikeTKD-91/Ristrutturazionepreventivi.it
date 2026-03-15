@@ -1,4 +1,4 @@
-// app/comune/[slug]/ristrutturazione-bagno/page.tsx
+// app/comune/[slug]/ristrutturazione-cucina/page.tsx
 
 import { Metadata } from "next";
 import Link from "next/link";
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!comune) return {};
   const title = `Ristrutturazione Bagno a ${comune.nome} | Costi Reali e Preventivo`;
   const description = `Quanto costa rifare il bagno a ${comune.nome}? Costi orientativi da Prezzario Regionale Campania, criticità locali, tempistiche reali. Stima gratuita senza impegno.`;
-  const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-bagno/`;
+  const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-cucina/`;
   return {
     title,
     description,
@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
   if (!comune) return null;
-  const pageUrl = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-bagno/`;
+  const pageUrl = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-cucina/`;
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -161,7 +161,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               {/* Foto servizio */}
               <div className="hidden lg:block relative h-72 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/servizi/ristrutturazione-bagno.jpg"
+                  src="/images/servizi/ristrutturazione-cucina.jpg"
                   alt={`Ristrutturazione bagno a ${comune.nome}`}
                   fill
                   className="object-cover"
@@ -383,7 +383,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                     const vicino = getComuneBySlug(slug);
                     if (!vicino) return null;
                     return (
-                      <Link key={slug} href={`/comune/${slug}/ristrutturazione-bagno/`} className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-navy hover:text-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full transition-colors">
+                      <Link key={slug} href={`/comune/${slug}/ristrutturazione-cucina/`} className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-navy hover:text-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full transition-colors">
                         Bagno a {vicino.nome}
                       </Link>
                     );
