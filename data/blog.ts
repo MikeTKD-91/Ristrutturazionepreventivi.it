@@ -51,54 +51,59 @@ Per avere una stima indicativa immediata e gratuita per la tua ristrutturazione 
 Ricorda che ogni progetto è unico: per un preventivo dettagliato, contattaci via WhatsApp con le specifiche del tuo appartamento.`
   },
   {
-    slug: "bonus-ristrutturazione-2026-cosa-cambiato",
-    titolo: "Bonus ristrutturazione 2026: cosa è cambiato",
-    estratto: "Tutte le novità sulle detrazioni fiscali per ristrutturazioni nel 2026. Come funziona il Bonus Ristrutturazioni, Ecobonus e Sismabonus.",
-    immagine: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800",
-    categoria: "Fisco",
-    data: "2026-01-10",
-    contenuto: `Il 2026 porta con sé importanti conferme per le detrazioni fiscali legate alle ristrutturazioni edilizie. Ecco tutto quello che devi sapere per approfittare degli incentivi fiscali per il tuo progetto di ristrutturazione.
+  slug: "bonus-ristrutturazione-2026-cosa-cambiato",
+  titolo: "Bonus ristrutturazione 2026: cosa è cambiato",
+  estratto: "Le novità aggiornate sui bonus casa 2026: aliquote, requisiti, Superbonus residuale e regole da verificare prima di iniziare i lavori.",
+  immagine: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800",
+  categoria: "Fisco",
+  data: "2026-01-10",
+  contenuto: `Il quadro dei bonus edilizi nel 2026 è cambiato rispetto agli anni precedenti e, prima di programmare una ristrutturazione, conviene capire con precisione quali agevolazioni sono ancora applicabili e con quali condizioni.
 
-**Bonus Ristrutturazioni: confermato al 50%**
+**Bonus Ristrutturazioni 2026**
 
-Il Bonus Ristrutturazioni resta una delle agevolazioni più importanti per chi deve ristrutturare casa. Nel 2026 è confermata la detrazione IRPEF del 50% delle spese sostenute, con un limite massimo di spesa di 96.000 € per unità immobiliare.
+Nel 2026 il Bonus Ristrutturazioni resta una delle principali agevolazioni per chi interviene sulla propria casa. La detrazione, nella pratica, varia in base alla destinazione dell'immobile: in molti casi è pari al 50% per l'abitazione principale e al 36% per gli altri immobili, sempre entro il limite di spesa previsto dalla normativa vigente.
 
-La detrazione viene ripartita in 10 quote annuali di pari importo. È fondamentale ricordare che si tratta di una detrazione d'imposta, non di uno sconto in fattura: il rimborso avviene attraverso la dichiarazione dei redditi.
+La detrazione si recupera tramite dichiarazione dei redditi e non come sconto immediato in fattura. Per questo è fondamentale conservare fatture, bonifici e documentazione tecnica in modo ordinato fin dall'inizio dei lavori.
 
-**Ecobonus: efficientamento energetico**
+**Ecobonus 2026**
 
-Per gli interventi di efficienza energetica, l'Ecobonus 2026 prevede:
-- **50% di detrazione** per la sostituzione di infissi
-- **50% di detrazione** per l'installazione di pannelli solari
-- **50% di detrazione** per la sostituzione di caldaie con caldaie a condensazione o pompe di calore
-- **65% di detrazione** per l'isolamento termico delle superfici opache (cappotto termico)
+Per gli interventi di efficienza energetica, l'Ecobonus continua a essere una soluzione utile, ma le aliquote e le condizioni vanno verificate caso per caso. In linea generale riguarda interventi come:
+- sostituzione infissi.
+- coibentazione e isolamento termico.
+- schermature solari.
+- interventi per ridurre i consumi energetici dell'immobile.
 
-**Sismabonus: sicurezza antisismica**
+In questi casi la convenienza fiscale dipende dal tipo di immobile, dalla tipologia di lavoro e dalla documentazione tecnica richiesta.
 
-Il Sismabonus è l'agevolazione per gli interventi di miglioramento sismico degli edifici. Nel 2026 prevede:
-- **75% di detrazione** per interventi che migliorano la classe sismica
-- La detrazione sale all'85% se gli interventi comportano il miglioramento di due classi sismiche
+**Sismabonus 2026**
 
-**Come ottenere le detrazioni**
+Il Sismabonus rimane l'agevolazione dedicata agli interventi di riduzione del rischio sismico. È una misura rilevante soprattutto per gli edifici che necessitano di miglioramenti strutturali o di consolidamento.
 
-Per usufruire delle detrazioni fiscali è necessario:
-1. Pagare con bonifico bancario o postale "agevolato" (indicante la causale del versamento e il codice fiscale del beneficiario)
-2. Conservare tutte le fatture e ricevute dei pagamenti
-3. Presentare la dichiarazione dei redditi indicando le spese sostenute
-4. Per alcuni interventi, è richiesta la certificazione energetica o la diagnosi energetica
+Anche qui la percentuale di detrazione e le modalità operative dipendono dal tipo di intervento, dalla classe di rischio e dalla documentazione predisposta dal tecnico incaricato.
 
-**Cosa NON è più disponibile**
+**Superbonus: non più misura ordinaria**
 
-Il Superbonus 110%, che aveva caratterizzato gli anni precedenti, non è più in vigore nel 2026. Le aliquote massime sono tornate ai livelli precedenti (50-75% a seconda dell'intervento).
+Il Superbonus 110% non è più una misura ordinaria per la generalità degli interventi nel 2026. Restano soltanto casi eccezionali e molto specifici, collegati in particolare ad alcune situazioni di ricostruzione o a immobili colpiti da eventi sismici, quindi non va considerato il bonus standard per chi ristruttura casa oggi.
 
-**Consigli pratici**
+Per questo motivo, chi sta pianificando lavori ordinari deve ragionare soprattutto sui bonus casa effettivamente vigenti e sui requisiti richiesti nel proprio caso.
 
-- Affidati sempre a imprese qualificate e registrate
-- Verifica che i materiali utilizzati siano certificati
-- Conserva tutta la documentazione per almeno 10 anni
-- Consulta un commercialista per la corretta compilazione della dichiarazione dei redditi`
-  },
-  {
+**Cosa fare prima di iniziare i lavori**
+
+Prima di partire con una ristrutturazione conviene sempre:
+- verificare quale bonus è davvero applicabile.
+- controllare se serve una pratica edilizia come CILA o SCIA.
+- usare modalità di pagamento corrette.
+- conservare tutta la documentazione fiscale.
+- confrontare il caso concreto con un tecnico o un commercialista.
+
+Questo evita errori costosi e aiuta a costruire un preventivo più realistico.
+
+**Conclusione pratica**
+
+Nel 2026 i bonus casa restano utili, ma non vanno trattati in modo generico. Ogni intervento ha regole proprie e la convenienza reale cambia in base all'immobile, al tipo di lavoro e alla documentazione necessaria.
+
+Se stai valutando una ristrutturazione a Napoli, Caserta o nei comuni dell'Agro Aversano, il modo migliore per partire è una stima tecnica dei lavori, così puoi capire in anticipo costi, pratiche e agevolazioni da verificare.`
+}
     slug: "ristrutturazione-bagno-idee-soluzioni-2026",
     titolo: "Ristrutturazione bagno: idee e soluzioni per il 2026",
     estratto: "Trend e novità per il bagno del futuro. Dalla doccia walk-in ai rivestimenti effetto pietra, scopri le soluzioni più richieste per il tuo bagno nuovo.",
