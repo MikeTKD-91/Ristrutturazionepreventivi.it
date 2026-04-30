@@ -103,7 +103,7 @@ Questo evita errori costosi e aiuta a costruire un preventivo più realistico.
 Nel 2026 i bonus casa restano utili, ma non vanno trattati in modo generico. Ogni intervento ha regole proprie e la convenienza reale cambia in base all'immobile, al tipo di lavoro e alla documentazione necessaria.
 
 Se stai valutando una ristrutturazione a Napoli, Caserta o nei comuni dell'Agro Aversano, il modo migliore per partire è una stima tecnica dei lavori, così puoi capire in anticipo costi, pratiche e agevolazioni da verificare.`
-    }
+    },
     {
     slug: "ristrutturazione-bagno-idee-soluzioni-2026",
     titolo: "Ristrutturazione bagno: idee e soluzioni per il 2026",
