@@ -80,7 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Blog ─────────────────────────────────────────────────────────
   const blogPages: MetadataRoute.Sitemap = articoli.map((p) => ({
     url: `${BASE_URL}/blog/${p.slug}/`,
-    lastModified: p.data || now,
+    lastModified: p.updatedAt || p.data,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
