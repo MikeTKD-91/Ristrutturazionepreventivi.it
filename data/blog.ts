@@ -6,6 +6,9 @@ export interface Articolo {
   immagine: string;
   categoria: string;
   data: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  updatedAt?: string;
 }
 
 export const articoli: Articolo[] = [
