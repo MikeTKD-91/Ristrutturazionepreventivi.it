@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Calendar, Check } from "lucide-react";
-import { articoli } from "@/data/blog";
+import { getAllArticoli } from "@/lib/blog";
 import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
 import { getDataAggiornamento } from "@/lib/utils";
 
@@ -37,6 +37,7 @@ function formatData(data: string): string {
 }
 
 export default function BlogPage() {
+  const articoli = getAllArticoli();
   const dataAggiornamento = getDataAggiornamento();
 
   return (

@@ -3,7 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Check, MessageCircle, User } from "lucide-react";
-import { articoli, getArticoloBySlug } from "@/data/blog";
+import ReactMarkdown from "react-markdown";
+import { getAllArticoli, getArticoloBySlug } from "@/lib/blog";
 import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
 import { getDataAggiornamento } from "@/lib/utils";
 
@@ -12,6 +13,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
+  const articoli = getAllArticoli();
   return articoli.map((articolo) => ({
     slug: articolo.slug,
   }));
@@ -67,6 +69,7 @@ export default async function ArticoloPage({ params }: Props) {
     notFound();
   }
 
+  const articoli = getAllArticoli();
   const altriArticoli = articoli
     .filter(a => a.slug !== slug)
     .slice(0, 3);
@@ -125,55 +128,8 @@ export default async function ArticoloPage({ params }: Props) {
               </div>
 
               {/* Article */}
-              <article className="prose prose-lg max-w-none">
-                {articolo.contenuto.split('\n\n').map((paragraph, index) => {
-                  if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-                    return <h2 key={index} className="text-2xl font-bold text-navy mt-8 mb-4">{paragraph.replace(/\*\*/g, '')}</h2>;
-                  }
-                  if (paragraph.startsWith('- ')) {
-                    const items = paragraph.split('\n').filter(item => item.startsWith('- '));
-                    return (
-                      <ul key={index} className="list-disc pl-6 space-y-2 my-4">
-                        {items.map((item, i) => (
-                          <li key={i} className="text-gray-700">{item.replace('- ', '')}</li>
-                        ))}
-                      </ul>
-                    );
-                  }
-                  if (paragraph.includes('|')) {
-                    const rows = paragraph.split('\n').filter(row => row.includes('|'));
-                    if (rows.length > 2) {
-                      return (
-                        <div key={index} className="overflow-x-auto my-6">
-                          <table className="w-full border-collapse">
-                            <tbody>
-                              {rows.map((row, i) => {
-                                const cells = row.split('|').filter(c => c.trim());
-                                if (i === 0) {
-                                  return (
-                                    <tr key={i} className="bg-navy text-white">
-                                      {cells.map((cell, j) => (
-                                        <th key={j} className="p-3 text-left">{cell.trim()}</th>
-                                      ))}
-                                    </tr>
-                                  );
-                                }
-                                return (
-                                  <tr key={i} className={i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                                    {cells.map((cell, j) => (
-                                      <td key={j} className="p-3 border-b">{cell.trim()}</td>
-                                    ))}
-                                  </tr>
-                                );
-                              })}
-                            </tbody>
-                          </table>
-                        </div>
-                      );
-                    }
-                  }
-                  return <p key={index} className="text-gray-700 leading-relaxed mb-4">{paragraph}</p>;
-                })}
+              <article className="prose prose-lg max-w-none prose-headings:text-navy prose-a:text-teal-600">
+                <ReactMarkdown>{articolo.contenuto}</ReactMarkdown>
               </article>
 
               {/* CTA */}
