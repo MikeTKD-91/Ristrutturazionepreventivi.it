@@ -209,12 +209,10 @@ export default async function ServizioPage({ params }: Props) {
               {/* CTA */}
               <div className="bg-navy p-6 rounded-2xl text-white">
                 <h3 className="text-xl font-bold mb-4">
-                  Verifica orientativa del progetto
+                  Scopri il costo del tuo intervento
                 </h3>
                 <p className="text-white/80 mb-6">
-                  Contattaci su WhatsApp per una prima verifica orientativa 
-                  del tuo progetto di {servizio.titolo.toLowerCase()}. Il preventivo reale 
-                  viene definito dopo verifica tecnica e sopralluogo.
+                  Contattaci su WhatsApp per capire il costo del tuo progetto di {servizio.titolo.toLowerCase()}. Se i dati rientrano nei parametri indicati, prepariamo il preventivo e confermiamo tutto con il sopralluogo.
                 </p>
                 <a
                   href={generaLinkWhatsApp(
@@ -229,7 +227,7 @@ export default async function ServizioPage({ params }: Props) {
                   className="w-full bg-orange hover:bg-orange-600 text-white py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="h-5 w-5" />
-                  Richiedi verifica su WhatsApp
+                  Richiedi preventivo su WhatsApp
                 </a>
               </div>
 
@@ -270,11 +268,10 @@ export default async function ServizioPage({ params }: Props) {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-navy mb-4">
-            Hai già un intervento da valutare?
+            Vuoi sapere quanto costa il tuo intervento?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-            Richiedi una prima verifica orientativa per il tuo progetto 
-            di {servizio.titolo.toLowerCase()}. Il sopralluogo serve a confermare misure, lavorazioni e criticità reali.
+            Scopri il costo del tuo progetto di {servizio.titolo.toLowerCase()} e richiedi il preventivo. Il sopralluogo conferma misure, lavorazioni e condizioni reali dell'immobile.
           </p>
           <a
             href="https://wa.me/393339809319"
@@ -283,7 +280,7 @@ export default async function ServizioPage({ params }: Props) {
             className="inline-flex items-center gap-2 bg-orange hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold transition-colors"
           >
             <MessageCircle className="h-5 w-5" />
-            Richiedi una prima verifica
+            Richiedi preventivo
           </a>
           <p className="text-gray-400 text-sm mt-4">
             Costi aggiornati a {dataAggiornamento} - Ultimo aggiornamento: {dataAggiornamento}

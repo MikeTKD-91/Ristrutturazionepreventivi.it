@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
   const title = `Impianti Elettrici, Idraulici e Termici a ${comune.nome} | Costi e Preventivo`;
-  const description = `Quanto costano gli impianti a ${comune.nome}? Elettrico, idraulico, termico: costi orientativi da Prezzario Campania, normative, certificazioni. Stima gratuita senza impegno.`;
+  const description = `Quanto costano gli impianti a ${comune.nome}? Elettrico, idraulico, termico: costi orientativi da Prezzario Campania, normative, certificazioni. Costo indicativo basato sul Prezzario Regionale Campania.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/impianti-elettrici-idraulici-termici/`;
   return {
     title,
@@ -155,7 +155,7 @@ export default async function ImpiantiPage({ params }: PageProps) {
                 <p className="text-orange text-sm font-semibold uppercase tracking-widest mb-3">Impianti · {comune.nome}</p>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Impianti a {comune.nome}:<br />
-                  <span className="text-orange">Costi Reali e Stima Gratuita</span>
+                  <span className="text-orange">Costi reali e preventivo</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
                   Prezzi orientativi per impianti elettrici, idraulici e termici basati sul
@@ -168,7 +168,7 @@ export default async function ImpiantiPage({ params }: PageProps) {
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Ecobonus applicabile</span>
                 </div>
                 <a href="#calcolatore" className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
-                  Calcola la tua stima gratuita
+                  Scopri il costo
                 </a>
               </div>
               <div className="hidden lg:block relative h-72 rounded-2xl overflow-hidden shadow-2xl">
@@ -312,7 +312,7 @@ export default async function ImpiantiPage({ params }: PageProps) {
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { step: "01", titolo: "Stima gratuita", testo: "Inserisci i dati dell'appartamento nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno." },
+                  { step: "01", titolo: "Costo indicativo", testo: "Inserisci i dati dell'appartamento nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno." },
                   { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico verifica lo stato degli impianti esistenti, l'anno di costruzione e la normativa applicabile per definire l'intervento necessario con relative certificazioni." },
                   { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo con dettaglio per ogni impianto, materiali specificati, tempistiche e garanzie. Tutte le certificazioni obbligatorie sono incluse." },
                 ].map((s) => (
@@ -391,7 +391,7 @@ export default async function ImpiantiPage({ params }: PageProps) {
         <section className="bg-navy py-14 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Vuoi sapere quanto costano gli impianti a {comune.nome}?</h2>
-            <p className="text-white/70 mb-8 text-lg">Parti dalla stima gratuita. Se la forbice è in linea col tuo budget, organizziamo il sopralluogo e prepariamo il preventivo dettagliato con tutte le certificazioni incluse.</p>
+            <p className="text-white/70 mb-8 text-lg">Scopri il costo del tuo intervento. Se la forbice è in linea col tuo budget, organizziamo il sopralluogo e prepariamo il preventivo dettagliato con tutte le certificazioni incluse.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`https://wa.me/393339809319?text=Salve%2C%20vorrei%20un%20preventivo%20per%20il%20rifacimento%20impianti%20a%20${encodeURIComponent(comune.nome)}`} target="_blank" rel="noopener noreferrer" className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center">
                 Richiedi stima su WhatsApp

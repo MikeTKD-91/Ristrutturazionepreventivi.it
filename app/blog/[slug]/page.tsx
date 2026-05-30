@@ -320,7 +320,7 @@ export default async function ArticoloPage({ params }: Props) {
               <div className="mt-8 bg-navy rounded-2xl p-8 text-white">
                 <h3 className="text-xl font-bold mb-2">Hai domande su questo argomento?</h3>
                 <p className="text-white/75 text-sm mb-6">
-                  Contattaci su WhatsApp per una prima verifica orientativa dell'intervento.
+                  Contattaci su WhatsApp per una scopri il costo dell'intervento.
                 </p>
                 <a
                   href="https://wa.me/393339809319"
@@ -329,7 +329,7 @@ export default async function ArticoloPage({ params }: Props) {
                   className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white px-6 py-3 rounded-xl font-semibold transition-colors text-sm"
                 >
                   <MessageCircle className="h-5 w-5" />
-                  Richiedi verifica su WhatsApp
+                  Richiedi preventivo su WhatsApp
                 </a>
               </div>
             </div>
@@ -381,7 +381,7 @@ export default async function ArticoloPage({ params }: Props) {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Pronto a Ristrutturare?</h2>
           <p className="text-white/75 text-lg mb-8 max-w-2xl mx-auto">
-            Richiedi una prima verifica orientativa per il tuo progetto.
+            Richiedi una scopri il costo per il tuo progetto.
           </p>
           <a
             href="https://wa.me/393339809319"
@@ -390,7 +390,7 @@ export default async function ArticoloPage({ params }: Props) {
             className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white px-8 py-4 rounded-xl font-semibold transition-colors"
           >
             <MessageCircle className="h-5 w-5" />
-            Richiedi una prima verifica
+            Richiedi preventivo
           </a>
           <p className="text-white/40 text-sm mt-4">Costi aggiornati a {dataAggiornamento}</p>
         </div>

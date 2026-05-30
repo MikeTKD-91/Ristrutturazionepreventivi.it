@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
   const title = `Pavimenti e Rivestimenti a ${comune.nome} | Costi Reali e Preventivo`;
-  const description = `Quanto costa la posa di pavimenti e rivestimenti a ${comune.nome}? Costi orientativi da Prezzario Regionale Campania, materiali, formati, tempistiche reali. Stima gratuita.`;
+  const description = `Quanto costa la posa di pavimenti e rivestimenti a ${comune.nome}? Costi orientativi da Prezzario Regionale Campania, materiali, formati, tempistiche reali. Costo indicativo basato sul Prezzario Regionale Campania.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/pavimenti-rivestimenti/`;
   return {
     title,
@@ -155,7 +155,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
                 <p className="text-orange text-sm font-semibold uppercase tracking-widest mb-3">Pavimenti e Rivestimenti · {comune.nome}</p>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Pavimenti e Rivestimenti a {comune.nome}:<br />
-                  <span className="text-orange">Costi Reali e Stima Gratuita</span>
+                  <span className="text-orange">Costi reali e preventivo</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
                   Prezzi orientativi basati sul Prezzario Regionale Campania, per ogni
@@ -168,7 +168,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Bonus 50% applicabile</span>
                 </div>
                 <a href="#calcolatore" className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
-                  Calcola la tua stima gratuita
+                  Scopri il costo
                 </a>
               </div>
               <div className="hidden lg:block relative h-72 rounded-2xl overflow-hidden shadow-2xl">
@@ -305,7 +305,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { step: "01", titolo: "Stima gratuita", testo: "Inserisci la superficie da trattare nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno." },
+                  { step: "01", titolo: "Costo indicativo", testo: "Inserisci la superficie da trattare nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno." },
                   { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico verifica lo stato del massetto, rileva le superfici e ti guida nella scelta del materiale più adatto alle tue esigenze e al tuo budget." },
                   { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo scritto con tipologia di materiale, schema di posa, tempistiche e garanzie. Trasparente, senza voci generiche." },
                 ].map((s) => (
@@ -384,7 +384,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
         <section className="bg-navy py-14 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Vuoi sapere quanto costa la posa a {comune.nome}?</h2>
-            <p className="text-white/70 mb-8 text-lg">Parti dalla stima gratuita. Se la forbice è in linea col tuo budget, organizziamo il sopralluogo e prepariamo il preventivo dettagliato.</p>
+            <p className="text-white/70 mb-8 text-lg">Scopri il costo del tuo intervento. Se la forbice è in linea col tuo budget, organizziamo il sopralluogo e prepariamo il preventivo dettagliato.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`https://wa.me/393339809319?text=Salve%2C%20vorrei%20un%20preventivo%20per%20pavimenti%20e%20rivestimenti%20a%20${encodeURIComponent(comune.nome)}`} target="_blank" rel="noopener noreferrer" className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center">
                 Richiedi stima su WhatsApp

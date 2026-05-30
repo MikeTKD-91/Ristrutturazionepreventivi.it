@@ -327,7 +327,7 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({ comuneDefault = 
             </div>
 
             <div className="bg-gradient-to-br from-navy to-navy/90 rounded-2xl p-5 text-center">
-              <p className="text-white/60 text-xs mb-1">Stima indicativa</p>
+              <p className="text-white/60 text-xs mb-1">Costo stimato</p>
               <div className="text-3xl md:text-4xl font-bold text-white">
                 {formatPrezzo(risultato.min)} – {formatPrezzo(risultato.max)}
               </div>

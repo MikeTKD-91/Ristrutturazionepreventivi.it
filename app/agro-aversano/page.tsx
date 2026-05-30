@@ -103,7 +103,7 @@ export default function AgroAversanoPage() {
                 href="#calcolatore"
                 className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
               >
-                Avvia la verifica orientativa
+                Scopri il costo
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -241,7 +241,7 @@ export default function AgroAversanoPage() {
             <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { n: "01", t: "Verifica orientativa", d: "Usi il calcolatore o ci scrivi su WhatsApp per capire l'ordine di grandezza dell'intervento. Il preventivo reale nasce dopo verifica tecnica e sopralluogo." },
+                { n: "01", t: "Scopri il costo", d: "Usi il calcolatore o ci scrivi su WhatsApp per capire l'ordine di grandezza dell'intervento. Il preventivo reale nasce dopo verifica tecnica e sopralluogo." },
                 { n: "02", t: "Sopralluogo tecnico", d: "Il nostro tecnico visita l'immobile. Verifica impianti, strutture e criticità specifiche dell'Agro Aversano: solo così il preventivo è affidabile." },
                 { n: "03", t: "Preventivo scritto", d: "Prezzi unitari, materiali specificati, tempistiche e garanzia decennale. Tutto nero su bianco prima di iniziare." },
               ].map((s) => (
@@ -289,7 +289,7 @@ export default function AgroAversanoPage() {
             Vuoi sapere quanto costa ristrutturare nell'Agro Aversano?
           </h2>
           <p className="text-white/70 mb-8 text-lg">
-            Parti da una prima verifica orientativa. Se il quadro economico è compatibile con il tuo intervento, organizziamo il sopralluogo e prepariamo una proposta tecnica chiara.
+            Parti da una scopri il costo. Se il quadro economico è compatibile con il tuo intervento, organizziamo il sopralluogo e prepariamo una proposta tecnica chiara.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -298,7 +298,7 @@ export default function AgroAversanoPage() {
               rel="noopener noreferrer"
               className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center"
             >
-              Richiedi verifica su WhatsApp
+              Richiedi preventivo su WhatsApp
             </a>
             <a
               href="tel:+393339809319"

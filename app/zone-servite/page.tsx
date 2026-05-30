@@ -8,13 +8,13 @@ import { getDataAggiornamento } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Zone Servite | Ristrutturazioni Napoli e Provincia, Caserta e Agro Aversano",
-  description: "Operiamo in tutti i comuni delle Province di Napoli e Caserta, con specializzazione nell'Agro Aversano. Prima verifica orientativa e sopralluogo tecnico.",
+  description: "Operiamo in tutti i comuni delle Province di Napoli e Caserta, con specializzazione nell'Agro Aversano. Scopri il costo e sopralluogo tecnico.",
   alternates: {
     canonical: "https://ristrutturazionepreventivi.it/zone-servite/",
   },
   openGraph: {
     title: "Zone Servite | Ristrutturazioni Napoli e Provincia, Caserta e Agro Aversano",
-    description: "Province di Napoli e Caserta · Agro Aversano. Prima verifica orientativa e sopralluogo tecnico.",
+    description: "Province di Napoli e Caserta · Agro Aversano. Scopri il costo e sopralluogo tecnico.",
     url: "https://ristrutturazionepreventivi.it/zone-servite/",
     images: [
       {
@@ -47,12 +47,12 @@ export default function ZoneServitePage() {
               Operiamo in tutta la <span className="text-orange font-bold">Provincia di Napoli e Caserta</span>, con specializzazione nell'<span className="text-orange font-bold">Agro Aversano</span>.
             </p>
             
-            {/* PULSANTE "Vai alla verifica orientativa" SUBITO DOPO IL TITOLO */}
+            {/* PULSANTE "Scopri il costo" SUBITO DOPO IL TITOLO */}
             <a
               href="#calcolatore"
               className="inline-flex items-center gap-2 bg-orange hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold transition-colors text-lg shadow-lg mt-8"
             >
-              Vai alla verifica orientativa
+              Scopri il costo
               <ArrowRight className="h-5 w-5" />
             </a>
           </div>
@@ -221,7 +221,7 @@ export default function ZoneServitePage() {
             Trova il Tuo Comune
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-            Seleziona il tuo comune per consultare i contenuti locali e partire da una prima verifica orientativa del progetto.
+            Seleziona il tuo comune per consultare i contenuti locali e partire da una scopri il costo del progetto.
           </p>
           <a
             href="https://wa.me/393339809319"
@@ -229,7 +229,7 @@ export default function ZoneServitePage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-orange hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold transition-colors"
           >
-            Richiedi verifica su WhatsApp
+            Richiedi preventivo su WhatsApp
           </a>
           <p className="text-white/50 text-sm mt-4">
             Costi aggiornati a {dataAggiornamento} - Ultimo aggiornamento: {dataAggiornamento}

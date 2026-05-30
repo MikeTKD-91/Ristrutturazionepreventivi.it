@@ -126,7 +126,7 @@ export default function CalcolatoreAppartamento({
         </div>
         <div>
           <h3 className="text-xl font-bold text-navy">
-            Prima stima orientativa appartamento
+            Scopri il costo appartamento
           </h3>
           <p className="text-sm text-gray-600">
             Calcolo basato su ristrutturazione chiavi in mano standard da 550 €/mq
@@ -368,7 +368,7 @@ export default function CalcolatoreAppartamento({
                 <Check className="h-7 w-7 text-green-600" />
               </div>
               <h4 className="text-lg font-semibold text-navy">
-                Ecco la tua prima stima orientativa, {nome}!
+                Ecco la tua prima stima del costo, {nome}!
               </h4>
               <p className="text-sm text-gray-500 mt-1">
                 Appartamento {mq} mq · {comuneFinale}

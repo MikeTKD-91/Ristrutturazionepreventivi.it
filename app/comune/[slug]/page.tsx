@@ -137,7 +137,7 @@ export default async function ComunePage({ params }: PageProps) {
                   href="#calcolatore"
                   className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
                 >
-                  Calcola la tua stima gratuita
+                  Scopri il costo
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -254,7 +254,7 @@ export default async function ComunePage({ params }: PageProps) {
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { n: "01", t: "Stima gratuita", d: "Usi il calcolatore o ci scrivi su WhatsApp. In pochi minuti sai se il tuo budget è compatibile con l'intervento, senza impegno." },
+                  { n: "01", t: "Costo indicativo", d: "Usi il calcolatore o ci scrivi su WhatsApp. In pochi minuti sai se il tuo budget è compatibile con l'intervento, senza impegno." },
                   { n: "02", t: "Sopralluogo tecnico", d: "Il nostro tecnico visita l'immobile di persona. Verifica impianti, strutture e criticità specifiche: solo così il preventivo è affidabile." },
                   { n: "03", t: "Preventivo scritto", d: "Un documento con prezzi unitari, materiali, tempistiche e garanzia decennale. Tutto nero su bianco prima di iniziare." },
                 ].map((s) => (
@@ -357,7 +357,7 @@ export default async function ComunePage({ params }: PageProps) {
               Vuoi sapere quanto costa ristrutturare a {comune.nome}?
             </h2>
             <p className="text-white/70 mb-8">
-              Parti dalla stima gratuita. Se la forbice è nel tuo range, organizziamo il sopralluogo.
+              Scopri il costo del tuo intervento. Se la forbice è nel tuo range, organizziamo il sopralluogo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

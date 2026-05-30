@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
   const title = `Ristrutturazione Bagno a ${comune.nome} | Costi Reali e Preventivo`;
-  const description = `Quanto costa rifare il bagno a ${comune.nome}? Costi orientativi da Prezzario Regionale Campania, criticità locali, tempistiche reali. Stima gratuita senza impegno.`;
+  const description = `Quanto costa rifare il bagno a ${comune.nome}? Costi orientativi da Prezzario Regionale Campania, criticità locali, tempistiche reali. Costo indicativo basato sul Prezzario Regionale Campania.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-bagno/`;
   return {
     title,
@@ -171,7 +171,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                 </p>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Ristrutturazione Bagno a {comune.nome}:<br />
-                  <span className="text-orange">Costi Reali e Stima Gratuita</span>
+                  <span className="text-orange">Costi reali e preventivo</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
                   Prezzi orientativi basati sul Prezzario Regionale Campania, criticità tipiche
@@ -188,7 +188,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                   href="#calcolatore"
                   className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
                 >
-                  Calcola la tua stima gratuita
+                  Scopri il costo
                 </a>
               </div>
 
@@ -368,7 +368,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { step: "01", titolo: "Stima gratuita", testo: "Inserisci i dati del tuo bagno nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno." },
+                  { step: "01", titolo: "Costo indicativo", testo: "Inserisci i dati del tuo bagno nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno." },
                   { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico visita l'immobile, verifica lo stato degli impianti, rileva eventuali criticità e raccoglie tutte le informazioni per il preventivo definitivo." },
                   { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo scritto con prezzi unitari, materiali specificati, tempistiche e condizioni di garanzia. Trasparente, senza voci generiche." },
                 ].map((s) => (
@@ -470,7 +470,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               Vuoi sapere quanto costa il tuo bagno a {comune.nome}?
             </h2>
             <p className="text-white/70 mb-8 text-lg">
-              Parti dalla stima gratuita. Se la forbice è in linea col tuo budget,
+              Scopri il costo del tuo intervento. Se la forbice è in linea col tuo budget,
               organizziamo il sopralluogo e prepariamo il preventivo dettagliato.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
