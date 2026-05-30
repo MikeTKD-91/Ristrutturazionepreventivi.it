@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { Check, Home, Zap, Shield, AlertTriangle } from "lucide-react";
-import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
+import ScopriIlCostoDellaTuaRistrutturazione from "@/components/shared/ScopriIlCostoDellaTuaRistrutturazione";
 import { getDataAggiornamento } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -160,7 +160,7 @@ export default function BonusPage() {
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <CalcolatoreStima />
+            <ScopriIlCostoDellaTuaRistrutturazione />
           </div>
         </div>
       </section>

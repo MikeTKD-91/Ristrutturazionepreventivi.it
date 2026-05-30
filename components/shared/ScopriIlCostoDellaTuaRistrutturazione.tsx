@@ -9,7 +9,7 @@ import {
 import { servizi } from "@/data/servizi";
 import { calcolaStima, formatPrezzo } from "@/lib/utils";
 
-interface CalcolatoreStimaProps {
+interface ScopriIlCostoDellaTuaRistrutturazioneProps {
   comuneDefault?: string;
 }
 
@@ -60,7 +60,7 @@ const finituraLabels = {
 
 const STEP_LABELS = ["Configura", "I tuoi dati", "La tua stima"];
 
-export default function CalcolatoreStima({ comuneDefault = "il tuo comune" }: CalcolatoreStimaProps) {
+export default function ScopriIlCostoDellaTuaRistrutturazione({ comuneDefault = "il tuo comune" }: ScopriIlCostoDellaTuaRistrutturazioneProps) {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [servizio, setServizio] = useState("");
   const [mq, setMq] = useState(80);
@@ -124,8 +124,8 @@ export default function CalcolatoreStima({ comuneDefault = "il tuo comune" }: Ca
           <Calculator className="h-6 w-6 text-orange" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-navy">Calcola la tua verifica orientativa</h3>
-          <p className="text-sm text-gray-600">Prima verifica orientativa basata sui dati inseriti</p>
+          <h3 className="text-xl font-bold text-navy">Scopri il costo della tua ristrutturazione</h3>
+          <p className="text-sm text-gray-600">Stima orientativa basata sui dati inseriti, da confermare dopo sopralluogo</p>
         </div>
       </div>
 

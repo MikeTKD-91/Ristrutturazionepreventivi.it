@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { MapPin, ArrowRight, TriangleAlert, CheckCircle } from "lucide-react";
-import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
+import ScopriIlCostoDellaTuaRistrutturazione from "@/components/shared/ScopriIlCostoDellaTuaRistrutturazione";
 import { comuni, getComuneBySlug } from "@/data/comuni";
 
 interface PageProps {
@@ -157,7 +157,7 @@ export default async function ComunePage({ params }: PageProps) {
         </section>
         {/* Calcolatore mobile */}
         <div id="calcolatore" className="lg:hidden px-4 pt-6">
-          <CalcolatoreStima comuneDefault={comune.nome} />
+          <ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} />
         </div>
 
         <div className="max-w-6xl mx-auto px-4 py-12 grid lg:grid-cols-3 gap-10 items-start">
@@ -316,7 +316,7 @@ export default async function ComunePage({ params }: PageProps) {
           <div className="hidden lg:block lg:col-span-1">
             <div className="sticky top-6 space-y-6">
               <div id="calcolatore">
-                <CalcolatoreStima comuneDefault={comune.nome} />
+                <ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} />
               </div>
               <div className="bg-gray-50 rounded-2xl p-5">
                 <p className="text-sm font-semibold text-navy mb-3">Pagine servizio disponibili</p>

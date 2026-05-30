@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, MapPin, TriangleAlert, CheckCircle } from "lucide-react";
 import { comuniAgroAversano } from "@/data/comuni";
-import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
+import ScopriIlCostoDellaTuaRistrutturazione from "@/components/shared/ScopriIlCostoDellaTuaRistrutturazione";
 
 export const metadata: Metadata = {
   title: "Ristrutturazione Agro Aversano | Costi Reali e Preventivo",
@@ -126,7 +126,7 @@ export default function AgroAversanoPage() {
 
       {/* Calcolatore mobile */}
       <div id="calcolatore" className="lg:hidden px-4 pt-6">
-        <CalcolatoreStima comuneDefault="Aversa" />
+        <ScopriIlCostoDellaTuaRistrutturazione comuneDefault="Aversa" />
       </div>
 
       {/* ── CORPO ── */}
@@ -259,7 +259,7 @@ export default function AgroAversanoPage() {
         {/* ── SIDEBAR ── */}
         <div className="hidden lg:block">
           <div id="calcolatore" className="sticky top-6 space-y-6">
-            <CalcolatoreStima comuneDefault="Aversa" />
+            <ScopriIlCostoDellaTuaRistrutturazione comuneDefault="Aversa" />
             <div className="bg-gray-50 rounded-2xl p-5">
               <p className="text-sm font-semibold text-navy mb-4">Perché scegliere noi</p>
               <div className="space-y-3">

@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 import { servizi, getServizioBySlug } from "@/data/servizi";
 import { comuni } from "@/data/comuni";
-import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
+import ScopriIlCostoDellaTuaRistrutturazione from "@/components/shared/ScopriIlCostoDellaTuaRistrutturazione";
 import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
 import { getDataAggiornamento, formatPrezzo, generaLinkWhatsApp } from "@/lib/utils";
 
@@ -204,7 +204,7 @@ export default async function ServizioPage({ params }: Props) {
             {/* Sidebar */}
             <div className="space-y-8">
               {/* Calcolatore */}
-              {slug === "ristrutturazione-appartamento-completo" ? <CalcolatoreAppartamento comuneDefault="Napoli" /> : <CalcolatoreStima comuneDefault="Napoli" />}
+              {slug === "ristrutturazione-appartamento-completo" ? <CalcolatoreAppartamento comuneDefault="Napoli" /> : <ScopriIlCostoDellaTuaRistrutturazione comuneDefault="Napoli" />}
 
               {/* CTA */}
               <div className="bg-navy p-6 rounded-2xl text-white">

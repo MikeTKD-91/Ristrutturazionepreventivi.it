@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Calendar, Check } from "lucide-react";
 import { getAllArticoli } from "@/lib/blog";
-import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
+import ScopriIlCostoDellaTuaRistrutturazione from "@/components/shared/ScopriIlCostoDellaTuaRistrutturazione";
 import { getDataAggiornamento } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -65,7 +65,7 @@ export default function BlogPage() {
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <CalcolatoreStima />
+            <ScopriIlCostoDellaTuaRistrutturazione />
           </div>
         </div>
       </section>

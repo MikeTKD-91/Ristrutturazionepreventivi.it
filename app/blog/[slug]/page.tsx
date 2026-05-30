@@ -6,7 +6,7 @@ import { ArrowLeft, Calendar, Clock, MessageCircle, User } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getAllArticoli, getArticoloBySlug, getAltriArticoli } from "@/lib/blog";
-import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
+import ScopriIlCostoDellaTuaRistrutturazione from "@/components/shared/ScopriIlCostoDellaTuaRistrutturazione";
 import { getDataAggiornamento } from "@/lib/utils";
 
 interface Props {
@@ -336,7 +336,7 @@ export default async function ArticoloPage({ params }: Props) {
 
             {/* Sidebar */}
             <aside className="space-y-8 lg:sticky lg:top-24">
-              <CalcolatoreStima />
+              <ScopriIlCostoDellaTuaRistrutturazione />
 
               <div>
                 <h3 className="text-base font-bold text-navy mb-4 uppercase tracking-wide">
