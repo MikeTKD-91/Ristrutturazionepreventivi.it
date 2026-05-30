@@ -18,6 +18,17 @@ function calcolaTempoLettura(contenuto: string): number {
   return Math.max(1, Math.ceil(parole / 200));
 }
 
+function slugifyHeading(testo: string): string {
+  return testo
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
 function estraiTOC(contenuto: string): { id: string; testo: string; livello: number }[] {
   const righe = contenuto.split("\n");
   return righe
@@ -25,7 +36,7 @@ function estraiTOC(contenuto: string): { id: string; testo: string; livello: num
     .map((r) => {
       const livello = r.startsWith("### ") ? 3 : 2;
       const testo = r.replace(/^#{2,3}\s+/, "").replace(/\*\*/g, "");
-      const id = testo.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+      const id = slugifyHeading(testo);
       return { id, testo, livello };
     });
 }
@@ -204,16 +215,24 @@ export default async function ArticoloPage({ params }: Props) {
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={{
-                    h2: ({ children }) => (
-                      <h2 className="text-[2rem] leading-tight font-bold text-navy mt-14 mb-6 pb-3 border-b border-gray-200">
-                        {children}
-                      </h2>
-                    ),
-                    h3: ({ children }) => (
-                      <h3 className="text-[1.35rem] leading-snug font-semibold text-navy mt-10 mb-4">
-                        {children}
-                      </h3>
-                    ),
+                    h2: ({ children }) => {
+                      const text = Array.isArray(children) ? children.join("") : String(children);
+                      const id = slugifyHeading(text);
+                      return (
+                        <h2 id={id} className="text-[2rem] leading-tight font-bold text-navy mt-14 mb-6 pb-3 border-b border-gray-200">
+                          {children}
+                        </h2>
+                      );
+                    },
+                    h3: ({ children }) => {
+                      const text = Array.isArray(children) ? children.join("") : String(children);
+                      const id = slugifyHeading(text);
+                      return (
+                        <h3 id={id} className="text-[1.35rem] leading-snug font-semibold text-navy mt-10 mb-4">
+                          {children}
+                        </h3>
+                      );
+                    },
                     p: ({ children }) => (
                       <p className="text-[1.08rem] leading-8 text-gray-700 mb-6">
                         {children}
