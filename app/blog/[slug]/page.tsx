@@ -200,22 +200,84 @@ export default async function ArticoloPage({ params }: Props) {
               )}
 
               {/* Contenuto */}
-              <article className="
-                prose prose-lg max-w-none
-                prose-headings:text-navy prose-headings:font-bold prose-headings:scroll-mt-24
-                prose-h2:text-[1.8rem] prose-h2:mt-14 prose-h2:mb-5 prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-3
-                prose-h3:text-[1.35rem] prose-h3:mt-10 prose-h3:mb-4
-                prose-p:text-gray-700 prose-p:leading-8 prose-p:mb-6
-                prose-ul:my-6 prose-ul:space-y-3
-                prose-ol:my-6 prose-ol:space-y-3
-                prose-li:text-gray-700 prose-li:leading-8
-                prose-strong:text-navy
-                prose-a:text-teal-600 prose-a:font-medium prose-a:no-underline hover:prose-a:text-orange hover:prose-a:underline
-                prose-table:my-8 prose-table:text-sm prose-th:bg-navy prose-th:text-white prose-th:px-4 prose-th:py-3 prose-td:px-4 prose-td:py-3 prose-td:border prose-td:border-gray-200
-                prose-blockquote:border-l-4 prose-blockquote:border-orange prose-blockquote:bg-orange/5 prose-blockquote:px-6 prose-blockquote:py-4 prose-blockquote:rounded-r-xl prose-blockquote:not-italic
-                prose-hr:my-10 prose-hr:border-gray-200
-              ">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{articolo.contenuto}</ReactMarkdown>
+              <article className="max-w-none">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    h2: ({ children }) => (
+                      <h2 className="text-[2rem] leading-tight font-bold text-navy mt-14 mb-6 pb-3 border-b border-gray-200">
+                        {children}
+                      </h2>
+                    ),
+                    h3: ({ children }) => (
+                      <h3 className="text-[1.35rem] leading-snug font-semibold text-navy mt-10 mb-4">
+                        {children}
+                      </h3>
+                    ),
+                    p: ({ children }) => (
+                      <p className="text-[1.08rem] leading-8 text-gray-700 mb-6">
+                        {children}
+                      </p>
+                    ),
+                    ul: ({ children }) => (
+                      <ul className="mb-7 space-y-3 pl-6 list-disc marker:text-orange text-gray-700">
+                        {children}
+                      </ul>
+                    ),
+                    ol: ({ children }) => (
+                      <ol className="mb-7 space-y-3 pl-6 list-decimal marker:font-semibold marker:text-orange text-gray-700">
+                        {children}
+                      </ol>
+                    ),
+                    li: ({ children }) => (
+                      <li className="pl-1 leading-8">
+                        {children}
+                      </li>
+                    ),
+                    strong: ({ children }) => (
+                      <strong className="font-semibold text-navy">
+                        {children}
+                      </strong>
+                    ),
+                    a: ({ href, children }) => (
+                      <a
+                        href={href}
+                        className="text-teal-600 font-medium underline decoration-teal-300 underline-offset-4 hover:text-orange"
+                      >
+                        {children}
+                      </a>
+                    ),
+                    table: ({ children }) => (
+                      <div className="my-8 overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
+                        <table className="min-w-full text-sm">
+                          {children}
+                        </table>
+                      </div>
+                    ),
+                    thead: ({ children }) => (
+                      <thead className="bg-navy text-white">
+                        {children}
+                      </thead>
+                    ),
+                    th: ({ children }) => (
+                      <th className="px-4 py-3 text-left font-semibold">
+                        {children}
+                      </th>
+                    ),
+                    td: ({ children }) => (
+                      <td className="px-4 py-3 border-t border-gray-200 text-gray-700 align-top">
+                        {children}
+                      </td>
+                    ),
+                    blockquote: ({ children }) => (
+                      <blockquote className="my-8 border-l-4 border-orange bg-orange/5 px-6 py-4 rounded-r-2xl text-gray-700">
+                        {children}
+                      </blockquote>
+                    ),
+                  }}
+                >
+                  {articolo.contenuto}
+                </ReactMarkdown>
               </article>
 
               {/* Autore card */}
