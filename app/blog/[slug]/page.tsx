@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock, MessageCircle, User } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { getAllArticoli, getArticoloBySlug, getAltriArticoli } from "@/lib/blog";
 import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
 import { getDataAggiornamento } from "@/lib/utils";
@@ -214,7 +215,7 @@ export default async function ArticoloPage({ params }: Props) {
                 prose-blockquote:border-l-4 prose-blockquote:border-orange prose-blockquote:bg-orange/5 prose-blockquote:px-6 prose-blockquote:py-4 prose-blockquote:rounded-r-xl prose-blockquote:not-italic
                 prose-hr:my-10 prose-hr:border-gray-200
               ">
-                <ReactMarkdown>{articolo.contenuto}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{articolo.contenuto}</ReactMarkdown>
               </article>
 
               {/* Autore card */}
