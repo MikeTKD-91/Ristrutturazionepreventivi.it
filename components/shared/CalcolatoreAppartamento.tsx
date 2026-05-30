@@ -138,9 +138,8 @@ export default function CalcolatoreAppartamento({
         <div className="flex gap-2">
           <AlertCircle className="h-5 w-5 text-orange shrink-0 mt-0.5" />
           <p className="text-sm text-navy leading-relaxed">
-            Questa stima si riferisce a un appartamento con accessibilità ordinaria,
-            comodo per carico/scarico materiali e smaltimento rifiuti. Extra,
-            finiture superiori e richieste particolari vengono conteggiati a parte.
+            Preventivo riferito a immobile con accesso ordinario e condizioni operative standard.
+            Extra, finiture fuori capitolato e richieste particolari vengono conteggiati a parte.
           </p>
         </div>
       </div>
