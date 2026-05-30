@@ -30,8 +30,8 @@ const features = [
 const processoSteps = [
   {
     n: "01",
-    titolo: "Prima stima orientativa",
-    testo: "Usi il calcolatore o ci contatti su WhatsApp. Ottieni una prima forbice orientativa basata sul Prezzario Campania e capisci se l'intervento è compatibile con il tuo caso.",
+    titolo: "Preventivo online immediato",
+    testo: "Usi il calcolatore o ci contatti su WhatsApp. Verifichi il costo della ristrutturazione e capisci se l'intervento è compatibile con il tuo budget.",
   },
   {
     n: "02",
@@ -47,12 +47,12 @@ const processoSteps = [
 
 const faqHome = [
   {
-    q: "Le stime del calcolatore sono vincolanti?",
-    a: "No. Sono stime orientative basate sul Prezzario Regionale Campania. Servono a capire se l'intervento è nel tuo range di budget. Il prezzo definitivo emerge solo dal sopralluogo.",
+    q: "Il preventivo online è vincolante?",
+    a: "No. Il calcolo online serve a verificare il costo della ristrutturazione e capire se l'intervento è compatibile con il tuo budget. Il preventivo definitivo si definisce solo dopo verifica tecnica e sopralluogo.",
   },
   {
     q: "Come funziona il sopralluogo?",
-    a: "Il sopralluogo serve a verificare lo stato reale dell'immobile, gli impianti, l'accessibilità e le criticità non visibili a distanza. Solo dopo questa verifica la stima orientativa può diventare un preventivo tecnico affidabile.",
+    a: "Il sopralluogo serve a verificare lo stato reale dell'immobile, gli impianti, l'accessibilità e le criticità non visibili a distanza. Solo dopo questa verifica possiamo definire un preventivo tecnico affidabile.",
   },
   {
     q: "Operate solo nell'Agro Aversano?",
@@ -98,9 +98,9 @@ export default function HomePage() {
                 <span className="text-orange">Caserta</span>
               </h1>
               <p className="text-lg text-white/75 mb-8 max-w-xl leading-relaxed">
-                Prima stima orientativa basata sul Prezzario Regionale Campania.
-                Serve a capire l'ordine di grandezza dell'intervento: la verifica tecnica e il sopralluogo definiscono il preventivo reale.
-                Russo FE Costruzione SRL.
+                Preventivo online immediato. Verifica il costo della tua ristrutturazione
+                e se l'intervento è compatibile con il tuo budget. Il preventivo definitivo
+                si definisce dopo verifica tecnica e sopralluogo.
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
                 <a

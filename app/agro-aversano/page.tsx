@@ -241,7 +241,7 @@ export default function AgroAversanoPage() {
             <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { n: "01", t: "Scopri il costo", d: "Usi il calcolatore o ci scrivi su WhatsApp per capire l'ordine di grandezza dell'intervento. Il preventivo reale nasce dopo verifica tecnica e sopralluogo." },
+                { n: "01", t: "Scopri il costo", d: "Usi il calcolatore o ci scrivi su WhatsApp per verificare il costo della ristrutturazione e capire se l'intervento è compatibile con il tuo budget. Il preventivo definitivo si definisce dopo verifica tecnica e sopralluogo." },
                 { n: "02", t: "Sopralluogo tecnico", d: "Il nostro tecnico visita l'immobile. Verifica impianti, strutture e criticità specifiche dell'Agro Aversano: solo così il preventivo è affidabile." },
                 { n: "03", t: "Preventivo scritto", d: "Prezzi unitari, materiali specificati, tempistiche e garanzia decennale. Tutto nero su bianco prima di iniziare." },
               ].map((s) => (

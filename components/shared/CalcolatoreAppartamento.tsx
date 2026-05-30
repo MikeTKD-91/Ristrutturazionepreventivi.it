@@ -108,7 +108,7 @@ export default function CalcolatoreAppartamento({
       `Vorrei verificare la compatibilità della mia ristrutturazione appartamento chiavi in mano.\n\n` +
       `📐 Superficie: ${mq} mq\n` +
       `📍 Comune: ${comuneFinale}\n` +
-      `💶 Stima orientativa standard: ${formatPrezzo(stima.min)} – ${formatPrezzo(stima.max)}\n` +
+      `💶 Preventivo online standard: ${formatPrezzo(stima.min)} – ${formatPrezzo(stima.max)}\n` +
       `📞 Telefono: ${telefono}\n` +
       `🏠 Immobile accessibile per carico/scarico materiali: Sì\n` +
       `🤝 Disponibile ad appuntamento in studio/sopralluogo: Sì\n\n` +
@@ -375,18 +375,18 @@ export default function CalcolatoreAppartamento({
             </div>
 
             <div className="bg-gradient-to-br from-navy to-navy/90 rounded-2xl p-5 text-center">
-              <p className="text-white/60 text-xs mb-1">Stima orientativa standard</p>
+              <p className="text-white/60 text-xs mb-1">Preventivo online standard</p>
               <div className="text-3xl md:text-4xl font-bold text-white">
                 {formatPrezzo(stima.min)} – {formatPrezzo(stima.max)}
               </div>
               <p className="text-white/40 text-xs mt-2">
-                Basata su ristrutturazione appartamento chiavi in mano standard
+                Calcolato su ristrutturazione appartamento chiavi in mano standard
               </p>
             </div>
 
             <div className="rounded-2xl border border-gray-200 p-5">
               <h5 className="text-base font-bold text-navy mb-3">
-                Cosa comprende il prezzo orientativo standard
+                Cosa comprende il preventivo online standard
               </h5>
               <ul className="space-y-2">
                 {inclusioniStandard.map((item) => (
@@ -414,10 +414,10 @@ export default function CalcolatoreAppartamento({
 
             <div className="bg-orange/5 border border-orange/20 rounded-xl p-4">
               <p className="text-sm text-navy leading-relaxed">
-                Se questa forbice è in linea con le tue aspettative, il passo successivo
+                Se questo importo è compatibile con il tuo budget, il passo successivo
                 è un appuntamento in studio o un sopralluogo tecnico. Serve a verificare
-                l'immobile dal vivo e trasformare questa stima orientativa in una proposta
-                seria e professionale.
+                l'immobile dal vivo e definire un preventivo serio, dettagliato e
+                tecnicamente affidabile.
               </p>
             </div>
 
