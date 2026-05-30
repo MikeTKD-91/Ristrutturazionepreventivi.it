@@ -202,14 +202,17 @@ export default async function ArticoloPage({ params }: Props) {
               <article className="
                 prose prose-lg max-w-none
                 prose-headings:text-navy prose-headings:font-bold prose-headings:scroll-mt-24
-                prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-b prose-h2:border-gray-100 prose-h2:pb-2
-                prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                prose-p:text-gray-700 prose-p:leading-relaxed
-                prose-li:text-gray-700
+                prose-h2:text-[1.8rem] prose-h2:mt-14 prose-h2:mb-5 prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-3
+                prose-h3:text-[1.35rem] prose-h3:mt-10 prose-h3:mb-4
+                prose-p:text-gray-700 prose-p:leading-8 prose-p:mb-6
+                prose-ul:my-6 prose-ul:space-y-3
+                prose-ol:my-6 prose-ol:space-y-3
+                prose-li:text-gray-700 prose-li:leading-8
                 prose-strong:text-navy
-                prose-a:text-teal-600 prose-a:no-underline hover:prose-a:underline
-                prose-table:text-sm prose-th:bg-navy prose-th:text-white prose-th:px-4 prose-th:py-2 prose-td:px-4 prose-td:py-2 prose-td:border prose-td:border-gray-200
-                prose-blockquote:border-l-4 prose-blockquote:border-orange prose-blockquote:bg-orange/5 prose-blockquote:rounded-r-xl prose-blockquote:not-italic
+                prose-a:text-teal-600 prose-a:font-medium prose-a:no-underline hover:prose-a:text-orange hover:prose-a:underline
+                prose-table:my-8 prose-table:text-sm prose-th:bg-navy prose-th:text-white prose-th:px-4 prose-th:py-3 prose-td:px-4 prose-td:py-3 prose-td:border prose-td:border-gray-200
+                prose-blockquote:border-l-4 prose-blockquote:border-orange prose-blockquote:bg-orange/5 prose-blockquote:px-6 prose-blockquote:py-4 prose-blockquote:rounded-r-xl prose-blockquote:not-italic
+                prose-hr:my-10 prose-hr:border-gray-200
               ">
                 <ReactMarkdown>{articolo.contenuto}</ReactMarkdown>
               </article>
