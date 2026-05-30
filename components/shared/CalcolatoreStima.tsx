@@ -124,8 +124,8 @@ export default function CalcolatoreStima({ comuneDefault = "il tuo comune" }: Ca
           <Calculator className="h-6 w-6 text-orange" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-navy">Calcola la tua stima</h3>
-          <p className="text-sm text-gray-600">Stima indicativa immediata e gratuita</p>
+          <h3 className="text-xl font-bold text-navy">Calcola la tua verifica orientativa</h3>
+          <p className="text-sm text-gray-600">Prima verifica orientativa basata sui dati inseriti</p>
         </div>
       </div>
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { comuni, getComuneBySlug } from "@/data/comuni";
-import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
+import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
 import {
   buildBreadcrumb,
   buildLocalBusiness,
@@ -182,7 +182,7 @@ export default async function RistrutturazioneAppartamentoPage({ params }: PageP
           </div>
         </section>
 
-        <div id="calcolatore" className="lg:hidden px-4 pt-6"><CalcolatoreStima comuneDefault={comune.nome} /></div>
+        <div id="calcolatore" className="lg:hidden px-4 pt-6"><CalcolatoreAppartamento comuneDefault={comune.nome} /></div>
 
         <div className="max-w-6xl mx-auto px-4 py-12 grid lg:grid-cols-3 gap-10 items-start">
           <div className="lg:col-span-2 space-y-16">
@@ -368,7 +368,7 @@ export default async function RistrutturazioneAppartamentoPage({ params }: PageP
 
           <div className="hidden lg:block">
             <div id="calcolatore" className="sticky top-6 space-y-6">
-              <CalcolatoreStima comuneDefault={comune.nome} />
+              <CalcolatoreAppartamento comuneDefault={comune.nome} />
               <div className="bg-gray-50 rounded-2xl p-5">
                 <p className="text-sm font-semibold text-navy mb-3">Altri servizi a {comune.nome}</p>
                 <div className="space-y-2">

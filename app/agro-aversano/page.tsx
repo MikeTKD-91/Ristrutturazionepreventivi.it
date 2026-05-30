@@ -9,14 +9,14 @@ import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
 export const metadata: Metadata = {
   title: "Ristrutturazione Agro Aversano | Costi Reali e Preventivo",
   description:
-    "Ristrutturazione nell'Agro Aversano: costi orientativi da Prezzario Regionale Campania, criticità tipiche del territorio, stima gratuita senza impegno. Russo FE Costruzione SRL.",
+    "Ristrutturazione nell'Agro Aversano: costi orientativi da Prezzario Regionale Campania, criticità tipiche del territorio, sopralluogo tecnico e proposta verificata. Russo FE Costruzione SRL.",
   alternates: {
     canonical: "https://ristrutturazionepreventivi.it/agro-aversano/",
   },
   openGraph: {
     title: "Ristrutturazione Agro Aversano | Costi Reali e Preventivo",
     description:
-      "Costi orientativi per ristrutturazioni nell'Agro Aversano. Stima gratuita senza impegno.",
+      "Costi orientativi per ristrutturazioni nell'Agro Aversano, con verifica tecnica e sopralluogo.",
     url: "https://ristrutturazionepreventivi.it/agro-aversano/",
     siteName: "ristrutturazionepreventivi.it",
     locale: "it_IT",
@@ -86,7 +86,7 @@ export default function AgroAversanoPage() {
               </div>
               <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                 Ristrutturazione nell'Agro Aversano:{" "}
-                <span className="text-orange">Costi Reali e Stima Gratuita</span>
+                <span className="text-orange">Costi orientativi e verifica tecnica</span>
               </h1>
               <p className="text-white/70 text-lg leading-relaxed mb-6">
                 Operiamo in 14 comuni dell'Agro Aversano con conoscenza diretta del
@@ -103,7 +103,7 @@ export default function AgroAversanoPage() {
                 href="#calcolatore"
                 className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
               >
-                Calcola la tua stima gratuita
+                Avvia la verifica orientativa
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -112,7 +112,7 @@ export default function AgroAversanoPage() {
                 { n: "14", label: "Comuni serviti" },
                 { n: "7", label: "Servizi disponibili" },
                 { n: "10 anni", label: "Garanzia lavori" },
-                { n: "Gratuita", label: "Stima iniziale" },
+                { n: "Tecnica", label: "Verifica iniziale" },
               ].map((s) => (
                 <div key={s.label} className="bg-white/10 rounded-2xl p-5 text-center">
                   <p className="text-2xl font-black text-orange mb-1">{s.n}</p>
@@ -241,7 +241,7 @@ export default function AgroAversanoPage() {
             <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { n: "01", t: "Stima gratuita", d: "Usi il calcolatore o ci scrivi su WhatsApp. In pochi minuti sai se il tuo budget è compatibile con l'intervento, senza impegno." },
+                { n: "01", t: "Verifica orientativa", d: "Usi il calcolatore o ci scrivi su WhatsApp per capire l'ordine di grandezza dell'intervento. Il preventivo reale nasce dopo verifica tecnica e sopralluogo." },
                 { n: "02", t: "Sopralluogo tecnico", d: "Il nostro tecnico visita l'immobile. Verifica impianti, strutture e criticità specifiche dell'Agro Aversano: solo così il preventivo è affidabile." },
                 { n: "03", t: "Preventivo scritto", d: "Prezzi unitari, materiali specificati, tempistiche e garanzia decennale. Tutto nero su bianco prima di iniziare." },
               ].map((s) => (
@@ -289,8 +289,7 @@ export default function AgroAversanoPage() {
             Vuoi sapere quanto costa ristrutturare nell'Agro Aversano?
           </h2>
           <p className="text-white/70 mb-8 text-lg">
-            Parti dalla stima gratuita. Se la forbice è in linea col tuo budget,
-            organizziamo il sopralluogo e prepariamo il preventivo dettagliato.
+            Parti da una prima verifica orientativa. Se il quadro economico è compatibile con il tuo intervento, organizziamo il sopralluogo e prepariamo una proposta tecnica chiara.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -299,7 +298,7 @@ export default function AgroAversanoPage() {
               rel="noopener noreferrer"
               className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center"
             >
-              Richiedi stima su WhatsApp
+              Richiedi verifica su WhatsApp
             </a>
             <a
               href="tel:+393339809319"

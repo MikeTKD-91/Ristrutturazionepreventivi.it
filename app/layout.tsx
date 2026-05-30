@@ -16,11 +16,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ristrutturazionepreventivi.it"),
   title: {
-    default: "Ristrutturazioni Agro Aversano, Napoli e Caserta | Preventivi Gratis",
+    default: "Ristrutturazioni a Napoli, Caserta e Agro Aversano | Verifica orientativa e sopralluogo",
     template: "%s | RistrutturazionePreventivi.it",
   },
   description:
-    "Ristrutturazioni residenziali a Napoli, Caserta e Agro Aversano. Stima orientativa gratuita basata sul Prezzario Regionale Campania. Russo FE Costruzione SRL — Province di Napoli e Caserta, specialisti Agro Aversano.",
+    "Ristrutturazioni residenziali a Napoli, Caserta e Agro Aversano. Prima verifica orientativa basata sul Prezzario Regionale Campania, con sopralluogo e proposta tecnica da confermare sul posto. Russo FE Costruzione SRL.",
   keywords: [
     "ristrutturazione", "preventivi", "Napoli", "Caserta", "Agro Aversano",
     "appartamento", "cucina", "bagno", "tetto", "cappotto termico", "Lusciano", "Aversa",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     locale: "it_IT",
     url: "https://ristrutturazionepreventivi.it",
     siteName: "RistrutturazionePreventivi.it",
-    title: "Ristrutturazioni Agro Aversano, Napoli e Caserta | Preventivi Gratis",
+    title: "Ristrutturazioni a Napoli, Caserta e Agro Aversano | Verifica orientativa e sopralluogo",
     description:
-      "Stima orientativa gratuita per ristrutturazioni a Napoli, Caserta e Agro Aversano. 7 servizi · Province di Napoli e Caserta · Agro Aversano. Russo FE Costruzione SRL.",
+      "Prima verifica orientativa per ristrutturazioni a Napoli, Caserta e Agro Aversano. 7 servizi, sopralluogo tecnico e proposta chiara da verificare sul posto. Russo FE Costruzione SRL.",
     images: [
       {
         url: "https://ristrutturazionepreventivi.it/og-image.jpg",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ristrutturazioni Napoli, Caserta e Agro Aversano",
-    description: "Stima orientativa gratuita per ristrutturazioni in Campania.",
+    description: "Prima verifica orientativa per ristrutturazioni in Campania, con sopralluogo tecnico.",
     images: ["https://ristrutturazionepreventivi.it/og-image.jpg"],
   },
   robots: {

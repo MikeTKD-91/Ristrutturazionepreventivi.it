@@ -308,7 +308,7 @@ export default async function ArticoloPage({ params }: Props) {
                   <p className="font-bold text-navy">Russo FE Costruzione SRL</p>
                   <p className="text-sm text-gray-500 mt-0.5">
                     Impresa edile specializzata in ristrutturazioni nell&apos;Agro Aversano, Napoli e Caserta. 
-                    Preventivi gratuiti e trasparenti.
+                    Prime verifiche orientative e proposte tecniche chiare.
                   </p>
                   <p className="text-xs text-gray-400 mt-1">
                     Contenuto aggiornato a {dataAggiornamento}
@@ -320,7 +320,7 @@ export default async function ArticoloPage({ params }: Props) {
               <div className="mt-8 bg-navy rounded-2xl p-8 text-white">
                 <h3 className="text-xl font-bold mb-2">Hai domande su questo argomento?</h3>
                 <p className="text-white/75 text-sm mb-6">
-                  Contattaci su WhatsApp per una consulenza gratuita e senza impegno.
+                  Contattaci su WhatsApp per una prima verifica orientativa dell'intervento.
                 </p>
                 <a
                   href="https://wa.me/393339809319"
@@ -329,7 +329,7 @@ export default async function ArticoloPage({ params }: Props) {
                   className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white px-6 py-3 rounded-xl font-semibold transition-colors text-sm"
                 >
                   <MessageCircle className="h-5 w-5" />
-                  Scrivici su WhatsApp
+                  Richiedi verifica su WhatsApp
                 </a>
               </div>
             </div>
@@ -381,7 +381,7 @@ export default async function ArticoloPage({ params }: Props) {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Pronto a Ristrutturare?</h2>
           <p className="text-white/75 text-lg mb-8 max-w-2xl mx-auto">
-            Richiedi ora una stima indicativa immediata e gratuita per il tuo progetto.
+            Richiedi una prima verifica orientativa per il tuo progetto.
           </p>
           <a
             href="https://wa.me/393339809319"
@@ -390,7 +390,7 @@ export default async function ArticoloPage({ params }: Props) {
             className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white px-8 py-4 rounded-xl font-semibold transition-colors"
           >
             <MessageCircle className="h-5 w-5" />
-            Richiedi Stima Gratuita
+            Richiedi una prima verifica
           </a>
           <p className="text-white/40 text-sm mt-4">Costi aggiornati a {dataAggiornamento}</p>
         </div>

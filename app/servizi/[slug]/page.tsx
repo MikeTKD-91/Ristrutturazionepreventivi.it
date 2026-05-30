@@ -6,6 +6,7 @@ import { ArrowRight, Check, MessageCircle } from "lucide-react";
 import { servizi, getServizioBySlug } from "@/data/servizi";
 import { comuni } from "@/data/comuni";
 import CalcolatoreStima from "@/components/shared/CalcolatoreStima";
+import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
 import { getDataAggiornamento, formatPrezzo, generaLinkWhatsApp } from "@/lib/utils";
 
 interface Props {
@@ -203,16 +204,17 @@ export default async function ServizioPage({ params }: Props) {
             {/* Sidebar */}
             <div className="space-y-8">
               {/* Calcolatore */}
-              <CalcolatoreStima comuneDefault="Napoli" />
+              {slug === "ristrutturazione-appartamento-completo" ? <CalcolatoreAppartamento comuneDefault="Napoli" /> : <CalcolatoreStima comuneDefault="Napoli" />}
 
               {/* CTA */}
               <div className="bg-navy p-6 rounded-2xl text-white">
                 <h3 className="text-xl font-bold mb-4">
-                  Richiedi una Stima
+                  Verifica orientativa del progetto
                 </h3>
                 <p className="text-white/80 mb-6">
-                  Contattaci su WhatsApp per una stima indicativa gratuita 
-                  per il tuo progetto di {servizio.titolo.toLowerCase()}.
+                  Contattaci su WhatsApp per una prima verifica orientativa 
+                  del tuo progetto di {servizio.titolo.toLowerCase()}. Il preventivo reale 
+                  viene definito dopo verifica tecnica e sopralluogo.
                 </p>
                 <a
                   href={generaLinkWhatsApp(
@@ -227,7 +229,7 @@ export default async function ServizioPage({ params }: Props) {
                   className="w-full bg-orange hover:bg-orange-600 text-white py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="h-5 w-5" />
-                  Scrivici su WhatsApp
+                  Richiedi verifica su WhatsApp
                 </a>
               </div>
 
@@ -268,11 +270,11 @@ export default async function ServizioPage({ params }: Props) {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-navy mb-4">
-            Pronto a Iniziare?
+            Hai già un intervento da valutare?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-            Richiedi ora una stima indicativa immediata e gratuita per il tuo progetto 
-            di {servizio.titolo.toLowerCase()}.
+            Richiedi una prima verifica orientativa per il tuo progetto 
+            di {servizio.titolo.toLowerCase()}. Il sopralluogo serve a confermare misure, lavorazioni e criticità reali.
           </p>
           <a
             href="https://wa.me/393339809319"
@@ -281,7 +283,7 @@ export default async function ServizioPage({ params }: Props) {
             className="inline-flex items-center gap-2 bg-orange hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold transition-colors"
           >
             <MessageCircle className="h-5 w-5" />
-            Richiedi Stima Gratuita
+            Richiedi una prima verifica
           </a>
           <p className="text-gray-400 text-sm mt-4">
             Costi aggiornati a {dataAggiornamento} - Ultimo aggiornamento: {dataAggiornamento}
