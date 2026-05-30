@@ -128,7 +128,7 @@ export default function BlogPage() {
             Hai un progetto da valutare?
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-            Contattaci su WhatsApp per una scopri il costo della tua ristrutturazione. Il sopralluogo serve a confermare misure, lavorazioni e criticità reali.
+            Contattaci su WhatsApp per capire quanto costa la tua ristrutturazione. Il sopralluogo serve a confermare misure, lavorazioni e criticità reali.
           </p>
           <a
             href="https://wa.me/393339809319"

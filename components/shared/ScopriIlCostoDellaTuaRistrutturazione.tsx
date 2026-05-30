@@ -124,7 +124,7 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({ comuneDefault = 
           <Calculator className="h-6 w-6 text-orange" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-navy">Scopri il costo della tua ristrutturazione</h3>
+          <h3 className="text-xl font-bold text-navy">Scopri quanto costa la tua ristrutturazione</h3>
           <p className="text-sm text-gray-600">Stima orientativa basata sui dati inseriti, da confermare dopo sopralluogo</p>
         </div>
       </div>

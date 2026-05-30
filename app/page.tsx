@@ -312,7 +312,7 @@ export default function HomePage() {
             Vuoi sapere quanto costa la tua ristrutturazione?
           </h2>
           <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
-            Scopri il costo della tua ristrutturazione con una prima stima basata sui dati inseriti. Se l'intervento rientra nei parametri indicati, organizziamo il sopralluogo e prepariamo il preventivo.
+            Scopri quanto costa la tua ristrutturazione con una prima stima basata sui dati inseriti. Se l'intervento rientra nei parametri indicati, organizziamo il sopralluogo e prepariamo il preventivo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
