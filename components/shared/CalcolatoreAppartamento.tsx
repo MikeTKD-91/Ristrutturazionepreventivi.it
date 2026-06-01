@@ -245,7 +245,7 @@ export default function CalcolatoreAppartamento({
                 </p>
               </div>
               <p className="text-sm text-gray-700">
-                Prezzo orientativo base di calcolo:{" "}
+                Importo base di calcolo:{" "}
                 <span className="font-bold text-navy">{PREZZO_STANDARD_MQ} €/mq</span>
               </p>
             </div>

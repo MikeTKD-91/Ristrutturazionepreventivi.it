@@ -8,13 +8,13 @@ import { getDataAggiornamento } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Servizi di Ristrutturazione | Napoli Caserta",
-  description: "Scopri i nostri 7 servizi di ristrutturazione: appartamento, cucina, bagno, tetto, pavimenti, impianti e cappotto termico. Scopri il costo basata sul Prezzario Regionale Campania.",
+  description: "Scopri i nostri 7 servizi di ristrutturazione a Napoli e Caserta: appartamento, cucina, bagno, tetto, pavimenti, impianti e cappotto termico. Preventivo online immediato e sopralluogo tecnico.",
   alternates: {
     canonical: "https://ristrutturazionepreventivi.it/servizi/",
   },
   openGraph: {
     title: "Servizi di Ristrutturazione | Napoli Caserta",
-    description: "7 servizi di ristrutturazione per la tua casa. Scopri il costo basata sul Prezzario Regionale Campania.",
+    description: "7 servizi di ristrutturazione per la tua casa a Napoli e Caserta. Preventivo online immediato e sopralluogo tecnico.",
     url: "https://ristrutturazionepreventivi.it/servizi/",
     images: [
       {

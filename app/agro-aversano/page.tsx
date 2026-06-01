@@ -9,14 +9,14 @@ import ScopriIlCostoDellaTuaRistrutturazione from "@/components/shared/ScopriIlC
 export const metadata: Metadata = {
   title: "Ristrutturazione Agro Aversano | Costi Reali e Preventivo",
   description:
-    "Ristrutturazione nell'Agro Aversano: costi orientativi da Prezzario Regionale Campania, criticità tipiche del territorio, sopralluogo tecnico e proposta verificata. Russo FE Costruzione SRL.",
+    "Ristrutturazione nell'Agro Aversano: indicazioni di costo, criticità tipiche del territorio, sopralluogo tecnico e preventivo verificato. Russo FE Costruzione SRL.",
   alternates: {
     canonical: "https://ristrutturazionepreventivi.it/agro-aversano/",
   },
   openGraph: {
     title: "Ristrutturazione Agro Aversano | Costi Reali e Preventivo",
     description:
-      "Costi orientativi per ristrutturazioni nell'Agro Aversano, con verifica tecnica e sopralluogo.",
+      "Indicazioni di costo per ristrutturazioni nell'Agro Aversano, con verifica tecnica e sopralluogo.",
     url: "https://ristrutturazionepreventivi.it/agro-aversano/",
     siteName: "ristrutturazionepreventivi.it",
     locale: "it_IT",
@@ -86,7 +86,7 @@ export default function AgroAversanoPage() {
               </div>
               <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                 Ristrutturazione nell'Agro Aversano:{" "}
-                <span className="text-orange">Costi orientativi e verifica tecnica</span>
+                <span className="text-orange">Indicazioni di costo e verifica tecnica</span>
               </h1>
               <p className="text-white/70 text-lg leading-relaxed mb-6">
                 Operiamo in 14 comuni dell'Agro Aversano con conoscenza diretta del
@@ -178,7 +178,7 @@ export default function AgroAversanoPage() {
           {/* PREZZI */}
           <section>
             <h2 className="text-2xl font-bold text-navy mb-2">
-              Costi orientativi nell'Agro Aversano
+              Indicazioni di costo nell'Agro Aversano
             </h2>
             <p className="text-gray-600 mb-1">
               Valori basati sul <strong>Prezzario Regionale Campania</strong>.
@@ -199,9 +199,9 @@ export default function AgroAversanoPage() {
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
               <TriangleAlert className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
               <p className="text-sm text-amber-900">
-                <strong>Questi sono costi orientativi, non preventivi vincolanti.</strong>{" "}
-                Servono a capire se l&apos;intervento è nel tuo range di budget.
-                Il prezzo reale richiede sopralluogo.
+                <strong>Questi valori non costituiscono un preventivo vincolante.</strong>{" "}
+                Servono a capire se l&apos;intervento è compatibile con il tuo budget.
+                Il preventivo definitivo richiede sopralluogo e verifica tecnica.
               </p>
             </div>
           </section>
@@ -212,7 +212,7 @@ export default function AgroAversanoPage() {
               Comuni serviti nell'Agro Aversano
             </h2>
             <p className="text-gray-600 mb-6">
-              Ogni comune ha una pagina dedicata con costi orientativi specifici,
+              Ogni comune ha una pagina dedicata con indicazioni di costo specifiche,
               criticità locali e FAQ.
             </p>
             <div className="grid sm:grid-cols-2 gap-3">

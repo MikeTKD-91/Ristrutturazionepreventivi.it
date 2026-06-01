@@ -89,7 +89,7 @@ export default function HomePage() {
             <div className="text-white">
               <div className="inline-flex items-center gap-2 bg-orange/20 text-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Check className="h-4 w-4" />
-                Prezzario Campania aggiornato a {dataAggiornamento} · Province NA e CE
+                Dati tecnici aggiornati a {dataAggiornamento} · Province NA e CE
               </div>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
                 Ristrutturazioni nell&apos;
@@ -158,7 +158,7 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">I Nostri Servizi</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               7 servizi di ristrutturazione residenziale. Ogni pagina servizio include
-              costi orientativi, criticità locali e FAQ specifiche per ogni comune.
+              indicazioni di costo, criticità locali e FAQ specifiche per ogni comune.
             </p>
           </div>
 
@@ -236,7 +236,7 @@ export default function HomePage() {
             <p className="text-orange text-sm font-semibold uppercase tracking-widest mb-2">Dove operiamo</p>
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">+33 Comuni Serviti</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Clicca sul tuo comune per vedere costi orientativi, criticità locali e FAQ specifiche.
+              Clicca sul tuo comune per vedere indicazioni di costo, criticità locali e FAQ specifiche.
             </p>
           </div>
 

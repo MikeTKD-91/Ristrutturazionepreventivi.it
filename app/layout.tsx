@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | RistrutturazionePreventivi.it",
   },
   description:
-    "Ristrutturazioni residenziali a Napoli, Caserta e Agro Aversano. Scopri il costo basata sul Prezzario Regionale Campania, con sopralluogo e proposta tecnica da confermare sul posto. Russo FE Costruzione SRL.",
+    "Ristrutturazioni residenziali a Napoli, Caserta e Agro Aversano. Preventivo online immediato, verifica tecnica e sopralluogo per definire il preventivo definitivo.",
   keywords: [
     "ristrutturazione", "preventivi", "Napoli", "Caserta", "Agro Aversano",
     "appartamento", "cucina", "bagno", "tetto", "cappotto termico", "Lusciano", "Aversa",
