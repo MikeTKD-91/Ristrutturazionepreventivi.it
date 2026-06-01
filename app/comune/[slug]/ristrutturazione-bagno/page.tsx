@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
   const title = `Ristrutturazione Bagno a ${comune.nome} | Costi Reali e Preventivo`;
-  const description = `Quanto costa rifare il bagno a ${comune.nome}? Costi orientativi da Prezzario Regionale Campania, criticità locali, tempistiche reali. Costo indicativo basato sul Prezzario Regionale Campania.`;
+  const description = `Quanto costa rifare il bagno a ${comune.nome}? Indicazioni di costo, criticità locali, tempistiche reali e preventivo con sopralluogo tecnico.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-bagno/`;
   return {
     title,
@@ -102,7 +102,7 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
 
   const localBusiness = buildLocalBusiness(
     comune.nome,
-    `Ristrutturazione bagno a ${comune.nome}. Preventivi con sopralluogo, stime orientative gratuite basate su Prezzario Regionale Campania.`
+    `Ristrutturazione bagno a ${comune.nome}. Preventivo con sopralluogo, verifica tecnica e analisi del caso reale.`
   );
 
   const serviceSchema = buildServiceSchema({
@@ -174,9 +174,9 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                   <span className="text-orange">Costi reali e preventivo</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Prezzi orientativi basati sul Prezzario Regionale Campania, criticità tipiche
-                  del patrimonio edilizio di {comune.nome}, tempistiche reali di cantiere.
-                  Nessun prezzo inventato: quello definitivo emerge solo dal sopralluogo.
+                  Indicazioni di costo basate su riferimenti tecnici, criticità tipiche
+                  del patrimonio edilizio di {comune.nome} e tempistiche reali di cantiere.
+                  Il preventivo definitivo emerge solo dal sopralluogo.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>
@@ -270,10 +270,10 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
                 <span className="text-amber-500 text-lg flex-shrink-0 mt-0.5">⚠</span>
                 <p className="text-sm text-amber-900">
-                  <strong>Questi sono costi orientativi, non preventivi vincolanti.</strong>{" "}
+                  <strong>Questi valori non costituiscono un preventivo vincolante.</strong>{" "}
                   Il prezzo definitivo dipende dallo stato degli impianti esistenti, dalla
                   presenza di criticità non visibili a distanza e dalle scelte specifiche di
-                  materiale. L&apos;unico modo per avere un preventivo preciso è il sopralluogo.
+                  materiale. Il sopralluogo è l&apos;unico modo per definire un preventivo preciso.
                 </p>
               </div>
             </section>
@@ -368,7 +368,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { step: "01", titolo: "Costo indicativo", testo: "Inserisci i dati del tuo bagno nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno." },
+                  { step: "01", titolo: "Prima valutazione del budget", testo: "Inserisci i dati del tuo bagno nel calcolatore o scrivici su WhatsApp per ottenere una prima indicazione di costo. È un passaggio utile per capire la compatibilità con il budget, ma non sostituisce il sopralluogo tecnico." },
                   { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico visita l'immobile, verifica lo stato degli impianti, rileva eventuali criticità e raccoglie tutte le informazioni per il preventivo definitivo." },
                   { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo scritto con prezzi unitari, materiali specificati, tempistiche e condizioni di garanzia. Trasparente, senza voci generiche." },
                 ].map((s) => (

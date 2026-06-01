@@ -124,7 +124,7 @@ export default async function ComunePage({ params }: PageProps) {
                 </div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Ristrutturazione Casa a {comune.nome}:{" "}
-                  <span className="text-orange">Costi Orientativi e Preventivo</span>
+                  <span className="text-orange">Indicazioni di costo e sopralluogo tecnico</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">{comune.descrizione}</p>
                 <div className="flex flex-wrap gap-3 mb-8">
@@ -167,7 +167,7 @@ export default async function ComunePage({ params }: PageProps) {
             <section>
               <h2 className="text-2xl font-bold text-navy mb-2">Interventi disponibili a {comune.nome}</h2>
               <p className="text-gray-600 mb-6">
-                Ogni pagina servizio include costi orientativi specifici, criticità locali e FAQ.
+                Ogni pagina servizio include indicazioni di costo, criticità locali, tempistiche e FAQ utili per capire il tipo di intervento.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
@@ -204,9 +204,9 @@ export default async function ComunePage({ params }: PageProps) {
 
             {/* PREZZI ORIENTATIVI */}
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Costi orientativi a {comune.nome}</h2>
+              <h2 className="text-2xl font-bold text-navy mb-2">Indicazioni di costo a {comune.nome}</h2>
               <p className="text-gray-600 mb-1">
-                Valori basati sul <strong>Prezzario Regionale Campania</strong> — costo al mq per ristrutturazione completa appartamento.
+                Valori basati su riferimenti tecnici e sul <strong>Prezzario Regionale Campania</strong>, utili per una prima valutazione economica della ristrutturazione completa.
               </p>
               <p className="text-sm text-gray-500 mb-6">
                 Il costo definitivo dipende dall&apos;anno di costruzione, dallo stato degli impianti e dai materiali scelti. Nessun numero è vincolante prima del sopralluogo.
@@ -223,8 +223,7 @@ export default async function ComunePage({ params }: PageProps) {
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
                 <TriangleAlert className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-amber-900">
-                  <strong>Questi sono costi orientativi, non preventivi vincolanti.</strong>{" "}
-                  Servono a capire se l&apos;intervento è nel tuo range. Il prezzo definitivo richiede sopralluogo.
+                  <strong>Questi valori non costituiscono un preventivo vincolante.</strong>{" "}Servono a capire se l&apos;intervento è compatibile con il budget disponibile, ma il prezzo definitivo richiede sopralluogo, verifiche tecniche e definizione delle lavorazioni.
                 </p>
               </div>
             </section>
@@ -254,7 +253,7 @@ export default async function ComunePage({ params }: PageProps) {
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { n: "01", t: "Costo indicativo", d: "Usi il calcolatore o ci scrivi su WhatsApp. In pochi minuti sai se il tuo budget è compatibile con l'intervento, senza impegno." },
+                  { n: "01", t: "Prima valutazione del budget", d: "Usi il calcolatore o ci scrivi su WhatsApp per ottenere una prima indicazione di costo. È un passaggio utile per capire la compatibilità con il budget, non sostituisce il sopralluogo tecnico." },
                   { n: "02", t: "Sopralluogo tecnico", d: "Il nostro tecnico visita l'immobile di persona. Verifica impianti, strutture e criticità specifiche: solo così il preventivo è affidabile." },
                   { n: "03", t: "Preventivo scritto", d: "Un documento con prezzi unitari, materiali, tempistiche e garanzia decennale. Tutto nero su bianco prima di iniziare." },
                 ].map((s) => (
@@ -357,7 +356,7 @@ export default async function ComunePage({ params }: PageProps) {
               Vuoi sapere quanto costa ristrutturare a {comune.nome}?
             </h2>
             <p className="text-white/70 mb-8">
-              Scopri il costo del tuo intervento. Se la forbice è nel tuo range, organizziamo il sopralluogo.
+              Scopri una prima indicazione di costo del tuo intervento. Se il quadro economico è compatibile con il budget, passiamo al sopralluogo tecnico.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -379,3 +378,4 @@ export default async function ComunePage({ params }: PageProps) {
     </>
   );
 }
+

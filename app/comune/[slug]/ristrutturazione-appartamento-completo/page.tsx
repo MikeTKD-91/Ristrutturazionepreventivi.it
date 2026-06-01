@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
   const title = `Ristrutturazione Appartamento a ${comune.nome} | Costi Reali e Preventivo`;
-  const description = `Quanto costa ristrutturare un appartamento a ${comune.nome}? Costi orientativi da Prezzario Regionale Campania, criticità locali, tempistiche reali. Costo indicativo basato sul Prezzario Regionale Campania.`;
+  const description = `Quanto costa ristrutturare un appartamento a ${comune.nome}? Indicazioni di costo, criticità locali, tempistiche reali e preventivo con sopralluogo tecnico.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-appartamento-completo/`;
   return {
     title,
@@ -102,7 +102,7 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
 
   const localBusiness = buildLocalBusiness(
     comune.nome,
-    `ristrutturazione appartamento a ${comune.nome}. Preventivi con sopralluogo, stime orientative gratuite basate su Prezzario Regionale Campania.`
+    `ristrutturazione appartamento a ${comune.nome}. Preventivo con sopralluogo, verifica tecnica e analisi del caso reale.`
   );
 
   const serviceSchema = buildServiceSchema({
@@ -162,7 +162,7 @@ export default async function RistrutturazioneAppartamentoPage({ params }: PageP
                   <span className="text-orange">Costi reali e preventivo</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Prezzi orientativi basati sul Prezzario Regionale Campania, criticità tipiche
+                  Indicazioni di costo basate su riferimenti tecnici, criticità tipiche
                   del patrimonio edilizio di {comune.nome}, tempistiche reali di cantiere.
                   Nessun prezzo inventato: quello definitivo emerge solo dal sopralluogo.
                 </p>
@@ -190,10 +190,10 @@ export default async function RistrutturazioneAppartamentoPage({ params }: PageP
             <section>
               <h2 className="text-2xl font-bold text-navy mb-2">Quanto costa ristrutturare un appartamento a {comune.nome}?</h2>
               <p className="text-gray-600 mb-6">
-                Le forbici di costo che trovi qui sotto sono orientative e si basano sul{" "}
-                <strong>Prezzario Regionale Campania</strong>. Il costo reale dipende dall&apos;anno di
-                costruzione dell&apos;edificio, dallo stato degli impianti e dal livello di finitura scelto.
-                Solo il sopralluogo consente una stima definitiva.
+                Le fasce di costo che trovi qui sotto sono basate su riferimenti tecnici e servono
+                a capire se l&apos;intervento è compatibile con il tuo budget. Il costo reale dipende
+                dall&apos;anno di costruzione dell&apos;edificio, dallo stato degli impianti e dal livello
+                di finitura scelto. Solo il sopralluogo consente di definire il preventivo definitivo.
               </p>
               <div className="hidden md:block overflow-x-auto rounded-xl border border-gray-200 mb-4">
                 <table className="w-full text-sm">
@@ -232,8 +232,8 @@ export default async function RistrutturazioneAppartamentoPage({ params }: PageP
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
                 <span className="text-amber-500 text-lg flex-shrink-0 mt-0.5">⚠</span>
                 <p className="text-sm text-amber-900">
-                  <strong>Questi sono costi orientativi, non preventivi vincolanti.</strong>{" "}
-                  Il prezzo definitivo dipende dallo stato degli impianti, dall&apos;anno di costruzione e dalle scelte di materiale. L&apos;unico modo per avere un preventivo preciso è il sopralluogo.
+                  <strong>Questi valori non costituiscono un preventivo vincolante.</strong>{" "}
+                  Il prezzo definitivo dipende dallo stato degli impianti, dall&apos;anno di costruzione e dalle scelte di materiale. Il sopralluogo è l&apos;unico modo per definire un preventivo preciso.
                 </p>
               </div>
             </section>
@@ -309,7 +309,7 @@ export default async function RistrutturazioneAppartamentoPage({ params }: PageP
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { step: "01", titolo: "Costo indicativo", testo: "Inserisci i dati dell'appartamento nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno." },
+                  { step: "01", titolo: "Preventivo online immediato", testo: "Inserisci i dati dell'appartamento nel calcolatore o scrivici su WhatsApp. Verifichi il costo della ristrutturazione e capisci se l'intervento è compatibile con il tuo budget." },
                   { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico visita l'immobile, verifica lo stato degli impianti, l'anno di costruzione e le caratteristiche strutturali per raccogliere tutte le informazioni necessarie." },
                   { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo scritto con prezzi unitari, materiali specificati, tempistiche e condizioni di garanzia. Trasparente, senza voci generiche." },
                 ].map((s) => (
