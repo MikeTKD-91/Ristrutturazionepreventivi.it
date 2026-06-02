@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { comuni, getComuneBySlug } from "@/data/comuni";
-import ScopriIlCostoDellaTuaRistrutturazione from "@/components/shared/ScopriIlCostoDellaTuaRistrutturazione";
+import CalcolatoreBagno from "@/components/shared/CalcolatoreBagno";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -112,7 +112,7 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
     comuneNome: comune.nome,
     comuneSlug: comune.slug,
     servizioSlug,
-    prezzoMin: "3800",
+    prezzoMin: "4500",
     prezzoMax: "22000",
   });
 
@@ -208,7 +208,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
         </section>
         {/* Calcolatore mobile */}
         <div id="calcolatore" className="lg:hidden px-4 pt-6">
-          <ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} />
+          <CalcolatoreBagno comuneDefault={comune.nome} />
         </div>
 
         {/* ── CORPO PAGINA ── */}
@@ -439,7 +439,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
           {/* ── SIDEBAR STICKY ── */}
           <div className="hidden lg:block">
             <div id="calcolatore" className="sticky top-6 space-y-6">
-              <ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} />
+              <CalcolatoreBagno comuneDefault={comune.nome} />
               <div className="bg-gray-50 rounded-2xl p-5">
                 <p className="text-sm font-semibold text-navy mb-3">Altri servizi a {comune.nome}</p>
                 <div className="space-y-2">
