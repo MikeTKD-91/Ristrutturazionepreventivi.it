@@ -173,7 +173,7 @@ export default async function ComunePage({ params }: PageProps) {
                 {[
                   { label: "Ristrutturazione Bagno", prezzo: "da ~450 €/mq", href: `/comune/${slug}/ristrutturazione-bagno/`, attivo: true },
                   { label: "Ristrutturazione Cucina", prezzo: "da ~400 €/mq", href: `/comune/${slug}/ristrutturazione-cucina/`, attivo: true },
-                  { label: "Ristrutturazione Appartamento", prezzo: "da ~550 €/mq", href: `/comune/${slug}/ristrutturazione-appartamento-completo/`, attivo: true },
+                  { label: "Ristrutturazione Appartamento", prezzo: "da ~550 €/mq", href: `/comune/${slug}/`, attivo: true },
                   { label: "Rifacimento Tetto", prezzo: "da ~80 €/mq", href: `/comune/${slug}/rifacimento-tetto/`, attivo: true },
                   { label: "Cappotto Termico", prezzo: "da ~80 €/mq", href: `/comune/${slug}/cappotto-termico/`, attivo: true },
                   { label: "Impianti", prezzo: "da ~150 €/mq", href: `/comune/${slug}/impianti-elettrici-idraulici-termici/`, attivo: true },
@@ -322,7 +322,7 @@ export default async function ComunePage({ params }: PageProps) {
                 {[
                   { label: "Ristrutturazione Bagno", href: `/comune/${slug}/ristrutturazione-bagno/` },
                   { label: "Ristrutturazione Cucina", href: `/comune/${slug}/ristrutturazione-cucina/` },
-                  { label: "Ristrutturazione Appartamento", href: `/comune/${slug}/ristrutturazione-appartamento-completo/` },
+                  { label: "Ristrutturazione Appartamento", href: `/comune/${slug}/` },
                   { label: "Rifacimento Tetto", href: `/comune/${slug}/rifacimento-tetto/` },
                   { label: "Cappotto Termico", href: `/comune/${slug}/cappotto-termico/` },
                   { label: "Impianti", href: `/comune/${slug}/impianti-elettrici-idraulici-termici/` },

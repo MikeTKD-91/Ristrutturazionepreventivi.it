@@ -9,6 +9,11 @@
       "source": "/caserta/",
       "destination": "/comune/caserta/",
       "permanent": true
+    },
+    {
+      "source": "/comune/:slug/ristrutturazione-appartamento-completo/",
+      "destination": "/comune/:slug/",
+      "permanent": true
     }
   ]
 }

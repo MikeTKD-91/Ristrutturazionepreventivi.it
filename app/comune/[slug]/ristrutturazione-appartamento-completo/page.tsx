@@ -353,7 +353,7 @@ export default async function RistrutturazioneAppartamentoPage({ params }: PageP
                     const vicino = getComuneBySlug(slug);
                     if (!vicino) return null;
                     return (
-                      <Link key={slug} href={`/comune/${slug}/ristrutturazione-appartamento-completo/`} className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-navy hover:text-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full transition-colors">
+                      <Link key={slug} href={`/comune/${slug}/`} className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-navy hover:text-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full transition-colors">
                         Appartamento a {vicino.nome}
                       </Link>
                     );

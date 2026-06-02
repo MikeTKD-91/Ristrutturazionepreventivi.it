@@ -444,7 +444,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                 <p className="text-sm font-semibold text-navy mb-3">Altri servizi a {comune.nome}</p>
                 <div className="space-y-2">
                   {[
-                    { label: "Ristrutturazione Appartamento", href: `/comune/${comune.slug}/ristrutturazione-appartamento-completo/` },
+                    { label: "Ristrutturazione Appartamento", href: `/comune/${comune.slug}/` },
                     { label: "Ristrutturazione Cucina", href: `/comune/${comune.slug}/ristrutturazione-cucina/` },
                     { label: "Rifacimento Tetto", href: `/comune/${comune.slug}/rifacimento-tetto/` },
                     { label: "Cappotto Termico", href: `/comune/${comune.slug}/cappotto-termico/` },
