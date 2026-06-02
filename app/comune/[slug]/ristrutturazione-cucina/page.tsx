@@ -62,8 +62,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
-  const title = `Ristrutturazione Cucina a ${comune.nome} | Costi Reali e Preventivo`;
-  const description = `Quanto costa ristrutturare la cucina a ${comune.nome}? Costi orientativi da Prezzario Regionale Campania, criticità locali, tempistiche reali. Costo indicativo basato sul Prezzario Regionale Campania.`;
+  const title = `Ristrutturazione Cucina a ${comune.nome} | Costi Reali, Preventivo Immediato`;
+  const description = `Quanto costa ristrutturare la cucina a ${comune.nome}? Costi reali, preventivo immediato, criticità locali, tempistiche reali e sopralluogo tecnico.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-cucina/`;
   return {
     title,
@@ -101,7 +101,7 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
 
   const localBusiness = buildLocalBusiness(
     comune.nome,
-    `ristrutturazione cucina a ${comune.nome}. Preventivi con sopralluogo, stime orientative gratuite basate su Prezzario Regionale Campania.`
+    `ristrutturazione cucina a ${comune.nome}. Preventivo immediato con verifica tecnica e analisi del caso reale.`
   );
 
   const serviceSchema = buildServiceSchema({
@@ -165,12 +165,12 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
                 </p>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Ristrutturazione Cucina a {comune.nome}:<br />
-                  <span className="text-orange">Costi reali e preventivo</span>
+                  <span className="text-orange">Costi reali, preventivo immediato</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Prezzi orientativi basati sul Prezzario Regionale Campania, criticità tipiche
-                  del patrimonio edilizio di {comune.nome}, tempistiche reali di cantiere.
-                  Nessun prezzo inventato: quello definitivo emerge solo dal sopralluogo.
+                  Indicazioni di costo basate su riferimenti tecnici, criticità tipiche
+                  del patrimonio edilizio di {comune.nome} e tempistiche reali di cantiere.
+                  Il preventivo definitivo emerge dopo verifica tecnica e sopralluogo.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>
@@ -240,8 +240,8 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
                 <span className="text-amber-500 text-lg flex-shrink-0 mt-0.5">⚠</span>
                 <p className="text-sm text-amber-900">
-                  <strong>Questi sono costi orientativi, non preventivi vincolanti.</strong>{" "}
-                  Il prezzo definitivo dipende dallo stato degli impianti, dalla presenza di criticità non visibili a distanza e dalle scelte specifiche di materiale e mobili. L&apos;unico modo per avere un preventivo preciso è il sopralluogo.
+                  <strong>Questi valori non costituiscono un preventivo vincolante.</strong>{" "}
+                  Il prezzo definitivo dipende dallo stato degli impianti, dalla presenza di criticità non visibili a distanza e dalle scelte specifiche di materiale e mobili. Il sopralluogo è l&apos;unico modo per definire un preventivo preciso.
                 </p>
               </div>
             </section>
@@ -317,7 +317,7 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { step: "01", titolo: "Costo indicativo", testo: "Inserisci i dati della tua cucina nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno." },
+                  { step: "01", titolo: "Preventivo online immediato", testo: "Inserisci i dati della tua cucina nel calcolatore o scrivici su WhatsApp per ottenere un preventivo online immediato. È un primo quadro economico utile per capire la compatibilità con il budget, ma non sostituisce il sopralluogo tecnico." },
                   { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico visita l'immobile, verifica lo stato degli impianti, le dimensioni e la configurazione della cucina per raccogliere tutte le informazioni necessarie." },
                   { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo scritto con prezzi unitari, materiali specificati, tempistiche e condizioni di garanzia. Trasparente, senza voci generiche." },
                 ].map((s) => (

@@ -62,8 +62,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
-  const title = `Pavimenti e Rivestimenti a ${comune.nome} | Costi Reali e Preventivo`;
-  const description = `Quanto costa la posa di pavimenti e rivestimenti a ${comune.nome}? Costi orientativi da Prezzario Regionale Campania, materiali, formati, tempistiche reali. Costo indicativo basato sul Prezzario Regionale Campania.`;
+  const title = `Pavimenti e Rivestimenti a ${comune.nome} | Costi Reali, Preventivo Immediato`;
+  const description = `Quanto costa la posa di pavimenti e rivestimenti a ${comune.nome}? Costi reali, preventivo immediato, materiali, formati, tempistiche reali e sopralluogo tecnico.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/pavimenti-rivestimenti/`;
   return {
     title,
@@ -101,7 +101,7 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
 
   const localBusiness = buildLocalBusiness(
     comune.nome,
-    `pavimenti e rivestimenti a ${comune.nome}. Preventivi con sopralluogo, stime orientative gratuite basate su Prezzario Regionale Campania.`
+    `pavimenti e rivestimenti a ${comune.nome}. Preventivo immediato con sopralluogo, verifica tecnica e analisi del caso reale.`
   );
 
   const serviceSchema = buildServiceSchema({
@@ -155,12 +155,12 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
                 <p className="text-orange text-sm font-semibold uppercase tracking-widest mb-3">Pavimenti e Rivestimenti · {comune.nome}</p>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Pavimenti e Rivestimenti a {comune.nome}:<br />
-                  <span className="text-orange">Costi reali e preventivo</span>
+                  <span className="text-orange">Costi reali, preventivo immediato</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Prezzi orientativi basati sul Prezzario Regionale Campania, per ogni
-                  tipologia di materiale: ceramica, gres porcellanato, grandi formati, parquet.
-                  Nessun prezzo inventato: quello definitivo emerge solo dal sopralluogo.
+                  Indicazioni di costo basate su riferimenti tecnici, materiale scelto,
+                  formato, schema di posa e condizioni del supporto.
+                  Il preventivo definitivo emerge dopo sopralluogo e verifica tecnica.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>
@@ -186,7 +186,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
             <section>
               <h2 className="text-2xl font-bold text-navy mb-2">Quanto costa la posa di pavimenti e rivestimenti a {comune.nome}?</h2>
               <p className="text-gray-600 mb-6">
-                I costi che trovi qui sotto sono orientativi (fornitura + posa) e si basano sul{" "}
+                I valori che trovi qui sotto sono indicazioni di costo basate sul{" "}
                 <strong>Prezzario Regionale Campania</strong>. Il prezzo finale dipende dal materiale
                 scelto, dal formato, dallo schema di posa e dallo stato del massetto esistente.
                 Solo il sopralluogo consente una stima definitiva.
@@ -228,8 +228,8 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
                 <span className="text-amber-500 text-lg flex-shrink-0 mt-0.5">⚠</span>
                 <p className="text-sm text-amber-900">
-                  <strong>Questi sono costi orientativi (fornitura + posa), non preventivi vincolanti.</strong>{" "}
-                  Se il massetto è da rifare o il livello non è idoneo, i costi aumentano. Il prezzo definitivo emerge solo dal sopralluogo.
+                  <strong>Questi valori non costituiscono un preventivo vincolante.</strong>{" "}
+                  Se il massetto è da rifare, il supporto non è idoneo o il formato richiede una posa più complessa, il costo finale può aumentare. Il sopralluogo è l&apos;unico modo per definire un preventivo preciso.
                 </p>
               </div>
             </section>
@@ -305,7 +305,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { step: "01", titolo: "Costo indicativo", testo: "Inserisci la superficie da trattare nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno." },
+                  { step: "01", titolo: "Preventivo online immediato", testo: "Inserisci la superficie da trattare nel calcolatore o scrivici su WhatsApp per ottenere un preventivo online immediato. È un primo quadro economico utile per capire la compatibilità con il budget, ma non sostituisce il sopralluogo tecnico." },
                   { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico verifica lo stato del massetto, rileva le superfici e ti guida nella scelta del materiale più adatto alle tue esigenze e al tuo budget." },
                   { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo scritto con tipologia di materiale, schema di posa, tempistiche e garanzie. Trasparente, senza voci generiche." },
                 ].map((s) => (

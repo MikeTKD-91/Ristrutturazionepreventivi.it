@@ -124,7 +124,7 @@ export default async function ComunePage({ params }: PageProps) {
                 </div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Ristrutturazione Casa a {comune.nome}:{" "}
-                  <span className="text-orange">Indicazioni di costo e sopralluogo tecnico</span>
+                  <span className="text-orange">Costi reali, preventivo immediato</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">{comune.descrizione}</p>
                 <div className="flex flex-wrap gap-3 mb-8">
@@ -204,7 +204,7 @@ export default async function ComunePage({ params }: PageProps) {
 
             {/* PREZZI ORIENTATIVI */}
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Indicazioni di costo a {comune.nome}</h2>
+              <h2 className="text-2xl font-bold text-navy mb-2">Costi reali a {comune.nome}</h2>
               <p className="text-gray-600 mb-1">
                 Valori basati su riferimenti tecnici e sul <strong>Prezzario Regionale Campania</strong>, utili per una prima valutazione economica della ristrutturazione completa.
               </p>

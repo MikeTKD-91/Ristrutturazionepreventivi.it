@@ -62,8 +62,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
-  const title = `Rifacimento Tetto a ${comune.nome} | Costi Reali e Preventivo`;
-  const description = `Quanto costa rifare il tetto a ${comune.nome}? Costi orientativi da Prezzario Regionale Campania, tipologie di copertura, tempistiche reali. Costo indicativo basato sul Prezzario Regionale Campania.`;
+  const title = `Rifacimento Tetto a ${comune.nome} | Costi Reali, Preventivo Immediato`;
+  const description = `Quanto costa rifare il tetto a ${comune.nome}? Costi reali, preventivo immediato, tipologie di copertura, tempistiche reali e sopralluogo tecnico.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/rifacimento-tetto/`;
   return {
     title,
@@ -101,7 +101,7 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
 
   const localBusiness = buildLocalBusiness(
     comune.nome,
-    `rifacimento tetto a ${comune.nome}. Preventivi con sopralluogo, stime orientative gratuite basate su Prezzario Regionale Campania.`
+    `rifacimento tetto a ${comune.nome}. Preventivo immediato con sopralluogo, verifica tecnica e analisi del caso reale.`
   );
 
   const serviceSchema = buildServiceSchema({
@@ -155,12 +155,12 @@ export default async function RifacimentoTettoPage({ params }: PageProps) {
                 <p className="text-orange text-sm font-semibold uppercase tracking-widest mb-3">Rifacimento Tetto · {comune.nome}</p>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Rifacimento Tetto a {comune.nome}:<br />
-                  <span className="text-orange">Costi reali e preventivo</span>
+                  <span className="text-orange">Costi reali, preventivo immediato</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Prezzi orientativi basati sul Prezzario Regionale Campania, verifiche strutturali
-                  incluse, smaltimento amianto se necessario. Nessun prezzo inventato:
-                  quello definitivo emerge solo dal sopralluogo.
+                  Indicazioni di costo basate su riferimenti tecnici, verifiche strutturali,
+                  accessibilità del cantiere ed eventuale presenza di amianto.
+                  Il preventivo definitivo emerge dopo sopralluogo e verifica tecnica.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>
@@ -228,8 +228,8 @@ export default async function RifacimentoTettoPage({ params }: PageProps) {
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
                 <span className="text-amber-500 text-lg flex-shrink-0 mt-0.5">⚠</span>
                 <p className="text-sm text-amber-900">
-                  <strong>Questi sono costi orientativi, non preventivi vincolanti.</strong>{" "}
-                  La presenza di amianto, lo stato della struttura portante e l&apos;accessibilità possono variare significativamente il costo finale. L&apos;unico modo per avere un preventivo preciso è il sopralluogo.
+                  <strong>Questi valori non costituiscono un preventivo vincolante.</strong>{" "}
+                  La presenza di amianto, lo stato della struttura portante e l&apos;accessibilità del cantiere possono variare significativamente il costo finale. Il sopralluogo è l&apos;unico modo per definire un preventivo preciso.
                 </p>
               </div>
             </section>
@@ -305,7 +305,7 @@ export default async function RifacimentoTettoPage({ params }: PageProps) {
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { step: "01", titolo: "Costo indicativo", testo: "Inserisci la superficie del tetto nel calcolatore o scrivici su WhatsApp. Ricevi subito una forbice di costo indicativa basata sul Prezzario Campania. Nessun impegno." },
+                  { step: "01", titolo: "Preventivo online immediato", testo: "Inserisci la superficie del tetto nel calcolatore o scrivici su WhatsApp per ottenere un preventivo online immediato. È un primo quadro economico utile per capire la compatibilità con il budget, ma non sostituisce il sopralluogo tecnico." },
                   { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico sale sul tetto, verifica lo stato della struttura portante, la presenza di amianto e l'accessibilità per definire l'intervento necessario." },
                   { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo scritto con tipologia di copertura, spessori, tempistiche e condizioni di garanzia. Trasparente, senza voci generiche." },
                 ].map((s) => (
