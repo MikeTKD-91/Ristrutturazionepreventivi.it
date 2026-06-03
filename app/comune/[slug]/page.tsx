@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { MapPin, ArrowRight, TriangleAlert, CheckCircle } from "lucide-react";
+import { MapPin, ArrowRight, TriangleAlert, CheckCircle, Check, AlertCircle } from "lucide-react";
 import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
 import { comuni, getComuneBySlug } from "@/data/comuni";
 
@@ -94,6 +94,28 @@ export default async function ComunePage({ params }: PageProps) {
       }
     : null;
 
+  const inclusioniStandard = [
+    "Demolizioni e smaltimento delle rimozioni previste",
+    "Rifacimento impianto elettrico, idraulico e termico",
+    "Opere murarie, sottofondi, intonaci e rasature",
+    "Controsoffittatura liscia dove prevista dal progetto",
+    "Posa di pavimenti e rivestimenti",
+    "Porte interne complete di telaio e bussole",
+    "Fornitura e installazione dei sanitari: wc, bidet, lavabo e piatto doccia",
+    "Tinteggiatura finale e finiture standard",
+  ];
+
+  const esclusioniExtra = [
+    "Pratiche edilizie, catastali e autorizzazioni eventualmente necessarie",
+    "Arredi su misura, cucina ed elettrodomestici",
+    "Box doccia",
+    "Infissi esterni, portoncino blindato e opere non previste nel computo",
+    "Adeguamenti strutturali, consolidamenti o interventi emersi dopo le demolizioni",
+    "Spese condominiali, occupazione suolo pubblico e costi logistici straordinari",
+    "Finiture fuori capitolato e forniture scelte dal cliente",
+  ];
+
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
@@ -166,23 +188,110 @@ export default async function ComunePage({ params }: PageProps) {
           <div className="lg:col-span-2 space-y-16">
 
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Ristrutturazione appartamento completo a {comune.nome}: cosa significa davvero</h2>
-              <p className="text-gray-600 mb-4">
-                Quando parliamo di ristrutturazione completa non intendiamo una semplice somma di piccoli lavori, ma un intervento coordinato che coinvolge demolizioni, impianti, superfici, finiture e verifica tecnica complessiva dell'immobile.
-              </p>
-              <p className="text-gray-600 mb-4">
-                A {comune.nome} il costo cambia in modo sensibile in base all'anno di costruzione del fabbricato, allo stato reale degli impianti esistenti, alla necessità di adeguamenti edilizi o condominiali e al livello di finitura scelto.
-              </p>
+              <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione appartamento completo a {comune.nome}</h2>
               <p className="text-gray-600">
-                Il preventivo online immediato serve a capire subito se l'intervento è compatibile con il budget disponibile. Il quadro economico definitivo, però, viene sempre confermato dopo sopralluogo, verifica tecnica e definizione delle lavorazioni effettivamente necessarie.
+                Qui trovi il costo reale di una ristrutturazione completa pensata per appartamenti da rifare in modo coordinato, con preventivo online immediato e verifica tecnica finale solo dopo sopralluogo.
               </p>
             </section>
 
-            {/* SERVIZI DISPONIBILI */}
+            <section>
+              <h2 className="text-2xl font-bold text-navy mb-3">Costi reali</h2>
+              <div className="rounded-3xl border border-gray-200 bg-gradient-to-br from-orange-50 via-white to-navy/5 p-6 md:p-8 shadow-lg">
+                <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-orange mb-3">Costo reale orientativo</p>
+                    <div className="flex items-end gap-3 flex-wrap">
+                      <span className="text-5xl md:text-7xl font-black text-navy leading-none">550</span>
+                      <span className="text-xl md:text-2xl font-bold text-orange pb-1">€/mq</span>
+                    </div>
+                    <p className="mt-4 text-sm text-gray-600 max-w-xl">
+                      Valore riferito a ristrutturazione completa standard, con accesso ordinario all'immobile e condizioni operative normali. Il prezzo serve a capire subito se il progetto è compatibile con il budget.
+                    </p>
+                  </div>
+                  <div className="rounded-2xl bg-white border border-gray-200 p-5">
+                    <div className="rounded-2xl border border-orange/20 bg-orange/5 p-4">
+                      <p className="text-[11px] font-bold tracking-[0.14em] text-orange uppercase">Esempio reale</p>
+                      <p className="mt-2 text-sm font-medium text-gray-600">Appartamento 80 mq</p>
+                      <p className="mt-2 text-3xl font-black text-navy leading-none">46.750 euro</p>
+                    </div>
+                    <p className="mt-4 text-xs text-gray-500">
+                      Il preventivo definitivo si conferma solo dopo verifica tecnica e sopralluogo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-navy mb-3">Cosa include la ristrutturazione completa dell'appartamento</h2>
+              <div className="grid gap-3 md:grid-cols-2">
+                {inclusioniStandard.map((voce) => (
+                  <div key={voce} className="flex gap-3 rounded-xl border border-green-100 bg-green-50/60 p-4">
+                    <Check className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+                    <p className="text-sm text-gray-700 leading-relaxed">{voce}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-navy mb-3">Cosa non comprende</h2>
+              <div className="grid gap-3 md:grid-cols-2">
+                {esclusioniExtra.map((voce) => (
+                  <div key={voce} className="flex gap-3 rounded-xl border border-gray-200 bg-gray-50 p-4">
+                    <AlertCircle className="h-5 w-5 text-orange mt-0.5 shrink-0" />
+                    <p className="text-sm text-gray-700 leading-relaxed">{voce}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-navy mb-3">Quanto dura il cantiere?</h2>
+              <p className="text-gray-600 mb-5">
+                Per un appartamento medio la durata varia in base allo stato degli impianti, ai tempi di asciugatura e al livello di finitura scelto. In condizioni ordinarie siamo nell'ordine di 6–10 settimane lavorative.
+              </p>
+              <div className="space-y-2">
+                {[
+                  ["Demolizioni e rimozioni", "3–5 gg", ""],
+                  ["Impianti elettrico, idraulico e termico", "7–10 gg", ""],
+                  ["Intonaci, rasature e massetti", "8–12 gg", "incluse le attese tecniche"],
+                  ["Pavimenti, rivestimenti e porte", "7–12 gg", ""],
+                  ["Tinteggiatura, sanitari e collaudi", "4–7 gg", ""],
+                ].map((t, i) => (
+                  <div key={i} className="flex items-center gap-4 py-3 border-b border-gray-100 last:border-0">
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-navy text-white text-xs font-bold flex items-center justify-center">{i + 1}</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-gray-800">{t[0]}</p>
+                      {t[2] ? <p className="text-xs text-gray-400">{t[2]}</p> : null}
+                    </div>
+                    <span className="flex-shrink-0 text-sm font-semibold text-navy">{t[1]}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-navy mb-3">Come funziona</h2>
+              <div className="grid gap-4 md:grid-cols-3">
+                {[
+                  ["01", "Preventivo online immediato", "Parti dal calcolatore con i mq dell'appartamento e ottieni una fascia di prezzo coerente con il livello standard da 550 €/mq."],
+                  ["02", "Verifica tecnica", "Controlliamo accessibilità, impianti, distribuzione interna e criticità locali per capire cosa incide davvero sul costo."],
+                  ["03", "Preventivo scritto", "Ricevi il quadro economico definitivo con lavorazioni, tempi e condizioni operative prima di iniziare il cantiere."],
+                ].map((s) => (
+                  <div key={s[0]} className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+                    <p className="text-4xl font-black text-gray-100 mb-3 leading-none">{s[0]}</p>
+                    <h3 className="text-base font-bold text-navy mb-2">{s[1]}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{s[2]}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
             <section>
               <h2 className="text-2xl font-bold text-navy mb-2">Servizi complementari a {comune.nome}</h2>
               <p className="text-gray-600 mb-6">
-                Oltre alla ristrutturazione completa dell'appartamento, puoi approfondire anche gli interventi specifici collegati, utili quando il lavoro riguarda solo una parte dell'immobile o una lavorazione mirata.
+                Se il tuo intervento riguarda solo una parte dell'immobile, puoi approfondire i servizi specifici collegati.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
@@ -204,127 +313,15 @@ export default async function ComunePage({ params }: PageProps) {
                       </div>
                       <ArrowRight className="h-4 w-4 text-orange group-hover:translate-x-1 transition-transform" />
                     </Link>
-                  ) : (
-                    <div key={s.label} className="flex items-center justify-between p-4 rounded-xl border border-gray-100 bg-gray-50 opacity-60">
-                      <div>
-                        <p className="font-semibold text-gray-500 text-sm">{s.label}</p>
-                        <p className="text-xs text-gray-400 mt-0.5">{s.prezzo} orientativo</p>
-                      </div>
-                      <span className="text-xs text-gray-400 bg-gray-200 px-2 py-0.5 rounded-full">In arrivo</span>
-                    </div>
-                  )
+                  ) : null
                 )}
               </div>
             </section>
 
-            {/* PREZZI ORIENTATIVI */}
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Costi reali a {comune.nome}</h2>
-              <p className="text-gray-600 mb-1">
-                Valori basati su riferimenti tecnici e sul <strong>Prezzario Regionale Campania</strong>, utili per una prima valutazione economica della ristrutturazione completa.
-              </p>
-              <p className="text-sm text-gray-500 mb-6">
-                Il costo definitivo dipende dall&apos;anno di costruzione, dallo stato degli impianti e dai materiali scelti. Nessun numero è vincolante prima del sopralluogo.
-              </p>
-              <div className="grid md:grid-cols-3 gap-4 mb-5">
-                {PREZZI_FINITURA.map((p) => (
-                  <div key={p.livello} className="border border-gray-200 rounded-xl p-5 text-center hover:border-orange/40 transition-colors">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">{p.livello}</p>
-                    <p className="text-xl font-bold text-navy mb-2">{p.prezzo}</p>
-                    <p className="text-xs text-gray-500">{p.desc}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
-                <TriangleAlert className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-amber-900">
-                  <strong>Questi valori non costituiscono un preventivo vincolante.</strong>{" "}Servono a capire se l&apos;intervento è compatibile con il budget disponibile, ma il prezzo definitivo richiede sopralluogo, verifiche tecniche e definizione delle lavorazioni.
-                </p>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Cosa cambia tra finitura Base, Standard e Premium?</h2>
-              <p className="text-gray-600 mb-6">Il livello di finitura è il principale fattore che sposta il costo. Ecco cosa include ciascun livello nella pratica.</p>
-              <div className="grid md:grid-cols-3 gap-4">
-                {[
-                  { livello: "Base", descrizione: "Ceramica standard, impianti a norma, tinteggiatura liscia. Funzionale e certificato.", colore: "bg-gray-100 text-gray-700" },
-                  { livello: "Standard", descrizione: "Gres porcellanato, impianti evoluti, serramenti con doppio vetro. Il livello più richiesto.", colore: "bg-blue-50 text-navy" },
-                  { livello: "Premium", descrizione: "Grandi formati, impianti smart, serramenti alto isolamento, finiture su misura.", colore: "bg-orange-50 text-orange" },
-                ].map((lv) => (
-                  <div key={lv.livello} className={`rounded-xl p-5 ${lv.colore}`}>
-                    <p className="font-bold text-lg mb-2">{lv.livello}</p>
-                    <p className="text-sm leading-relaxed">{lv.descrizione}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Cosa include la ristrutturazione completa dell&apos;appartamento</h2>
-              <p className="text-gray-600 mb-6">Un appartamento ristrutturato bene è un intervento di sistema, non una somma di lavoretti. Ecco cosa comprende a regola d&apos;arte.</p>
-              <div className="space-y-3">
-                {[
-                  ["Demolizioni e smaltimento materiali", true, null],
-                  ["Rifacimento impianto elettrico completo (norma CEI 64-8)", true, null],
-                  ["Rifacimento impianto idraulico-sanitario", true, null],
-                  ["Rifacimento impianto termico (radiatori o fan coil)", true, null],
-                  ["Posa nuovi pavimenti in tutti i locali", true, null],
-                  ["Rivestimenti cucina e bagni", true, null],
-                  ["Intonaci e tinteggiatura completa", true, null],
-                  ["Sostituzione sanitari e rubinetteria bagni", true, null],
-                  ["Controsoffitti e cartongesso", false, "opzionale, preventivato separatamente"],
-                  ["Sostituzione serramenti", false, "disponibile su richiesta, richiede verifica condominiale"],
-                ].map(([voce, incluso, nota]) => (
-                  <div key={String(voce)} className={`flex items-start gap-3 p-4 rounded-xl ${incluso ? "bg-green-50" : "bg-gray-50"}`}>
-                    <span className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 ${incluso ? "bg-green-500 text-white" : "bg-gray-300 text-gray-600"}`}>
-                      {incluso ? "✓" : "○"}
-                    </span>
-                    <div>
-                      <p className={`text-sm font-medium ${incluso ? "text-gray-800" : "text-gray-500"}`}>{String(voce)}</p>
-                      {nota ? <p className="text-xs text-gray-400 mt-0.5">{String(nota)}</p> : null}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Quanto dura il cantiere?</h2>
-              <p className="text-gray-600 mb-6">Un appartamento di 70–80 mq richiede mediamente <strong>6–10 settimane lavorative</strong> per la ristrutturazione completa. I tempi dipendono fortemente dallo stato degli impianti esistenti e dal livello di finitura scelto.</p>
-              <div className="space-y-2">
-                {[
-                  ["Demolizioni e rimozioni", "3–5 gg", "in base alla dimensione e al livello di intervento"],
-                  ["Impianto elettrico (tracce e cavi)", "3–5 gg", "prima degli intonaci"],
-                  ["Impianto idraulico e termico", "3–5 gg", "in parallelo all'elettrico"],
-                  ["Intonaci e rasature", "5–8 gg", "attesa essicazione inclusa"],
-                  ["Massetti e preparazione pavimenti", "3–4 gg", "attesa essicazione 28 giorni ridotta con additivi"],
-                  ["Posa pavimenti e rivestimenti", "5–10 gg", "in base alla superficie e al formato"],
-                  ["Installazione impianti (quadri, sanitari, radiatori)", "3–5 gg", "collaudo incluso"],
-                  ["Tinteggiatura e finiture finali", "3–5 gg", "incluse porte e battiscopa"],
-                ].map((t, i) => (
-                  <div key={i} className="flex items-center gap-4 py-3 border-b border-gray-100 last:border-0">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-navy text-white text-xs font-bold flex items-center justify-center">{i + 1}</span>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-800">{t[0]}</p>
-                      <p className="text-xs text-gray-400">{t[2]}</p>
-                    </div>
-                    <span className="flex-shrink-0 text-sm font-semibold text-navy">{t[1]}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-gray-500 mt-4">I tempi si allungano in presenza di bonifica amianto, problemi strutturali o modifiche alla distribuzione degli spazi. Il programma definitivo viene definito al sopralluogo.</p>
-            </section>
-
-            {/* CRITICITÀ LOCALI */}
             <section>
               <h2 className="text-2xl font-bold text-navy mb-2">Cosa troviamo spesso a {comune.nome}</h2>
-              <p className="text-gray-600 mb-2">
-                <strong>{comune.tipoEdilizio}.</strong>
-              </p>
-              <p className="text-gray-600 mb-6">
-                Conoscere le criticità locali prima del sopralluogo permette stime più accurate e meno sorprese di cantiere.
-              </p>
+              <p className="text-gray-600 mb-2"><strong>{comune.tipoEdilizio}.</strong></p>
+              <p className="text-gray-600 mb-6">Conoscere le criticità locali prima del sopralluogo permette stime più accurate e meno sorprese di cantiere.</p>
               <div className="space-y-3">
                 {comune.criticalita.map((c, i) => (
                   <div key={i} className="flex gap-3 items-start bg-amber-50 border border-amber-100 rounded-xl p-4">
@@ -335,23 +332,8 @@ export default async function ComunePage({ params }: PageProps) {
               </div>
             </section>
 
-            {/* PROCESSO */}
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Come funziona</h2>
-              <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { n: "01", t: "Preventivo immediato", d: "Usi il calcolatore o ci scrivi su WhatsApp per ottenere subito un preventivo immediato basato sui dati dell'intervento e sui costi reali di lavorazione." },
-                  { n: "02", t: "Sopralluogo tecnico", d: "Il nostro tecnico visita l'immobile di persona. Verifica impianti, strutture e criticità specifiche: solo così il preventivo è affidabile." },
-                  { n: "03", t: "Preventivo scritto", d: "Un documento con prezzi unitari, materiali, tempistiche e garanzia decennale. Tutto nero su bianco prima di iniziare." },
-                ].map((s) => (
-                  <div key={s.n}>
-                    <p className="text-5xl font-black text-gray-100 mb-3 leading-none">{s.n}</p>
-                    <h3 className="text-base font-bold text-navy mb-2">{s.t}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{s.d}</p>
-                  </div>
-                ))}
-              </div>
+              <h2 className="text-2xl font-bold text-navy mb-2">FAQ</h2>
             </section>
 
             {/* FAQ DINAMICHE */}
