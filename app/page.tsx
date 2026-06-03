@@ -86,11 +86,7 @@ export default function HomePage() {
 
         <div className="relative container mx-auto px-4 py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div className="text-white">
-              <div className="inline-flex items-center gap-2 bg-orange/20 text-orange px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <Check className="h-4 w-4" />
-                Dati tecnici aggiornati a {dataAggiornamento} · Province NA e CE
-              </div>
+              <div className="text-white">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
                 Ristrutturazioni nell&apos;
                 <span className="text-orange">Agro Aversano</span>,{" "}

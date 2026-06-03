@@ -138,12 +138,6 @@ export default async function ComunePage({ params }: PageProps) {
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               {/* Testo */}
               <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <MapPin className="h-4 w-4 text-orange" />
-                  <p className="text-orange text-sm font-semibold uppercase tracking-widest">
-                    Ristrutturazione appartamento completo · {comune.nome}
-                  </p>
-                </div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Ristrutturazione Appartamento Completo a {comune.nome}:{" "}
                   <span className="text-orange">costi reali e preventivo online immediato</span>
