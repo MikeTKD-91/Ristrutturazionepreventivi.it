@@ -253,7 +253,7 @@ export default async function ComunePage({ params }: PageProps) {
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { n: "01", t: "Prima valutazione del budget", d: "Usi il calcolatore o ci scrivi su WhatsApp per ottenere una prima indicazione di costo. È un passaggio utile per capire la compatibilità con il budget, non sostituisce il sopralluogo tecnico." },
+                  { n: "01", t: "Preventivo immediato", d: "Usi il calcolatore o ci scrivi su WhatsApp per ottenere subito un preventivo immediato basato sui dati dell'intervento e sui costi reali di lavorazione." },
                   { n: "02", t: "Sopralluogo tecnico", d: "Il nostro tecnico visita l'immobile di persona. Verifica impianti, strutture e criticità specifiche: solo così il preventivo è affidabile." },
                   { n: "03", t: "Preventivo scritto", d: "Un documento con prezzi unitari, materiali, tempistiche e garanzia decennale. Tutto nero su bianco prima di iniziare." },
                 ].map((s) => (
@@ -353,10 +353,10 @@ export default async function ComunePage({ params }: PageProps) {
         <section className="bg-navy py-14 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Vuoi sapere quanto costa ristrutturare a {comune.nome}?
+              Vuoi ottenere un preventivo immediato a {comune.nome}?
             </h2>
             <p className="text-white/70 mb-8">
-              Scopri una prima indicazione di costo del tuo intervento. Se il quadro economico è compatibile con il budget, passiamo al sopralluogo tecnico.
+              Ottieni subito un preventivo immediato basato sui dati del tuo intervento. Dopo la verifica tecnica, confermiamo il quadro economico definitivo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -364,7 +364,7 @@ export default async function ComunePage({ params }: PageProps) {
                 target="_blank" rel="noopener noreferrer"
                 className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center"
               >
-                Richiedi stima su WhatsApp
+                Richiedi preventivo su WhatsApp
               </a>
               <a href="tel:+393339809319"
                 className="bg-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors text-center"

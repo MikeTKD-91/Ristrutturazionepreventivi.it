@@ -101,7 +101,7 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
 
   const localBusiness = buildLocalBusiness(
     comune.nome,
-    `cappotto termico a ${comune.nome}. Preventivo immediato con sopralluogo, verifica tecnica e analisi del caso reale.`
+    `cappotto termico a ${comune.nome}. Preventivo immediato, con verifica tecnica e sopralluogo per confermare il quadro economico definitivo.`
   );
 
   const serviceSchema = buildServiceSchema({
@@ -189,7 +189,7 @@ export default async function CappottoTermicoPage({ params }: PageProps) {
                 Le forbici di costo che trovi qui sotto sono orientative e si basano sul{" "}
                 <strong>Prezzario Regionale Campania</strong>. Il costo finale dipende dallo spessore
                 dell&apos;isolante, dallo stato della facciata esistente, dall&apos;altezza dell&apos;edificio e
-                dalla finitura scelta. Solo il sopralluogo consente una stima definitiva.
+                dalla finitura scelta. Solo il sopralluogo consente di confermare il quadro economico definitivo.
               </p>
               <div className="hidden md:block overflow-x-auto rounded-xl border border-gray-200 mb-4">
                 <table className="w-full text-sm">
@@ -276,7 +276,7 @@ export default async function CappottoTermicoPage({ params }: PageProps) {
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-gray-500 mt-4">Queste criticità emergono spesso solo durante il sopralluogo. Il nostro tecnico le verifica sistematicamente prima di emettere qualsiasi stima definitiva.</p>
+              <p className="text-sm text-gray-500 mt-4">Queste criticità emergono spesso solo durante il sopralluogo. Il nostro tecnico le verifica sistematicamente prima di confermare il quadro economico definitivo.</p>
             </section>
 
             <section>
@@ -387,7 +387,7 @@ export default async function CappottoTermicoPage({ params }: PageProps) {
             <p className="text-white/70 mb-8 text-lg">Scopri il costo del tuo intervento. Se la forbice è in linea col tuo budget, organizziamo il sopralluogo e prepariamo il preventivo dettagliato.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`https://wa.me/393339809319?text=Salve%2C%20vorrei%20un%20preventivo%20per%20il%20cappotto%20termico%20a%20${encodeURIComponent(comune.nome)}`} target="_blank" rel="noopener noreferrer" className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center">
-                Richiedi stima su WhatsApp
+                Richiedi preventivo su WhatsApp
               </a>
               <a href="tel:+393339809319" className="bg-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors text-center">
                 Chiama +39 333 980 9319

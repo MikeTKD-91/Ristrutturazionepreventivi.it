@@ -58,7 +58,7 @@ const finituraLabels = {
   premium:  { label: "Premium",  desc: "Materiali di pregio, finiture di lusso" },
 };
 
-const STEP_LABELS = ["Configura", "I tuoi dati", "La tua stima"];
+const STEP_LABELS = ["Configura", "I tuoi dati", "Il tuo preventivo"];
 
 export default function ScopriIlCostoDellaTuaRistrutturazione({ comuneDefault = "il tuo comune" }: ScopriIlCostoDellaTuaRistrutturazioneProps) {
   const [step, setStep] = useState<1 | 2 | 3>(1);
@@ -104,11 +104,11 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({ comuneDefault = 
 
   const generaLinkWA = () => {
     const testo = encodeURIComponent(
-      `Ciao, sono ${nome} e vorrei una stima per ${servizioSelezionato?.titolo?.toLowerCase() ?? "ristrutturazione"}.\n` +
+      `Ciao, sono ${nome} e vorrei un preventivo per ${servizioSelezionato?.titolo?.toLowerCase() ?? "ristrutturazione"}.\n` +
       `📐 Superficie: ${mq} mq\n` +
       `📍 Comune: ${comuneDefault}\n` +
       `✨ Finitura: ${finituraLabels[finitura].label}\n` +
-      `💶 Stima: ${formatPrezzo(risultato.min)} – ${formatPrezzo(risultato.max)}\n` +
+      `💶 Preventivo immediato: ${formatPrezzo(risultato.min)} – ${formatPrezzo(risultato.max)}\n` +
       (telefono ? `📞 Telefono: ${telefono}\n` : "") +
       `\nPotete contattarmi per un preventivo dettagliato?`
     );
@@ -248,7 +248,7 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({ comuneDefault = 
             </div>
 
             <p className="text-sm text-gray-600">
-              A chi inviamo la stima?{" "}
+              A chi inviamo il preventivo?{" "}
               <span className="text-gray-400">I dati sono usati solo per il preventivo.</span>
             </p>
 
@@ -288,7 +288,7 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({ comuneDefault = 
                 </>
               ) : (
                 <>
-                  Mostra la mia stima
+                  Mostra il mio preventivo
                   <ArrowRight className="h-5 w-5" />
                 </>
               )}
@@ -319,7 +319,7 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({ comuneDefault = 
                 <Check className="h-7 w-7 text-green-600" />
               </div>
               <h4 className="text-lg font-semibold text-navy">
-                Ecco la tua stima, {nome}!
+                Ecco il tuo preventivo immediato, {nome}!
               </h4>
               <p className="text-sm text-gray-500 mt-1">
                 {servizioSelezionato?.titolo} · {mq} mq · {finituraLabels[finitura].label}
@@ -327,7 +327,7 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({ comuneDefault = 
             </div>
 
             <div className="bg-gradient-to-br from-navy to-navy/90 rounded-2xl p-5 text-center">
-              <p className="text-white/60 text-xs mb-1">Costo stimato</p>
+              <p className="text-white/60 text-xs mb-1">Quadro economico</p>
               <div className="text-3xl md:text-4xl font-bold text-white">
                 {formatPrezzo(risultato.min)} – {formatPrezzo(risultato.max)}
               </div>
@@ -344,7 +344,7 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({ comuneDefault = 
                     {params.bonus} {params.bonusPerc}%
                   </span>
                 </div>
-                <p className="text-xs text-gray-500 mb-1">Costo effettivo stimato</p>
+                <p className="text-xs text-gray-500 mb-1">Costo dopo bonus</p>
                 <p className="text-sm font-bold text-green-700">
                   {formatPrezzo(costoConBonus.min)} – {formatPrezzo(costoConBonus.max)}
                 </p>
@@ -355,7 +355,7 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({ comuneDefault = 
                   <Clock className="h-4 w-4 text-blue-600" />
                   <span className="text-xs font-semibold text-blue-700">Tempistica</span>
                 </div>
-                <p className="text-xs text-gray-500 mb-1">Durata stimata lavori</p>
+                <p className="text-xs text-gray-500 mb-1">Durata prevista lavori</p>
                 <p className="text-sm font-bold text-blue-700">{params.tempistica}</p>
               </div>
             </div>
@@ -397,7 +397,7 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({ comuneDefault = 
               onClick={handleReset}
               className="w-full bg-gray-100 hover:bg-gray-200 text-navy py-3 rounded-xl font-medium transition-colors text-sm"
             >
-              Calcola nuova stima
+              Calcola nuovo preventivo
             </button>
           </motion.div>
         )}

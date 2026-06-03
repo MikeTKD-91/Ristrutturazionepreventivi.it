@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
   const title = `Ristrutturazione Appartamento a ${comune.nome} | Costi Reali e Preventivo`;
-  const description = `Quanto costa ristrutturare un appartamento a ${comune.nome}? Indicazioni di costo, criticità locali, tempistiche reali e preventivo con sopralluogo tecnico.`;
+  const description = `Quanto costa ristrutturare un appartamento a ${comune.nome}? Costi reali, criticità locali, tempi di esecuzione e preventivo immediato basato sui dati dell'intervento. Il quadro economico definitivo si conferma dopo sopralluogo tecnico.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-appartamento-completo/`;
   return {
     title,
@@ -102,7 +102,7 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
 
   const localBusiness = buildLocalBusiness(
     comune.nome,
-    `ristrutturazione appartamento a ${comune.nome}. Preventivo con sopralluogo, verifica tecnica e analisi del caso reale.`
+    `ristrutturazione appartamento a ${comune.nome}. Preventivo immediato, con verifica tecnica e sopralluogo per confermare il quadro economico definitivo.`
   );
 
   const serviceSchema = buildServiceSchema({
@@ -280,7 +280,7 @@ export default async function RistrutturazioneAppartamentoPage({ params }: PageP
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-gray-500 mt-4">Queste criticità emergono spesso solo durante il sopralluogo. Il nostro tecnico le verifica sistematicamente prima di emettere qualsiasi stima definitiva.</p>
+              <p className="text-sm text-gray-500 mt-4">Queste criticità emergono spesso solo durante il sopralluogo. Il nostro tecnico le verifica sistematicamente prima di confermare il quadro economico definitivo.</p>
             </section>
 
             <section>
@@ -396,7 +396,7 @@ export default async function RistrutturazioneAppartamentoPage({ params }: PageP
             <p className="text-white/70 mb-8 text-lg">Scopri il costo del tuo intervento. Se la forbice è in linea col tuo budget, organizziamo il sopralluogo e prepariamo il preventivo dettagliato.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`https://wa.me/393339809319?text=Salve%2C%20vorrei%20un%20preventivo%20per%20la%20ristrutturazione%20dell%27appartamento%20a%20${encodeURIComponent(comune.nome)}`} target="_blank" rel="noopener noreferrer" className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center">
-                Richiedi stima su WhatsApp
+                Richiedi preventivo su WhatsApp
               </a>
               <a href="tel:+393339809319" className="bg-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors text-center">
                 Chiama +39 333 980 9319

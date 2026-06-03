@@ -55,9 +55,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
-  const title = `Ristrutturazione Bagno a ${comune.nome} | Costi Reali e Preventivo`;
-  const description = `Quanto costa rifare il bagno a ${comune.nome}? Indicazioni di costo, criticità locali, tempistiche reali e preventivo con sopralluogo tecnico.`;
+
+  const title = `Ristrutturazione Bagno a ${comune.nome} | Costi reali e preventivo immediato`;
+  const description = `Quanto costa rifare il bagno a ${comune.nome}? Costi reali, tempi di esecuzione e preventivo immediato basato sui dati dell'intervento. Il quadro economico definitivo si conferma dopo sopralluogo tecnico.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-bagno/`;
+
   return {
     title,
     description,
@@ -68,7 +70,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url,
       siteName: "ristrutturazionepreventivi.it",
       locale: "it_IT",
-      type: "article",
+      type: "website",
       images: [
         {
           url: `https://ristrutturazionepreventivi.it/images/servizi/ristrutturazione-bagno.jpg`,
@@ -102,7 +104,7 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
 
   const localBusiness = buildLocalBusiness(
     comune.nome,
-    `Ristrutturazione bagno a ${comune.nome}. Preventivo con sopralluogo, verifica tecnica e analisi del caso reale.`
+    `Ristrutturazione bagno a ${comune.nome}. Costi reali e preventivo immediato, con verifica tecnica e sopralluogo per confermare il quadro economico definitivo.`
   );
 
   const serviceSchema = buildServiceSchema({
@@ -112,7 +114,7 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
     comuneNome: comune.nome,
     comuneSlug: comune.slug,
     servizioSlug,
-    prezzoMin: "4500",
+    prezzoMin: "5000",
     prezzoMax: "22000",
   });
 
@@ -171,7 +173,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                 </p>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Ristrutturazione Bagno a {comune.nome}:<br />
-                  <span className="text-orange">Costi reali e preventivo</span>
+                  <span className="text-orange">Costi reali e preventivo immediato</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
                   Indicazioni di costo basate su riferimenti tecnici, criticità tipiche
@@ -334,7 +336,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                 ))}
               </div>
               <p className="text-sm text-gray-500 mt-4">
-                Queste criticità emergono spesso solo durante il sopralluogo. Il nostro tecnico le verifica sistematicamente prima di emettere qualsiasi stima definitiva.
+                Queste criticità emergono spesso solo durante il sopralluogo. Il nostro tecnico le verifica sistematicamente prima di confermare il quadro economico definitivo.
               </p>
             </section>
 
@@ -480,7 +482,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                 rel="noopener noreferrer"
                 className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center"
               >
-                Richiedi stima su WhatsApp
+                Richiedi preventivo su WhatsApp
               </a>
               <a href="tel:+393339809319" className="bg-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors text-center">
                 Chiama +39 333 980 9319

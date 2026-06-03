@@ -22,7 +22,7 @@ interface CalcolatoreAppartamentoProps {
 
 type Step = 1 | 2 | 3;
 
-const STEP_LABELS = ["Configura", "I tuoi dati", "La tua stima"];
+const STEP_LABELS = ["Configura", "I tuoi dati", "Il tuo preventivo"];
 
 const PREZZO_STANDARD_MQ = 550;
 const MIN_MQ = 70;
@@ -316,7 +316,7 @@ export default function CalcolatoreAppartamento({
               />
               <div>
                 <p className="text-sm font-semibold text-navy">
-                  Se la stima è compatibile, sono disponibile a un appuntamento
+                  Se il preventivo è compatibile, sono disponibile a un appuntamento
                 </p>
                 <p className="text-xs text-gray-600 mt-1 leading-relaxed">
                   In studio o con sopralluogo tecnico, per verificare immobile,
@@ -337,7 +337,7 @@ export default function CalcolatoreAppartamento({
                 </>
               ) : (
                 <>
-                  Mostra la mia stima
+                  Mostra il mio preventivo
                   <ArrowRight className="h-5 w-5" />
                 </>
               )}
@@ -367,7 +367,7 @@ export default function CalcolatoreAppartamento({
                 <Check className="h-7 w-7 text-green-600" />
               </div>
               <h4 className="text-lg font-semibold text-navy">
-                Ecco la tua prima stima del costo, {nome}!
+                Ecco il tuo preventivo immediato, {nome}!
               </h4>
               <p className="text-sm text-gray-500 mt-1">
                 Appartamento {mq} mq · {comuneFinale}
@@ -435,7 +435,7 @@ export default function CalcolatoreAppartamento({
               onClick={handleReset}
               className="w-full bg-gray-100 hover:bg-gray-200 text-navy py-3 rounded-xl font-medium transition-colors text-sm"
             >
-              Calcola nuova stima
+              Calcola nuovo preventivo
             </button>
           </motion.div>
         )}

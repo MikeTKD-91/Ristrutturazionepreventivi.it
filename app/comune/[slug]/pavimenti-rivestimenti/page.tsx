@@ -101,7 +101,7 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
 
   const localBusiness = buildLocalBusiness(
     comune.nome,
-    `pavimenti e rivestimenti a ${comune.nome}. Preventivo immediato con sopralluogo, verifica tecnica e analisi del caso reale.`
+    `pavimenti e rivestimenti a ${comune.nome}. Preventivo immediato, con verifica tecnica e sopralluogo per confermare il quadro economico definitivo.`
   );
 
   const serviceSchema = buildServiceSchema({
@@ -189,7 +189,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
                 I valori che trovi qui sotto sono indicazioni di costo basate sul{" "}
                 <strong>Prezzario Regionale Campania</strong>. Il prezzo finale dipende dal materiale
                 scelto, dal formato, dallo schema di posa e dallo stato del massetto esistente.
-                Solo il sopralluogo consente una stima definitiva.
+                Solo il sopralluogo consente di confermare il quadro economico definitivo.
               </p>
               <div className="hidden md:block overflow-x-auto rounded-xl border border-gray-200 mb-4">
                 <table className="w-full text-sm">
@@ -387,7 +387,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
             <p className="text-white/70 mb-8 text-lg">Scopri il costo del tuo intervento. Se la forbice è in linea col tuo budget, organizziamo il sopralluogo e prepariamo il preventivo dettagliato.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`https://wa.me/393339809319?text=Salve%2C%20vorrei%20un%20preventivo%20per%20pavimenti%20e%20rivestimenti%20a%20${encodeURIComponent(comune.nome)}`} target="_blank" rel="noopener noreferrer" className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center">
-                Richiedi stima su WhatsApp
+                Richiedi preventivo su WhatsApp
               </a>
               <a href="tel:+393339809319" className="bg-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors text-center">
                 Chiama +39 333 980 9319

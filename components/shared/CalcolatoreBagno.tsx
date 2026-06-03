@@ -22,9 +22,9 @@ interface CalcolatoreBagnoProps {
 
 type Step = 1 | 2 | 3;
 
-const STEP_LABELS = ["Configura", "I tuoi dati", "La tua stima"];
+const STEP_LABELS = ["Configura", "I tuoi dati", "Il tuo preventivo"];
 
-const PREZZO_BASE = 4500;
+const PREZZO_BASE = 5000;
 const MIN_MQ = 4;
 const MAX_MQ = 20;
 const DEFAULT_MQ = 4;
@@ -124,10 +124,10 @@ export default function CalcolatoreBagno({
         </div>
         <div>
           <h3 className="text-xl font-bold text-navy">
-            Scopri quanto costa rifare il tuo bagno
+            Costi reali e preventivo immediato per il tuo bagno
           </h3>
           <p className="text-sm text-gray-600">
-            Calcolo basato su rifacimento bagno standard con prezzo minimo dedicato
+            Preventivo online immediato basato sui dati del tuo intervento
           </p>
         </div>
       </div>
@@ -136,8 +136,7 @@ export default function CalcolatoreBagno({
         <div className="flex gap-2">
           <AlertCircle className="h-5 w-5 text-orange shrink-0 mt-0.5" />
           <p className="text-sm text-navy leading-relaxed">
-            Preventivo riferito a bagno standard con accesso comodo per il carico dei materiali e per lo smaltimento dei materiali di risulta.
-            Box doccia, finiture premium, lavorazioni speciali e criticità emerse in sopralluogo vengono conteggiate a parte.
+            Il preventivo immediato si riferisce a un bagno standard con accesso comodo per carico materiali e smaltimento. Box doccia, finiture premium, lavorazioni speciali e criticità emerse in sopralluogo vengono conteggiati a parte.
           </p>
         </div>
       </div>
@@ -318,7 +317,7 @@ export default function CalcolatoreBagno({
               />
               <div>
                 <p className="text-sm font-semibold text-navy">
-                  Se la stima è compatibile, sono disponibile a un appuntamento
+                  Se il preventivo è compatibile, sono disponibile a un appuntamento
                 </p>
                 <p className="text-xs text-gray-600 mt-1 leading-relaxed">
                   In studio o con sopralluogo tecnico, per verificare il bagno,
@@ -437,7 +436,7 @@ export default function CalcolatoreBagno({
               onClick={handleReset}
               className="w-full bg-gray-100 hover:bg-gray-200 text-navy py-3 rounded-xl font-medium transition-colors text-sm"
             >
-              Calcola nuova stima
+              Calcola nuovo preventivo
             </button>
           </motion.div>
         )}
