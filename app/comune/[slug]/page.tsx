@@ -148,7 +148,7 @@ export default async function ComunePage({ params }: PageProps) {
                   href="#calcolatore"
                   className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
                 >
-                  Ottieni il preventivo online immediato
+                  Ottieni preventivo
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -167,11 +167,11 @@ export default async function ComunePage({ params }: PageProps) {
           </div>
         </section>
         {/* Calcolatore mobile */}
-        <div id="calcolatore" className="lg:hidden px-4 pt-6">
+        <div className="lg:hidden px-4 pt-6">
           <CalcolatoreAppartamento comuneDefault={comune.nome} />
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 py-12 grid lg:grid-cols-3 gap-10 items-start">
+        <div className="container mx-auto px-4 py-20 grid lg:grid-cols-3 gap-10 items-start">
           <div className="lg:col-span-2 space-y-16">
 
             <section>
