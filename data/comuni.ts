@@ -39,7 +39,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa ad Aversa | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione ad Aversa: costi orientativi, criticità del centro storico e delle palazzine anni '60-'70. Preventivo online immediato. Il preventivo definitivo richiede sopralluogo e verifica tecnica.",
+    metaDescription: "Ristrutturazione ad Aversa: costi reali, criticità del centro storico e delle palazzine anni '60-'70. Preventivo online immediato. Il preventivo definitivo richiede sopralluogo e verifica tecnica.",
     descrizione: "Aversa è il comune più popoloso dell'Agro Aversano, con un centro storico di origine normanna sottoposto a vincoli della Soprintendenza e un'ampia corona di espansione residenziale sviluppata tra gli anni '70 e i primi anni 2000. Questa doppia natura rende ogni intervento edilizio potenzialmente soggetto a iter autorizzativi differenti a seconda della zona.",
     tipoEdilizio: "Palazzi storici anni '50-'70 nel centro (alcuni con vincolo Soprintendenza), villette unifamiliari e case a schiera nelle zone di espansione anni '80-'00",
     criticalita: [
@@ -169,7 +169,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa a Carinaro | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Carinaro: costi orientativi per villette e palazzine. Criticità locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
+    metaDescription: "Ristrutturazione a Carinaro: costi reali per villette e palazzine. Criticità locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
     descrizione: "Carinaro è un piccolo comune residenziale dell'Agro Aversano, con un tessuto edilizio composto prevalentemente da villette unifamiliari e case a schiera edificate tra gli anni '80 e i primi anni 2000. Il centro storico è contenuto, con alcune palazzine degli anni '60-'70.",
     tipoEdilizio: "Prevalenza di villette anni '80-'00 e case a schiera; nucleo centrale con palazzine anni '60-'70",
     criticalita: [
@@ -221,7 +221,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa a Teverola | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Teverola: interventi su villette e palazzine, costi orientativi da Prezzario Campania. Preventivo online immediato. Il preventivo definitivo richiede sopralluogo e verifica tecnica.",
+    metaDescription: "Ristrutturazione a Teverola: interventi su villette e palazzine, costi reali basati sul Prezzario Campania. Preventivo online immediato. Il preventivo definitivo richiede sopralluogo e verifica tecnica.",
     descrizione: "Teverola è un comune con vocazione mista residenziale e produttiva, situato lungo la SS7bis. Il tessuto abitativo è composto da villette e palazzine di diverse epoche, con una parte centrale più densa e zone periferiche a edilizia sparsa.",
     tipoEdilizio: "Mix di villette anni '80-'00 e palazzine anni '70; presenza di edilizia residenziale lungo le arterie principali",
     criticalita: [
@@ -273,7 +273,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa a Gricignano di Aversa | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Gricignano di Aversa: costi orientativi, criticità edilizie e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Gricignano di Aversa: costi reali, criticità edilizie e preventivo online immediato.",
     descrizione: "Gricignano di Aversa è un comune di dimensioni ridotte con un tessuto edilizio misto, composto da un nucleo storico e zone di espansione residenziale sviluppate tra gli anni '70 e i primi anni 2000. La presenza della base militare statunitense (USAF) ha caratterizzato storicamente il comune.",
     tipoEdilizio: "Nucleo storico con palazzine anni '50-'70; espansione con villette e case a schiera anni '80-'00",
     criticalita: [
@@ -321,7 +321,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa a Trentola Ducenta | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Trentola Ducenta: costi orientativi da Prezzario Campania, criticità locali e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Trentola Ducenta: costi reali basati sul Prezzario Campania, criticità locali e preventivo online immediato.",
     descrizione: "Trentola Ducenta è un comune in forte crescita demografica, con un tessuto edilizio che va dalle palazzine degli anni '70 nel centro alle villette e ai nuovi complessi residenziali nelle zone di espansione. La presenza di attività commerciali e artigianali lo rende un comune vivace con una domanda abitativa costante.",
     tipoEdilizio: "Palazzine anni '70-'80 nel centro; villette e case a schiera anni '90-2000 nell'espansione; nuovi complessi residenziali nelle zone periferiche",
     criticalita: [
@@ -369,7 +369,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa a San Marcellino | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a San Marcellino: costi orientativi, criticità edilizie locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
+    metaDescription: "Ristrutturazione a San Marcellino: costi reali, criticità edilizie locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
     descrizione: "San Marcellino è un piccolo comune dell'Agro Aversano con un tessuto edilizio prevalentemente residenziale, composto da un nucleo storico compatto e zone di espansione con villette e palazzine di piccole e medie dimensioni.",
     tipoEdilizio: "Nucleo storico con palazzine anni '50-'70; espansione con villette unifamiliari e case a schiera anni '80-'00",
     criticalita: [
@@ -383,7 +383,7 @@ export const comuniAgroAversano: Comune[] = [
     faq: [
       {
         domanda: "Quanto costa ristrutturare un bagno a San Marcellino?",
-        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 4-5 mq vanno da circa 4.500 € (base) a 9.000 € (premium). Nelle palazzine storiche con impianti originali, il costo tende al limite superiore. Il sopralluogo gratuito chiarisce la situazione specifica.",
+        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 4-5 mq vanno da circa 4.500 € (base) a 9.000 € (premium). Nelle palazzine storiche con impianti originali, il costo tende al limite superiore. Il sopralluogo tecnico chiarisce la situazione specifica.",
       },
       {
         domanda: "Il bagno del mio appartamento è molto piccolo (meno di 4 mq). Vale la pena ristrutturarlo?",
@@ -417,7 +417,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa a Casal di Principe | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Casal di Principe: costi orientativi da Prezzario Campania, criticità locali e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Casal di Principe: costi reali basati sul Prezzario Campania, criticità locali e preventivo online immediato.",
     descrizione: "Casal di Principe è un comune dell'Agro Aversano con un tessuto edilizio misto: il centro storico conserva palazzi e palazzine di varie epoche, mentre le zone periferiche mostrano un'edilizia prevalentemente degli anni '80-'90.",
     tipoEdilizio: "Centro con palazzi storici e palazzine anni '60-'80; periferia con villette e case a schiera anni '80-'00",
     criticalita: [
@@ -465,7 +465,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa a Casaluce | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Casaluce: costi orientativi, criticità edilizie e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
+    metaDescription: "Ristrutturazione a Casaluce: costi reali, criticità edilizie e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
     descrizione: "Casaluce è un comune residenziale dell'Agro Aversano con un tessuto edilizio prevalentemente composto da villette unifamiliari e palazzine di piccole dimensioni, sviluppato principalmente tra gli anni '80 e i primi anni 2000.",
     tipoEdilizio: "Prevalenza di villette unifamiliari anni '80-'00; alcune palazzine nel nucleo centrale",
     criticalita: [
@@ -513,7 +513,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa a Cesa | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Cesa: costi orientativi da Prezzario Campania, criticità edilizie locali e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Cesa: costi reali basati sul Prezzario Campania, criticità edilizie locali e preventivo online immediato.",
     descrizione: "Cesa è un piccolo comune dell'Agro Aversano con un nucleo storico ben definito e zone di espansione residenziale degli anni '80-'90. Il comune è conosciuto per la produzione ortofrutticola e mantiene un carattere prevalentemente residenziale.",
     tipoEdilizio: "Nucleo storico con palazzine anni '50-'70; espansione con villette anni '80-'00",
     criticalita: [
@@ -557,7 +557,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa a Frignano | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Frignano: costi orientativi da Prezzario Campania, criticità edilizie e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Frignano: costi reali basati sul Prezzario Campania, criticità edilizie e preventivo online immediato.",
     descrizione: "Frignano è un comune prevalentemente residenziale dell'Agro Aversano, con un patrimonio edilizio composto da un nucleo centrale e zone di espansione sviluppate tra gli anni '70 e i primi anni 2000.",
     tipoEdilizio: "Mix di palazzine anni '70-'80 e villette anni '90-2000; nucleo storico compatto",
     criticalita: [
@@ -571,7 +571,7 @@ export const comuniAgroAversano: Comune[] = [
     faq: [
       {
         domanda: "Quanto costa ristrutturare un bagno a Frignano?",
-        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo gratuito quantifica le variabili specifiche.",
+        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo tecnico quantifica le variabili specifiche.",
       },
       {
         domanda: "Quanto dura una ristrutturazione bagno completa a Frignano?",
@@ -601,7 +601,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa a Parete | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Parete: costi orientativi da Prezzario Campania, criticità locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
+    metaDescription: "Ristrutturazione a Parete: costi reali basati sul Prezzario Campania, criticità locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
     descrizione: "Parete è un comune dell'Agro Aversano con un tessuto edilizio misto, dove convivono palazzine del centro storico degli anni '60-'70 e un'espansione residenziale più recente con villette e case a schiera.",
     tipoEdilizio: "Palazzine anni '60-'80 nel centro; villette e case a schiera anni '80-'00 nell'espansione",
     criticalita: [
@@ -645,7 +645,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa a Succivo | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Succivo: costi orientativi da Prezzario Campania, criticità locali e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Succivo: costi reali basati sul Prezzario Campania, criticità locali e preventivo online immediato.",
     descrizione: "Succivo è un comune residenziale dell'Agro Aversano con un tenore abitativo mediamente più elevato rispetto agli altri comuni della zona, caratterizzato da villette e palazzine di medie dimensioni edificate principalmente tra gli anni '80 e i primi anni 2000.",
     tipoEdilizio: "Prevalenza di villette unifamiliari e palazzine anni '80-'00; nucleo storico con edifici anni '60-'70",
     criticalita: [
@@ -693,7 +693,7 @@ export const comuniAgroAversano: Comune[] = [
     provincia: "caserta",
     zona: "agro-aversano",
     metaTitle: "Ristrutturazione Casa a Villa di Briano | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Villa di Briano: costi orientativi, criticità edilizie locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
+    metaDescription: "Ristrutturazione a Villa di Briano: costi reali, criticità edilizie locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
     descrizione: "Villa di Briano è un piccolo comune residenziale dell'Agro Aversano, con un tessuto edilizio composto da un nucleo storico compatto e zone di espansione con villette e palazzine di piccole dimensioni, sviluppate tra gli anni '70 e i primi anni 2000.",
     tipoEdilizio: "Nucleo storico con palazzine anni '50-'70; periferia con villette anni '80-'00",
     criticalita: [
@@ -707,7 +707,7 @@ export const comuniAgroAversano: Comune[] = [
     faq: [
       {
         domanda: "Quanto costa ristrutturare un bagno a Villa di Briano?",
-        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Nelle palazzine storiche con impianti originali, il costo tende al limite superiore. Il sopralluogo gratuito chiarisce la situazione specifica.",
+        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Nelle palazzine storiche con impianti originali, il costo tende al limite superiore. Il sopralluogo tecnico chiarisce la situazione specifica.",
       },
       {
         domanda: "Nel mio appartamento storico a Villa di Briano gli scarichi sono condivisi con il vicino. Posso comunque ristrutturare?",
@@ -743,7 +743,7 @@ export const comuniNapoli: Comune[] = [
     provincia: "napoli",
     zona: "napoli",
     metaTitle: "Ristrutturazione Casa a Napoli | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Napoli: costi orientativi per appartamenti nei quartieri serviti. Criticità locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
+    metaDescription: "Ristrutturazione a Napoli: costi reali per appartamenti nei quartieri serviti. Criticità locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
     descrizione: "Napoli è servita nelle zone periferiche nord e nord-ovest, con un tessuto edilizio prevalentemente condominiale degli anni '60-'80. Le caratteristiche edilizie variano significativamente da quartiere a quartiere: il nostro servizio copre principalmente le zone di Secondigliano, Piscinola e le aree limitrofe.",
     tipoEdilizio: "Condomini anni '60-'80 nelle periferie nord; edilizia popolare IACP; palazzine anni '50 nei quartieri più centrali dell'area servita",
     criticalita: [
@@ -799,7 +799,7 @@ export const comuniNapoli: Comune[] = [
     provincia: "napoli",
     zona: "napoli",
     metaTitle: "Ristrutturazione Casa a Giugliano in Campania | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Giugliano in Campania: costi orientativi, criticità edilizie e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
+    metaDescription: "Ristrutturazione a Giugliano in Campania: costi reali, criticità edilizie e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
     descrizione: "Giugliano in Campania è uno dei comuni più popolosi della Campania, con un'espansione residenziale avvenuta molto rapidamente tra gli anni '80 e i primi anni 2000. Il tessuto edilizio è prevalentemente composto da palazzine e condomini di media altezza, con un nucleo storico relativamente contenuto.",
     tipoEdilizio: "Palazzine e condomini anni '80-'00 nelle zone di espansione; nucleo storico con edifici anni '50-'70; alcune ville e villette nelle zone periferiche",
     criticalita: [
@@ -851,7 +851,7 @@ export const comuniNapoli: Comune[] = [
     provincia: "napoli",
     zona: "napoli",
     metaTitle: "Ristrutturazione Casa a Sant'Antimo | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Sant'Antimo: costi orientativi da Prezzario Campania, criticità edilizie e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Sant'Antimo: costi reali basati sul Prezzario Campania, criticità edilizie e preventivo online immediato.",
     descrizione: "Sant'Antimo è un comune densamente popolato a nord di Napoli, con un tessuto edilizio prevalentemente composto da palazzine e condomini di media altezza. L'espansione residenziale rapida degli anni '70-'90 ha lasciato un patrimonio edilizio eterogeneo con livelli di qualità costruttiva molto variabili.",
     tipoEdilizio: "Condomini e palazzine anni '70-'90; alcune aree di edilizia popolare; nucleo storico con edifici anni '50-'60",
     criticalita: [
@@ -899,7 +899,7 @@ export const comuniNapoli: Comune[] = [
     provincia: "napoli",
     zona: "napoli",
     metaTitle: "Ristrutturazione Casa a Melito di Napoli | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Melito di Napoli: costi orientativi, criticità locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
+    metaDescription: "Ristrutturazione a Melito di Napoli: costi reali, criticità locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
     descrizione: "Melito di Napoli è un comune dell'area nord di Napoli con un tessuto edilizio prevalentemente condominiale, sviluppatosi rapidamente tra gli anni '60 e gli anni '90. La vicinanza a Napoli e la buona connessione viaria hanno favorito una forte crescita residenziale.",
     tipoEdilizio: "Condomini anni '60-'90; palazzine di media altezza; alcune aree di edilizia popolare",
     criticalita: [
@@ -921,7 +921,7 @@ export const comuniNapoli: Comune[] = [
       },
       {
         domanda: "Nell'appartamento di mia madre anni '60 a Melito il bagno è piccolo e con impianti originali. Quanto costerebbe rifarlo completamente?",
-        risposta: "Un bagno degli anni '60 con impianti originali è quasi certamente da rifare integralmente: tubazioni in piombo o acciaio zincato, impianto elettrico non a norma, rivestimenti in mosaico con adesivo a base di catrame. La stima orientativa per un bagno sotto i 5 mq con rifacimento completo è di 4.500-7.500 € a seconda della finitura scelta. Il sopralluogo gratuito definisce il costo reale.",
+        risposta: "Un bagno degli anni '60 con impianti originali è quasi certamente da rifare integralmente: tubazioni in piombo o acciaio zincato, impianto elettrico non a norma, rivestimenti in mosaico con adesivo a base di catrame. La stima orientativa per un bagno sotto i 5 mq con rifacimento completo è di 4.500-7.500 € a seconda della finitura scelta. Il sopralluogo tecnico definisce il costo reale.",
       },
     ],
     faqBagno: [
@@ -947,7 +947,7 @@ export const comuniNapoli: Comune[] = [
     provincia: "napoli",
     zona: "napoli",
     metaTitle: "Ristrutturazione Casa a Mugnano di Napoli | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Mugnano di Napoli: costi orientativi, criticità edilizie locali e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Mugnano di Napoli: costi reali, criticità edilizie locali e preventivo online immediato.",
     descrizione: "Mugnano di Napoli è un comune dell'area nord-ovest di Napoli, con un tessuto edilizio prevalentemente condominiale degli anni '60-'80. La densità abitativa è elevata e le abitazioni sono in larga parte appartamenti in condominio.",
     tipoEdilizio: "Condomini anni '60-'80; palazzine di media altezza; edilizia compatta",
     criticalita: [
@@ -995,7 +995,7 @@ export const comuniNapoli: Comune[] = [
     provincia: "napoli",
     zona: "napoli",
     metaTitle: "Ristrutturazione Casa a Villaricca | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Villaricca: costi orientativi da Prezzario Campania, criticità edilizie e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Villaricca: costi reali basati sul Prezzario Campania, criticità edilizie e preventivo online immediato.",
     descrizione: "Villaricca è un comune dell'area nord-ovest di Napoli con un tessuto edilizio misto: palazzine degli anni '70-'80 nel centro e una consistente espansione residenziale degli anni '90-2000 nelle zone periferiche con villette e condomini.",
     tipoEdilizio: "Palazzine anni '70-'80 nel centro; villette e condomini anni '90-2000 nell'espansione",
     criticalita: [
@@ -1043,7 +1043,7 @@ export const comuniNapoli: Comune[] = [
     provincia: "napoli",
     zona: "napoli",
     metaTitle: "Ristrutturazione Casa a Casandrino | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Casandrino: costi orientativi da Prezzario Campania, criticità locali e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Casandrino: costi reali basati sul Prezzario Campania, criticità locali e preventivo online immediato.",
     descrizione: "Casandrino è un comune dell'area nord di Napoli con un tessuto edilizio prevalentemente composto da palazzine degli anni '60-'80 e alcune zone di espansione recente. La prossimità a Napoli e a Giugliano in Campania ne fa un comune a forte vocazione residenziale.",
     tipoEdilizio: "Palazzine anni '60-'80 nel centro; espansione recente con condomini di qualità media",
     criticalita: [
@@ -1057,7 +1057,7 @@ export const comuniNapoli: Comune[] = [
     faq: [
       {
         domanda: "Quanto costa ristrutturare un bagno a Casandrino?",
-        risposta: "In base al Prezzario Regionale Campania, le stime orientative per un bagno 4-5 mq vanno da circa 4.500 € a 8.500 €. Il sopralluogo gratuito quantifica le variabili specifiche dell'immobile.",
+        risposta: "In base al Prezzario Regionale Campania, le stime orientative per un bagno 4-5 mq vanno da circa 4.500 € a 8.500 €. Il sopralluogo tecnico quantifica le variabili specifiche dell'immobile.",
       },
       {
         domanda: "Il mio appartamento a Casandrino ha il bagno e la cucina adiacenti. Posso abbatterli e ricavare un bagno più grande?",
@@ -1091,7 +1091,7 @@ export const comuniNapoli: Comune[] = [
     provincia: "napoli",
     zona: "napoli",
     metaTitle: "Ristrutturazione Casa a Grumo Nevano | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Grumo Nevano: costi orientativi, criticità edilizie e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Grumo Nevano: costi reali, criticità edilizie e preventivo online immediato.",
     descrizione: "Grumo Nevano è un comune dell'area nord di Napoli, al confine con la provincia di Caserta. Il tessuto edilizio è prevalentemente composto da palazzine degli anni '70-'90 con alcune aree di edilizia residenziale più recente. La posizione di confine tra le due province lo rende un comune con caratteristiche edilizie ibride.",
     tipoEdilizio: "Palazzine anni '70-'90; nucleo storico con edifici più datati; edilizia recente nelle zone periferiche",
     criticalita: [
@@ -1105,7 +1105,7 @@ export const comuniNapoli: Comune[] = [
     faq: [
       {
         domanda: "Quanto costa ristrutturare un bagno a Grumo Nevano?",
-        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo gratuito quantifica le variabili specifiche dell'immobile.",
+        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo tecnico quantifica le variabili specifiche dell'immobile.",
       },
       {
         domanda: "Vivo a Grumo Nevano ma il confine comunale è vicino ad Aversa. Intervenite anche nella mia zona?",
@@ -1145,7 +1145,7 @@ export const comuniCaserta: Comune[] = [
     provincia: "caserta",
     zona: "caserta",
     metaTitle: "Ristrutturazione Casa a Caserta | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Caserta: costi orientativi per appartamenti e ville, criticità locali e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Caserta: costi reali per appartamenti e ville, criticità locali e preventivo online immediato.",
     descrizione: "Caserta è il capoluogo di provincia, con un tessuto edilizio che varia dalla zona del centro storico e delle ville storiche nei pressi della Reggia, alle palazzine degli anni '60-'80 nelle zone residenziali, fino alle villette dell'espansione periferica degli anni '90-2000. Ogni zona ha caratteristiche edilizie e iter autorizzativi differenti.",
     tipoEdilizio: "Centro storico con edifici d'epoca e palazzi signorili; palazzine anni '60-'80 nelle zone residenziali (Pietro Nenni, Acquaviva); villette anni '90-2000 in periferia",
     criticalita: [
@@ -1163,7 +1163,7 @@ export const comuniCaserta: Comune[] = [
       },
       {
         domanda: "Quanto costa ristrutturare un bagno a Caserta?",
-        risposta: "In base al Prezzario Regionale Campania, le stime orientative per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Negli appartamenti del centro con impianti d'epoca, il costo tende al limite superiore. Il sopralluogo gratuito chiarisce la situazione specifica.",
+        risposta: "In base al Prezzario Regionale Campania, le stime orientative per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Negli appartamenti del centro con impianti d'epoca, il costo tende al limite superiore. Il sopralluogo tecnico chiarisce la situazione specifica.",
       },
       {
         domanda: "Quanto tempo ci vuole per ristrutturare un bagno a Caserta?",
@@ -1201,7 +1201,7 @@ export const comuniCaserta: Comune[] = [
     provincia: "caserta",
     zona: "caserta",
     metaTitle: "Ristrutturazione Casa a Marcianise | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Marcianise: costi orientativi da Prezzario Campania, criticità edilizie e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Marcianise: costi reali basati sul Prezzario Campania, criticità edilizie e preventivo online immediato.",
     descrizione: "Marcianise è un comune con una forte componente industriale e commerciale, ma con un nucleo residenziale significativo composto da palazzine degli anni '60-'80 nel centro e villette nelle zone periferiche. La prossimità all'autostrada e al casello A30 ha favorito l'espansione residenziale.",
     tipoEdilizio: "Palazzine anni '60-'80 nel centro; villette anni '80-'00 nelle zone periferiche; edilizia mista",
     criticalita: [
@@ -1215,7 +1215,7 @@ export const comuniCaserta: Comune[] = [
     faq: [
       {
         domanda: "Quanto costa ristrutturare un bagno a Marcianise?",
-        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo gratuito quantifica le variabili specifiche dell'immobile.",
+        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo tecnico quantifica le variabili specifiche dell'immobile.",
       },
       {
         domanda: "Ho crepe sui muri di casa a Marcianise vicino alla SS7. Cosa faccio prima di ristrutturare?",
@@ -1249,7 +1249,7 @@ export const comuniCaserta: Comune[] = [
     provincia: "caserta",
     zona: "caserta",
     metaTitle: "Ristrutturazione Casa a Curti | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Curti: costi orientativi da Prezzario Campania, criticità edilizie locali e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Curti: costi reali basati sul Prezzario Campania, criticità edilizie locali e preventivo online immediato.",
     descrizione: "Curti è un comune di dimensioni ridotte nella provincia di Caserta, con un tessuto edilizio prevalentemente residenziale composto da palazzine degli anni '70-'80 e villette degli anni '90-2000. La sua posizione tra Caserta e Marcianise lo rende un comune a forte domanda abitativa.",
     tipoEdilizio: "Palazzine anni '70-'80 nel centro; villette e case a schiera anni '90-2000 nell'espansione",
     criticalita: [
@@ -1263,7 +1263,7 @@ export const comuniCaserta: Comune[] = [
     faq: [
       {
         domanda: "Quanto costa ristrutturare un bagno a Curti?",
-        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo gratuito chiarisce la situazione specifica.",
+        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo tecnico chiarisce la situazione specifica.",
       },
       {
         domanda: "Ho una palazzina anni '70 a Curti. Devo sostituire le tubazioni durante la ristrutturazione del bagno?",
@@ -1293,7 +1293,7 @@ export const comuniCaserta: Comune[] = [
     provincia: "caserta",
     zona: "caserta",
     metaTitle: "Ristrutturazione Casa a Santa Maria Capua Vetere | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Santa Maria Capua Vetere: costi orientativi, criticità del centro storico e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Santa Maria Capua Vetere: costi reali, criticità del centro storico e preventivo online immediato.",
     descrizione: "Santa Maria Capua Vetere è un comune di rilevanza storica, sede dell'antica Capua romana, con un centro storico ricco di reperti e vincoli archeologici. Il tessuto edilizio mescola edifici storici nel centro con palazzine degli anni '60-'80 nelle zone residenziali.",
     tipoEdilizio: "Centro storico con edifici d'epoca e zone di interesse archeologico; palazzine anni '60-'80; villette nelle zone periferiche",
     criticalita: [
@@ -1341,7 +1341,7 @@ export const comuniCaserta: Comune[] = [
     provincia: "caserta",
     zona: "caserta",
     metaTitle: "Ristrutturazione Casa a Casapulla | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Casapulla: costi orientativi da Prezzario Campania, criticità locali e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Casapulla: costi reali basati sul Prezzario Campania, criticità locali e preventivo online immediato.",
     descrizione: "Casapulla è un comune della provincia di Caserta con un tessuto edilizio prevalentemente residenziale, composto da palazzine degli anni '70-'80 e villette degli anni '90. Il comune è in posizione favorevole rispetto ai principali centri della provincia.",
     tipoEdilizio: "Palazzine anni '70-'80 nel centro; villette anni '90-2000 nelle zone di espansione",
     criticalita: [
@@ -1355,7 +1355,7 @@ export const comuniCaserta: Comune[] = [
     faq: [
       {
         domanda: "Quanto costa ristrutturare un bagno a Casapulla?",
-        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo gratuito quantifica le variabili specifiche.",
+        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo tecnico quantifica le variabili specifiche.",
       },
       {
         domanda: "Posso fare la ristrutturazione del bagno senza preavviso al condominio a Casapulla?",
@@ -1385,7 +1385,7 @@ export const comuniCaserta: Comune[] = [
     provincia: "caserta",
     zona: "caserta",
     metaTitle: "Ristrutturazione Casa a Recale | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Recale: costi orientativi da Prezzario Campania, criticità edilizie e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Recale: costi reali basati sul Prezzario Campania, criticità edilizie e preventivo online immediato.",
     descrizione: "Recale è un comune residenziale della provincia di Caserta, con un tessuto edilizio composto principalmente da palazzine degli anni '70-'80 e villette degli anni '90-2000. La sua posizione nelle immediate vicinanze di Caserta lo rende un polo residenziale attrattivo.",
     tipoEdilizio: "Mix di palazzine anni '70-'80 e villette anni '90-2000; alcune costruzioni recenti in zone di espansione",
     criticalita: [
@@ -1399,7 +1399,7 @@ export const comuniCaserta: Comune[] = [
     faq: [
       {
         domanda: "Quanto costa ristrutturare un bagno a Recale?",
-        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo gratuito chiarisce la situazione specifica.",
+        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo tecnico chiarisce la situazione specifica.",
       },
       {
         domanda: "Ho una villetta degli anni '90 a Recale. Conviene fare cappotto termico durante la ristrutturazione?",
@@ -1429,7 +1429,7 @@ export const comuniCaserta: Comune[] = [
     provincia: "caserta",
     zona: "caserta",
     metaTitle: "Ristrutturazione Casa a San Prisco | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a San Prisco: costi orientativi da Prezzario Campania, criticità edilizie locali e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a San Prisco: costi reali basati sul Prezzario Campania, criticità edilizie locali e preventivo online immediato.",
     descrizione: "San Prisco è un comune della provincia di Caserta con un tessuto edilizio prevalentemente residenziale. Il paese ospita la Cattedrale di San Prisco, uno dei più importanti edifici paleocristiani della Campania, e mantiene un nucleo storico interessante circondato da zone di espansione più recente.",
     tipoEdilizio: "Palazzine anni '70-'80 nel centro; villette negli anni '80-'00 nelle zone periferiche",
     criticalita: [
@@ -1443,7 +1443,7 @@ export const comuniCaserta: Comune[] = [
     faq: [
       {
         domanda: "Quanto costa ristrutturare un bagno a San Prisco?",
-        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo gratuito quantifica le variabili specifiche.",
+        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Il sopralluogo tecnico quantifica le variabili specifiche.",
       },
       {
         domanda: "Ho un appartamento con doppio bagno a San Prisco. Conviene rifarli entrambi?",
@@ -1477,7 +1477,7 @@ export const comuniCaserta: Comune[] = [
     provincia: "caserta",
     zona: "caserta",
     metaTitle: "Ristrutturazione Casa a Capua | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Capua: costi orientativi per appartamenti nel centro storico e villette. Preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
+    metaDescription: "Ristrutturazione a Capua: costi reali per appartamenti nel centro storico e villette. Preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
     descrizione: "Capua è un comune con un centro storico di origine medievale ben conservato, circondato dalle anse del Volturno. Il tessuto edilizio del centro è prevalentemente storico, mentre le zone periferiche ospitano palazzine degli anni '70-'80 e villette più recenti.",
     tipoEdilizio: "Centro storico medievale (sec. X-XVIII) con palazzi d'epoca; palazzine anni '70-'80 nelle zone residenziali; villette nelle periferie",
     criticalita: [
@@ -1499,7 +1499,7 @@ export const comuniCaserta: Comune[] = [
       },
       {
         domanda: "Quanto costa ristrutturare un bagno a Capua?",
-        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Negli edifici storici con impianti d'epoca, il costo tende al limite superiore. Il sopralluogo gratuito chiarisce la situazione specifica.",
+        risposta: "Le stime orientative basate sul Prezzario Regionale Campania per un bagno 5-6 mq vanno da circa 5.000 € (base) a 9.500 € (premium). Negli edifici storici con impianti d'epoca, il costo tende al limite superiore. Il sopralluogo tecnico chiarisce la situazione specifica.",
       },
       {
         domanda: "La mia cucina nel centro storico di Capua non ha una canna fumaria. Come installo la cappa?",
@@ -1529,7 +1529,7 @@ export const comuniCaserta: Comune[] = [
     provincia: "caserta",
     zona: "caserta",
     metaTitle: "Ristrutturazione Casa a Casagiove | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Casagiove: costi orientativi da Prezzario Campania, criticità locali e preventivo online immediato.",
+    metaDescription: "Ristrutturazione a Casagiove: costi reali basati sul Prezzario Campania, criticità locali e preventivo online immediato.",
     descrizione: "Casagiove è un comune residenziale adiacente a Caserta, con un tenore abitativo mediamente più elevato rispetto agli altri comuni della zona. Il tessuto edilizio comprende villette e palazzine di qualità costruttiva superiore alla media, edificate tra gli anni '80 e i primi anni 2000.",
     tipoEdilizio: "Villette unifamiliari e palazzine di qualità medio-alta anni '80-2000; alcuni condomini degli anni '70 nel centro",
     criticalita: [

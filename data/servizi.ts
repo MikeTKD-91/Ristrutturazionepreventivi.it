@@ -39,7 +39,7 @@ Offriamo tre livelli di finitura per adattarci a ogni esigenza e budget: Base, S
     vantaggi: [
       "Unico interlocutore per tutto il progetto",
       "Tempi di realizzazione certi",
-      "Garanzia decennale sui lavori",
+      "Garanzie previste per legge e da contratto",
       "Possibilità di detrazioni fiscali",
       "Materiali di qualità certificata",
       "Personale qualificato e assicurato",
@@ -73,7 +73,7 @@ Proponiamo soluzioni su misura per ogni spazio, dalle cucine piccole e funzional
       "Materiali resistenti all'umidità",
       "Illuminazione ottimizzata",
       "Soluzioni per ogni budget",
-      "Consulenza progettuale gratuita",
+      "Verifica preliminare del progetto",
       "Tempi rapidi di realizzazione",
     ],
   },

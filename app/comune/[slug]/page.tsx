@@ -127,13 +127,6 @@ export default async function ComunePage({ params }: PageProps) {
         {/* HERO */}
         <section className="bg-navy py-14 px-4">
           <div className="max-w-6xl mx-auto">
-            <nav className="text-sm text-white/50 mb-6 flex flex-wrap gap-1 items-center">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <span>/</span>
-              <Link href="/zone-servite/" className="hover:text-white transition-colors">Zone servite</Link>
-              <span>/</span>
-              <span className="text-white/80">{comune.nome}</span>
-            </nav>
 
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               {/* Testo */}
@@ -146,7 +139,7 @@ export default async function ComunePage({ params }: PageProps) {
                   Se stai valutando una ristrutturazione completa del tuo appartamento a {comune.nome}, qui trovi un preventivo online immediato basato su costi reali, livelli di finitura e parametri coerenti con il tipo di intervento. Il quadro economico definitivo viene confermato solo dopo verifica tecnica e sopralluogo.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
-                  {["Prezzario Regionale Campania", "Garanzia decennale", "Bonus 50% applicabile"].map((t) => (
+                  {["Prezzario Regionale Campania", "Lavori concordati", "Bonus 50% applicabile"].map((t) => (
                     <span key={t} className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">{t}</span>
                   ))}
                 </div>
@@ -401,7 +394,7 @@ export default async function ComunePage({ params }: PageProps) {
               </div>
               <div className="bg-orange/5 border border-orange/20 rounded-2xl p-5">
                 <div className="space-y-2">
-                  {["Garanzia decennale sui lavori", "Materiali certificati CE", "Supporto pratiche Bonus 50%"].map((t) => (
+                  {["Lavori eseguiti come da accordi", "Materiali certificati CE", "Supporto pratiche Bonus 50%"].map((t) => (
                     <div key={t} className="flex items-center gap-2 text-sm text-gray-700">
                       <CheckCircle className="h-4 w-4 text-orange flex-shrink-0" />
                       {t}

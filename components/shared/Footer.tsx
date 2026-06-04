@@ -53,7 +53,7 @@ export default function Footer() {
             </Link>
             <p className="text-white/70 text-sm">
               Russo FE Costruzione SRL è la tua impresa di fiducia per ristrutturazioni 
-              a Napoli, Caserta e in tutta la provincia. Stime indicative immediate e gratuite.
+              a Napoli, Caserta e in tutta la provincia. Preventivo online immediato e verifica tecnica da definire insieme.
             </p>
             <div className="space-y-2 text-sm">
               <div className="flex items-start gap-2 text-white/70">

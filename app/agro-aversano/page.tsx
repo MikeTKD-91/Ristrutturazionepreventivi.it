@@ -95,7 +95,7 @@ export default function AgroAversanoPage() {
                 sul Prezzario Regionale Campania, mai inventati.
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
-                {["Prezzario Regionale Campania", "Garanzia decennale", "14 comuni serviti"].map((t) => (
+                {["Prezzario Regionale Campania", "Lavori concordati", "14 comuni serviti"].map((t) => (
                   <span key={t} className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">{t}</span>
                 ))}
               </div>
@@ -266,10 +266,10 @@ export default function AgroAversanoPage() {
                 {[
                   "Sede a Lusciano: conosciamo il territorio",
                   "Prezzi da Prezzario Regionale Campania",
-                  "Garanzia decennale sui lavori",
+                  "Lavori concordati",
                   "Materiali certificati CE",
                   "Supporto pratiche Bonus 50%",
-                  "Sopralluogo tecnico senza impegno",
+                  "Sopralluogo tecnico su appuntamento",
                 ].map((t) => (
                   <div key={t} className="flex items-start gap-2 text-sm text-gray-700">
                     <CheckCircle className="h-4 w-4 text-orange flex-shrink-0 mt-0.5" />

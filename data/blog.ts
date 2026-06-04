@@ -47,11 +47,11 @@ Nel 2026 sono ancora disponibili importanti agevolazioni fiscali per le ristrutt
 - **Ecobonus**: detrazione fino al 50% per interventi di efficienza energetica
 - **Sismabonus**: detrazione fino al 75% per interventi di miglioramento sismico
 
-**Come ottenere una stima accurata**
+**Come ottenere un preventivo online immediato**
 
-Per avere una stima indicativa immediata e gratuita per la tua ristrutturazione a Napoli, utilizza il nostro calcolatore online. Inserisci i metri quadri, scegli il livello di finitura e ricevi immediatamente un range di prezzo personalizzato.
+Per avere un preventivo online immediato e gratuito per la tua ristrutturazione a Napoli, utilizza il nostro calcolatore online. Inserisci i metri quadri, scegli il livello di finitura e ricevi subito un primo valore indicativo coerente con il tipo di intervento.
 
-Ricorda che ogni progetto è unico: per un preventivo dettagliato, contattaci via WhatsApp con le specifiche del tuo appartamento.`
+Ricorda che ogni progetto e diverso: il preventivo dettagliato si definisce dopo verifica delle specifiche, confronto sui lavori da eseguire e sopralluogo tecnico.`
   },
   {
   slug: "bonus-ristrutturazione-2026-cosa-cambiato",
@@ -423,7 +423,7 @@ Stai alla larga da chi:
 
 **Garanzie da richiedere**
 
-- **Garanzia decennale**: Per i lavori strutturali (obbligatoria per legge)
+- **Garanzie sui lavori**: Per vizi, difformita e, nei casi previsti, responsabilita di durata anche decennale
 - **Garanzia biennale**: Per i difetti di conformità
 - **Garanzia sui materiali**: Fornita dai produttori
 - **Certificazioni impianti**: Obbligatorie per legge`
