@@ -93,36 +93,47 @@ export default function HomePage() {
                 <span className="text-orange">Napoli</span> e{" "}
                 <span className="text-orange">Caserta</span>
               </h1>
-              <p className="text-lg text-white/75 mb-8 max-w-xl leading-relaxed">
+              <p className="text-lg text-white/80 mb-8 max-w-xl leading-relaxed">
                 Preventivo online immediato. Verifica il costo della tua ristrutturazione
                 e se l'intervento è compatibile con il tuo budget. Il preventivo definitivo
                 si definisce dopo verifica tecnica e sopralluogo.
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
-                <a
-                  href="https://wa.me/393339809319"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-orange hover:bg-orange-600 text-white px-7 py-3.5 rounded-xl font-semibold transition-colors flex items-center gap-2"
-                >
-                  Richiedi preventivo su WhatsApp
-                  <ArrowRight className="h-5 w-5" />
-                </a>
                 <Link
                   href="/servizi/"
-                  className="bg-white/10 hover:bg-white/20 text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
+                  className="w-full justify-center text-center bg-white/10 hover:bg-white/20 text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
                 >
                   Vedi i Servizi
                 </Link>
               </div>
-              <div className="flex flex-wrap gap-4 text-sm text-white/60">
-                <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-orange" /> Impresa certificata</span>
-                <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-orange" /> Materiali certificati CE</span>
-                <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-orange" /> Bonus 50% applicabile</span>
+              <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-3">
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+                  <p className="text-2xl font-bold text-orange leading-none">550 €/mq</p>
+                  <p className="mt-2 text-sm font-semibold text-white">Ristrutturazione completa</p>
+                  <p className="mt-1 text-xs leading-relaxed text-white/65">
+                    Valore base per lavorazioni standard.
+                  </p>
+                </div>
+
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+                  <p className="text-2xl font-bold text-orange leading-none">Costi reali</p>
+                  <p className="mt-2 text-sm font-semibold text-white">Niente prezzi civetta</p>
+                  <p className="mt-1 text-xs leading-relaxed text-white/65">
+                    Importi pensati per orientarti davvero.
+                  </p>
+                </div>
+
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+                  <p className="text-2xl font-bold text-orange leading-none">Subito</p>
+                  <p className="mt-2 text-sm font-semibold text-white">Preventivo immediato</p>
+                  <p className="mt-1 text-xs leading-relaxed text-white/65">
+                    Verifica se l’intervento è compatibile col budget.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="lg:pl-4">
+            <div className="">
               <CalcolatoreAppartamento />
             </div>
           </div>

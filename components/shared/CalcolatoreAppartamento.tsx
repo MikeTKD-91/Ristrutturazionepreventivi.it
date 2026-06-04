@@ -57,8 +57,6 @@ export default function CalcolatoreAppartamento({
   const [step, setStep] = useState<Step>(1);
   const [mq, setMq] = useState(DEFAULT_MQ);
   const [comune, setComune] = useState(comuneDefault);
-  const [accessibile, setAccessibile] = useState(false);
-
   const [nome, setNome] = useState("");
   const [telefono, setTelefono] = useState("");
   const [disponibileAppuntamento, setDisponibileAppuntamento] = useState(false);
@@ -75,10 +73,11 @@ export default function CalcolatoreAppartamento({
 
   const comuneFinale = comune.trim() || comuneDefault || "da definire";
 
-  const canGoStep2 = accessibile && mq >= MIN_MQ;
+  const canGoStep2 = mq >= MIN_MQ && comune.trim().length >= 2;
   const canCalculate =
     nome.trim().length >= 2 &&
     telefono.trim().length >= 6 &&
+    comune.trim().length >= 2 &&
     disponibileAppuntamento;
 
   const handleCalculate = () => {
@@ -95,7 +94,6 @@ export default function CalcolatoreAppartamento({
     setStep(1);
     setMq(DEFAULT_MQ);
     setComune(comuneDefault);
-    setAccessibile(false);
     setNome("");
     setTelefono("");
     setDisponibileAppuntamento(false);
@@ -110,7 +108,6 @@ export default function CalcolatoreAppartamento({
       `📍 Comune: ${comuneFinale}\n` +
       `💶 Preventivo online standard: ${formatPrezzo(stima.min)} – ${formatPrezzo(stima.max)}\n` +
       `📞 Telefono: ${telefono}\n` +
-      `🏠 Immobile accessibile per carico/scarico materiali: Sì\n` +
       `🤝 Disponibile ad appuntamento in studio/sopralluogo: Sì\n\n` +
       `Se la configurazione è compatibile con il vostro metodo di lavoro, resto disponibile per un appuntamento tecnico.`
     );
@@ -208,7 +205,7 @@ export default function CalcolatoreAppartamento({
                 Comune
               </label>
               <div className="relative">
-                <MapPin className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <MapPin className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
                   type="text"
                   value={comune}
@@ -217,37 +214,9 @@ export default function CalcolatoreAppartamento({
                   className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
                 />
               </div>
-            </div>
-
-            <label className="flex items-start gap-3 p-4 rounded-xl border border-gray-200 hover:border-orange/40 transition-colors cursor-pointer">
-              <input
-                type="checkbox"
-                checked={accessibile}
-                onChange={(e) => setAccessibile(e.target.checked)}
-                className="mt-1 h-4 w-4 accent-orange"
-              />
-              <div>
-                <p className="text-sm font-semibold text-navy">
-                  Confermo che l'immobile è accessibile
-                </p>
-                <p className="text-xs text-gray-600 mt-1 leading-relaxed">
-                  L'appartamento è comodo per carico/scarico materiali e per la gestione
-                  dei rifiuti di risulta in condizioni ordinarie.
-                </p>
-              </div>
-            </label>
-
-            <div className="bg-gray-50 rounded-xl p-4">
-              <div className="flex items-center gap-2 mb-1">
-                <Home className="h-4 w-4 text-orange" />
-                <p className="text-sm font-semibold text-navy">
-                  Riferimento standard
-                </p>
-              </div>
-              <p className="text-sm text-gray-700">
-                Importo base di calcolo:{" "}
-                <span className="font-bold text-navy">{PREZZO_STANDARD_MQ} €/mq</span>
-              </p>
+              {comune.trim().length < 2 && (
+                <p className="text-xs text-rose-600 mt-2">Inserisci il comune per proseguire.</p>
+              )}
             </div>
 
             <button
@@ -271,8 +240,7 @@ export default function CalcolatoreAppartamento({
             className="space-y-5"
           >
             <div className="bg-orange/5 border border-orange/20 rounded-xl p-4 text-sm text-navy">
-              <strong>Configurazione:</strong> appartamento {mq} mq · {comuneFinale} ·
-              accessibilità ordinaria confermata
+              <strong>Configurazione:</strong> appartamento {mq} mq · {comuneFinale}
             </div>
 
             <div>
@@ -280,7 +248,7 @@ export default function CalcolatoreAppartamento({
                 Nome e cognome *
               </label>
               <div className="relative">
-                <User className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <User className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
                   type="text"
                   value={nome}
@@ -289,6 +257,9 @@ export default function CalcolatoreAppartamento({
                   className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
                 />
               </div>
+              {nome.trim().length < 2 && (
+                <p className="text-xs text-rose-600 mt-2">Inserisci nome e cognome per proseguire.</p>
+              )}
             </div>
 
             <div>
@@ -296,7 +267,7 @@ export default function CalcolatoreAppartamento({
                 Telefono *
               </label>
               <div className="relative">
-                <Phone className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Phone className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                 <input
                   type="tel"
                   value={telefono}
@@ -305,6 +276,9 @@ export default function CalcolatoreAppartamento({
                   className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
                 />
               </div>
+              {telefono.trim().length < 6 && (
+                <p className="text-xs text-rose-600 mt-2">Inserisci un numero valido per essere ricontattato.</p>
+              )}
             </div>
 
             <label className="flex items-start gap-3 p-4 rounded-xl border border-gray-200 hover:border-orange/40 transition-colors cursor-pointer">
@@ -391,7 +365,7 @@ export default function CalcolatoreAppartamento({
               <ul className="space-y-2">
                 {inclusioniStandard.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
-                    <Check className="h-4 w-4 text-orange shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-orange shrink-0 self-start mt-[2px]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -405,7 +379,7 @@ export default function CalcolatoreAppartamento({
               <ul className="space-y-2">
                 {esclusioniExtra.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
-                    <ArrowRight className="h-4 w-4 text-orange shrink-0 mt-0.5" />
+                    <ArrowRight className="h-4 w-4 text-orange shrink-0 self-start mt-[2px]" />
                     <span>{item}</span>
                   </li>
                 ))}
