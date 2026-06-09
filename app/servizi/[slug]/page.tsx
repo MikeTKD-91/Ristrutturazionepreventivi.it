@@ -293,12 +293,8 @@ export default async function ServizioPage({ params }: Props) {
                       />
                     </div>
                     <div>
-                    <p className="text-orange text-sm">Stima orientativa da confermare in base a lavorazioni, finiture e sopralluogo</p>
-                      <h4 className="font-semibold text-navy text-sm">{s.titolo}</h4>
-                      {isBagno && (
-                      <p className="text-orange text-sm">Stima orientativa da confermare in base a lavorazioni, finiture e sopralluogo</p>
-                    )}
-                    </div>
+                        <h4 className="font-semibold text-navy text-sm">{s.titolo}</h4>
+                      </div>
                   </Link>
                 ))}
               </div>
@@ -529,7 +525,6 @@ export default async function ServizioPage({ params }: Props) {
                       <div>
                         <h4 className="font-semibold text-navy text-sm">{s.titolo}</h4>
                         {isBagno && (
-                      <p className="text-orange text-sm">Stima orientativa da confermare in base a lavorazioni, finiture e sopralluogo</p>
                     )}
                       </div>
                     </Link>
