@@ -82,34 +82,32 @@ Proponiamo soluzioni su misura per ogni spazio, dalle cucine piccole e funzional
   {
     slug: "ristrutturazione-bagno",
     titolo: "Ristrutturazione Bagno",
-    sottotitolo: "Rifacimento completo del bagno con stima realistica e sopralluogo tecnico",
-    descrizione: "Ristrutturazione completa del bagno con demolizioni, smaltimento, rifacimento impianti, pavimenti, rivestimenti e sanitari. Il costo base da 5.000 € è un riferimento iniziale per bagni piccoli o medi con lavorazioni standard, da confermare dopo sopralluogo.",
-    descrizioneLunga: `La ristrutturazione completa del bagno è un intervento tecnico che comprende demolizioni, rifacimento degli impianti, ripristino dei sottofondi, impermeabilizzazione e posa delle nuove finiture.
+    sottotitolo: "Eleganza e comfort per il tuo spazio wellness",
+    descrizione: "Ristrutturazione completa del bagno con nuovi impianti, sanitari, box doccia o vasca, pavimenti e rivestimenti di design.",
+    descrizioneLunga: `Il bagno è uno degli ambienti più importanti della casa, un luogo di relax e cura personale. La sua ristrutturazione richiede competenze specifiche per garantire impermeabilità, sicurezza e comfort.
 
-Il costo base da 5.000 € rappresenta un riferimento iniziale per bagni di dimensioni contenute o medie, con configurazione standard e senza criticità particolari. Il preventivo definitivo può aumentare in caso di bagno più grande, spostamenti impiantistici rilevanti, finiture fuori capitolato o problematiche emerse dopo la demolizione.
+Il nostro servizio di ristrutturazione bagno include la rimozione dei vecchi sanitari e rivestimenti, il rifacimento completo degli impianti con materiali di qualità, la posa di pavimenti e rivestimenti impermeabili, l'installazione di nuovi sanitari, rubinetteria e accessori.
 
-Il nostro servizio comprende smontaggio dei sanitari esistenti, demolizione di pavimenti e rivestimenti, smaltimento dei materiali di risulta, realizzazione del nuovo impianto idrico-sanitario ed elettrico del bagno, formazione del massetto, impermeabilizzazione della zona doccia o vasca, posa di pavimenti e rivestimenti e installazione dei nuovi sanitari con rubinetteria.
-
-Ogni stima online ha valore orientativo: il sopralluogo serve a verificare misure, stato degli impianti, condizioni del supporto e reali necessità del cantiere.`,
+Proponiamo soluzioni per ogni esigenza: bagni moderni e minimalisti, bagni classici ed eleganti, bagni accessibili per anziani e disabili. Ogni progetto è personalizzato in base allo spazio disponibile e alle preferenze del cliente.`,
     immagine: "/images/servizi/ristrutturazione-bagno.jpg",
     alt: "Ristrutturazione bagno luxury con doccia walk-in in marmo, vasca freestanding e design elegante a Napoli Caserta",
     prezzoMq: { base: 450, standard: 700, premium: 1000 },
     caratteristiche: [
-      "Smontaggio dei sanitari esistenti",
-      "Demolizione di pavimento, rivestimenti e massetto con disconnessione degli impianti esistenti",
-      "Carico, trasporto e smaltimento dei materiali di risulta",
-      "Realizzazione del nuovo impianto idrico-sanitario ed elettrico del bagno",
-      "Formazione del nuovo massetto e piano di posa",
-      "Impermeabilizzazione dell’area doccia o vasca",
-      "Fornitura e posa di pavimenti e rivestimenti",
-      "Fornitura e installazione di wc, bidet, lavabo con mobile sospeso, doccia oppure vasca, con rubinetteria inclusa",
+      "Rimozione vecchi sanitari",
+      "Rifacimento impermeabilizzazioni",
+      "Rifacimento impianto idraulico",
+      "Rifacimento impianto elettrico",
+      "Posa pavimenti antiscivolo",
+      "Rivestimenti pareti doccia",
+      "Installazione sanitari e rubinetteria",
+      "Montaggio box doccia o vasca",
     ],
     vantaggi: [
       "Bagno impermeabile e sicuro",
       "Sanitari di design o classici",
       "Soluzioni per disabili disponibili",
       "Materiali antimuffa e antibatterici",
-      "Materiali certificati CE",
+      "Garanzia su impermeabilizzazioni",
       "Possibilità di vasca o doccia",
     ],
   },

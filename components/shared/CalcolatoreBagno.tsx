@@ -196,7 +196,7 @@ export default function CalcolatoreBagno({
                 <span>{MAX_MQ} mq</span>
               </div>
               <p className="text-xs text-gray-500 mt-2">
-                Il calcolatore è pensato per bagni standard da rifare completamente, a partire da 4 mq.
+                Il calcolatore è pensato per bagni standard da rifare completamente, in condizioni operative ordinarie.
               </p>
             </div>
 
@@ -242,9 +242,9 @@ export default function CalcolatoreBagno({
                 </p>
               </div>
               <p className="text-sm text-gray-700">
-                Preventivo online immediato a partire da{" "}
+                Per un bagno standard completo il riferimento parte da{" "}
                 <span className="font-bold text-navy">{formatPrezzo(PREZZO_BASE)}</span>{" "}
-                per bagno standard da 4 mq.
+                . Il valore finale si conferma dopo verifica tecnica e sopralluogo.
               </p>
               <p className="text-xs text-gray-500 mt-2 leading-relaxed">
                 L'importo finale si definisce dopo verifica tecnica e sopralluogo, in base alle condizioni reali del bagno e alle eventuali richieste extra.

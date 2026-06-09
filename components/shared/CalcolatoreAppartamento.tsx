@@ -9,7 +9,6 @@ import {
   MessageCircle,
   ChevronLeft,
   MapPin,
-  Home,
   Phone,
   User,
   AlertCircle,

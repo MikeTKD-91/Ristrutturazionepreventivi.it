@@ -3,11 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, MapPin, Shield, Clock, Award, ChevronDown } from "lucide-react";
+import { ArrowRight, MapPin, Shield, Clock, Award, ChevronDown } from "lucide-react";
 import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
 import { servizi } from "@/data/servizi";
 import { comuniNapoli, comuniCaserta, comuniAgroAversano } from "@/data/comuni";
-import { getDataAggiornamento } from "@/lib/utils";
 
 const features = [
   {
@@ -30,8 +29,8 @@ const features = [
 const processoSteps = [
   {
     n: "01",
-    titolo: "Preventivo online immediato",
-    testo: "Usi il calcolatore o ci contatti su WhatsApp. Verifichi il costo della ristrutturazione e capisci se l'intervento è compatibile con il tuo budget.",
+    titolo: "Prima stima del costo",
+    testo: "Usi lo strumento di stima o ci contatti su WhatsApp. Ricevi una prima indicazione del costo e capisci se la spesa è in linea con il tuo budget.",
   },
   {
     n: "02",
@@ -47,8 +46,8 @@ const processoSteps = [
 
 const faqHome = [
   {
-    q: "Il preventivo online è vincolante?",
-    a: "No. Il calcolo online serve a verificare il costo della ristrutturazione e capire se l'intervento è compatibile con il tuo budget. Il preventivo definitivo si definisce solo dopo verifica tecnica e sopralluogo.",
+    q: "La prima stima online è vincolante?",
+    a: "No. La stima online serve a capire l’ordine di grandezza dell’intervento e capire se la spesa è in linea con il budget. Il preventivo finale si definisce solo dopo verifica tecnica e sopralluogo.",
   },
   {
     q: "Come funziona il sopralluogo?",
@@ -65,8 +64,17 @@ const faqHome = [
 ];
 
 export default function HomePage() {
-  const dataAggiornamento = getDataAggiornamento();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+const servicePriceLabels: Record<string, string> = {
+  "ristrutturazione-appartamento-completo": "Da 550 €/mq",
+  "ristrutturazione-bagno": "Da 5.000 € completo",
+  "pavimenti-rivestimenti": "Da 45 €/mq",
+  "ristrutturazione-cucina": "Preventivo su sopralluogo",
+  "rifacimento-tetto": "Preventivo su sopralluogo",
+  "cappotto-termico": "Preventivo su sopralluogo",
+  "impianti-elettrici-idraulici-termici": "Preventivo dopo verifica tecnica",
+};
 
   return (
     <div className="min-h-screen">
@@ -94,9 +102,9 @@ export default function HomePage() {
                 <span className="text-orange">Caserta</span>
               </h1>
               <p className="text-lg text-white/80 mb-8 max-w-xl leading-relaxed">
-                Preventivo online immediato. Verifica il costo della tua ristrutturazione
-                e se l'intervento è compatibile con il tuo budget. Il preventivo definitivo
-                si definisce dopo verifica tecnica e sopralluogo.
+                Richiedi una prima stima del costo della ristrutturazione
+                e capisci se la spesa è in linea con il tuo budget. Il preventivo finale
+                si conferma dopo verifica tecnica e sopralluogo.
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
                 <Link
@@ -124,7 +132,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-                  <p className="text-2xl font-bold text-orange leading-none">Subito</p>
+                  <p className="text-2xl font-bold text-orange leading-none">Online</p>
                   <p className="mt-2 text-sm font-semibold text-white">Preventivo immediato</p>
                   <p className="mt-1 text-xs leading-relaxed text-white/65">
                     Verifica se l’intervento è compatibile col budget.
@@ -192,8 +200,8 @@ export default function HomePage() {
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">{s.descrizione}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-orange font-semibold text-sm">
-                      Da {s.prezzoMq.base} €/mq orientativo
-                    </span>
+  {servicePriceLabels[s.slug] ?? "Preventivo su richiesta"}
+</span>
                     <span className="text-navy font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
                       Scopri <ArrowRight className="h-4 w-4" />
                     </span>
@@ -319,7 +327,7 @@ export default function HomePage() {
             Vuoi sapere quanto costa la tua ristrutturazione?
           </h2>
           <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
-            Scopri quanto costa la tua ristrutturazione con una prima stima basata sui dati inseriti. Se l'intervento rientra nei parametri indicati, organizziamo il sopralluogo e prepariamo il preventivo.
+            Richiedi una prima stima della ristrutturazione in base ai dati che inserisci. Se il caso rientra nei parametri indicati, organizziamo il sopralluogo e prepariamo il preventivo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -331,7 +339,7 @@ export default function HomePage() {
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>
-              Richiedi preventivo su WhatsApp
+              Parla con noi su WhatsApp
             </a>
             <a
               href="tel:+393339809319"

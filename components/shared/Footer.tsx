@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MapPin, Phone, Mail, Wrench } from "lucide-react";
+import { MapPin, Mail, Wrench } from "lucide-react";
 import { getDataAggiornamento } from "@/lib/utils";
 
 const footerLinks = {

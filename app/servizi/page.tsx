@@ -8,13 +8,13 @@ import { getDataAggiornamento } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Servizi di Ristrutturazione | Napoli Caserta",
-  description: "Scopri i nostri 7 servizi di ristrutturazione a Napoli e Caserta: appartamento, cucina, bagno, tetto, pavimenti, impianti e cappotto termico. Preventivo online immediato e sopralluogo tecnico.",
+  description: "Scopri i nostri 7 servizi di ristrutturazione a Napoli e Caserta: appartamento, cucina, bagno, tetto, pavimenti, impianti e cappotto termico. Prima stima online e sopralluogo tecnico.",
   alternates: {
     canonical: "https://ristrutturazionepreventivi.it/servizi/",
   },
   openGraph: {
     title: "Servizi di Ristrutturazione | Napoli Caserta",
-    description: "7 servizi di ristrutturazione per la tua casa a Napoli e Caserta. Preventivo online immediato e sopralluogo tecnico.",
+    description: "7 servizi di ristrutturazione per la tua casa a Napoli e Caserta. Prima stima online e sopralluogo tecnico.",
     url: "https://ristrutturazionepreventivi.it/servizi/",
     images: [
       {
@@ -29,6 +29,37 @@ export const metadata: Metadata = {
 
 export default function ServiziPage() {
   const dataAggiornamento = getDataAggiornamento();
+
+const pricingLabels: Record<string, { top: string; value: string }> = {
+  "ristrutturazione-appartamento-completo": {
+    top: "Da",
+    value: "550 €/mq",
+  },
+  "ristrutturazione-bagno": {
+    top: "Da",
+    value: "5.000 € completo",
+  },
+  "pavimenti-rivestimenti": {
+    top: "Da",
+    value: "45 €/mq",
+  },
+  "ristrutturazione-cucina": {
+    top: "Preventivo",
+    value: "su sopralluogo",
+  },
+  "rifacimento-tetto": {
+    top: "Preventivo",
+    value: "su sopralluogo",
+  },
+  "cappotto-termico": {
+    top: "Preventivo",
+    value: "su sopralluogo",
+  },
+  "impianti-elettrici-idraulici-termici": {
+    top: "Preventivo",
+    value: "dopo verifica tecnica",
+  },
+};
 
   return (
     <div className="min-h-screen">
@@ -51,7 +82,7 @@ export default function ServiziPage() {
         </div>
       </section>
 
-      {/* Calcolatore */}
+      {/* Modulo di stima */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
@@ -103,10 +134,12 @@ export default function ServiziPage() {
                   
                   <div className="flex items-center justify-between pt-4 border-t">
                     <div>
-                      <p className="text-sm text-gray-500">Da</p>
-                      <p className="text-2xl font-bold text-orange">
-                        {servizio.prezzoMq.base} €/mq
-                      </p>
+                     <p className="text-sm text-gray-500">
+  {pricingLabels[servizio.slug]?.top ?? "Preventivo"}
+</p>
+<p className="text-2xl font-bold text-orange">
+  {pricingLabels[servizio.slug]?.value ?? "su richiesta"}
+</p>
                     </div>
                     <Link
                       href={`/servizi/${servizio.slug}/`}
@@ -130,7 +163,7 @@ export default function ServiziPage() {
             Non Sai Da Dove Iniziare?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-            Contattaci su WhatsApp per una valutare il costo del progetto. Ti aiutiamo a capire quale servizio è più adatto e quando serve un sopralluogo tecnico.
+            Contattaci su WhatsApp per valutare il costo del progetto. Ti aiutiamo a capire quale servizio è più adatto e quando serve un sopralluogo tecnico.
           </p>
           <a
             href="https://wa.me/393339809319"

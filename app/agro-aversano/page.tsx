@@ -55,13 +55,13 @@ const CRITICITA_ZONA = [
 ];
 
 const SERVIZI = [
-  { label: "Ristrutturazione Bagno", prezzo: "da ~450 €/mq" },
-  { label: "Ristrutturazione Cucina", prezzo: "da ~400 €/mq" },
-  { label: "Ristrutturazione Appartamento", prezzo: "da ~550 €/mq" },
-  { label: "Rifacimento Tetto", prezzo: "da ~80 €/mq" },
-  { label: "Cappotto Termico", prezzo: "da ~80 €/mq" },
-  { label: "Impianti", prezzo: "da ~150 €/mq" },
-  { label: "Pavimenti e Rivestimenti", prezzo: "da ~60 €/mq" },
+  { label: "Ristrutturazione Bagno", prezzo: "da 5.000 € completo" },
+  { label: "Ristrutturazione Cucina", prezzo: "preventivo su sopralluogo" },
+  { label: "Ristrutturazione Appartamento", prezzo: "da 550 €/mq" },
+  { label: "Rifacimento Tetto", prezzo: "preventivo su sopralluogo" },
+  { label: "Cappotto Termico", prezzo: "preventivo su sopralluogo" },
+  { label: "Impianti", prezzo: "preventivo dopo verifica tecnica" },
+  { label: "Pavimenti e Rivestimenti", prezzo: "da 45 €/mq" },
 ];
 
 export default function AgroAversanoPage() {
@@ -100,10 +100,10 @@ export default function AgroAversanoPage() {
                 ))}
               </div>
               <a
-                href="#calcolatore"
+                href="#modulo di stima"
                 className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
               >
-                Scopri il costo
+                Richiedi una prima stima
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -124,8 +124,8 @@ export default function AgroAversanoPage() {
         </div>
       </section>
 
-      {/* Calcolatore mobile */}
-      <div id="calcolatore" className="lg:hidden px-4 pt-6">
+      {/* Modulo di stima mobile */}
+      <div id="modulo di stima" className="lg:hidden px-4 pt-6">
         <ScopriIlCostoDellaTuaRistrutturazione comuneDefault="Aversa" />
       </div>
 
@@ -200,8 +200,8 @@ export default function AgroAversanoPage() {
               <TriangleAlert className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
               <p className="text-sm text-amber-900">
                 <strong>Questi valori non costituiscono un preventivo vincolante.</strong>{" "}
-                Servono a capire se l&apos;intervento è compatibile con il tuo budget.
-                Il preventivo definitivo richiede sopralluogo e verifica tecnica.
+                Servono a capire se la spesa è in linea con il tuo budget.
+                Il preventivo finale richiede sopralluogo e verifica tecnica.
               </p>
             </div>
           </section>
@@ -241,7 +241,7 @@ export default function AgroAversanoPage() {
             <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { n: "01", t: "Scopri il costo", d: "Usi il calcolatore o ci scrivi su WhatsApp per verificare il costo della ristrutturazione e capire se l'intervento è compatibile con il tuo budget. Il preventivo definitivo si definisce dopo verifica tecnica e sopralluogo." },
+                { n: "01", t: "Richiedi una prima stima", d: "Usi il modulo di stima o ci scrivi su WhatsApp per ricevere una prima indicazione del costo e capire se la spesa è in linea con il tuo budget. Il preventivo finale si definisce dopo verifica tecnica e sopralluogo." },
                 { n: "02", t: "Sopralluogo tecnico", d: "Il nostro tecnico visita l'immobile. Verifica impianti, strutture e criticità specifiche dell'Agro Aversano: solo così il preventivo è affidabile." },
                 { n: "03", t: "Preventivo scritto", d: "Prezzi unitari, materiali specificati, tempistiche e garanzia decennale. Tutto nero su bianco prima di iniziare." },
               ].map((s) => (
@@ -258,7 +258,7 @@ export default function AgroAversanoPage() {
 
         {/* ── SIDEBAR ── */}
         <div className="hidden lg:block">
-          <div id="calcolatore" className="sticky top-6 space-y-6">
+          <div id="modulo di stima" className="sticky top-6 space-y-6">
             <ScopriIlCostoDellaTuaRistrutturazione comuneDefault="Aversa" />
             <div className="bg-gray-50 rounded-2xl p-5">
               <p className="text-sm font-semibold text-navy mb-4">Perché scegliere noi</p>
@@ -289,7 +289,7 @@ export default function AgroAversanoPage() {
             Vuoi sapere quanto costa ristrutturare nell'Agro Aversano?
           </h2>
           <p className="text-white/70 mb-8 text-lg">
-            Parti da una scopri il costo. Se il quadro economico è compatibile con il tuo intervento, organizziamo il sopralluogo e prepariamo una proposta tecnica chiara.
+            Parti da una prima stima. Se il quadro economico è compatibile con il tuo intervento, organizziamo il sopralluogo e prepariamo una proposta tecnica chiara.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -298,7 +298,7 @@ export default function AgroAversanoPage() {
               rel="noopener noreferrer"
               className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center"
             >
-              Richiedi preventivo su WhatsApp
+              Parla con noi su WhatsApp
             </a>
             <a
               href="tel:+393339809319"

@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { MapPin, ArrowRight, TriangleAlert, CheckCircle, Check, AlertCircle } from "lucide-react";
+import { ArrowRight, TriangleAlert, CheckCircle, Check, X } from "lucide-react";
 import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
 import { comuni, getComuneBySlug } from "@/data/comuni";
 
@@ -12,12 +12,6 @@ interface PageProps {
 }
 
 // Valori orientativi da Prezzario Regionale Campania — ristrutturazione appartamento completo
-const PREZZI_FINITURA = [
-  { livello: "Base", prezzo: "550 – 700 €/mq", desc: "Ceramica standard, impianti a norma, tinteggiatura liscia. Funzionale e certificato." },
-  { livello: "Standard", prezzo: "700 – 900 €/mq", desc: "Gres porcellanato, impianti evoluti, serramenti con doppio vetro. Il livello più richiesto." },
-  { livello: "Premium", prezzo: "900 – 1.200 €/mq", desc: "Grandi formati, impianti smart, serramenti alto isolamento, finiture su misura." },
-];
-
 export async function generateStaticParams() {
   return comuni.map((c) => ({ slug: c.slug }));
 }
@@ -28,12 +22,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!comune) return {};
   const url = `https://ristrutturazionepreventivi.it/comune/${slug}/`;
   return {
-    title: `Ristrutturazione Appartamento Completo a ${comune.nome} | Costi reali e preventivo online immediato`,
-    description: `Ristrutturazione appartamento completo a ${comune.nome}: costi reali, livelli di finitura, criticità locali e preventivo online immediato. Il quadro economico definitivo richiede sopralluogo e verifica tecnica.`,
+    title: `Ristrutturazione Appartamento Completo a ${comune.nome} | Costi reali e prima stima online`,
+    description: `Ristrutturazione appartamento completo a ${comune.nome}: costi reali, livelli di finitura, criticità locali e prima stima online. Il quadro economico definitivo richiede sopralluogo e verifica tecnica.`,
     alternates: { canonical: url },
     openGraph: {
-      title: `Ristrutturazione Appartamento Completo a ${comune.nome} | Costi reali e preventivo online immediato`,
-      description: `Ristrutturazione appartamento completo a ${comune.nome}: costi reali, livelli di finitura, criticità locali e preventivo online immediato. Il quadro economico definitivo richiede sopralluogo e verifica tecnica.`,
+      title: `Ristrutturazione Appartamento Completo a ${comune.nome} | Costi reali e prima stima online`,
+      description: `Ristrutturazione appartamento completo a ${comune.nome}: costi reali, livelli di finitura, criticità locali e prima stima online. Il quadro economico definitivo richiede sopralluogo e verifica tecnica.`,
       url,
       type: "article",
       siteName: "ristrutturazionepreventivi.it",
@@ -95,21 +89,24 @@ export default async function ComunePage({ params }: PageProps) {
     : null;
 
   const inclusioniStandard = [
-    "Demolizioni e smaltimento delle rimozioni previste",
-    "Rifacimento impianto elettrico, idraulico e termico",
-    "Opere murarie, sottofondi, intonaci e rasature",
-    "Controsoffittatura liscia dove prevista dal progetto",
-    "Posa di pavimenti e rivestimenti",
-    "Porte interne complete di telaio e bussole",
-    "Fornitura e installazione dei sanitari: wc, bidet, lavabo e piatto doccia",
-    "Tinteggiatura finale e finiture standard",
-  ];
+        "Rifacimento impianto elettrico, idraulico e termico",
+        "Fornitura e installazione di termosifoni standard in alluminio",
+        "Fornitura e posa di infissi esterni in PVC",
+        "Fornitura e installazione di portoncino d'ingresso",
+        "Fornitura e posa di pavimenti e rivestimenti",
+        "Fornitura e posa di porte interne complete di telaio e bussole",
+        "Opere murarie, sottofondi, intonaci e rasature",
+        "Controsoffittatura liscia dove prevista dal progetto",
+        "Fornitura e installazione dei sanitari: wc, bidet, lavabo e piatto doccia",
+        "Tinteggiatura finale e finiture standard",
+        "Demolizioni e smaltimento delle rimozioni previste",
+      ];
 
   const esclusioniExtra = [
     "Pratiche edilizie, catastali e autorizzazioni eventualmente necessarie",
     "Arredi su misura, cucina ed elettrodomestici",
     "Box doccia",
-    "Infissi esterni, portoncino blindato e opere non previste nel computo",
+    "Infissi fuori capitolato e opere non previste nel computo",
     "Adeguamenti strutturali, consolidamenti o interventi emersi dopo le demolizioni",
     "Spese condominiali, occupazione suolo pubblico e costi logistici straordinari",
     "Finiture fuori capitolato e forniture scelte dal cliente",
@@ -133,22 +130,22 @@ export default async function ComunePage({ params }: PageProps) {
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Ristrutturazione Appartamento Completo a {comune.nome}:{" "}
-                  <span className="text-orange">costi reali e preventivo online immediato</span>
+                  <span className="text-orange">costi reali e prima stima online</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Se stai valutando una ristrutturazione completa del tuo appartamento a {comune.nome}, qui trovi un preventivo online immediato basato su costi reali, livelli di finitura e parametri coerenti con il tipo di intervento. Il quadro economico definitivo viene confermato solo dopo verifica tecnica e sopralluogo.
+                  Se stai valutando una ristrutturazione completa del tuo appartamento a {comune.nome}, qui trovi una prima stima online basata su costi reali, livelli di finitura e parametri coerenti con il tipo di intervento. Il quadro economico definitivo viene confermato solo dopo verifica tecnica e sopralluogo.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {["Prezzario Regionale Campania", "Lavori concordati", "Bonus 50% applicabile"].map((t) => (
                     <span key={t} className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">{t}</span>
                   ))}
                 </div>
-                {/* Scroll verso calcolatore */}
+                {/* Scroll verso modulo di stima */}
                 <a
-                  href="#calcolatore"
+                  href="#modulo di stima"
                   className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
                 >
-                  Ottieni preventivo
+                  Richiedi una stima
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -166,7 +163,7 @@ export default async function ComunePage({ params }: PageProps) {
             </div>
           </div>
         </section>
-        {/* Calcolatore mobile */}
+        {/* Modulo di stima mobile */}
         <div className="lg:hidden px-4 pt-6">
           <CalcolatoreAppartamento comuneDefault={comune.nome} />
         </div>
@@ -177,7 +174,7 @@ export default async function ComunePage({ params }: PageProps) {
             <section>
               <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione appartamento completo a {comune.nome}</h2>
               <p className="text-gray-600">
-                Qui trovi il costo reale di una ristrutturazione completa pensata per appartamenti da rifare in modo coordinato, con preventivo online immediato e verifica tecnica finale solo dopo sopralluogo.
+                Qui trovi una stima realistica dei costi di una ristrutturazione completa pensata per appartamenti da rifare in modo coordinato, con una prima stima online e verifica tecnica finale solo dopo sopralluogo.
               </p>
             </section>
 
@@ -186,13 +183,13 @@ export default async function ComunePage({ params }: PageProps) {
               <div className="rounded-3xl border border-gray-200 bg-gradient-to-br from-orange-50 via-white to-navy/5 p-6 md:p-8 shadow-lg">
                 <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-orange mb-3">Costo reale orientativo</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-orange mb-3">Costo base reale</p>
                     <div className="flex items-end gap-3 flex-wrap">
                       <span className="text-5xl md:text-7xl font-black text-navy leading-none">550</span>
                       <span className="text-xl md:text-2xl font-bold text-orange pb-1">€/mq</span>
                     </div>
                     <p className="mt-4 text-sm text-gray-600 max-w-xl">
-                      Valore riferito a ristrutturazione completa standard, con accesso ordinario all'immobile e condizioni operative normali. Il prezzo serve a capire subito se il progetto è compatibile con il budget.
+                      Valore riferito a ristrutturazione completa standard, con accesso ordinario all'immobile e condizioni operative normali. Questo valore aiuta a capire se il progetto è in linea con il budget, ma non sostituisce il sopralluogo.
                     </p>
                   </div>
                   <div className="rounded-2xl bg-white border border-gray-200 p-5">
@@ -202,7 +199,7 @@ export default async function ComunePage({ params }: PageProps) {
                       <p className="mt-2 text-3xl font-black text-navy leading-none">46.750 euro</p>
                     </div>
                     <p className="mt-4 text-xs text-gray-500">
-                      Il preventivo definitivo si conferma solo dopo verifica tecnica e sopralluogo.
+                      Il preventivo finale si conferma solo dopo verifica tecnica e sopralluogo.
                     </p>
                   </div>
                 </div>
@@ -226,7 +223,7 @@ export default async function ComunePage({ params }: PageProps) {
               <div className="grid gap-3 md:grid-cols-2">
                 {esclusioniExtra.map((voce) => (
                   <div key={voce} className="flex gap-3 rounded-xl border border-gray-200 bg-gray-50 p-4">
-                    <AlertCircle className="h-5 w-5 text-orange mt-0.5 shrink-0" />
+                    <X className="h-5 w-5 text-orange mt-0.5 shrink-0" />
                     <p className="text-sm text-gray-700 leading-relaxed">{voce}</p>
                   </div>
                 ))}
@@ -262,7 +259,7 @@ export default async function ComunePage({ params }: PageProps) {
               <h2 className="text-2xl font-bold text-navy mb-3">Come funziona</h2>
               <div className="grid gap-4 md:grid-cols-3">
                 {[
-                  ["01", "Preventivo online immediato", "Parti dal calcolatore con i mq dell'appartamento e ottieni una fascia di prezzo coerente con il livello standard da 550 €/mq."],
+                  ["01", "Prima stima online", "Parti dallo strumento di stima con i mq dell'appartamento e ricevi una prima indicazione coerente con il livello standard da 550 €/mq."],
                   ["02", "Verifica tecnica", "Controlliamo accessibilità, impianti, distribuzione interna e criticità locali per capire cosa incide davvero sul costo."],
                   ["03", "Preventivo scritto", "Ricevi il quadro economico definitivo con lavorazioni, tempi e condizioni operative prima di iniziare il cantiere."],
                 ].map((s) => (
@@ -282,13 +279,13 @@ export default async function ComunePage({ params }: PageProps) {
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { label: "Ristrutturazione Bagno", prezzo: "da ~450 €/mq", href: `/comune/${slug}/ristrutturazione-bagno/`, attivo: true },
-                  { label: "Ristrutturazione Cucina", prezzo: "da ~400 €/mq", href: `/comune/${slug}/ristrutturazione-cucina/`, attivo: true },
-                  { label: "Ristrutturazione Appartamento", prezzo: "da ~550 €/mq", href: `/comune/${slug}/`, attivo: true },
-                  { label: "Rifacimento Tetto", prezzo: "da ~80 €/mq", href: `/comune/${slug}/rifacimento-tetto/`, attivo: true },
-                  { label: "Cappotto Termico", prezzo: "da ~80 €/mq", href: `/comune/${slug}/cappotto-termico/`, attivo: true },
-                  { label: "Impianti", prezzo: "da ~150 €/mq", href: `/comune/${slug}/impianti-elettrici-idraulici-termici/`, attivo: true },
-                  { label: "Pavimenti e Rivestimenti", prezzo: "da ~60 €/mq", href: `/comune/${slug}/pavimenti-rivestimenti/`, attivo: true },
+                  { label: "Ristrutturazione Bagno", prezzo: "da 5.000 € completo", href: `/comune/${slug}/ristrutturazione-bagno/`, attivo: true },
+                  { label: "Ristrutturazione Cucina", prezzo: "preventivo su sopralluogo", href: `/comune/${slug}/ristrutturazione-cucina/`, attivo: true },
+                  { label: "Ristrutturazione Appartamento", prezzo: "da 550 €/mq", href: `/comune/${slug}/`, attivo: true },
+                  { label: "Rifacimento Tetto", prezzo: "preventivo su sopralluogo", href: `/comune/${slug}/rifacimento-tetto/`, attivo: true },
+                  { label: "Cappotto Termico", prezzo: "preventivo su sopralluogo", href: `/comune/${slug}/cappotto-termico/`, attivo: true },
+                  { label: "Impianti", prezzo: "preventivo dopo verifica tecnica", href: `/comune/${slug}/impianti-elettrici-idraulici-termici/`, attivo: true },
+                  { label: "Pavimenti e Rivestimenti", prezzo: "da 45 €/mq", href: `/comune/${slug}/pavimenti-rivestimenti/`, attivo: true },
                 ].map((s) =>
                   s.attivo ? (
                     <Link key={s.label} href={s.href}
@@ -296,7 +293,7 @@ export default async function ComunePage({ params }: PageProps) {
                     >
                       <div>
                         <p className="font-semibold text-navy text-sm">{s.label}</p>
-                        <p className="text-xs text-gray-500 mt-0.5">{s.prezzo} orientativo</p>
+                        <p className="text-xs text-gray-500 mt-0.5">{s.prezzo}</p>
                       </div>
                       <ArrowRight className="h-4 w-4 text-orange group-hover:translate-x-1 transition-transform" />
                     </Link>
@@ -343,6 +340,9 @@ export default async function ComunePage({ params }: PageProps) {
                     </details>
                   ))}
                 </div>
+                <p className="mt-4 text-sm text-gray-500">
+                  Le forniture comprese si riferiscono a capitolato standard e possono variare in base a misure, modello scelto e condizioni dell&apos;immobile.
+                </p>
               </section>
             )}
 
@@ -371,7 +371,7 @@ export default async function ComunePage({ params }: PageProps) {
           {/* SIDEBAR STICKY */}
           <div className="hidden lg:block lg:col-span-1">
             <div className="sticky top-6 space-y-6">
-              <div id="calcolatore">
+              <div id="modulo di stima">
                 <CalcolatoreAppartamento comuneDefault={comune.nome} />
               </div>
               <div className="bg-gray-50 rounded-2xl p-5">
@@ -413,7 +413,7 @@ export default async function ComunePage({ params }: PageProps) {
               Vuoi ottenere un preventivo immediato a {comune.nome}?
             </h2>
             <p className="text-white/70 mb-8">
-              Ottieni subito un preventivo immediato basato sui dati del tuo intervento. Dopo la verifica tecnica, confermiamo il quadro economico definitivo.
+              Ricevi una prima stima basata sui dati del tuo intervento. Dopo la verifica tecnica e il sopralluogo, confermiamo il preventivo finale.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -421,7 +421,7 @@ export default async function ComunePage({ params }: PageProps) {
                 target="_blank" rel="noopener noreferrer"
                 className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center"
               >
-                Richiedi preventivo su WhatsApp
+                Parla con noi su WhatsApp
               </a>
               <a href="tel:+393339809319"
                 className="bg-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors text-center"
