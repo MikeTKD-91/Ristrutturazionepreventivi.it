@@ -3,6 +3,7 @@ export interface Servizio {
   titolo: string;
   sottotitolo: string;
   descrizione: string;
+  descrizioneCard?: string;
   descrizioneLunga: string;
   immagine: string;
   alt: string;                    // ← AGGIUNTO
@@ -15,6 +16,8 @@ export interface Servizio {
 export const servizi: Servizio[] = [
   {
     slug: "ristrutturazione-appartamento-completo",
+    descrizioneCard: "Intervento completo con impianti, opere murarie, finiture e verifica tecnica sul posto.",
+
     titolo: "Ristrutturazione Appartamento Completo",
     sottotitolo: "Costo base certo da 550 €/mq nei casi standard con condizioni operative agevolate",
     descrizione: "Ristrutturazione completa dell'appartamento con demolizioni, rifacimento impianti, opere murarie, pavimenti, rivestimenti e finiture standard o superiori. Il valore base di 550 €/mq è applicabile nei casi standard con accesso facilitato, gestione semplice dei materiali di risulta e piano agevole come un primo piano.",
@@ -49,6 +52,8 @@ Il sopralluogo resta il passaggio che conferma misure, lavorazioni, logistica, t
   },
   {
     slug: "ristrutturazione-cucina",
+    descrizioneCard: "Rifacimento cucina con impianti, rivestimenti, predisposizioni e posa delle finiture.",
+
     titolo: "Ristrutturazione Cucina",
     sottotitolo: "Il cuore della casa rinnovato con stile e funzionalità",
     descrizione: "Ristrutturazione completa della cucina con nuovi impianti, pavimenti, rivestimenti, illuminazione e installazione mobili su misura.",
@@ -81,9 +86,11 @@ Proponiamo soluzioni su misura per ogni spazio, dalle cucine piccole e funzional
   },
   {
     slug: "ristrutturazione-bagno",
+    descrizioneCard: "Rifacimento bagno con demolizioni, nuovi impianti, impermeabilizzazione e posa sanitari.",
+
     titolo: "Ristrutturazione Bagno",
     sottotitolo: "Rifacimento completo del bagno con stima realistica e sopralluogo tecnico",
-    descrizione: "Ristrutturazione completa del bagno con demolizioni, smaltimento, rifacimento impianti, pavimenti, rivestimenti e sanitari. Il costo base da 5.000 € è un riferimento iniziale per bagni piccoli o medi con lavorazioni standard, da confermare dopo sopralluogo.",
+    descrizione: "Ristrutturazione completa del bagno con demolizioni, smaltimento, rifacimento impianti, pavimenti, rivestimenti e sanitari. La stima iniziale varia in base a dimensioni, accessibilità, finiture e stato degli impianti esistenti, da confermare dopo sopralluogo.",
     descrizioneLunga: `La ristrutturazione completa del bagno è un intervento tecnico che comprende demolizioni, rifacimento degli impianti, ripristino dei sottofondi, impermeabilizzazione e posa delle nuove finiture.
 
 Il costo base da 5.000 € rappresenta un riferimento iniziale per bagni di dimensioni contenute o medie, con configurazione standard e senza criticità particolari. Il preventivo definitivo può aumentare in caso di bagno più grande, spostamenti impiantistici rilevanti, finiture fuori capitolato o problematiche emerse dopo la demolizione.
@@ -115,6 +122,8 @@ Ogni stima online ha valore orientativo: il sopralluogo serve a verificare misur
   },
   {
     slug: "rifacimento-tetto",
+    descrizioneCard: "Lavori su copertura, impermeabilizzazione e pacchetto tetto in base a struttura e accessibilità.",
+
     titolo: "Rifacimento Tetto",
     sottotitolo: "Proteggi la tua casa con un tetto nuovo e sicuro",
     descrizione: "Rifacimento completo del tetto con struttura portante, copertura in tegole o altri materiali, isolamento termico e idraulico.",
@@ -147,6 +156,8 @@ Utilizziamo materiali certificati e tecniche costruttive aggiornate per garantir
   },
   {
     slug: "pavimenti-rivestimenti",
+    descrizioneCard: "Fornitura e posa di pavimenti e rivestimenti con preparazione dei supporti e finiture.",
+
     titolo: "Pavimenti e Rivestimenti",
     sottotitolo: "Rinnova gli ambienti con materiali di qualità",
     descrizione: "Fornitura e posa di pavimenti e rivestimenti in ceramica, gres porcellanato, parquet, marmo e altri materiali.",
@@ -179,6 +190,8 @@ Proponiamo una vasta gamma di materiali: gres porcellanato effetto legno o pietr
   },
   {
     slug: "impianti-elettrici-idraulici-termici",
+    descrizioneCard: "Adeguamento o rifacimento impianti con valutazione tecnica delle reti esistenti.",
+
     titolo: "Impianti Elettrici, Idraulici e Termici",
     sottotitolo: "Sicurezza ed efficienza per la tua casa",
     descrizione: "Progettazione e installazione di impianti elettrici, idraulici e termici a norma, con certificazioni e collaudi.",
@@ -211,6 +224,8 @@ Realizziamo impianti elettrici con quadri moderni e protezioni a norma, impianti
   },
   {
     slug: "cappotto-termico",
+    descrizioneCard: "Isolamento termico dell’involucro con analisi del supporto, dettagli esecutivi e prestazioni attese.",
+
     titolo: "Cappotto Termico",
     sottotitolo: "Isolamento esterno per comfort e risparmio energetico",
     descrizione: "Installazione di cappotto termico esterno per l'isolamento della facciata, con riduzione dei consumi energetici e maggiore comfort abitativo.",
