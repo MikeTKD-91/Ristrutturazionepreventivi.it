@@ -11,13 +11,6 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-const COSTI_BAGNO = [
-  { dimensione: "Bagno piccolo (fino a 4 mq)", base: "3.800 – 5.200 €", standard: "5.200 – 7.500 €", premium: "7.500 – 10.000 €" },
-  { dimensione: "Bagno standard (4–6 mq)", base: "5.000 – 6.500 €", standard: "6.500 – 9.000 €", premium: "9.000 – 13.000 €" },
-  { dimensione: "Bagno grande (6–9 mq)", base: "6.500 – 8.500 €", standard: "8.500 – 12.000 €", premium: "12.000 – 17.000 €" },
-  { dimensione: "Bagno padronale (oltre 9 mq)", base: "8.500 – 11.000 €", standard: "11.000 – 15.000 €", premium: "15.000 – 22.000 €" },
-];
-
 const LIVELLI_FINITURA = [
   { livello: "Base", descrizione: "Ceramica standard, sanitari di primo livello, rubinetteria entry-level. Funzionale, senza ricerca estetica.", colore: "bg-gray-100 text-gray-700" },
   { livello: "Standard", descrizione: "Gres porcellanato o grandi formati, sanitari sospesi, rubinetteria miscelatore. Il livello più richiesto.", colore: "bg-blue-50 text-navy" },
@@ -178,19 +171,19 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
                   Indicazioni di costo basate su riferimenti tecnici, criticità tipiche
                   del patrimonio edilizio di {comune.nome} e tempistiche reali di cantiere.
-                  Il preventivo definitivo emerge solo dal sopralluogo.
+                  Il preventivo finale emerge solo dal sopralluogo.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Lavori concordati</span>
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Bonus 50% applicabile</span>
                 </div>
-                {/* Pulsante scroll verso calcolatore */}
+                {/* Pulsante scroll verso modulo di stima */}
                 <a
-                  href="#calcolatore"
+                  href="#modulo di stima"
                   className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
                 >
-                  Scopri il costo
+                  Richiedi una prima stima
                 </a>
               </div>
 
@@ -208,8 +201,8 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
             </div>
           </div>
         </section>
-        {/* Calcolatore mobile */}
-        <div id="calcolatore" className="lg:hidden px-4 pt-6">
+        {/* Modulo di stima mobile */}
+        <div id="modulo di stima" className="lg:hidden px-4 pt-6">
           <CalcolatoreBagno comuneDefault={comune.nome} />
         </div>
 
@@ -217,68 +210,6 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto px-4 py-12 grid lg:grid-cols-3 gap-10 items-start">
           <div className="lg:col-span-2 space-y-16">
 
-            {/* ── TABELLA COSTI ── */}
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Quanto costa rifare il bagno a {comune.nome}?</h2>
-              <p className="text-gray-600 mb-6">
-                Le forbici di costo che trovi qui sotto sono orientative e si basano sul{" "}
-                <strong>Prezzario Regionale Campania</strong>. Il prezzo reale del tuo bagno
-                emerge solo dopo il sopralluogo, che permette di rilevare lo stato degli impianti
-                esistenti, eventuali criticità strutturali e le scelte di materiale.
-              </p>
-              <div className="hidden md:block overflow-x-auto rounded-xl border border-gray-200 mb-4">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="bg-navy text-white">
-                      <th className="text-left py-4 px-5 font-semibold">Dimensione bagno</th>
-                      <th className="text-center py-4 px-4 font-semibold">Base</th>
-                      <th className="text-center py-4 px-4 font-semibold">Standard</th>
-                      <th className="text-center py-4 px-4 font-semibold text-orange">Premium</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {COSTI_BAGNO.map((row, i) => (
-                      <tr key={row.dimensione} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                        <td className="py-4 px-5 font-medium text-navy">{row.dimensione}</td>
-                        <td className="py-4 px-4 text-center text-gray-700">{row.base}</td>
-                        <td className="py-4 px-4 text-center text-gray-700">{row.standard}</td>
-                        <td className="py-4 px-4 text-center font-semibold text-navy">{row.premium}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <div className="md:hidden space-y-4 mb-4">
-                {COSTI_BAGNO.map((row) => (
-                  <div key={row.dimensione} className="border border-gray-200 rounded-xl p-4">
-                    <p className="font-semibold text-navy mb-3">{row.dimensione}</p>
-                    <div className="grid grid-cols-3 gap-2 text-sm">
-                      <div className="bg-gray-50 rounded-lg p-2 text-center">
-                        <p className="text-gray-500 text-xs mb-1">Base</p>
-                        <p className="font-medium text-gray-700">{row.base}</p>
-                      </div>
-                      <div className="bg-blue-50 rounded-lg p-2 text-center">
-                        <p className="text-navy text-xs mb-1">Standard</p>
-                        <p className="font-medium text-navy">{row.standard}</p>
-                      </div>
-                      <div className="bg-orange-50 rounded-lg p-2 text-center">
-                        <p className="text-orange text-xs mb-1">Premium</p>
-                        <p className="font-medium text-navy">{row.premium}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
-                <span className="text-amber-500 text-lg flex-shrink-0 mt-0.5">⚠</span>
-                <p className="text-sm text-amber-900">
-                  <strong>Questi valori non costituiscono un preventivo vincolante.</strong>{" "}
-                  Il prezzo definitivo dipende dallo stato degli impianti esistenti, dalla
-                  presenza di criticità non visibili a distanza e dalle scelte specifiche di
-                  materiale. Il sopralluogo è l&apos;unico modo per definire un preventivo preciso.
-                </p>
-              </div>
-            </section>
 
             {/* ── LIVELLI FINITURA ── */}
             <section>
@@ -370,8 +301,8 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { step: "01", titolo: "Prima valutazione del budget", testo: "Inserisci i dati del tuo bagno nel calcolatore o scrivici su WhatsApp per ottenere una prima indicazione di costo. È un passaggio utile per capire la compatibilità con il budget, ma non sostituisce il sopralluogo tecnico." },
-                  { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico visita l'immobile, verifica lo stato degli impianti, rileva eventuali criticità e raccoglie tutte le informazioni per il preventivo definitivo." },
+                  { step: "01", titolo: "Prima valutazione del budget", testo: "Compila il modulo del tuo bagno nel modulo di stima o scrivici su WhatsApp per ricevere una prima indicazione di costo. È un passaggio utile per capire se la spesa è in linea con il budget, ma non sostituisce il sopralluogo tecnico." },
+                  { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico visita l'immobile, verifica lo stato degli impianti, rileva eventuali criticità e raccoglie tutte le informazioni per il preventivo finale." },
                   { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo scritto con prezzi unitari, materiali specificati, tempistiche e condizioni di garanzia. Trasparente, senza voci generiche." },
                 ].map((s) => (
                   <div key={s.step}>
@@ -440,7 +371,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
 
           {/* ── SIDEBAR STICKY ── */}
           <div className="hidden lg:block">
-            <div id="calcolatore" className="sticky top-6 space-y-6">
+            <div id="modulo di stima" className="sticky top-6 space-y-6">
               <CalcolatoreBagno comuneDefault={comune.nome} />
               <div className="bg-gray-50 rounded-2xl p-5">
                 <p className="text-sm font-semibold text-navy mb-3">Altri servizi a {comune.nome}</p>
@@ -472,7 +403,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               Vuoi sapere quanto costa il tuo bagno a {comune.nome}?
             </h2>
             <p className="text-white/70 mb-8 text-lg">
-              Scopri il costo del tuo intervento. Se la forbice è in linea col tuo budget,
+              Richiedi una prima stima del tuo intervento. Se la stima è in linea con il tuo budget,
               organizziamo il sopralluogo e prepariamo il preventivo dettagliato.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -482,7 +413,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                 rel="noopener noreferrer"
                 className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center"
               >
-                Richiedi preventivo su WhatsApp
+                Parla con noi su WhatsApp
               </a>
               <a href="tel:+393339809319" className="bg-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors text-center">
                 Chiama +39 333 980 9319
