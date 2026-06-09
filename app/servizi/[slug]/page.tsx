@@ -524,8 +524,6 @@ export default async function ServizioPage({ params }: Props) {
                       </div>
                       <div>
                         <h4 className="font-semibold text-navy text-sm">{s.titolo}</h4>
-                        {isBagno && (
-                    )}
                       </div>
                     </Link>
                   ))}
