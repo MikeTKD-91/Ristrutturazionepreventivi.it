@@ -124,9 +124,9 @@ Ogni stima online ha valore orientativo: il sopralluogo serve a verificare misur
     slug: "rifacimento-tetto",
     descrizioneCard: "Lavori su copertura, impermeabilizzazione e pacchetto tetto in base a struttura e accessibilità.",
 
-    titolo: "Rifacimento Tetto",
-    sottotitolo: "Proteggi la tua casa con un tetto nuovo e sicuro",
-    descrizione: "Rifacimento completo del tetto con struttura portante, copertura in tegole o altri materiali, isolamento termico e idraulico.",
+    titolo: "Rifacimento Tetto Casa",
+    sottotitolo: "Rifare il tetto di casa per eliminare infiltrazioni e migliorare isolamento e sicurezza",
+    descrizione: "Rifacimento completo del tetto di casa con struttura portante, copertura in tegole o altri materiali, isolamento termico e impermeabilizzazione.",
     descrizioneLunga: `Il tetto è l'elemento fondamentale per la protezione della casa dalle intemperie. Un tetto malmesso può causare infiltrazioni, muffe e problemi strutturali gravi. Il rifacimento del tetto è un investimento essenziale per la sicurezza e il valore dell'immobile.
 
 Il nostro servizio di rifacimento tetto comprende la rimozione della vecchia copertura, la verifica e il consolidamento della struttura portante, la posa di isolamento termico e idraulico di ultima generazione, l'installazione della nuova copertura con tegole, coppi o altri materiali scelti.
@@ -226,9 +226,9 @@ Realizziamo impianti elettrici con quadri moderni e protezioni a norma, impianti
     slug: "cappotto-termico",
     descrizioneCard: "Isolamento termico dell’involucro con analisi del supporto, dettagli esecutivi e prestazioni attese.",
 
-    titolo: "Cappotto Termico",
-    sottotitolo: "Isolamento esterno per comfort e risparmio energetico",
-    descrizione: "Installazione di cappotto termico esterno per l'isolamento della facciata, con riduzione dei consumi energetici e maggiore comfort abitativo.",
+    titolo: "Cappotto Termico per Casa",
+    sottotitolo: "Isolamento termico esterno per casa, comfort abitativo e risparmio energetico",
+    descrizione: "Installazione di cappotto termico esterno per casa e facciata, con isolamento termico, riduzione dei consumi energetici e maggiore comfort abitativo.",
     descrizioneLunga: `Il cappotto termico esterno è una delle migliori soluzioni per isolare la casa, ridurre i consumi energetici e migliorare il comfort abitativo. Consiste nell'applicazione di uno strato isolante sulla facciata esterna, protetto da un rivestimento finito.
 
 Il nostro servizio di installazione cappotto termico include la valutazione tecnica del fabbricato, la scelta del sistema isolante più adatto, la preparazione della superficie, la posa dei pannelli isolanti, l'applicazione della rete di armatura e del rasante, la finitura con intonaco o altri rivestimenti.
