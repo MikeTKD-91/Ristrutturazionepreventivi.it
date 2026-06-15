@@ -103,7 +103,7 @@ export default function AgroAversanoPage() {
                 href="#modulo di stima"
                 className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
               >
-                Richiedi una prima stima
+                Richiedi un preventivo indicativo
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -241,7 +241,7 @@ export default function AgroAversanoPage() {
             <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { n: "01", t: "Richiedi una prima stima", d: "Usi il modulo di stima o ci scrivi su WhatsApp per ricevere una prima indicazione del costo e capire se la spesa è in linea con il tuo budget. Il preventivo finale si definisce dopo verifica tecnica e sopralluogo." },
+                { n: "01", t: "Richiedi un preventivo indicativo", d: "Usi il modulo di stima o ci scrivi su WhatsApp per ricevere una prima indicazione del costo e capire se la spesa è in linea con il tuo budget. Il preventivo finale si definisce dopo verifica tecnica e sopralluogo." },
                 { n: "02", t: "Sopralluogo tecnico", d: "Il nostro tecnico visita l'immobile. Verifica impianti, strutture e criticità specifiche dell'Agro Aversano: solo così il preventivo è affidabile." },
                 { n: "03", t: "Preventivo scritto", d: "Prezzi unitari, materiali specificati, tempistiche e garanzia decennale. Tutto nero su bianco prima di iniziare." },
               ].map((s) => (
@@ -289,7 +289,7 @@ export default function AgroAversanoPage() {
             Vuoi sapere quanto costa ristrutturare nell'Agro Aversano?
           </h2>
           <p className="text-white/70 mb-8 text-lg">
-            Parti da una prima stima. Se il quadro economico è compatibile con il tuo intervento, organizziamo il sopralluogo e prepariamo una proposta tecnica chiara.
+            Parti da un preventivo indicativo. Se il quadro economico è compatibile con il tuo intervento, organizziamo il sopralluogo e prepariamo una proposta tecnica chiara.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
