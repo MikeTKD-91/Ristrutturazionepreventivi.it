@@ -89,7 +89,7 @@ Proponiamo soluzioni su misura per ogni spazio, dalle cucine piccole e funzional
     descrizioneCard: "Rifacimento bagno con demolizioni, nuovi impianti, impermeabilizzazione e posa sanitari.",
 
     titolo: "Ristrutturazione Bagno",
-    sottotitolo: "Rifacimento completo del bagno con stima realistica e sopralluogo tecnico",
+    sottotitolo: "Ristrutturazione bagno completa con nuovi impianti, sanitari e sopralluogo tecnico",
     descrizione: "Ristrutturazione completa del bagno con demolizioni, smaltimento, rifacimento impianti, pavimenti, rivestimenti e sanitari. La stima iniziale varia in base a dimensioni, accessibilità, finiture e stato degli impianti esistenti, da confermare dopo sopralluogo.",
     descrizioneLunga: `La ristrutturazione completa del bagno è un intervento tecnico che comprende demolizioni, rifacimento degli impianti, ripristino dei sottofondi, impermeabilizzazione e posa delle nuove finiture.
 
