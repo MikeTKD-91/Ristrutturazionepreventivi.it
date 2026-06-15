@@ -480,7 +480,7 @@ export default async function ServizioPage({ params }: Props) {
               {/* CTA */}
               <div className="bg-navy p-6 rounded-2xl text-white">
                 <h3 className="text-xl font-bold mb-4">
-                  Richiedi una prima stima del tuo intervento
+                  Richiedi un preventivo per il tuo intervento
                 </h3>
                 <p className="text-white/80 mb-6">
                   Contattaci su WhatsApp per capire il costo del tuo progetto di {servizio.titolo.toLowerCase()}. Se i dati rientrano nei parametri indicati, prepariamo il preventivo e confermiamo tutto con il sopralluogo.
@@ -541,7 +541,7 @@ export default async function ServizioPage({ params }: Props) {
             Vuoi sapere quanto costa il tuo intervento?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-            Richiedi una prima stima del tuo progetto di {servizio.titolo.toLowerCase()} e richiedi il preventivo. Il sopralluogo conferma misure, lavorazioni e condizioni reali dell'immobile.
+            Richiedi un preventivo per il tuo progetto di {servizio.titolo.toLowerCase()}. Il sopralluogo conferma misure, lavorazioni e condizioni reali dell'immobile.
           </p>
           <a
             href="https://wa.me/393339809319"

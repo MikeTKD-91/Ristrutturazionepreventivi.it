@@ -102,7 +102,7 @@ const servicePriceLabels: Record<string, string> = {
                 <span className="text-orange">Caserta</span>
               </h1>
               <p className="text-lg text-white/80 mb-8 max-w-xl leading-relaxed">
-                Richiedi una prima stima del costo della ristrutturazione
+                Richiedi un preventivo online per la ristrutturazione
                 e capisci se la spesa è in linea con il tuo budget. Il preventivo finale
                 si conferma dopo verifica tecnica e sopralluogo.
               </p>
@@ -327,7 +327,7 @@ const servicePriceLabels: Record<string, string> = {
             Vuoi sapere quanto costa la tua ristrutturazione?
           </h2>
           <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
-            Richiedi una prima stima della ristrutturazione in base ai dati che inserisci. Se il caso rientra nei parametri indicati, organizziamo il sopralluogo e prepariamo il preventivo.
+            Richiedi un preventivo indicativo della ristrutturazione in base ai dati che inserisci. Se il caso rientra nei parametri indicati, organizziamo il sopralluogo e prepariamo il preventivo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

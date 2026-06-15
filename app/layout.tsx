@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | RistrutturazionePreventivi.it",
   },
   description:
-    "Ristrutturazioni residenziali a Napoli, Caserta e Agro Aversano. Prima stima online, verifica tecnica e sopralluogo per definire il preventivo finale.",
+    "Ristrutturazioni residenziali a Napoli, Caserta e Agro Aversano. Richiedi un preventivo online, con verifica tecnica e sopralluogo per definire costi e lavorazioni.",
   keywords: [
     "ristrutturazione", "preventivi", "Napoli", "Caserta", "Agro Aversano",
     "appartamento", "cucina", "bagno", "tetto", "cappotto termico", "Lusciano", "Aversa",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "RistrutturazionePreventivi.it",
     title: "Ristrutturazioni a Napoli, Caserta e Agro Aversano | Costo ristrutturazione e sopralluogo",
     description:
-      "Richiedi una prima stima per ristrutturazioni a Napoli, Caserta e Agro Aversano. 7 servizi, sopralluogo tecnico e proposta chiara da verificare sul posto. Russo FE Costruzione SRL.",
+      "Richiedi un preventivo online per ristrutturazioni a Napoli, Caserta e Agro Aversano. 7 servizi, sopralluogo tecnico e proposta chiara da verificare sul posto. Russo FE Costruzione SRL.",
     images: [
       {
         url: "https://ristrutturazionepreventivi.it/og-image.jpg",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ristrutturazioni Napoli, Caserta e Agro Aversano",
-    description: "Richiedi una prima stima per ristrutturazioni in Campania, con sopralluogo tecnico.",
+    description: "Richiedi un preventivo online per ristrutturazioni in Campania, con sopralluogo tecnico.",
     images: ["https://ristrutturazionepreventivi.it/og-image.jpg"],
   },
   robots: {

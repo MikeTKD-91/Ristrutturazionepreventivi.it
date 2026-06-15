@@ -7,13 +7,13 @@ import { getDataAggiornamento } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Zone Servite | Ristrutturazioni Napoli e Provincia, Caserta e Agro Aversano",
-  description: "Operiamo in tutti i comuni delle Province di Napoli e Caserta, con specializzazione nell'Agro Aversano. Richiedi una prima stima e sopralluogo tecnico.",
+  description: "Operiamo in tutti i comuni delle Province di Napoli e Caserta, con specializzazione nell'Agro Aversano. Richiedi un preventivo indicativo e sopralluogo tecnico.",
   alternates: {
     canonical: "https://ristrutturazionepreventivi.it/zone-servite/",
   },
   openGraph: {
     title: "Zone Servite | Ristrutturazioni Napoli e Provincia, Caserta e Agro Aversano",
-    description: "Province di Napoli e Caserta · Agro Aversano. Richiedi una prima stima e sopralluogo tecnico.",
+    description: "Province di Napoli e Caserta · Agro Aversano. Richiedi un preventivo indicativo e sopralluogo tecnico.",
     url: "https://ristrutturazionepreventivi.it/zone-servite/",
     images: [
       {
@@ -46,12 +46,12 @@ export default function ZoneServitePage() {
               Operiamo in tutta la <span className="text-orange font-bold">Provincia di Napoli e Caserta</span>, con specializzazione nell'<span className="text-orange font-bold">Agro Aversano</span>.
             </p>
             
-            {/* Pulsante "Richiedi una prima stima" sotto il titolo */}
+            {/* Pulsante "Richiedi un preventivo indicativo" sotto il titolo */}
             <a
               href="#modulo di stima"
               className="inline-flex items-center gap-2 bg-orange hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold transition-colors text-lg shadow-lg mt-8"
             >
-              Richiedi una prima stima
+              Richiedi un preventivo indicativo
               <ArrowRight className="h-5 w-5" />
             </a>
           </div>
@@ -220,7 +220,7 @@ export default function ZoneServitePage() {
             Trova il Tuo Comune
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-            Seleziona il tuo comune per consultare i contenuti locali e partire da una prima stima del progetto.
+            Seleziona il tuo comune per consultare i contenuti locali e partire da un preventivo indicativo del progetto.
           </p>
           <a
             href="https://wa.me/393339809319"
