@@ -183,7 +183,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                   href="#modulo di stima"
                   className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
                 >
-                  Richiedi una prima stima
+                  Richiedi un preventivo indicativo
                 </a>
               </div>
 
@@ -403,7 +403,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
               Vuoi sapere quanto costa il tuo bagno a {comune.nome}?
             </h2>
             <p className="text-white/70 mb-8 text-lg">
-              Richiedi una prima stima del tuo intervento. Se la stima è in linea con il tuo budget,
+              Richiedi un preventivo indicativo del tuo intervento. Se la stima è in linea con il tuo budget,
               organizziamo il sopralluogo e prepariamo il preventivo dettagliato.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
