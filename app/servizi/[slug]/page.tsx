@@ -412,41 +412,58 @@ export default async function ServizioPage({ params }: Props) {
               </div>
 
               {/* Prezzi */}
-              <div>
-                <h2 className="text-2xl font-bold text-navy mb-6">
-                  Prezzi Indicativi (Prezzario Regionale Campania)
-                </h2>
-                <div className="grid sm:grid-cols-3 gap-4">
-                  <div className="bg-white border-2 border-gray-200 p-6 rounded-xl text-center">
-                    <p className="text-sm text-gray-500 mb-2">Finitura Base</p>
-                    <p className="text-3xl font-bold text-navy">
-                      {servizio.prezzoMq.base} €
-                    </p>
-                    <p className="text-sm text-gray-400">/mq</p>
-                  </div>
-                  <div className="bg-white border-2 border-orange p-6 rounded-xl text-center relative">
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange text-white text-xs px-3 py-1 rounded-full">
-                      Più scelta
-                    </div>
-                    <p className="text-sm text-gray-500 mb-2">Finitura Standard</p>
+              {isBagno ? (
+                <div>
+                  <h2 className="text-2xl font-bold text-navy mb-6">
+                    Costo indicativo
+                  </h2>
+                  <div className="bg-white border-2 border-orange p-6 rounded-xl text-center">
+                    <p className="text-sm text-gray-500 mb-2">Esempio per bagno standard da 6 mq</p>
                     <p className="text-3xl font-bold text-orange">
-                      {servizio.prezzoMq.standard} €
+                      Ristrutturazione bagno da 5.500 €
                     </p>
-                    <p className="text-sm text-gray-400">/mq</p>
-                  </div>
-                  <div className="bg-white border-2 border-gray-200 p-6 rounded-xl text-center">
-                    <p className="text-sm text-gray-500 mb-2">Finitura Premium</p>
-                    <p className="text-3xl font-bold text-navy">
-                      {servizio.prezzoMq.premium} €
+                    <p className="text-sm text-gray-500 mt-3">
+                      Una base utile per orientarti. Il preventivo finale dipende da impianti, demolizioni, rivestimenti, sanitari scelti e complessità dell&apos;intervento.
                     </p>
-                    <p className="text-sm text-gray-400">/mq</p>
                   </div>
                 </div>
-                <p className="text-sm text-gray-500 mt-4">
-                  * I prezzi sono indicativi e possono variare in base alle specifiche del progetto.
-                  Costi aggiornati a {dataAggiornamento}.
-                </p>
-              </div>
+              ) : (
+                <div>
+                  <h2 className="text-2xl font-bold text-navy mb-6">
+                    Prezzi Indicativi (Prezzario Regionale Campania)
+                  </h2>
+                  <div className="grid sm:grid-cols-3 gap-4">
+                    <div className="bg-white border-2 border-gray-200 p-6 rounded-xl text-center">
+                      <p className="text-sm text-gray-500 mb-2">Finitura Base</p>
+                      <p className="text-3xl font-bold text-navy">
+                        {servizio.prezzoMq.base} €
+                      </p>
+                      <p className="text-sm text-gray-400">/mq</p>
+                    </div>
+                    <div className="bg-white border-2 border-orange p-6 rounded-xl text-center relative">
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange text-white text-xs px-3 py-1 rounded-full">
+                        Più scelta
+                      </div>
+                      <p className="text-sm text-gray-500 mb-2">Finitura Standard</p>
+                      <p className="text-3xl font-bold text-orange">
+                        {servizio.prezzoMq.standard} €
+                      </p>
+                      <p className="text-sm text-gray-400">/mq</p>
+                    </div>
+                    <div className="bg-white border-2 border-gray-200 p-6 rounded-xl text-center">
+                      <p className="text-sm text-gray-500 mb-2">Finitura Premium</p>
+                      <p className="text-3xl font-bold text-navy">
+                        {servizio.prezzoMq.premium} €
+                      </p>
+                      <p className="text-sm text-gray-400">/mq</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-500 mt-4">
+                    * I prezzi sono indicativi e possono variare in base alle specifiche del progetto.
+                    Costi aggiornati a {dataAggiornamento}.
+                  </p>
+                </div>
+              )}
 
               {/* Zone */}
               <div>
@@ -454,8 +471,7 @@ export default async function ServizioPage({ params }: Props) {
                   Dove Operiamo
                 </h2>
                 <p className="text-gray-600 mb-4">
-                  Offriamo il servizio di {servizio.titolo.toLowerCase()} nelle Province di Napoli e Caserta 
-                  di Napoli, Caserta e Agro Aversano:
+                  Offriamo il servizio di {servizio.titolo.toLowerCase()} nelle province di Napoli, Caserta e Agro Aversano:
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {comuni.slice(0, 15).map((comune) => (
