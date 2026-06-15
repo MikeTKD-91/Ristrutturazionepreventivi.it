@@ -164,7 +164,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                 </div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Ristrutturazione Bagno a {comune.nome}:{" "}
-                  <span className="text-orange">costo base da 5.000 €</span>
+                  <span className="text-orange">Preventivo e costi</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
                   Il costo base da 5.000 € è un riferimento iniziale per un bagno standard a {comune.nome}. Il preventivo definitivo si conferma solo dopo verifica tecnica e sopralluogo.
