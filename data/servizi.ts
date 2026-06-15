@@ -54,7 +54,7 @@ Il sopralluogo resta il passaggio che conferma misure, lavorazioni, logistica, t
     slug: "ristrutturazione-cucina",
     descrizioneCard: "Rifacimento cucina con impianti, rivestimenti, predisposizioni e posa delle finiture.",
 
-    titolo: "Ristrutturazione e Rifacimento Cucina",
+    titolo: "Ristrutturazione Cucina",
     sottotitolo: "Rifacimento cucina completo con impianti, rivestimenti e soluzioni su misura",
     descrizione: "Ristrutturazione e rifacimento cucina con nuovi impianti, pavimenti, rivestimenti, illuminazione e installazione di mobili su misura.",
     descrizioneLunga: `La cucina è il cuore pulsante della casa, il luogo dove si preparano i pasti ma anche dove ci si ritrova in famiglia. La sua ristrutturazione richiede attenzione particolare alla funzionalità, alla sicurezza e all'estetica.
@@ -158,9 +158,9 @@ Utilizziamo materiali certificati e tecniche costruttive aggiornate per garantir
     slug: "pavimenti-rivestimenti",
     descrizioneCard: "Fornitura e posa di pavimenti e rivestimenti con preparazione dei supporti e finiture.",
 
-    titolo: "Posa e Rifacimento Pavimenti e Rivestimenti",
-    sottotitolo: "Posa pavimenti e rivestimenti per casa con materiali resistenti e finiture di qualità",
-    descrizione: "Posa e rifacimento pavimenti e rivestimenti in ceramica, gres porcellanato, parquet, marmo e altri materiali per casa e appartamento.",
+    titolo: "Pavimenti e Rivestimenti per Casa",
+    sottotitolo: "Posa e rifacimento pavimenti e rivestimenti per casa con materiali resistenti e finiture di qualità",
+    descrizione: "Posa e rifacimento di pavimenti e rivestimenti per casa e appartamento in ceramica, gres porcellanato, parquet, marmo e altri materiali.",
     descrizioneLunga: `Pavimenti e rivestimenti sono gli elementi che caratterizzano maggiormente l'estetica di una casa. La loro scelta influenza non solo l'aspetto visivo ma anche la funzionalità, la manutenzione e il comfort degli ambienti.
 
 Il nostro servizio di posa pavimenti e rivestimenti include la consulenza nella scelta dei materiali più adatti alle esigenze del cliente, la preparazione del supporto, la posa professionale con tecniche aggiornate, la sigillatura e la pulizia finale.
