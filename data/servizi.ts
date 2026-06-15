@@ -192,7 +192,7 @@ Proponiamo una vasta gamma di materiali: gres porcellanato effetto legno o pietr
     slug: "impianti-elettrici-idraulici-termici",
     descrizioneCard: "Adeguamento o rifacimento impianti con valutazione tecnica delle reti esistenti.",
 
-    titolo: "Rifacimento Impianti Elettrici, Idraulici e Termici",
+    titolo: "Rifacimento Impianti Casa",
     sottotitolo: "Rifacimento impianti casa a norma per sicurezza, comfort ed efficienza",
     descrizione: "Rifacimento di impianti elettrici, idraulici e termici per casa e appartamento, con installazione a norma, certificazioni e collaudi.",
     descrizioneLunga: `Gli impianti sono il sistema nervoso della casa: devono essere sicuri, efficienti e conformi alle normative vigenti. Un impianto fatto male può comportare rischi per la sicurezza e sprechi energetici.
