@@ -103,12 +103,12 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
   const serviceSchema = buildServiceSchema({
     serviceType: "Ristrutturazione Bagno",
     serviceName: `Ristrutturazione Bagno a ${comune.nome}`,
-    descrizione: `Rifacimento completo del bagno a ${comune.nome}: demolizione, impermeabilizzazione, posa rivestimenti, sostituzione impianti e sanitari. ${comune.caratteristicheBagni}`,
+    descrizione: `Ristrutturazione bagno a ${comune.nome} con demolizioni, rifacimento impianti, impermeabilizzazione, posa di pavimenti e rivestimenti, installazione sanitari e verifica tecnica finale. ${comune.caratteristicheBagni}`,
     comuneNome: comune.nome,
     comuneSlug: comune.slug,
     servizioSlug,
     prezzoMin: "5000",
-    prezzoMax: "22000",
+    prezzoMax: "12000",
   });
 
   const howToSchema = buildHowToSchema("Ristrutturazione Bagno", comune.nome);
