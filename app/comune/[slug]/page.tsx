@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!comune) return {};
   const url = `https://ristrutturazionepreventivi.it/comune/${slug}/`;
   return {
-    title: `Ristrutturazione Appartamento Completo a ${comune.nome} | Costi reali e prima stima online`,
-    description: `Ristrutturazione appartamento completo a ${comune.nome}: costi reali, livelli di finitura, criticità locali e prima stima online. Il quadro economico definitivo richiede sopralluogo e verifica tecnica.`,
+    title: `Ristrutturazione Casa e Appartamento Completo a ${comune.nome} | Costi reali e prima stima online`,
+    description: `Ristrutturazione casa e appartamento completo a ${comune.nome}: costi reali, livelli di finitura, criticità locali e prima stima online. Il quadro economico definitivo richiede sopralluogo e verifica tecnica.`,
     alternates: { canonical: url },
     openGraph: {
-      title: `Ristrutturazione Appartamento Completo a ${comune.nome} | Costi reali e prima stima online`,
-      description: `Ristrutturazione appartamento completo a ${comune.nome}: costi reali, livelli di finitura, criticità locali e prima stima online. Il quadro economico definitivo richiede sopralluogo e verifica tecnica.`,
+      title: `Ristrutturazione Casa e Appartamento Completo a ${comune.nome} | Costi reali e prima stima online`,
+      description: `Ristrutturazione casa e appartamento completo a ${comune.nome}: costi reali, livelli di finitura, criticità locali e prima stima online. Il quadro economico definitivo richiede sopralluogo e verifica tecnica.`,
       url,
       type: "article",
       siteName: "ristrutturazionepreventivi.it",
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           url: "https://ristrutturazionepreventivi.it/images/servizi/ristrutturazione-appartamento-completo.jpg",
           width: 1200,
           height: 630,
-          alt: `Ristrutturazione appartamento completo a ${comune.nome}`,
+          alt: `Ristrutturazione casa e appartamento completo a ${comune.nome}`,
         },
       ],
     },
@@ -129,11 +129,11 @@ export default async function ComunePage({ params }: PageProps) {
               {/* Testo */}
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
-                  Ristrutturazione Appartamento Completo a {comune.nome}:{" "}
+                  Ristrutturazione Casa e Appartamento Completo a {comune.nome}:{" "}
                   <span className="text-orange">costi reali e prima stima online</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Se stai valutando una ristrutturazione completa del tuo appartamento a {comune.nome}, qui trovi una prima stima online basata su costi reali, livelli di finitura e parametri coerenti con il tipo di intervento. Il quadro economico definitivo viene confermato solo dopo verifica tecnica e sopralluogo.
+                  Se stai valutando una ristrutturazione completa della tua casa o del tuo appartamento a {comune.nome}, qui trovi una prima stima online basata su costi reali, livelli di finitura e parametri coerenti con il tipo di intervento. Il quadro economico definitivo viene confermato solo dopo verifica tecnica e sopralluogo.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {["Prezzario Regionale Campania", "Lavori concordati", "Bonus 50% applicabile"].map((t) => (
@@ -154,7 +154,7 @@ export default async function ComunePage({ params }: PageProps) {
               <div className="hidden lg:block relative h-72 rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/servizi/ristrutturazione-appartamento-completo.jpg"
-                  alt={`Ristrutturazione appartamento a ${comune.nome}`}
+                  alt={`Ristrutturazione casa o appartamento a ${comune.nome}`}
                   fill
                   className="object-cover"
                   priority
@@ -172,9 +172,9 @@ export default async function ComunePage({ params }: PageProps) {
           <div className="lg:col-span-2 space-y-16">
 
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione appartamento completo a {comune.nome}</h2>
+              <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione casa e appartamento completo a {comune.nome}</h2>
               <p className="text-gray-600">
-                Qui trovi una stima realistica dei costi di una ristrutturazione completa pensata per appartamenti da rifare in modo coordinato, con una prima stima online e verifica tecnica finale solo dopo sopralluogo.
+                Qui trovi una stima realistica dei costi di una ristrutturazione completa pensata per case o appartamenti da rifare in modo coordinato, con una prima stima online e verifica tecnica finale solo dopo sopralluogo.
               </p>
             </section>
 
