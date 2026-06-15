@@ -1,43 +1,53 @@
-// app/comune/[slug]/ristrutturazione-bagno/page.tsx
-
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { ArrowRight, Check, MessageCircle, X } from "lucide-react";
 import { comuni, getComuneBySlug } from "@/data/comuni";
+import { servizi } from "@/data/servizi";
 import CalcolatoreBagno from "@/components/shared/CalcolatoreBagno";
+import { getDataAggiornamento } from "@/lib/utils";
+import {
+  buildBreadcrumb,
+  buildLocalBusiness,
+  buildServiceSchema,
+  buildHowToSchema,
+  buildFaqSchema,
+} from "@/lib/schema";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-const LIVELLI_FINITURA = [
-  { livello: "Base", descrizione: "Ceramica standard, sanitari di primo livello, rubinetteria entry-level. Funzionale, senza ricerca estetica.", colore: "bg-gray-100 text-gray-700" },
-  { livello: "Standard", descrizione: "Gres porcellanato o grandi formati, sanitari sospesi, rubinetteria miscelatore. Il livello più richiesto.", colore: "bg-blue-50 text-navy" },
-  { livello: "Premium", descrizione: "Grandi lastre, sanitari di design, doccia walk-in, riscaldamento a pavimento, domotica. Nessun compromesso.", colore: "bg-orange-50 text-orange" },
+const CARATTERISTICHE_BAGNO = [
+  "Smontaggio dei sanitari esistenti",
+  "Demolizione di pavimento, rivestimenti e massetto con disconnessione degli impianti esistenti",
+  "Carico, trasporto e smaltimento dei materiali di risulta",
+  "Realizzazione del nuovo impianto idrico-sanitario ed elettrico del bagno",
+  "Formazione del nuovo massetto e piano di posa",
+  "Impermeabilizzazione dell'area doccia o vasca",
+  "Fornitura e posa di pavimenti e rivestimenti",
+  "Fornitura e installazione di wc, bidet, lavabo con mobile sospeso, doccia oppure vasca, con rubinetteria inclusa",
 ];
 
-const COSA_INCLUDE_RIFACIMENTO = [
-  { voce: "Demolizione e smaltimento rivestimenti e sanitari esistenti", incluso: true },
-  { voce: "Impermeabilizzazione pareti e pavimento (sistema a ponte liquido)", incluso: true },
-  { voce: "Posa nuovi rivestimenti e pavimenti", incluso: true },
-  { voce: "Sostituzione sanitari (WC, bidet, lavabo)", incluso: true },
-  { voce: "Nuova rubinetteria e miscelatori", incluso: true },
-  { voce: "Rifacimento impianto idrico-sanitario interno", incluso: true },
-  { voce: "Rifacimento impianto elettrico bagno (IP44 obbligatorio)", incluso: true },
-  { voce: "Sostituzione vasca / box doccia", incluso: true },
-  { voce: "Nuova porta e telaio", incluso: false, nota: "opzionale, preventivata separatamente" },
-  { voce: "Riscaldamento a pavimento", incluso: false, nota: "disponibile su richiesta, preventivato separatamente" },
+const ESCLUSIONI_BAGNO = [
+  "Opere extra capitolato o richieste fuori standard",
+  "Box doccia",
+  "Scaldabagno, termoarredo e accessori non previsti nel pacchetto base",
+  "Controsoffitti, faretti, nicchie su misura, velette e lavorazioni decorative",
+  "Spostamenti importanti di scarichi e colonne montanti se richiedono opere aggiuntive",
+  "Adeguamenti su murature ammalorate, umidità, sottofondi deteriorati o imprevisti emersi dopo la demolizione",
+  "Permessi, pratiche edilizie o adempimenti tecnici se necessari",
+  "Forniture extra capitolato o di fascia superiore rispetto alla dotazione base",
 ];
 
-const TEMPISTICHE = [
-  { fase: "Demolizione e rimozione", giorni: "2–3 gg", nota: "smaltimento in giornata" },
-  { fase: "Impermeabilizzazione", giorni: "1–2 gg", nota: "attesa essicazione inclusa" },
-  { fase: "Posa pavimento e rivestimenti", giorni: "3–5 gg", nota: "in base alla dimensione e al formato" },
-  { fase: "Impianti idrico-sanitari", giorni: "1–2 gg", nota: "in parallelo o successivo" },
-  { fase: "Impianto elettrico", giorni: "1 gg", nota: "obbligatorio IP44 in zone umide" },
-  { fase: "Montaggio sanitari e rubinetteria", giorni: "1 gg", nota: "" },
-  { fase: "Stuccatura, sigillatura, rifinitura", giorni: "1–2 gg", nota: "attesa essicazione inclusa" },
+const VANTAGGI_BAGNO = [
+  "Bagno impermeabile e sicuro",
+  "Sanitari di design o classici",
+  "Soluzioni per disabili disponibili",
+  "Materiali antimuffa e antibatterici",
+  "Materiali certificati CE",
+  "Possibilità di vasca o doccia",
 ];
 
 export async function generateStaticParams() {
@@ -66,7 +76,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "website",
       images: [
         {
-          url: `https://ristrutturazionepreventivi.it/images/servizi/ristrutturazione-bagno.jpg`,
+          url: "https://ristrutturazionepreventivi.it/images/servizi/ristrutturazione-bagno.jpg",
           width: 1200,
           height: 630,
           alt: title,
@@ -75,14 +85,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
   };
 }
-
-import {
-  buildBreadcrumb,
-  buildLocalBusiness,
-  buildServiceSchema,
-  buildHowToSchema,
-  buildFaqSchema,
-} from "@/lib/schema";
 
 function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
   if (!comune) return null;
@@ -112,11 +114,7 @@ function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
   });
 
   const howToSchema = buildHowToSchema("Ristrutturazione Bagno", comune.nome);
-
-  // FAQ specifiche del bagno se disponibili, altrimenti quelle generali del comune
-  const faqSource = comune.faqBagno && comune.faqBagno.length > 0
-    ? comune.faqBagno
-    : comune.faq;
+  const faqSource = comune.faqBagno && comune.faqBagno.length > 0 ? comune.faqBagno : comune.faq;
   const faqSchema = buildFaqSchema(faqSource);
 
   return { breadcrumb, localBusiness, serviceSchema, howToSchema, faqSchema };
@@ -126,7 +124,10 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) notFound();
+
   const jsonLd = buildJsonLd(comune);
+  const dataAggiornamento = getDataAggiornamento();
+  const altriServizi = servizi.filter((s) => s.slug !== "ristrutturazione-bagno").slice(0, 3);
 
   return (
     <>
@@ -142,9 +143,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
         </>
       )}
 
-      <main className="min-h-screen bg-white">
-
-        {/* ── HERO ── */}
+      <div className="min-h-screen bg-white">
         <section className="bg-navy py-14 px-4">
           <div className="max-w-6xl mx-auto">
             <nav className="text-sm text-white/50 mb-6 flex flex-wrap gap-1 items-center">
@@ -158,37 +157,30 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
             </nav>
 
             <div className="grid lg:grid-cols-2 gap-10 items-center">
-
-              {/* Testo */}
               <div>
-                <p className="text-orange text-sm font-semibold uppercase tracking-widest mb-3">
-                  Ristrutturazione Bagno · {comune.nome}
-                </p>
+                <div className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                  <Check className="h-4 w-4 text-orange" />
+                  Costi aggiornati a {dataAggiornamento}
+                </div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
-                  Ristrutturazione Bagno a {comune.nome}:<br />
-                  <span className="text-orange">Costi reali e preventivo immediato</span>
+                  Ristrutturazione Bagno a {comune.nome}:{" "}
+                  <span className="text-orange">costo base da 5.000 €</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Indicazioni di costo basate su riferimenti tecnici, criticità tipiche
-                  del patrimonio edilizio di {comune.nome} e tempistiche reali di cantiere.
-                  Il preventivo finale emerge solo dal sopralluogo.
+                  Il costo base da 5.000 € è un riferimento iniziale per un bagno standard a {comune.nome}. Il preventivo definitivo si conferma solo dopo verifica tecnica e sopralluogo.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
-                  <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>
-                  <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Lavori concordati</span>
-                  <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Bonus 50% applicabile</span>
+                  {["Prezzario Regionale Campania", "Sopralluogo tecnico", "Stima verificabile"].map((t) => (
+                    <span key={t} className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">{t}</span>
+                  ))}
                 </div>
-                {/* Pulsante scroll verso modulo di stima */}
-                <a
-                  href="#modulo di stima"
-                  className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
-                >
-                  Richiedi un preventivo indicativo
+                <a href="#modulo di stima" className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">
+                  Richiedi una stima
+                  <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
 
-              {/* Foto servizio */}
-              <div className="hidden lg:block relative h-72 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="hidden lg:block relative h-72 rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/servizi/ristrutturazione-bagno.jpg"
                   alt={`Ristrutturazione bagno a ${comune.nome}`}
@@ -197,234 +189,151 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                   priority
                 />
               </div>
-
             </div>
           </div>
         </section>
-        {/* Modulo di stima mobile */}
+
         <div id="modulo di stima" className="lg:hidden px-4 pt-6">
           <CalcolatoreBagno comuneDefault={comune.nome} />
         </div>
 
-        {/* ── CORPO PAGINA ── */}
-        <div className="max-w-6xl mx-auto px-4 py-12 grid lg:grid-cols-3 gap-10 items-start">
-          <div className="lg:col-span-2 space-y-16">
+        <div className="container mx-auto px-4 py-20 grid lg:grid-cols-3 gap-10 items-start">
+          <div className="lg:col-span-2 space-y-12">
+            <div>
+              <h2 className="text-2xl font-bold text-navy mb-4">Descrizione del Servizio</h2>
+              <div className="prose prose-lg max-w-none text-gray-600 whitespace-pre-line">
+                {`La ristrutturazione completa del bagno a ${comune.nome} è un intervento tecnico che comprende demolizioni, rifacimento degli impianti, ripristino dei sottofondi, impermeabilizzazione e posa delle nuove finiture.
 
+Il costo base da 5.000 € rappresenta un riferimento iniziale per bagni di dimensioni contenute o medie, con configurazione standard e senza criticità particolari. Il preventivo definitivo può aumentare in caso di bagno più grande, spostamenti impiantistici rilevanti, finiture fuori capitolato o problematiche emerse dopo la demolizione.
 
-            {/* ── LIVELLI FINITURA ── */}
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Cosa cambia tra finitura Base, Standard e Premium?</h2>
-              <p className="text-gray-600 mb-6">
-                Il livello di finitura è il principale fattore che sposta il costo verso l&apos;alto o verso il basso. Ecco cosa include ciascun livello nella pratica.
-              </p>
-              <div className="grid md:grid-cols-3 gap-4">
-                {LIVELLI_FINITURA.map((lv) => (
-                  <div key={lv.livello} className={`rounded-xl p-5 ${lv.colore}`}>
-                    <p className="font-bold text-lg mb-2">{lv.livello}</p>
-                    <p className="text-sm leading-relaxed">{lv.descrizione}</p>
-                  </div>
-                ))}
+Il nostro servizio comprende smontaggio dei sanitari esistenti, demolizione di pavimenti e rivestimenti, smaltimento dei materiali di risulta, realizzazione del nuovo impianto idrico-sanitario ed elettrico del bagno, formazione del massetto, impermeabilizzazione della zona doccia o vasca, posa di pavimenti e rivestimenti e installazione dei nuovi sanitari con rubinetteria.
+
+Ogni stima online ha valore orientativo: il sopralluogo serve a verificare misure, stato degli impianti, condizioni del supporto e reali necessità del cantiere a ${comune.nome}.`}
               </div>
-            </section>
+            </div>
 
-            {/* ── COSA INCLUDE ── */}
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Cosa include il rifacimento completo del bagno</h2>
-              <p className="text-gray-600 mb-6">
-                Un rifacimento completo non è solo "cambiare le piastrelle". Ecco cosa comprende un intervento eseguito a regola d&apos;arte.
-              </p>
-              <div className="space-y-3">
-                {COSA_INCLUDE_RIFACIMENTO.map((item) => (
-                  <div key={item.voce} className={`flex items-start gap-3 p-4 rounded-xl ${item.incluso ? "bg-green-50" : "bg-gray-50"}`}>
-                    <span className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 ${item.incluso ? "bg-green-500 text-white" : "bg-gray-300 text-gray-600"}`}>
-                      {item.incluso ? "✓" : "○"}
-                    </span>
-                    <div>
-                      <p className={`text-sm font-medium ${item.incluso ? "text-gray-800" : "text-gray-500"}`}>{item.voce}</p>
-                      {item.nota && <p className="text-xs text-gray-400 mt-0.5">{item.nota}</p>}
+            <div className="bg-gray-50 p-8 rounded-2xl">
+              <h2 className="text-2xl font-bold text-navy mb-6">Cosa Include</h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {CARATTERISTICHE_BAGNO.map((voce, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="h-6 w-6 rounded-full bg-orange/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-4 w-4 text-orange" />
                     </div>
+                    <span className="text-gray-700">{voce}</span>
                   </div>
                 ))}
               </div>
-            </section>
+            </div>
 
-            {/* ── CRITICITÀ LOCALI ── */}
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Criticità tipiche degli immobili a {comune.nome}</h2>
-              <p className="text-gray-600 mb-6">
-                {comune.tipoEdilizio}. Prima di ogni sopralluogo, teniamo conto delle caratteristiche specifiche del patrimonio edilizio locale.
-              </p>
-              <div className="bg-blue-50 border border-blue-100 rounded-xl p-5 mb-6">
-                <p className="text-sm font-semibold text-navy mb-2">Bagni tipici a {comune.nome}</p>
-                <p className="text-sm text-gray-700 leading-relaxed">{comune.caratteristicheBagni}</p>
-              </div>
-              <div className="space-y-3">
-                {comune.criticalita.map((c, i) => (
-                  <div key={i} className="flex gap-3 items-start bg-amber-50 border border-amber-100 rounded-xl p-4">
-                    <span className="flex-shrink-0 text-amber-500 mt-0.5">▲</span>
-                    <p className="text-sm text-gray-800 leading-relaxed">{c}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-gray-500 mt-4">
-                Queste criticità emergono spesso solo durante il sopralluogo. Il nostro tecnico le verifica sistematicamente prima di confermare il quadro economico definitivo.
-              </p>
-            </section>
-
-            {/* ── TEMPISTICHE ── */}
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Quanto dura il cantiere?</h2>
-              <p className="text-gray-600 mb-6">
-                Un bagno standard (4–6 mq) richiede mediamente <strong>1 settimana lavorativa</strong>{" "}
-                per il rifacimento completo. Le fasi si susseguono nell&apos;ordine indicato — alcune in parallelo, altre con attese obbligatorie di essicazione.
-              </p>
-              <div className="space-y-2">
-                {TEMPISTICHE.map((t, i) => (
-                  <div key={i} className="flex items-center gap-4 py-3 border-b border-gray-100 last:border-0">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-navy text-white text-xs font-bold flex items-center justify-center">{i + 1}</span>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-800">{t.fase}</p>
-                      {t.nota && <p className="text-xs text-gray-400">{t.nota}</p>}
+            <div className="bg-gray-50 p-8 rounded-2xl">
+              <h2 className="text-2xl font-bold text-navy mb-6">Cosa non comprende</h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {ESCLUSIONI_BAGNO.map((voce, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="h-6 w-6 rounded-full bg-orange/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <X className="h-4 w-4 text-orange" />
                     </div>
-                    <span className="flex-shrink-0 text-sm font-semibold text-navy">{t.giorni}</span>
+                    <span className="text-gray-700">{voce}</span>
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-gray-500 mt-4">
-                I tempi si allungano in presenza di criticità (bonifica amianto, problemi strutturali, modifiche agli impianti condominiali). Il programma definitivo viene definito al sopralluogo.
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-navy mb-6">Perché Sceglierci</h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {VANTAGGI_BAGNO.map((vantaggio, i) => (
+                  <div key={i} className="bg-navy/5 p-4 rounded-xl border-l-4 border-orange">
+                    <p className="text-gray-700">{vantaggio}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-navy mb-6">Costo indicativo</h2>
+              <div className="bg-white border-2 border-orange p-6 rounded-xl text-center">
+                <p className="text-sm text-gray-500 mb-2">Esempio per bagno standard da 6 mq</p>
+                <p className="text-3xl font-bold text-orange">
+                  Ristrutturazione bagno da 5.500 €
+                </p>
+                <p className="text-sm text-gray-500 mt-3">
+                  Una base utile per orientarti. Il preventivo finale dipende da impianti, demolizioni, rivestimenti, sanitari scelti e complessità dell&apos;intervento.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-navy mb-4">Dove Operiamo</h2>
+              <p className="text-gray-600 mb-4">
+                Offriamo il servizio di ristrutturazione bagno a {comune.nome} e nei comuni vicini tra Napoli, Caserta e Agro Aversano.
               </p>
-            </section>
-
-            {/* ── COME FUNZIONA ── */}
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Come funziona con noi</h2>
-              <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { step: "01", titolo: "Prima valutazione del budget", testo: "Compila il modulo del tuo bagno nel modulo di stima o scrivici su WhatsApp per ricevere una prima indicazione di costo. È un passaggio utile per capire se la spesa è in linea con il budget, ma non sostituisce il sopralluogo tecnico." },
-                  { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico visita l'immobile, verifica lo stato degli impianti, rileva eventuali criticità e raccoglie tutte le informazioni per il preventivo finale." },
-                  { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo scritto con prezzi unitari, materiali specificati, tempistiche e condizioni di garanzia. Trasparente, senza voci generiche." },
-                ].map((s) => (
-                  <div key={s.step}>
-                    <p className="text-5xl font-black text-gray-100 mb-3 leading-none">{s.step}</p>
-                    <h3 className="text-base font-bold text-navy mb-2">{s.titolo}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{s.testo}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* ── FAQ ── */}
-            {(() => {
-              const faqRender = comune.faqBagno && comune.faqBagno.length > 0
-                ? comune.faqBagno
-                : comune.faq;
-              return faqRender.length > 0 && (
-                <section>
-                  <h2 className="text-2xl font-bold text-navy mb-2">
-                    Domande frequenti sulla ristrutturazione bagno a {comune.nome}
-                  </h2>
-                  <p className="text-gray-600 mb-6">
-                    Le domande che ci vengono poste più spesso da chi ci contatta da {comune.nome}.
-                  </p>
-                  <div className="space-y-4">
-                    {faqRender.map((faq, i) => (
-                      <details key={i} className="group border border-gray-200 rounded-xl overflow-hidden">
-                        <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none hover:bg-gray-50 transition-colors">
-                          <span className="font-medium text-navy text-sm leading-snug">{faq.domanda}</span>
-                          <span className="flex-shrink-0 w-6 h-6 rounded-full bg-orange/10 text-orange flex items-center justify-center text-sm group-open:rotate-45 transition-transform">+</span>
-                        </summary>
-                        <div className="px-5 pb-5 pt-1">
-                          <p className="text-sm text-gray-700 leading-relaxed">{faq.risposta}</p>
-                        </div>
-                      </details>
-                    ))}
-                  </div>
-                </section>
-              );
-            })()}
-
-            {/* ── COMUNI VICINI ── */}
-            {comune.vicini.length > 0 && (
-              <section>
-                <h2 className="text-xl font-bold text-navy mb-4">
-                  Ristrutturazione bagno nei comuni vicini a {comune.nome}
-                </h2>
-                <div className="flex flex-wrap gap-3">
-                  {comune.vicini.map((slug) => {
-                    const vicino = getComuneBySlug(slug);
-                    if (!vicino) return null;
-                    return (
-                      <Link key={slug} href={`/comune/${slug}/ristrutturazione-bagno/`} className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-navy hover:text-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full transition-colors">
-                        Bagno a {vicino.nome}
-                      </Link>
-                    );
-                  })}
-                  <Link href={`/comune/${comune.slug}/`} className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-navy hover:text-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full transition-colors">
-                    Tutti i servizi a {comune.nome} →
+              <div className="flex flex-wrap gap-2">
+                {comuni.slice(0, 15).map((item) => (
+                  <Link
+                    key={item.slug}
+                    href={`/comune/${item.slug}/`}
+                    className="bg-gray-100 hover:bg-navy hover:text-white text-navy px-3 py-1 rounded-lg text-sm transition-colors"
+                  >
+                    {item.nome}
                   </Link>
-                </div>
-              </section>
-            )}
-
-          </div>
-
-          {/* ── SIDEBAR STICKY ── */}
-          <div className="hidden lg:block">
-            <div id="modulo di stima" className="sticky top-6 space-y-6">
-              <CalcolatoreBagno comuneDefault={comune.nome} />
-              <div className="bg-gray-50 rounded-2xl p-5">
-                <p className="text-sm font-semibold text-navy mb-3">Altri servizi a {comune.nome}</p>
-                <div className="space-y-2">
-                  {[
-                    { label: "Ristrutturazione Appartamento", href: `/comune/${comune.slug}/` },
-                    { label: "Ristrutturazione Cucina", href: `/comune/${comune.slug}/ristrutturazione-cucina/` },
-                    { label: "Rifacimento Tetto", href: `/comune/${comune.slug}/rifacimento-tetto/` },
-                    { label: "Cappotto Termico", href: `/comune/${comune.slug}/cappotto-termico/` },
-                    { label: "Impianti", href: `/comune/${comune.slug}/impianti-elettrici-idraulici-termici/` },
-                    { label: "Pavimenti e Rivestimenti", href: `/comune/${comune.slug}/pavimenti-rivestimenti/` },
-                  ].map((s) => (
-                    <Link key={s.href} href={s.href} className="flex items-center justify-between text-sm text-gray-700 hover:text-navy py-2 border-b border-gray-200 last:border-0 transition-colors">
-                      {s.label}
-                      <span className="text-gray-400">→</span>
-                    </Link>
-                  ))}
-                </div>
+                ))}
+                <span className="text-gray-400 px-3 py-1 text-sm">e altri...</span>
               </div>
             </div>
           </div>
 
-        </div>
+          <div className="space-y-8">
+            <div id="modulo di stima" className="hidden lg:block">
+              <CalcolatoreBagno comuneDefault={comune.nome} />
+            </div>
 
-        {/* ── CTA FINALE ── */}
-        <section className="bg-navy py-14 px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Vuoi sapere quanto costa il tuo bagno a {comune.nome}?
-            </h2>
-            <p className="text-white/70 mb-8 text-lg">
-              Richiedi un preventivo indicativo del tuo intervento. Se la stima è in linea con il tuo budget,
-              organizziamo il sopralluogo e prepariamo il preventivo dettagliato.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="bg-navy p-6 rounded-2xl text-white">
+              <h3 className="text-xl font-bold mb-4">Richiedi un preventivo per il tuo intervento</h3>
+              <p className="text-white/80 mb-6">
+                Contattaci su WhatsApp per capire il costo del tuo progetto di ristrutturazione bagno a {comune.nome}. Se i dati rientrano nei parametri indicati, prepariamo il preventivo e confermiamo tutto con il sopralluogo.
+              </p>
               <a
                 href={`https://wa.me/393339809319?text=Salve%2C%20vorrei%20un%20preventivo%20per%20la%20ristrutturazione%20del%20bagno%20a%20${encodeURIComponent(comune.nome)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center"
+                className="w-full bg-orange hover:bg-orange-600 text-white py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
               >
+                <MessageCircle className="h-5 w-5" />
                 Parla con noi su WhatsApp
               </a>
-              <a href="tel:+393339809319" className="bg-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors text-center">
-                Chiama +39 333 980 9319
-              </a>
             </div>
-            <p className="text-white/40 text-xs mt-6">
-              Russo FE Costruzione SRL · Lusciano (CE) · P.IVA 04836230617
-            </p>
+
+            <div>
+              <h3 className="text-lg font-bold text-navy mb-4">
+                Altri Servizi
+              </h3>
+              <div className="space-y-3">
+                {altriServizi.map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={`/servizi/${s.slug}/`}
+                    className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl hover:bg-navy/5 transition-colors"
+                  >
+                    <div className="relative h-16 w-16 rounded-lg overflow-hidden flex-shrink-0">
+                      <Image
+                        src={s.immagine}
+                        alt={s.alt}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-navy text-sm">{s.titolo}</h4>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </div>
     </>
   );
 }
