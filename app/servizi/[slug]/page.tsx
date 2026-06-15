@@ -100,11 +100,11 @@ export default async function ServizioPage({ params }: Props) {
                   Costi aggiornati a {dataAggiornamento}
                 </div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
-                  Ristrutturazione appartamento completo a Napoli e Caserta:{" "}
+                  Ristrutturazione casa e appartamento a Napoli e Caserta:{" "}
                   <span className="text-orange">costo base da 550 €/mq</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Il costo base da 550 €/mq è un riferimento iniziale per una ristrutturazione completa. Il preventivo definitivo si conferma solo dopo verifica tecnica e sopralluogo.
+                  Il costo base da 550 €/mq è un riferimento iniziale per ristrutturazione completa di casa o appartamento. Il preventivo definitivo si conferma solo dopo verifica tecnica e sopralluogo.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {["Prezzario Regionale Campania", "Sopralluogo tecnico", "Stima verificabile"].map((t) => (

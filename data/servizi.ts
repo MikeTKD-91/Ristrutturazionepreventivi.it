@@ -18,9 +18,9 @@ export const servizi: Servizio[] = [
     slug: "ristrutturazione-appartamento-completo",
     descrizioneCard: "Intervento completo con impianti, opere murarie, finiture e verifica tecnica sul posto.",
 
-    titolo: "Ristrutturazione Appartamento Completo",
-    sottotitolo: "Costo base certo da 550 €/mq nei casi standard con condizioni operative agevolate",
-    descrizione: "Ristrutturazione completa dell'appartamento con demolizioni, rifacimento impianti, opere murarie, pavimenti, rivestimenti e finiture standard o superiori. Il valore base di 550 €/mq è applicabile nei casi standard con accesso facilitato, gestione semplice dei materiali di risulta e piano agevole come un primo piano.",
+    titolo: "Ristrutturazione Casa e Appartamento Completo",
+    sottotitolo: "Costo base certo da 550 €/mq per ristrutturazione completa casa e appartamento, confermato dopo sopralluogo",
+    descrizione: "Ristrutturazione completa di casa e appartamento con demolizioni, rifacimento impianti, opere murarie, pavimenti, rivestimenti e finiture. Prezzo base da 550 €/mq per ristrutturazione casa o appartamento in condizioni standard, con conferma dopo sopralluogo tecnico.",
     descrizioneLunga: `La ristrutturazione completa dell'appartamento è un intervento che coinvolge in modo coordinato demolizioni, impianti, opere murarie, pavimenti, rivestimenti, porte interne, sanitari e finiture finali.
 
 Per questo servizio utilizziamo come riferimento un costo base certo di 550 €/mq quando l'immobile rientra in condizioni operative standard: accesso facilitato, gestione semplice dei materiali di risulta, piano agevole come un primo piano, distribuzione interna regolare e assenza di criticità tecniche rilevanti.
@@ -54,9 +54,9 @@ Il sopralluogo resta il passaggio che conferma misure, lavorazioni, logistica, t
     slug: "ristrutturazione-cucina",
     descrizioneCard: "Rifacimento cucina con impianti, rivestimenti, predisposizioni e posa delle finiture.",
 
-    titolo: "Ristrutturazione Cucina",
-    sottotitolo: "Il cuore della casa rinnovato con stile e funzionalità",
-    descrizione: "Ristrutturazione completa della cucina con nuovi impianti, pavimenti, rivestimenti, illuminazione e installazione mobili su misura.",
+    titolo: "Ristrutturazione e Rifacimento Cucina",
+    sottotitolo: "Rifacimento cucina completo con impianti, rivestimenti e soluzioni su misura",
+    descrizione: "Ristrutturazione e rifacimento cucina con nuovi impianti, pavimenti, rivestimenti, illuminazione e installazione di mobili su misura.",
     descrizioneLunga: `La cucina è il cuore pulsante della casa, il luogo dove si preparano i pasti ma anche dove ci si ritrova in famiglia. La sua ristrutturazione richiede attenzione particolare alla funzionalità, alla sicurezza e all'estetica.
 
 Il nostro servizio di ristrutturazione cucina comprende la progettazione del layout ottimale, il rifacimento degli impianti elettrici e idraulici, la posa di pavimenti e rivestimenti resistenti e facili da pulire, l'installazione di illuminazione funzionale e d'atmosfera.
@@ -158,9 +158,9 @@ Utilizziamo materiali certificati e tecniche costruttive aggiornate per garantir
     slug: "pavimenti-rivestimenti",
     descrizioneCard: "Fornitura e posa di pavimenti e rivestimenti con preparazione dei supporti e finiture.",
 
-    titolo: "Pavimenti e Rivestimenti",
-    sottotitolo: "Rinnova gli ambienti con materiali di qualità",
-    descrizione: "Fornitura e posa di pavimenti e rivestimenti in ceramica, gres porcellanato, parquet, marmo e altri materiali.",
+    titolo: "Posa e Rifacimento Pavimenti e Rivestimenti",
+    sottotitolo: "Posa pavimenti e rivestimenti per casa con materiali resistenti e finiture di qualità",
+    descrizione: "Posa e rifacimento pavimenti e rivestimenti in ceramica, gres porcellanato, parquet, marmo e altri materiali per casa e appartamento.",
     descrizioneLunga: `Pavimenti e rivestimenti sono gli elementi che caratterizzano maggiormente l'estetica di una casa. La loro scelta influenza non solo l'aspetto visivo ma anche la funzionalità, la manutenzione e il comfort degli ambienti.
 
 Il nostro servizio di posa pavimenti e rivestimenti include la consulenza nella scelta dei materiali più adatti alle esigenze del cliente, la preparazione del supporto, la posa professionale con tecniche aggiornate, la sigillatura e la pulizia finale.
@@ -192,9 +192,9 @@ Proponiamo una vasta gamma di materiali: gres porcellanato effetto legno o pietr
     slug: "impianti-elettrici-idraulici-termici",
     descrizioneCard: "Adeguamento o rifacimento impianti con valutazione tecnica delle reti esistenti.",
 
-    titolo: "Impianti Elettrici, Idraulici e Termici",
-    sottotitolo: "Sicurezza ed efficienza per la tua casa",
-    descrizione: "Progettazione e installazione di impianti elettrici, idraulici e termici a norma, con certificazioni e collaudi.",
+    titolo: "Rifacimento Impianti Elettrici, Idraulici e Termici",
+    sottotitolo: "Rifacimento impianti casa a norma per sicurezza, comfort ed efficienza",
+    descrizione: "Rifacimento di impianti elettrici, idraulici e termici per casa e appartamento, con installazione a norma, certificazioni e collaudi.",
     descrizioneLunga: `Gli impianti sono il sistema nervoso della casa: devono essere sicuri, efficienti e conformi alle normative vigenti. Un impianto fatto male può comportare rischi per la sicurezza e sprechi energetici.
 
 Il nostro servizio di installazione impianti comprende la progettazione personalizzata, l'installazione completa con materiali certificati, le prove di funzionamento, la redazione della documentazione e le certificazioni richieste dalla legge.
