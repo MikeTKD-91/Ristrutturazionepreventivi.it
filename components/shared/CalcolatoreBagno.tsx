@@ -2,18 +2,6 @@
 
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Calculator,
-  ArrowRight,
-  Check,
-  MessageCircle,
-  ChevronLeft,
-  MapPin,
-  Home,
-  Phone,
-  User,
-  AlertCircle,
-} from "lucide-react";
 import { formatPrezzo } from "@/lib/utils";
 
 interface CalcolatoreBagnoProps {
@@ -52,8 +40,6 @@ export default function CalcolatoreBagno({
   const [step, setStep] = useState<Step>(1);
   const [mq, setMq] = useState(DEFAULT_MQ);
   const [comune, setComune] = useState(comuneDefault);
-  const [accessibile, setAccessibile] = useState(false);
-
   const [nome, setNome] = useState("");
   const [telefono, setTelefono] = useState("");
   const [disponibileAppuntamento, setDisponibileAppuntamento] = useState(false);
@@ -73,7 +59,7 @@ export default function CalcolatoreBagno({
 
   const comuneFinale = comune.trim() || comuneDefault || "da definire";
 
-  const canGoStep2 = accessibile && mq >= MIN_MQ;
+  const canGoStep2 = mq >= MIN_MQ;
   const canCalculate =
     nome.trim().length >= 2 &&
     telefono.trim().length >= 6 &&
@@ -93,7 +79,6 @@ export default function CalcolatoreBagno({
     setStep(1);
     setMq(DEFAULT_MQ);
     setComune(comuneDefault);
-    setAccessibile(false);
     setNome("");
     setTelefono("");
     setDisponibileAppuntamento(false);
@@ -108,7 +93,6 @@ export default function CalcolatoreBagno({
       `📍 Comune: ${comuneFinale}\n` +
       `💶 Preventivo online immediato: ${formatPrezzo(stima.min)}\n` +
       `📞 Telefono: ${telefono}\n` +
-      `🏠 Accesso comodo per carico materiali e smaltimento: Sì\n` +
       `🤝 Disponibile ad appuntamento in studio/sopralluogo: Sì\n\n` +
       `Se la configurazione è compatibile con il vostro metodo di lavoro, resto disponibile per un appuntamento tecnico.`
     );
@@ -118,10 +102,7 @@ export default function CalcolatoreBagno({
 
   return (
     <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100">
-      <div className="flex items-start gap-3 mb-6">
-        <div className="h-12 w-12 rounded-xl bg-orange/10 flex items-center justify-center shrink-0">
-          <Calculator className="h-6 w-6 text-orange" />
-        </div>
+      <div className="mb-6">
         <div>
           <h3 className="text-xl font-bold text-navy">
             Costi reali e preventivo immediato per il tuo bagno
@@ -133,12 +114,9 @@ export default function CalcolatoreBagno({
       </div>
 
       <div className="mb-5 rounded-xl bg-orange/5 border border-orange/20 p-4">
-        <div className="flex gap-2">
-          <AlertCircle className="h-5 w-5 text-orange shrink-0 mt-0.5" />
-          <p className="text-sm text-navy leading-relaxed">
-            Il preventivo immediato si riferisce a un bagno standard con accesso comodo per carico materiali e smaltimento. Box doccia, finiture premium, lavorazioni speciali e criticità emerse in sopralluogo vengono conteggiati a parte.
-          </p>
-        </div>
+        <p className="text-sm text-navy leading-relaxed">
+          Il preventivo immediato si riferisce a un bagno standard con accesso comodo per carico materiali e smaltimento. Box doccia, finiture premium, lavorazioni speciali e criticità emerse in sopralluogo vengono conteggiati a parte.
+        </p>
       </div>
 
       <div className="mb-6">
@@ -204,51 +182,13 @@ export default function CalcolatoreBagno({
               <label className="block text-sm font-medium text-navy mb-2">
                 Comune
               </label>
-              <div className="relative">
-                <MapPin className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                <input
-                  type="text"
-                  value={comune}
-                  onChange={(e) => setComune(e.target.value)}
-                  placeholder={comuneDefault || "Es. Napoli, Aversa, Caserta"}
-                  className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
-                />
-              </div>
-            </div>
-
-            <label className="flex items-start gap-3 p-4 rounded-xl border border-gray-200 hover:border-orange/40 transition-colors cursor-pointer">
               <input
-                type="checkbox"
-                checked={accessibile}
-                onChange={(e) => setAccessibile(e.target.checked)}
-                className="mt-1 h-4 w-4 accent-orange"
+                type="text"
+                value={comune}
+                onChange={(e) => setComune(e.target.value)}
+                placeholder={comuneDefault || "Es. Napoli, Aversa, Caserta"}
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
               />
-              <div>
-                <p className="text-sm font-semibold text-navy">
-                  Confermo che il bagno è accessibile in condizioni ordinarie
-                </p>
-                <p className="text-xs text-gray-600 mt-1 leading-relaxed">
-                  L'accesso deve essere comodo sia per il carico dei materiali sia per lo
-                  smaltimento dei materiali di risulta.
-                </p>
-              </div>
-            </label>
-
-            <div className="bg-gray-50 rounded-xl p-4">
-              <div className="flex items-center gap-2 mb-1">
-                <Home className="h-4 w-4 text-orange" />
-                <p className="text-sm font-semibold text-navy">
-                  Riferimento standard
-                </p>
-              </div>
-              <p className="text-sm text-gray-700">
-                Per un bagno standard completo il riferimento parte da{" "}
-                <span className="font-bold text-navy">{formatPrezzo(PREZZO_BASE)}</span>{" "}
-                . Il valore finale si conferma dopo verifica tecnica e sopralluogo.
-              </p>
-              <p className="text-xs text-gray-500 mt-2 leading-relaxed">
-                L'importo finale si definisce dopo verifica tecnica e sopralluogo, in base alle condizioni reali del bagno e alle eventuali richieste extra.
-              </p>
             </div>
 
             <button
@@ -257,7 +197,6 @@ export default function CalcolatoreBagno({
               className="w-full bg-navy hover:bg-navy/90 disabled:bg-gray-300 text-white py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
             >
               Avanti
-              <ArrowRight className="h-5 w-5" />
             </button>
           </motion.div>
         )}
@@ -272,40 +211,33 @@ export default function CalcolatoreBagno({
             className="space-y-5"
           >
             <div className="bg-orange/5 border border-orange/20 rounded-xl p-4 text-sm text-navy">
-              <strong>Configurazione:</strong> bagno {mq} mq · {comuneFinale} ·
-              accesso comodo confermato
+              <strong>Configurazione:</strong> bagno {mq} mq · {comuneFinale}
             </div>
 
             <div>
               <label className="block text-sm font-medium text-navy mb-2">
                 Nome e cognome *
               </label>
-              <div className="relative">
-                <User className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                <input
-                  type="text"
-                  value={nome}
-                  onChange={(e) => setNome(e.target.value)}
-                  placeholder="Es. Mario Rossi"
-                  className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
-                />
-              </div>
+              <input
+                type="text"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+                placeholder="Es. Mario Rossi"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
+              />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-navy mb-2">
                 Telefono *
               </label>
-              <div className="relative">
-                <Phone className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                <input
-                  type="tel"
-                  value={telefono}
-                  onChange={(e) => setTelefono(e.target.value)}
-                  placeholder="Es. 333 980 9319"
-                  className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
-                />
-              </div>
+              <input
+                type="tel"
+                value={telefono}
+                onChange={(e) => setTelefono(e.target.value)}
+                placeholder="Es. 333 980 9319"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
+              />
             </div>
 
             <label className="flex items-start gap-3 p-4 rounded-xl border border-gray-200 hover:border-orange/40 transition-colors cursor-pointer">
@@ -339,16 +271,14 @@ export default function CalcolatoreBagno({
               ) : (
                 <>
                   Mostra il mio preventivo online immediato
-                  <ArrowRight className="h-5 w-5" />
                 </>
               )}
             </button>
 
             <button
               onClick={() => setStep(1)}
-              className="w-full flex items-center justify-center gap-1 text-sm text-gray-500 hover:text-navy transition-colors"
+              className="w-full text-sm text-gray-500 hover:text-navy transition-colors"
             >
-              <ChevronLeft className="h-4 w-4" />
               Modifica configurazione
             </button>
           </motion.div>
@@ -364,9 +294,6 @@ export default function CalcolatoreBagno({
             className="space-y-5"
           >
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-green-100 mb-3">
-                <Check className="h-7 w-7 text-green-600" />
-              </div>
               <h4 className="text-lg font-semibold text-navy">
                 Ecco il tuo preventivo online immediato, {nome}!
               </h4>
@@ -391,9 +318,8 @@ export default function CalcolatoreBagno({
               </h5>
               <ul className="space-y-2">
                 {inclusioniStandard.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
-                    <Check className="h-4 w-4 text-orange shrink-0 mt-0.5" />
-                    <span>{item}</span>
+                  <li key={item} className="text-sm text-gray-700">
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -405,9 +331,8 @@ export default function CalcolatoreBagno({
               </h5>
               <ul className="space-y-2">
                 {esclusioniExtra.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
-                    <ArrowRight className="h-4 w-4 text-orange shrink-0 mt-0.5" />
-                    <span>{item}</span>
+                  <li key={item} className="text-sm text-gray-700">
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -426,9 +351,8 @@ export default function CalcolatoreBagno({
               href={generaLinkWhatsApp()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-orange hover:bg-orange/90 text-white py-4 px-6 rounded-xl font-semibold transition-colors flex items-center justify-center gap-3"
+              className="block w-full bg-orange hover:bg-orange/90 text-white py-4 px-6 rounded-xl font-semibold transition-colors text-center"
             >
-              <MessageCircle className="h-5 w-5 shrink-0" />
               Invia richiesta per verifica compatibilità
             </a>
 
