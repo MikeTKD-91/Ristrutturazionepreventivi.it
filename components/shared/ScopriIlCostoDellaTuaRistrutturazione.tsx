@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Calculator, MessageCircle } from "lucide-react";
+
 
 interface ScopriIlCostoDellaTuaRistrutturazioneProps {
   comuneDefault?: string;
@@ -49,11 +49,7 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({
 
   return (
     <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="h-12 w-12 rounded-xl bg-orange/10 flex items-center justify-center">
-          <Calculator className="h-6 w-6 text-orange" />
-        </div>
-        <div>
+      <div className="flex items-center gap-0 mb-6">        <div>
           <h3 className="text-xl font-bold text-navy">Richiedi un preventivo online immediato</h3>
           <p className="text-sm text-gray-600">
             Compila il form: ricevi un preventivo online immediato e, se serve, proseguiamo su WhatsApp per i dettagli.
@@ -162,7 +158,7 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({
           />
         </div>
 
-        <label className="flex items-start gap-3 text-sm text-gray-600">
+        <label className="flex items-start gap-0 text-sm text-gray-600">
           <input
             type="checkbox"
             checked={consenso}
@@ -187,14 +183,12 @@ export default function ScopriIlCostoDellaTuaRistrutturazione({
           target={isValid ? "_blank" : undefined}
           rel={isValid ? "noopener noreferrer" : undefined}
           aria-disabled={!isValid}
-          className={`w-full py-4 px-6 rounded-xl font-semibold transition-colors flex items-center justify-center gap-3 ${
+          className={`w-full py-4 px-6 rounded-xl font-semibold transition-colors flex items-center justify-center gap-0 ${
             isValid
               ? "bg-orange hover:bg-orange/90 text-white"
               : "bg-gray-200 text-gray-400 pointer-events-none"
           }`}
-        >
-          <MessageCircle className="h-5 w-5 shrink-0" />
-          Invia richiesta e continua su WhatsApp
+        >          Invia richiesta e continua su WhatsApp
         </a>
       </div>
     </div>

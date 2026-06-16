@@ -2,17 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Calculator,
-  ArrowRight,
-  Check,
-  MessageCircle,
-  ChevronLeft,
-  MapPin,
-  Phone,
-  User,
-  AlertCircle,
-} from "lucide-react";
+import { ArrowRight, Check, ChevronLeft } from "lucide-react";
 import { formatPrezzo } from "@/lib/utils";
 
 interface CalcolatoreAppartamentoProps {
@@ -116,11 +106,7 @@ export default function CalcolatoreAppartamento({
 
   return (
     <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100">
-      <div className="flex items-start gap-3 mb-6">
-        <div className="h-12 w-12 rounded-xl bg-orange/10 flex items-center justify-center shrink-0">
-          <Calculator className="h-6 w-6 text-orange" />
-        </div>
-        <div>
+      <div className="flex items-start gap-3 mb-6">        <div>
           <h3 className="text-xl font-bold text-navy">
             Scopri quanto costa la tua ristrutturazione
           </h3>
@@ -131,8 +117,7 @@ export default function CalcolatoreAppartamento({
       </div>
 
       <div className="mb-5 rounded-xl bg-orange/5 border border-orange/20 p-4">
-        <div className="flex gap-2">
-          <AlertCircle className="h-5 w-5 text-orange shrink-0 mt-0.5" />
+        <div>
           <p className="text-sm text-navy leading-relaxed">
             Preventivo riferito a immobile con accesso ordinario e condizioni operative standard.
             Extra, finiture fuori capitolato e richieste particolari vengono conteggiati a parte.
@@ -203,14 +188,12 @@ export default function CalcolatoreAppartamento({
               <label className="block text-sm font-medium text-navy mb-2">
                 Comune
               </label>
-              <div className="relative">
-                <MapPin className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
-                <input
+              <div className="relative">                <input
                   type="text"
                   value={comune}
                   onChange={(e) => setComune(e.target.value)}
                   placeholder={comuneDefault || "Es. Napoli, Aversa, Caserta"}
-                  className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
                 />
               </div>
               {comune.trim().length < 2 && (
@@ -246,14 +229,12 @@ export default function CalcolatoreAppartamento({
               <label className="block text-sm font-medium text-navy mb-2">
                 Nome e cognome *
               </label>
-              <div className="relative">
-                <User className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
-                <input
+              <div className="relative">                <input
                   type="text"
                   value={nome}
                   onChange={(e) => setNome(e.target.value)}
                   placeholder="Es. Mario Rossi"
-                  className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
                 />
               </div>
               {nome.trim().length < 2 && (
@@ -265,14 +246,12 @@ export default function CalcolatoreAppartamento({
               <label className="block text-sm font-medium text-navy mb-2">
                 Telefono *
               </label>
-              <div className="relative">
-                <Phone className="h-4 w-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
-                <input
+              <div className="relative">                <input
                   type="tel"
                   value={telefono}
                   onChange={(e) => setTelefono(e.target.value)}
                   placeholder="Es. 333 980 9319"
-                  className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-all"
                 />
               </div>
               {telefono.trim().length < 6 && (
@@ -399,9 +378,7 @@ export default function CalcolatoreAppartamento({
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-orange hover:bg-orange/90 text-white py-4 px-6 rounded-xl font-semibold transition-colors flex items-center justify-center gap-3"
-            >
-              <MessageCircle className="h-5 w-5 shrink-0" />
-              Invia richiesta per verifica compatibilità
+            >              Invia richiesta per verifica compatibilità
             </a>
 
             <button
