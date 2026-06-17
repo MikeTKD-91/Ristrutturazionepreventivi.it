@@ -54,8 +54,8 @@ Il sopralluogo resta il passaggio che conferma misure, lavorazioni, logistica, t
     slug: "ristrutturazione-cucina",
     descrizioneCard: "Interventi su cucina definiti dal progetto, con lavorazioni e finiture personalizzate.",
 
-    titolo: "Ristrutturazione Cucina a Napoli e Caserta",
-    sottotitolo: "Interventi su misura definiti in base al progetto e al sopralluogo tecnico",
+    titolo: "Ristrutturazione Cucina",
+    sottotitolo: "Interventi su misura con costo e preventivo definiti in base al progetto e al sopralluogo tecnico",
     descrizione: "Ristrutturazione cucina con lavorazioni definite in base al progetto, al sopralluogo tecnico e alle esigenze reali dell'ambiente.",
     descrizioneLunga: `Ogni cucina richiede una valutazione diversa: per questo definiamo lavorazioni, tempi e finiture solo dopo analisi del progetto e sopralluogo tecnico.
 

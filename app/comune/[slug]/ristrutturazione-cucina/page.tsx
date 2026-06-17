@@ -32,16 +32,16 @@ const LIVELLI_FINITURA = [
 ];
 
 const COSA_INCLUDE_RIFACIMENTO = [
-  { voce: "Demolizione e smaltimento cucina e rivestimenti esistenti", incluso: true },
-  { voce: "Rifacimento impianto idraulico (alimentazione e scarichi)", incluso: true },
-  { voce: "Rifacimento impianto elettrico (piano cottura, forno, cappa, frigorifero)", incluso: true },
-  { voce: "Posa nuovi pavimenti resistenti all'acqua e all'abrasione", incluso: true },
-  { voce: "Posa rivestimento schienale (dietro piano cottura e lavello)", incluso: true },
-  { voce: "Installazione cappa (da muro o isola)", incluso: true },
-  { voce: "Predisposizione per elettrodomestici integrati", incluso: true },
-  { voce: "Montaggio mobili cucina (fornitura esclusa se non a nostro catalogo)", incluso: true },
-  { voce: "Fornitura e montaggio top in quarzo o granito", incluso: false, nota: "opzionale, preventivata separatamente in base al materiale scelto" },
-  { voce: "Isola centrale con piano cottura", incluso: false, nota: "disponibile su richiesta, richiede verifica strutturale e impianti" },
+  { voce: "Valutazione tecnica iniziale del progetto cucina", incluso: true },
+  { voce: "Demolizioni e rimozioni necessarie in base allo stato esistente", incluso: true },
+  { voce: "Adeguamento impianto idraulico secondo nuova configurazione", incluso: true },
+  { voce: "Adeguamento impianto elettrico in base a punti utenza e layout", incluso: true },
+  { voce: "Modifiche murarie e ripristini dove richiesti dal progetto", incluso: true },
+  { voce: "Posa pavimenti e rivestimenti previsti", incluso: true },
+  { voce: "Rasature, riprese e tinteggiature finali", incluso: true },
+  { voce: "Fornitura o montaggio dei mobili cucina", incluso: false, nota: "non rientrano nel nostro servizio" },
+  { voce: "Installazione degli elettrodomestici", incluso: false, nota: "non rientra nel nostro servizio" },
+  { voce: "Lavorazioni extra non definite nel sopralluogo o nel computo", incluso: false, nota: "vengono valutate solo a parte" },
 ];
 
 const TEMPISTICHE = [
@@ -50,7 +50,7 @@ const TEMPISTICHE = [
   { fase: "Impianto elettrico", giorni: "1–2 gg", nota: "punti presa dedicati per ogni elettrodomestico" },
   { fase: "Posa pavimento e rivestimenti", giorni: "2–4 gg", nota: "in base alla dimensione e al formato" },
   { fase: "Intonaco e tinteggiatura pareti", giorni: "1–2 gg", nota: "attesa essicazione inclusa" },
-  { fase: "Montaggio mobili e top", giorni: "1–2 gg", nota: "a cura del mobilificio o nostri falegnami" },
+  { fase: "Finiture e verifiche finali", giorni: "1–2 gg", nota: "controlli conclusivi sulle lavorazioni eseguite" },
   { fase: "Allacciamenti e collaudi", giorni: "1 gg", nota: "test di tenuta impianti e funzionamento" },
 ];
 
@@ -261,7 +261,7 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
 
             <section>
               <h2 className="text-2xl font-bold text-navy mb-2">Cosa include la ristrutturazione completa della cucina</h2>
-              <p className="text-gray-600 mb-6">Una cucina rifatta bene è molto più che sostituire i mobili. Ecco cosa comprende un intervento eseguito a regola d&apos;arte.</p>
+              <p className="text-gray-600 mb-6">Le lavorazioni vengono definite in base al progetto e al sopralluogo. Qui sotto vedi le voci normalmente comprese e quelle escluse dal nostro servizio.</p>
               <div className="space-y-3">
                 {COSA_INCLUDE_RIFACIMENTO.map((item) => (
                   <div key={item.voce} className={`flex items-start gap-3 p-4 rounded-xl ${item.incluso ? "bg-green-50" : "bg-gray-50"}`}>
@@ -295,7 +295,7 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
               <h2 className="text-2xl font-bold text-navy mb-2">Quanto dura il cantiere?</h2>
               <p className="text-gray-600 mb-6">
                 Una cucina media (6–10 mq) richiede mediamente <strong>1,5–2 settimane lavorative</strong>{" "}
-                per il rifacimento completo inclusi impianti e montaggio mobili.
+                per il rifacimento delle opere edili e impiantistiche previste dal progetto.
               </p>
               <div className="space-y-2">
                 {TEMPISTICHE.map((t, i) => (
