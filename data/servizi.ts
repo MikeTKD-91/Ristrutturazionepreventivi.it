@@ -52,36 +52,37 @@ Il sopralluogo resta il passaggio che conferma misure, lavorazioni, logistica, t
   },
   {
     slug: "ristrutturazione-cucina",
-    descrizioneCard: "Rifacimento cucina con impianti, rivestimenti, predisposizioni e posa delle finiture.",
+    descrizioneCard: "Interventi su cucina definiti dal progetto, con lavorazioni e finiture personalizzate.",
 
-    titolo: "Ristrutturazione Cucina",
-    sottotitolo: "Rifacimento cucina completo con impianti, rivestimenti e soluzioni su misura",
-    descrizione: "Ristrutturazione e rifacimento cucina con nuovi impianti, pavimenti, rivestimenti, illuminazione e installazione di mobili su misura.",
-    descrizioneLunga: `La cucina è il cuore pulsante della casa, il luogo dove si preparano i pasti ma anche dove ci si ritrova in famiglia. La sua ristrutturazione richiede attenzione particolare alla funzionalità, alla sicurezza e all'estetica.
+    titolo: "Ristrutturazione Cucina a Napoli e Caserta",
+    sottotitolo: "Interventi su misura definiti in base al progetto e al sopralluogo tecnico",
+    descrizione: "Ristrutturazione cucina con lavorazioni definite in base al progetto, al sopralluogo tecnico e alle esigenze reali dell'ambiente.",
+    descrizioneLunga: `Ogni cucina richiede una valutazione diversa: per questo definiamo lavorazioni, tempi e finiture solo dopo analisi del progetto e sopralluogo tecnico.
 
-Il nostro servizio di ristrutturazione cucina comprende la progettazione del layout ottimale, il rifacimento degli impianti elettrici e idraulici, la posa di pavimenti e rivestimenti resistenti e facili da pulire, l'installazione di illuminazione funzionale e d'atmosfera.
+Il servizio è orientato agli interventi edili e impiantistici necessari per rendere la cucina funzionale, sicura e coerente con lo spazio disponibile. Le lavorazioni possono includere demolizioni, ripristini, modifiche murarie, adeguamenti impiantistici, posa di pavimenti e rivestimenti, rasature e tinteggiature.
 
-Proponiamo soluzioni su misura per ogni spazio, dalle cucine piccole e funzionali alle grandi cucine open space, con materiali di qualità e finiture che resistono all'usura del tempo e all'umidità.`,
+Non includiamo fornitura, montaggio o installazione dei mobili cucina: questi aspetti restano fuori dal nostro servizio e vengono eventualmente gestiti da altri fornitori.
+
+Il preventivo finale viene costruito sul progetto reale, così da dare una stima chiara, verificabile e adatta al cantiere specifico.`,
     immagine: "/images/servizi/ristrutturazione-cucina.jpg",
-    alt: "Ristrutturazione cucina moderna con isola centrale in marmo, mobili su misura e elettrodomestici integrati a Napoli",
+    alt: "Ristrutturazione cucina con lavorazioni edili e impiantistiche definite su progetto a Napoli e Caserta",
     prezzoMq: { base: 400, standard: 600, premium: 850 },
     caratteristiche: [
-      "Progettazione layout cucina",
-      "Rifacimento impianto elettrico",
-      "Rifacimento impianto idraulico",
-      "Posa pavimenti resistenti",
-      "Rivestimenti pareti e schienali",
-      "Installazione punti luce",
-      "Predisposizione elettrodomestici",
-      "Montaggio mobili cucina",
+      "Valutazione tecnica del progetto",
+      "Demolizioni e ripristini necessari",
+      "Modifiche murarie in base al layout",
+      "Adeguamenti impiantistici",
+      "Posa pavimenti e rivestimenti",
+      "Rasature e tinteggiature",
+      "Verifica finale sul cantiere",
     ],
     vantaggi: [
-      "Cucina funzionale e ergonomica",
-      "Materiali resistenti all'umidità",
-      "Illuminazione ottimizzata",
-      "Soluzioni per ogni budget",
-      "Verifica preliminare del progetto",
-      "Tempi rapidi di realizzazione",
+      "Sopralluogo tecnico prima della conferma del preventivo",
+      "Lavorazioni definite in base al progetto reale",
+      "Capitolato più chiaro, senza voci che non ci competono",
+      "Intervento adattabile a cucina lineare, ad angolo o open space",
+      "Maggiore chiarezza su inclusioni, esclusioni e variabili di cantiere",
+      "Percorso semplice per richiedere stima e contatto rapido",
     ],
   },
   {
