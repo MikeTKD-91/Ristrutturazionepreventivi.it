@@ -26,9 +26,9 @@ const COSTI_CUCINA = [
 ];
 
 const LIVELLI_FINITURA = [
-  { livello: "Base", descrizione: "Ceramica standard, rivestimento schienale semplice, mobili in kit funzionali, rubinetteria entry-level. Cucina pratica senza eccessi.", colore: "bg-gray-100 text-gray-700" },
-  { livello: "Standard", descrizione: "Gres porcellanato, rivestimento a tutta altezza, mobili su misura in laminato, top in quarzo o granito. Il livello più richiesto.", colore: "bg-blue-50 text-navy" },
-  { livello: "Premium", descrizione: "Grandi lastre, mobili in legno massello o laccato opaco, top in marmo o Dekton, isola centrale, illuminazione integrata LED, elettrodomestici integrati.", colore: "bg-orange-50 text-orange" },
+  { livello: "Base", descrizione: "Finiture essenziali, interventi impiantistici standard e opere edili contenute. Soluzione adatta ai casi più lineari.", colore: "bg-gray-100 text-gray-700" },
+  { livello: "Standard", descrizione: "Migliore qualità di finiture, più lavorazioni e maggior cura nei dettagli esecutivi. È il livello scelto più spesso nei progetti completi.", colore: "bg-blue-50 text-navy" },
+  { livello: "Premium", descrizione: "Intervento più articolato, con finiture superiori, modifiche più complesse e maggior incidenza delle lavorazioni su misura previste dal progetto.", colore: "bg-orange-50 text-orange" },
 ];
 
 const COSA_INCLUDE_RIFACIMENTO = [
@@ -241,7 +241,7 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
                 <span className="text-amber-500 text-lg flex-shrink-0 mt-0.5">⚠</span>
                 <p className="text-sm text-amber-900">
                   <strong>Questi valori non costituiscono un preventivo vincolante.</strong>{" "}
-                  Il prezzo definitivo dipende dallo stato degli impianti, dalla presenza di criticità non visibili a distanza e dalle scelte specifiche di materiale e mobili. Il sopralluogo è l&apos;unico modo per definire un preventivo preciso.
+                  Il prezzo definitivo dipende dallo stato degli impianti, dalla presenza di criticità non visibili a distanza e dal livello delle lavorazioni e finiture previste. Il sopralluogo è l&apos;unico modo per definire un preventivo preciso.
                 </p>
               </div>
             </section>
