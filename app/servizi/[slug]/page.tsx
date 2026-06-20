@@ -307,28 +307,42 @@ export default async function ServizioPage({ params }: Props) {
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative h-[50vh] min-h-[400px]">
-        <Image
-          src={servizio.immagine}
-          alt={servizio.alt}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="container mx-auto px-4 pb-12">
-            <div className="inline-flex items-center gap-2 bg-orange/20 text-orange backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-4">
-              <Check className="h-4 w-4" />
-              Costi aggiornati a {dataAggiornamento}
+            {/* Hero */}
+      <section className="bg-navy py-14 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                <Check className="h-4 w-4 text-orange" />
+                Costi aggiornati a {dataAggiornamento}
+              </div>
+                <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
+                  {servizio.titolo.split(":")[0]}:{" "}
+                  <span className="text-orange">
+                    {servizio.titolo.split(":")[1]?.trim() || servizio.sottotitolo}
+                  </span>
+                </h1>
+              <p className="text-white/70 text-lg leading-relaxed mb-6">
+                {servizio.sottotitolo}
+              </p>
+              <a
+                href="#modulo-di-preventivo"
+                className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
+              >
+                Richiedi un preventivo
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              {servizio.titolo}
-            </h2>
-            <p className="text-xl text-white/80 max-w-2xl">
-              {servizio.sottotitolo}
-            </p>
+
+            <div className="hidden lg:block relative h-72 rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src={servizio.immagine}
+                alt={servizio.alt}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
