@@ -54,9 +54,9 @@ Il sopralluogo resta il passaggio che conferma misure, lavorazioni, logistica, t
     slug: "ristrutturazione-cucina",
     descrizioneCard: "Interventi su cucina definiti dal progetto, con lavorazioni e finiture personalizzate.",
 
-    titolo: "Ristrutturazione Cucina",
-    sottotitolo: "Interventi su misura con costo e preventivo definiti in base al progetto e al sopralluogo tecnico",
-    descrizione: "Ristrutturazione cucina con lavorazioni definite in base al progetto, al sopralluogo tecnico e alle esigenze reali dell'ambiente.",
+    titolo: "Ristrutturazione Cucina: preventivo immediato e costo reale",
+    sottotitolo: "Richiedi un preventivo immediato per la ristrutturazione della cucina e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica del cantiere.",
+    descrizione: "Richiedi un preventivo immediato per la ristrutturazione della cucina e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica del cantiere.",
     descrizioneLunga: `Ogni cucina richiede una valutazione diversa: per questo definiamo lavorazioni, tempi e finiture solo dopo analisi del progetto e sopralluogo tecnico.
 
 Il servizio è orientato agli interventi edili e impiantistici necessari per rendere la cucina funzionale, sicura e coerente con lo spazio disponibile. Le lavorazioni possono includere demolizioni, ripristini, modifiche murarie, adeguamenti impiantistici, posa di pavimenti e rivestimenti, rasature e tinteggiature.
@@ -89,9 +89,9 @@ Il preventivo finale viene costruito sul progetto reale, così da dare un preven
     slug: "ristrutturazione-bagno",
     descrizioneCard: "Rifacimento bagno con demolizioni, nuovi impianti, impermeabilizzazione e posa sanitari.",
 
-    titolo: "Ristrutturazione Bagno",
-    sottotitolo: "Ristrutturazione bagno completa con nuovi impianti, sanitari e sopralluogo tecnico",
-    descrizione: "Ristrutturazione completa del bagno con demolizioni, smaltimento, rifacimento impianti, pavimenti, rivestimenti e sanitari. Il preventivo iniziale varia in base a dimensioni, accessibilità, finiture e stato degli impianti esistenti, da confermare dopo sopralluogo.",
+    titolo: "Ristrutturazione Bagno: preventivo immediato e costo reale",
+    sottotitolo: "Richiedi un preventivo immediato per la ristrutturazione del bagno e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica del cantiere.",
+    descrizione: "Richiedi un preventivo immediato per la ristrutturazione del bagno e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica del cantiere.",
     descrizioneLunga: `La ristrutturazione completa del bagno è un intervento tecnico che comprende demolizioni, rifacimento degli impianti, ripristino dei sottofondi, impermeabilizzazione e posa delle nuove finiture.
 
 Il costo base da 5.000 € rappresenta un riferimento iniziale per bagni di dimensioni contenute o medie, con configurazione standard e senza criticità particolari. Il preventivo definitivo può aumentare in caso di bagno più grande, spostamenti impiantistici rilevanti, finiture fuori capitolato o problematiche emerse dopo la demolizione.
@@ -125,9 +125,9 @@ Ogni preventivo online ha valore orientativo: il sopralluogo serve a verificare 
     slug: "rifacimento-tetto",
     descrizioneCard: "Lavori su copertura, impermeabilizzazione e pacchetto tetto in base a struttura e accessibilità.",
 
-    titolo: "Rifacimento Tetto Casa",
-    sottotitolo: "Rifare il tetto di casa per eliminare infiltrazioni e migliorare isolamento e sicurezza",
-    descrizione: "Rifacimento completo del tetto di casa con struttura portante, copertura in tegole o altri materiali, isolamento termico e impermeabilizzazione.",
+    titolo: "Rifacimento Tetto: preventivo immediato e costo reale",
+    sottotitolo: "Richiedi un preventivo immediato per il rifacimento del tetto e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dello stato attuale.",
+    descrizione: "Richiedi un preventivo immediato per il rifacimento del tetto e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dello stato attuale.",
     descrizioneLunga: `Il tetto è l'elemento fondamentale per la protezione della casa dalle intemperie. Un tetto malmesso può causare infiltrazioni, muffe e problemi strutturali gravi. Il rifacimento del tetto è un investimento essenziale per la sicurezza e il valore dell'immobile.
 
 Il nostro servizio di rifacimento tetto comprende la rimozione della vecchia copertura, la verifica e il consolidamento della struttura portante, la posa di isolamento termico e idraulico di ultima generazione, l'installazione della nuova copertura con tegole, coppi o altri materiali scelti.
@@ -159,9 +159,9 @@ Utilizziamo materiali certificati e tecniche costruttive aggiornate per garantir
     slug: "pavimenti-rivestimenti",
     descrizioneCard: "Fornitura e posa di pavimenti e rivestimenti con preparazione dei supporti e finiture.",
 
-    titolo: "Pavimenti e Rivestimenti per Casa",
-    sottotitolo: "Posa e rifacimento pavimenti e rivestimenti per casa con materiali resistenti e finiture di qualità",
-    descrizione: "Posa e rifacimento di pavimenti e rivestimenti per casa e appartamento in ceramica, gres porcellanato, parquet, marmo e altri materiali.",
+    titolo: "Pavimenti e Rivestimenti: preventivo immediato e costo reale",
+    sottotitolo: "Richiedi un preventivo immediato per la posa di pavimenti e rivestimenti e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica del cantiere.",
+    descrizione: "Richiedi un preventivo immediato per la posa di pavimenti e rivestimenti e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica del cantiere.",
     descrizioneLunga: `Pavimenti e rivestimenti sono gli elementi che caratterizzano maggiormente l'estetica di una casa. La loro scelta influenza non solo l'aspetto visivo ma anche la funzionalità, la manutenzione e il comfort degli ambienti.
 
 Il nostro servizio di posa pavimenti e rivestimenti include la consulenza nella scelta dei materiali più adatti alle esigenze del cliente, la preparazione del supporto, la posa professionale con tecniche aggiornate, la sigillatura e la pulizia finale.
@@ -193,9 +193,9 @@ Proponiamo una vasta gamma di materiali: gres porcellanato effetto legno o pietr
     slug: "impianti-elettrici-idraulici-termici",
     descrizioneCard: "Adeguamento o rifacimento impianti con valutazione tecnica delle reti esistenti.",
 
-    titolo: "Rifacimento Impianti Casa",
-    sottotitolo: "Rifacimento impianti casa a norma per sicurezza, comfort ed efficienza",
-    descrizione: "Rifacimento di impianti elettrici, idraulici e termici per casa e appartamento, con installazione a norma, certificazioni e collaudi.",
+    titolo: "Rifacimento Impianti: preventivo immediato e costo reale",
+    sottotitolo: "Richiedi un preventivo immediato per il rifacimento degli impianti e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica degli impianti esistenti.",
+    descrizione: "Richiedi un preventivo immediato per il rifacimento degli impianti e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica degli impianti esistenti.",
     descrizioneLunga: `Gli impianti sono il sistema nervoso della casa: devono essere sicuri, efficienti e conformi alle normative vigenti. Un impianto fatto male può comportare rischi per la sicurezza e sprechi energetici.
 
 Il nostro servizio di installazione impianti comprende la progettazione personalizzata, l'installazione completa con materiali certificati, le prove di funzionamento, la redazione della documentazione e le certificazioni richieste dalla legge.
@@ -227,9 +227,9 @@ Realizziamo impianti elettrici con quadri moderni e protezioni a norma, impianti
     slug: "cappotto-termico",
     descrizioneCard: "Isolamento termico dell’involucro con analisi del supporto, dettagli esecutivi e prestazioni attese.",
 
-    titolo: "Cappotto Termico per Casa",
-    sottotitolo: "Isolamento termico esterno per casa, comfort abitativo e risparmio energetico",
-    descrizione: "Installazione di cappotto termico esterno per casa e facciata, con isolamento termico, riduzione dei consumi energetici e maggiore comfort abitativo.",
+    titolo: "Cappotto Termico: preventivo immediato e costo reale",
+    sottotitolo: "Richiedi un preventivo immediato per il cappotto termico e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica del supporto.",
+    descrizione: "Richiedi un preventivo immediato per il cappotto termico e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica del supporto.",
     descrizioneLunga: `Il cappotto termico esterno è una delle migliori soluzioni per isolare la casa, ridurre i consumi energetici e migliorare il comfort abitativo. Consiste nell'applicazione di uno strato isolante sulla facciata esterna, protetto da un rivestimento finito.
 
 Il nostro servizio di installazione cappotto termico include la valutazione tecnica del fabbricato, la scelta del sistema isolante più adatto, la preparazione della superficie, la posa dei pannelli isolanti, l'applicazione della rete di armatura e del rasante, la finitura con intonaco o altri rivestimenti.
