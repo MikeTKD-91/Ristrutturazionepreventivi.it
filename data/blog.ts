@@ -15,7 +15,7 @@ export const articoli: Articolo[] = [
   {
     slug: "quanto-costa-ristrutturare-appartamento-napoli-2026",
     titolo: "Quanto costa ristrutturare un appartamento a Napoli nel 2026",
-    estratto: "Guida aggiornata ai costi di ristrutturazione a Napoli e provincia. Scopri i prezzi medi per metro quadro e come ottenere la migliore stima per il tuo progetto.",
+    estratto: "Guida aggiornata ai costi di ristrutturazione a Napoli e provincia. Scopri i prezzi medi per metro quadro e come ottenere la migliore preventivo per il tuo progetto.",
     immagine: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800",
     categoria: "Guide",
     data: "2026-01-15",
@@ -105,7 +105,7 @@ Questo evita errori costosi e aiuta a costruire un preventivo più realistico.
 
 Nel 2026 i bonus casa restano utili, ma non vanno trattati in modo generico. Ogni intervento ha regole proprie e la convenienza reale cambia in base all'immobile, al tipo di lavoro e alla documentazione necessaria.
 
-Se stai valutando una ristrutturazione a Napoli, Caserta o nei comuni dell'Agro Aversano, il modo migliore per partire è una stima tecnica dei lavori, così puoi capire in anticipo costi, pratiche e agevolazioni da verificare.`
+Se stai valutando una ristrutturazione a Napoli, Caserta o nei comuni dell'Agro Aversano, il modo migliore per partire è un preventivo tecnica dei lavori, così puoi capire in anticipo costi, pratiche e agevolazioni da verificare.`
     },
     {
     slug: "ristrutturazione-bagno-idee-soluzioni-2026",

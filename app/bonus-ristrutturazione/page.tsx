@@ -349,7 +349,7 @@ export default function BonusPage() {
               <p className="text-gray-600">
                 Se stai valutando una ristrutturazione a Napoli, Caserta o nei
                 comuni dell'Agro Aversano, il modo più prudente è partire da una
-                stima dei lavori e poi verificare con precisione bonus, pratiche
+                preventivo dei lavori e poi verificare con precisione bonus, pratiche
                 edilizie e costi reali del cantiere.
               </p>
             </div>
@@ -388,7 +388,7 @@ export default function BonusPage() {
           </h2>
 
           <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-            Compila la stima online o contattaci su WhatsApp. Ti aiutiamo a
+            Compila il preventivo online o contattaci su WhatsApp. Ti aiutiamo a
             inquadrare il tipo di lavori, i costi indicativi e i bonus da
             approfondire prima di partire.
           </p>

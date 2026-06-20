@@ -35,7 +35,7 @@ export function generaLinkWhatsApp(
   finitura: string
 ): string {
   const messaggio = encodeURIComponent(
-    `Ciao, sono interessato a una stima per ${servizio.toLowerCase()}.\n` +
+    `Ciao, sono interessato a un preventivo per ${servizio.toLowerCase()}.\n` +
     `Metri quadri: ${mq} mq\n` +
     `Comune: ${comune}\n` +
     `Livello finitura: ${finitura}\n` +

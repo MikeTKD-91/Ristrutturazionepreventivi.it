@@ -168,16 +168,14 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
                   <span className="text-orange">Costi reali, preventivo immediato</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Indicazioni di costo basate su riferimenti tecnici, criticità tipiche
-                  del patrimonio edilizio di {comune.nome} e tempistiche reali di cantiere.
-                  Il preventivo finale emerge dopo verifica tecnica e sopralluogo.
+                  Richiedi un preventivo per la ristrutturazione della cucina a {comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Lavori concordati</span>
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Bonus 50% applicabile</span>
                 </div>
-                <a href="#modulo di stima" className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+                <a href="#modulo preventivo" className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
                   Richiedi un preventivo indicativo
                 </a>
               </div>
@@ -188,7 +186,7 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
           </div>
         </section>
 
-        <div id="modulo di stima" className="lg:hidden px-4 pt-6">
+        <div id="modulo preventivo" className="lg:hidden px-4 pt-6">
           <ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} />
         </div>
 
@@ -317,7 +315,7 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { step: "01", titolo: "Preventivo online", testo: "Compila il modulo della tua cucina nel modulo di stima o scrivici su WhatsApp per ricevere un preventivo online. È una prima indicazione utile per capire se la spesa è in linea con il budget, ma non sostituisce il sopralluogo tecnico." },
+                  { step: "01", titolo: "Preventivo online", testo: "Compila il modulo della tua cucina nel modulo preventivo o scrivici su WhatsApp per ricevere un preventivo online. È una prima indicazione utile per capire se la spesa è in linea con il budget, ma non sostituisce il sopralluogo tecnico." },
                   { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico visita l'immobile, verifica lo stato degli impianti, le dimensioni e la configurazione della cucina per raccogliere tutte le informazioni necessarie." },
                   { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo scritto con prezzi unitari, materiali specificati, tempistiche e condizioni di garanzia. Trasparente, senza voci generiche." },
                 ].map((s) => (
@@ -376,7 +374,7 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
           </div>
 
           <div className="hidden lg:block">
-            <div id="modulo di stima" className="sticky top-6 space-y-6">
+            <div id="modulo preventivo" className="sticky top-6 space-y-6">
               <ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} />
               <div className="bg-gray-50 rounded-2xl p-5">
                 <p className="text-sm font-semibold text-navy mb-3">Altri servizi a {comune.nome}</p>

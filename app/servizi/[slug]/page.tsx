@@ -100,11 +100,11 @@ export default async function ServizioPage({ params }: Props) {
                   Costi aggiornati a {dataAggiornamento}
                 </div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
-                  Ristrutturazione casa e appartamento a Napoli e Caserta:{" "}
-                  <span className="text-orange">costo base da 550 €/mq</span>
+                  Ristrutturazione Casa:{" "}
+                  <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Il costo base da 550 €/mq è un riferimento iniziale per ristrutturazione completa di casa o appartamento. Il preventivo definitivo si conferma solo dopo verifica tecnica e sopralluogo.
+                  Richiedi un preventivo immediato per la ristrutturazione di casa o appartamento e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {["Prezzario Regionale Campania", "Sopralluogo tecnico", "Stima verificabile"].map((t) => (
@@ -112,10 +112,10 @@ export default async function ServizioPage({ params }: Props) {
                   ))}
                 </div>
                 <a
-                  href="#modulo di stima"
+                  href="#modulo-di-preventivo"
                   className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
                 >
-                  Richiedi una stima
+                  Richiedi un preventivo
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -133,7 +133,7 @@ export default async function ServizioPage({ params }: Props) {
           </div>
         </section>
 
-        <div className="lg:hidden px-4 pt-6" id="modulo di stima">
+        <div className="lg:hidden px-4 pt-6" id="modulo-di-preventivo">
           <CalcolatoreAppartamento comuneDefault="Napoli" />
         </div>
 
@@ -245,7 +245,7 @@ export default async function ServizioPage({ params }: Props) {
           </div>
 
           <div className="space-y-8">
-            <div id="modulo di stima" className="hidden lg:block">
+            <div id="modulo-di-preventivo" className="hidden lg:block">
               <CalcolatoreAppartamento comuneDefault="Napoli" />
             </div>
 
@@ -490,7 +490,7 @@ export default async function ServizioPage({ params }: Props) {
 
             {/* Sidebar */}
             <div className="space-y-8">
-              {/* Modulo di stima */}
+              {/* Modulo di preventivo */}
               {slug === "ristrutturazione-appartamento-completo" ? <CalcolatoreAppartamento comuneDefault="Napoli" /> : slug === "ristrutturazione-bagno" ? <CalcolatoreBagno comuneDefault="Napoli" /> : <ScopriIlCostoDellaTuaRistrutturazione comuneDefault="Napoli" />}
 
               {/* CTA */}

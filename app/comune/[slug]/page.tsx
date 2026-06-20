@@ -129,23 +129,23 @@ export default async function ComunePage({ params }: PageProps) {
               {/* Testo */}
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
-                  Ristrutturazione Casa e Appartamento Completo a {comune.nome}:{" "}
+                  Ristrutturazione Casa e Appartamento a {comune.nome}:{" "}
                   <span className="text-orange">costi reali e richiedi preventivo online</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Se stai valutando una ristrutturazione completa della tua casa o del tuo appartamento a {comune.nome}, qui puoi richiedere un preventivo online basato su costi reali, livelli di finitura e parametri coerenti con il tipo di intervento. Il quadro economico definitivo viene confermato solo dopo verifica tecnica e sopralluogo.
+                  Richiedi un preventivo online per la ristrutturazione completa della tua casa o del tuo appartamento a {comune.nome}. Il calcolo parte da costi reali e parametri tecnici coerenti con l’intervento, mentre il preventivo finale viene confermato dopo sopralluogo e verifica dell’immobile.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {["Prezzario Regionale Campania", "Lavori concordati", "Bonus 50% applicabile"].map((t) => (
                     <span key={t} className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">{t}</span>
                   ))}
                 </div>
-                {/* Scroll verso modulo di stima */}
+                {/* Scroll verso modulo preventivo */}
                 <a
-                  href="#modulo di stima"
+                  href="#modulo preventivo"
                   className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
                 >
-                  Richiedi una stima
+                  Richiedi un preventivo
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -163,7 +163,7 @@ export default async function ComunePage({ params }: PageProps) {
             </div>
           </div>
         </section>
-        {/* Modulo di stima mobile */}
+        {/* Modulo di preventivo mobile */}
         <div className="lg:hidden px-4 pt-6">
           <CalcolatoreAppartamento comuneDefault={comune.nome} />
         </div>
@@ -174,7 +174,7 @@ export default async function ComunePage({ params }: PageProps) {
             <section>
               <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione casa e appartamento completo a {comune.nome}</h2>
               <p className="text-gray-600">
-                Qui trovi una stima realistica dei costi di una ristrutturazione completa pensata per case o appartamenti da rifare in modo coordinato, con possibilità di richiedere un preventivo online e verifica tecnica finale solo dopo sopralluogo.
+                Qui trovi un preventivo realistica dei costi di una ristrutturazione completa pensata per case o appartamenti da rifare in modo coordinato, con possibilità di richiedere un preventivo online e verifica tecnica finale solo dopo sopralluogo.
               </p>
             </section>
 
@@ -259,7 +259,7 @@ export default async function ComunePage({ params }: PageProps) {
               <h2 className="text-2xl font-bold text-navy mb-3">Come funziona</h2>
               <div className="grid gap-4 md:grid-cols-3">
                 {[
-                  ["01", "Prima stima online", "Parti dallo strumento di stima con i mq dell'appartamento e ricevi una prima indicazione coerente con il livello standard da 550 €/mq."],
+                  ["01", "Primo preventivo online", "Parti dallo strumento di stima con i mq dell'appartamento e ricevi una prima indicazione coerente con il livello standard da 550 €/mq."],
                   ["02", "Verifica tecnica", "Controlliamo accessibilità, impianti, distribuzione interna e criticità locali per capire cosa incide davvero sul costo."],
                   ["03", "Preventivo scritto", "Ricevi il quadro economico definitivo con lavorazioni, tempi e condizioni operative prima di iniziare il cantiere."],
                 ].map((s) => (
@@ -305,7 +305,7 @@ export default async function ComunePage({ params }: PageProps) {
             <section>
               <h2 className="text-2xl font-bold text-navy mb-2">Cosa troviamo spesso a {comune.nome}</h2>
               <p className="text-gray-600 mb-2"><strong>{comune.tipoEdilizio}.</strong></p>
-              <p className="text-gray-600 mb-6">Conoscere le criticità locali prima del sopralluogo permette stime più accurate e meno sorprese di cantiere.</p>
+              <p className="text-gray-600 mb-6">Conoscere le criticità locali prima del sopralluogo permette costi più accurati e meno sorprese di cantiere.</p>
               <div className="space-y-3">
                 {comune.criticalita.map((c, i) => (
                   <div key={i} className="flex gap-3 items-start bg-amber-50 border border-amber-100 rounded-xl p-4">
@@ -371,7 +371,7 @@ export default async function ComunePage({ params }: PageProps) {
           {/* SIDEBAR STICKY */}
           <div className="hidden lg:block lg:col-span-1">
             <div className="sticky top-6 space-y-6">
-              <div id="modulo di stima">
+              <div id="modulo preventivo">
                 <CalcolatoreAppartamento comuneDefault={comune.nome} />
               </div>
               <div className="bg-gray-50 rounded-2xl p-5">

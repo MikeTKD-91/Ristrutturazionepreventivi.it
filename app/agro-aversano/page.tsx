@@ -100,7 +100,7 @@ export default function AgroAversanoPage() {
                 ))}
               </div>
               <a
-                href="#modulo di stima"
+                href="#modulo preventivo"
                 className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
               >
                 Richiedi un preventivo indicativo
@@ -124,8 +124,8 @@ export default function AgroAversanoPage() {
         </div>
       </section>
 
-      {/* Modulo di stima mobile */}
-      <div id="modulo di stima" className="lg:hidden px-4 pt-6">
+      {/* Modulo di preventivo mobile */}
+      <div id="modulo preventivo" className="lg:hidden px-4 pt-6">
         <ScopriIlCostoDellaTuaRistrutturazione comuneDefault="Aversa" />
       </div>
 
@@ -160,7 +160,7 @@ export default function AgroAversanoPage() {
             </h2>
             <p className="text-gray-600 mb-6">
               Questi problemi emergono sistematicamente nei cantieri dell'Agro Aversano.
-              Conoscerli prima del sopralluogo permette stime più accurate e meno sorprese.
+              Conoscerli prima del sopralluogo permette costi più accurati e meno sorprese.
             </p>
             <div className="space-y-4">
               {CRITICITA_ZONA.map((c) => (
@@ -241,7 +241,7 @@ export default function AgroAversanoPage() {
             <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { n: "01", t: "Richiedi un preventivo indicativo", d: "Usi il modulo di stima o ci scrivi su WhatsApp per ricevere una prima indicazione del costo e capire se la spesa è in linea con il tuo budget. Il preventivo finale si definisce dopo verifica tecnica e sopralluogo." },
+                { n: "01", t: "Richiedi un preventivo indicativo", d: "Usi il modulo preventivo o ci scrivi su WhatsApp per ricevere una prima indicazione del costo e capire se la spesa è in linea con il tuo budget. Il preventivo finale si definisce dopo verifica tecnica e sopralluogo." },
                 { n: "02", t: "Sopralluogo tecnico", d: "Il nostro tecnico visita l'immobile. Verifica impianti, strutture e criticità specifiche dell'Agro Aversano: solo così il preventivo è affidabile." },
                 { n: "03", t: "Preventivo scritto", d: "Prezzi unitari, materiali specificati, tempistiche e garanzia decennale. Tutto nero su bianco prima di iniziare." },
               ].map((s) => (
@@ -258,7 +258,7 @@ export default function AgroAversanoPage() {
 
         {/* ── SIDEBAR ── */}
         <div className="hidden lg:block">
-          <div id="modulo di stima" className="sticky top-6 space-y-6">
+          <div id="modulo preventivo" className="sticky top-6 space-y-6">
             <ScopriIlCostoDellaTuaRistrutturazione comuneDefault="Aversa" />
             <div className="bg-gray-50 rounded-2xl p-5">
               <p className="text-sm font-semibold text-navy mb-4">Perché scegliere noi</p>

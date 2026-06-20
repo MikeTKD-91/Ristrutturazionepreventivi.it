@@ -167,15 +167,15 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                   <span className="text-orange">Preventivo e costi</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Il costo base da 5.000 € è un riferimento iniziale per un bagno standard a {comune.nome}. Il preventivo definitivo si conferma solo dopo verifica tecnica e sopralluogo.
+                  Richiedi un preventivo per la ristrutturazione del bagno a {comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {["Prezzario Regionale Campania", "Sopralluogo tecnico", "Stima verificabile"].map((t) => (
                     <span key={t} className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">{t}</span>
                   ))}
                 </div>
-                <a href="#modulo di stima" className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">
-                  Richiedi una stima
+                <a href="#modulo preventivo" className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">
+                  Richiedi un preventivo
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -193,7 +193,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
           </div>
         </section>
 
-        <div id="modulo di stima" className="lg:hidden px-4 pt-6">
+        <div id="modulo preventivo" className="lg:hidden px-4 pt-6">
           <CalcolatoreBagno comuneDefault={comune.nome} />
         </div>
 
@@ -208,7 +208,7 @@ Il costo base da 5.000 € rappresenta un riferimento iniziale per bagni di dime
 
 Il nostro servizio comprende smontaggio dei sanitari esistenti, demolizione di pavimenti e rivestimenti, smaltimento dei materiali di risulta, realizzazione del nuovo impianto idrico-sanitario ed elettrico del bagno, formazione del massetto, impermeabilizzazione della zona doccia o vasca, posa di pavimenti e rivestimenti e installazione dei nuovi sanitari con rubinetteria.
 
-Ogni stima online ha valore orientativo: il sopralluogo serve a verificare misure, stato degli impianti, condizioni del supporto e reali necessità del cantiere a ${comune.nome}.`}
+Ogni preventivo online ha valore orientativo: il sopralluogo serve a verificare misure, stato degli impianti, condizioni del supporto e reali necessità del cantiere a ${comune.nome}.`}
               </div>
             </div>
 
@@ -285,7 +285,7 @@ Ogni stima online ha valore orientativo: il sopralluogo serve a verificare misur
           </div>
 
           <div className="space-y-8">
-            <div id="modulo di stima" className="hidden lg:block">
+            <div id="modulo preventivo" className="hidden lg:block">
               <CalcolatoreBagno comuneDefault={comune.nome} />
             </div>
 

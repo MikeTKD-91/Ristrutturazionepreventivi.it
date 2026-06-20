@@ -63,7 +63,7 @@ Il servizio è orientato agli interventi edili e impiantistici necessari per ren
 
 Non includiamo fornitura, montaggio o installazione dei mobili cucina: questi aspetti restano fuori dal nostro servizio e vengono eventualmente gestiti da altri fornitori.
 
-Il preventivo finale viene costruito sul progetto reale, così da dare una stima chiara, verificabile e adatta al cantiere specifico.`,
+Il preventivo finale viene costruito sul progetto reale, così da dare un preventivo chiara, verificabile e adatta al cantiere specifico.`,
     immagine: "/images/servizi/ristrutturazione-cucina.jpg",
     alt: "Ristrutturazione cucina con lavorazioni edili e impiantistiche definite su progetto a Napoli e Caserta",
     prezzoMq: { base: 400, standard: 600, premium: 850 },
@@ -82,7 +82,7 @@ Il preventivo finale viene costruito sul progetto reale, così da dare una stima
       "Capitolato più chiaro, senza voci che non ci competono",
       "Intervento adattabile a cucina lineare, ad angolo o open space",
       "Maggiore chiarezza su inclusioni, esclusioni e variabili di cantiere",
-      "Percorso semplice per richiedere stima e contatto rapido",
+      "Percorso semplice per richiedere preventivo e contatto rapido",
     ],
   },
   {
@@ -91,14 +91,14 @@ Il preventivo finale viene costruito sul progetto reale, così da dare una stima
 
     titolo: "Ristrutturazione Bagno",
     sottotitolo: "Ristrutturazione bagno completa con nuovi impianti, sanitari e sopralluogo tecnico",
-    descrizione: "Ristrutturazione completa del bagno con demolizioni, smaltimento, rifacimento impianti, pavimenti, rivestimenti e sanitari. La stima iniziale varia in base a dimensioni, accessibilità, finiture e stato degli impianti esistenti, da confermare dopo sopralluogo.",
+    descrizione: "Ristrutturazione completa del bagno con demolizioni, smaltimento, rifacimento impianti, pavimenti, rivestimenti e sanitari. Il preventivo iniziale varia in base a dimensioni, accessibilità, finiture e stato degli impianti esistenti, da confermare dopo sopralluogo.",
     descrizioneLunga: `La ristrutturazione completa del bagno è un intervento tecnico che comprende demolizioni, rifacimento degli impianti, ripristino dei sottofondi, impermeabilizzazione e posa delle nuove finiture.
 
 Il costo base da 5.000 € rappresenta un riferimento iniziale per bagni di dimensioni contenute o medie, con configurazione standard e senza criticità particolari. Il preventivo definitivo può aumentare in caso di bagno più grande, spostamenti impiantistici rilevanti, finiture fuori capitolato o problematiche emerse dopo la demolizione.
 
 Il nostro servizio comprende smontaggio dei sanitari esistenti, demolizione di pavimenti e rivestimenti, smaltimento dei materiali di risulta, realizzazione del nuovo impianto idrico-sanitario ed elettrico del bagno, formazione del massetto, impermeabilizzazione della zona doccia o vasca, posa di pavimenti e rivestimenti e installazione dei nuovi sanitari con rubinetteria.
 
-Ogni stima online ha valore orientativo: il sopralluogo serve a verificare misure, stato degli impianti, condizioni del supporto e reali necessità del cantiere.`,
+Ogni preventivo online ha valore orientativo: il sopralluogo serve a verificare misure, stato degli impianti, condizioni del supporto e reali necessità del cantiere.`,
     immagine: "/images/servizi/ristrutturazione-bagno.jpg",
     alt: "Ristrutturazione bagno luxury con doccia walk-in in marmo, vasca freestanding e design elegante a Napoli Caserta",
     prezzoMq: { base: 450, standard: 700, premium: 1000 },

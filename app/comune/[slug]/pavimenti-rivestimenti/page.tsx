@@ -167,8 +167,8 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Lavori concordati</span>
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Bonus 50% applicabile</span>
                 </div>
-                <a href="#modulo di stima" className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
-                  Richiedi una prima stima
+                <a href="#modulo preventivo" className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+                  Richiedi una primo preventivo
                 </a>
               </div>
               <div className="hidden lg:block relative h-72 rounded-2xl overflow-hidden shadow-2xl">
@@ -178,7 +178,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
           </div>
         </section>
 
-        <div id="modulo di stima" className="lg:hidden px-4 pt-6"><ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} /></div>
+        <div id="modulo preventivo" className="lg:hidden px-4 pt-6"><ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} /></div>
 
         <div className="max-w-6xl mx-auto px-4 py-12 grid lg:grid-cols-3 gap-10 items-start">
           <div className="lg:col-span-2 space-y-16">
@@ -305,7 +305,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
               <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { step: "01", titolo: "Prima stima online", testo: "Inserisci la superficie da trattare nel modulo di stima o scrivici su WhatsApp per ricevere una prima stima online. È una prima indicazione utile per capire se la spesa è in linea con il budget, ma non sostituisce il sopralluogo tecnico." },
+                  { step: "01", titolo: "Primo preventivo online", testo: "Inserisci la superficie da trattare nel modulo preventivo o scrivici su WhatsApp per ricevere una primo preventivo online. È una prima indicazione utile per capire se la spesa è in linea con il budget, ma non sostituisce il sopralluogo tecnico." },
                   { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico verifica lo stato del massetto, rileva le superfici e ti guida nella scelta del materiale più adatto alle tue esigenze e al tuo budget." },
                   { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo scritto con tipologia di materiale, schema di posa, tempistiche e garanzie. Trasparente, senza voci generiche." },
                 ].map((s) => (
@@ -358,7 +358,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
           </div>
 
           <div className="hidden lg:block">
-            <div id="modulo di stima" className="sticky top-6 space-y-6">
+            <div id="modulo preventivo" className="sticky top-6 space-y-6">
               <ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} />
               <div className="bg-gray-50 rounded-2xl p-5">
                 <p className="text-sm font-semibold text-navy mb-3">Altri servizi a {comune.nome}</p>
@@ -384,7 +384,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
         <section className="bg-navy py-14 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Vuoi sapere quanto costa la posa a {comune.nome}?</h2>
-            <p className="text-white/70 mb-8 text-lg">Richiedi una prima stima del tuo intervento. Se la stima è in linea con il tuo budget, organizziamo il sopralluogo e prepariamo il preventivo dettagliato.</p>
+            <p className="text-white/70 mb-8 text-lg">Richiedi una primo preventivo del tuo intervento. Se il preventivo è in linea con il tuo budget, organizziamo il sopralluogo e prepariamo il preventivo dettagliato.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`https://wa.me/393339809319?text=Salve%2C%20vorrei%20un%20preventivo%20per%20pavimenti%20e%20rivestimenti%20a%20${encodeURIComponent(comune.nome)}`} target="_blank" rel="noopener noreferrer" className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center">
                 Parla con noi su WhatsApp

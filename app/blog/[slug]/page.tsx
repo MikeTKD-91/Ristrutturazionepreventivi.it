@@ -320,7 +320,7 @@ export default async function ArticoloPage({ params }: Props) {
               <div className="mt-8 bg-navy rounded-2xl p-8 text-white">
                 <h3 className="text-xl font-bold mb-2">Hai domande su questo argomento?</h3>
                 <p className="text-white/75 text-sm mb-6">
-                  Contattaci su WhatsApp per una prima stima dell'intervento.
+                  Contattaci su WhatsApp per una primo preventivo dell'intervento.
                 </p>
                 <a
                   href="https://wa.me/393339809319"
@@ -381,7 +381,7 @@ export default async function ArticoloPage({ params }: Props) {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Pronto a Ristrutturare?</h2>
           <p className="text-white/75 text-lg mb-8 max-w-2xl mx-auto">
-            Richiedi una prima stima per il tuo progetto.
+            Richiedi una primo preventivo per il tuo progetto.
           </p>
           <a
             href="https://wa.me/393339809319"
