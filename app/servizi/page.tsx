@@ -110,10 +110,11 @@ const pricingLabels: Record<string, { top: string; value: string }> = {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6">
-                    <h2 className="text-2xl font-bold text-white mb-2">
-                      {servizio.titolo}
+                      <h2 className="text-2xl font-bold text-white mb-2">
+                        {servizio.slug === "ristrutturazione-appartamento-completo"
+                        ? "Ristrutturazione Casa e Appartamento"
+                        : servizio.titolo.split(":")[0]}
                     </h2>
-                    <p className="text-white/80 text-sm">{servizio.sottotitolo}</p>
                   </div>
                 </div>
                 
