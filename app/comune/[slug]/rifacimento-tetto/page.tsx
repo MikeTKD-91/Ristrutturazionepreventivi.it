@@ -1,10 +1,10 @@
-// app/comune/[slug]/rifacimento-tetto/page.tsx
-
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { Check, MessageCircle } from "lucide-react";
 import { comuni, getComuneBySlug } from "@/data/comuni";
+import { getServizioBySlug } from "@/data/servizi";
 import ScopriIlCostoDellaTuaRistrutturazione from "@/components/shared/ScopriIlCostoDellaTuaRistrutturazione";
 import {
   buildBreadcrumb,
@@ -13,46 +13,11 @@ import {
   buildHowToSchema,
   buildFaqSchema,
 } from "@/lib/schema";
+import { getDataAggiornamento, formatPrezzo, generaLinkWhatsApp } from "@/lib/utils";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
-
-const COSTI_TETTO = [
-  { dimensione: "Tetto fino a 80 mq", base: "6.400 – 9.600 €", standard: "9.600 – 14.400 €", premium: "14.400 – 21.600 €" },
-  { dimensione: "Tetto 80–150 mq", base: "9.600 – 18.000 €", standard: "18.000 – 27.000 €", premium: "27.000 – 40.500 €" },
-  { dimensione: "Tetto 150–250 mq", base: "18.000 – 30.000 €", standard: "30.000 – 45.000 €", premium: "45.000 – 67.500 €" },
-  { dimensione: "Tetto oltre 250 mq", base: "Da 30.000 €", standard: "Da 45.000 €", premium: "Da 67.500 €" },
-];
-
-const LIVELLI_FINITURA = [
-  { livello: "Base", descrizione: "Tegole in laterizio standard, sottomanto traspirante, guaina impermeabile. Protezione certificata, funzionale e durevole.", colore: "bg-gray-100 text-gray-700" },
-  { livello: "Standard", descrizione: "Coppi in cotto o tegole ventilate, isolamento termico 8–10 cm, guaina traspirante, grondaie in alluminio preverniciato. Il livello più richiesto.", colore: "bg-blue-50 text-navy" },
-  { livello: "Premium", descrizione: "Tegole di design o ardesia, isolamento termico 14+ cm, tetto ventilato, velux/lucernari, grondaie in rame, massima efficienza energetica.", colore: "bg-orange-50 text-orange" },
-];
-
-const COSA_INCLUDE_RIFACIMENTO = [
-  { voce: "Rimozione e smaltimento copertura esistente (incluso amianto se presente)", incluso: true },
-  { voce: "Verifica e consolidamento struttura portante (travetti, arcarecci)", incluso: true },
-  { voce: "Sostituzione elementi lignei deteriorati", incluso: true },
-  { voce: "Posa guaina impermeabile e sottomanto traspirante", incluso: true },
-  { voce: "Isolamento termico (spessore concordato in progetto)", incluso: true },
-  { voce: "Posa nuova copertura (tegole, coppi o materiale scelto)", incluso: true },
-  { voce: "Installazione grondaie e pluviali", incluso: true },
-  { voce: "Rifacimento colmi, scossaline e converse", incluso: true },
-  { voce: "Ponteggi (inclusi nell'intervento standard)", incluso: true },
-  { voce: "Velux o lucernari", incluso: false, nota: "disponibili su richiesta, preventivati separatamente" },
-];
-
-const TEMPISTICHE = [
-  { fase: "Montaggio ponteggi e protezioni", giorni: "1–2 gg", nota: "obbligatori per qualsiasi intervento in quota" },
-  { fase: "Rimozione copertura esistente", giorni: "2–4 gg", nota: "smaltimento in discarica autorizzata" },
-  { fase: "Verifica e consolidamento struttura", giorni: "1–3 gg", nota: "sostituzione travetti e arcarecci danneggiati" },
-  { fase: "Posa isolamento e guaina", giorni: "2–4 gg", nota: "in base alla superficie" },
-  { fase: "Posa nuova copertura", giorni: "3–7 gg", nota: "in base alla tipologia e superficie" },
-  { fase: "Grondaie, scossaline e rifinitura", giorni: "1–2 gg", nota: "stagna definitiva" },
-  { fase: "Smontaggio ponteggi e pulizia", giorni: "1–2 gg", nota: "" },
-];
 
 export async function generateStaticParams() {
   return comuni.map((c) => ({ slug: c.slug }));
@@ -61,10 +26,13 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
-  if (!comune) return {};
+  const servizio = getServizioBySlug("rifacimento-tetto");
+  if (!comune || !servizio) return {};
+
   const title = `Rifacimento Tetto a ${comune.nome} | Costi Reali, Preventivo Immediato`;
-  const description = `Quanto costa rifare il tetto a ${comune.nome}? Costi reali, preventivo immediato, tipologie di copertura, tempistiche reali e sopralluogo tecnico.`;
+  const description = `Rifacimento tetto a ${comune.nome}: costi indicativi, cosa include il servizio, vantaggi, zone servite e preventivo.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/rifacimento-tetto/`;
+
   return {
     title,
     description,
@@ -78,10 +46,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "article",
       images: [
         {
-          url: `https://ristrutturazionepreventivi.it/images/servizi/rifacimento-tetto.jpg`,
-          width: 1200,
-          height: 630,
-          alt: title,
+          url: servizio.immagine,
+          width: 800,
+          height: 600,
+          alt: `Rifacimento tetto a ${comune.nome}`,
         },
       ],
     },
@@ -91,41 +59,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 function buildJsonLd(comune: ReturnType<typeof getComuneBySlug>) {
   if (!comune) return null;
   const servizioSlug = "rifacimento-tetto";
-
-  const breadcrumb = buildBreadcrumb(
-    comune.nome,
-    comune.slug,
-    "Rifacimento Tetto",
-    servizioSlug
-  );
-
-  const localBusiness = buildLocalBusiness(
-    comune.nome,
-    `rifacimento tetto a ${comune.nome}. Preventivo immediato, con verifica tecnica e sopralluogo per confermare il quadro economico definitivo.`
-  );
-
+  const breadcrumb = buildBreadcrumb(comune.nome, comune.slug, "Rifacimento Tetto", servizioSlug);
+  const localBusiness = buildLocalBusiness(comune.nome, `rifacimento tetto a ${comune.nome}. Preventivo immediato, con verifica tecnica e sopralluogo.`);
   const serviceSchema = buildServiceSchema({
     serviceType: "Rifacimento Tetto",
     serviceName: `Rifacimento Tetto a ${comune.nome}`,
-    descrizione: `Rifacimento Tetto a ${comune.nome}. ${comune.tipoEdilizio}.`,
+    descrizione: `Rifacimento tetto a ${comune.nome}. ${comune.tipoEdilizio}.`,
     comuneNome: comune.nome,
     comuneSlug: comune.slug,
     servizioSlug,
-    prezzoMin: "2400",
-    prezzoMax: "40000",
+    prezzoMin: "80",
+    prezzoMax: "180",
   });
-
   const howToSchema = buildHowToSchema("Rifacimento Tetto", comune.nome);
-
   const faqSchema = buildFaqSchema(comune.faq);
-
   return { breadcrumb, localBusiness, serviceSchema, howToSchema, faqSchema };
 }
 
-export default async function RifacimentoTettoPage({ params }: PageProps) {
+export default async function RifacimentoTettoComunePage({ params }: PageProps) {
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
-  if (!comune) notFound();
+  const servizio = getServizioBySlug("rifacimento-tetto");
+  const dataAggiornamento = getDataAggiornamento();
+  if (!comune || !servizio) notFound();
   const jsonLd = buildJsonLd(comune);
 
   return (
@@ -136,267 +92,178 @@ export default async function RifacimentoTettoPage({ params }: PageProps) {
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.localBusiness) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.serviceSchema) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.howToSchema) }} />
-          {jsonLd.faqSchema && (
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.faqSchema) }} />
-          )}
+          {jsonLd.faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.faqSchema) }} />}
         </>
       )}
-      <main className="min-h-screen bg-white">
-        <section className="bg-navy py-14 px-4">
-          <div className="max-w-6xl mx-auto">
-            <nav className="text-sm text-white/50 mb-6 flex flex-wrap gap-1 items-center">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link><span>/</span>
-              <Link href="/zone-servite/" className="hover:text-white transition-colors">Zone servite</Link><span>/</span>
-              <Link href={`/comune/${comune.slug}/`} className="hover:text-white transition-colors">{comune.nome}</Link><span>/</span>
-              <span className="text-white/80">Rifacimento Tetto</span>
-            </nav>
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div>
-                <p className="text-orange text-sm font-semibold uppercase tracking-widest mb-3">Rifacimento Tetto · {comune.nome}</p>
-                <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
-                  Rifacimento Tetto a {comune.nome}:<br />
-                  <span className="text-orange">Costi reali, preventivo immediato</span>
-                </h1>
-                <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Indicazioni di costo basate su riferimenti tecnici, verifiche strutturali,
-                  accessibilità del cantiere ed eventuale presenza di amianto.
-                  Il preventivo finale emerge dopo sopralluogo e verifica tecnica.
-                </p>
-                <div className="flex flex-wrap gap-3 mb-8">
-                  <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>
-                  <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Smaltimento amianto autorizzato</span>
-                  <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Bonus 50% applicabile</span>
-                </div>
-                <a href="#modulo di stima" className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
-                  Richiedi una prima stima
-                </a>
+
+      <div className="min-h-screen">
+        <section className="relative h-[50vh] min-h-[400px]">
+          <Image src={servizio.immagine} alt={`Rifacimento tetto a ${comune.nome}`} fill className="object-cover" priority />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent" />
+          <div className="absolute inset-0 flex items-end">
+            <div className="container mx-auto px-4 pb-12">
+              <nav className="text-sm text-white/70 mb-4 flex flex-wrap gap-1 items-center">
+                <Link href="/" className="hover:text-white transition-colors">Home</Link><span>/</span>
+                <Link href="/zone-servite/" className="hover:text-white transition-colors">Zone servite</Link><span>/</span>
+                <Link href={`/comune/${comune.slug}/`} className="hover:text-white transition-colors">{comune.nome}</Link><span>/</span>
+                <span className="text-white">Rifacimento Tetto</span>
+              </nav>
+              <div className="inline-flex items-center gap-2 bg-orange/20 text-orange backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-4">
+                <Check className="h-4 w-4" /> Costi aggiornati a {dataAggiornamento}
               </div>
-              <div className="hidden lg:block relative h-72 rounded-2xl overflow-hidden shadow-2xl">
-                <Image src="/images/servizi/rifacimento-tetto.jpg" alt={`Rifacimento tetto a ${comune.nome}`} fill className="object-cover" priority />
-              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Rifacimento Tetto a {comune.nome}</h1>
+              <p className="text-xl text-white/80 max-w-2xl">{servizio.sottotitolo}. Intervento calibrato sulle caratteristiche edilizie di {comune.nome}.</p>
             </div>
           </div>
         </section>
 
-        <div id="modulo di stima" className="lg:hidden px-4 pt-6"><ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} /></div>
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-3 gap-12">
+              <div className="lg:col-span-2 space-y-12">
+                <div>
+                  <h2 className="text-2xl font-bold text-navy mb-4">Descrizione del Servizio</h2>
+                  <div className="prose prose-lg max-w-none text-gray-600 whitespace-pre-line">
+                    {servizio.descrizioneLunga}
+                    {"\n\n"} A {comune.nome}, il sopralluogo tiene conto di questo contesto: {comune.tipoEdilizio}.
+                  </div>
+                </div>
 
-        <div className="max-w-6xl mx-auto px-4 py-12 grid lg:grid-cols-3 gap-10 items-start">
-          <div className="lg:col-span-2 space-y-16">
-
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Quanto costa rifare il tetto a {comune.nome}?</h2>
-              <p className="text-gray-600 mb-6">
-                Le forbici di costo che trovi qui sotto sono orientative e si basano sul{" "}
-                <strong>Prezzario Regionale Campania</strong>. Il costo reale dipende dalle condizioni
-                della struttura portante, dalla presenza di amianto, dalla tipologia di copertura scelta
-                e dall&apos;accessibilità dell&apos;edificio. Solo il sopralluogo consente di confermare il quadro economico definitivo.
-              </p>
-              <div className="hidden md:block overflow-x-auto rounded-xl border border-gray-200 mb-4">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="bg-navy text-white">
-                      <th className="text-left py-4 px-5 font-semibold">Superficie tetto</th>
-                      <th className="text-center py-4 px-4 font-semibold">Base</th>
-                      <th className="text-center py-4 px-4 font-semibold">Standard</th>
-                      <th className="text-center py-4 px-4 font-semibold text-orange">Premium</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {COSTI_TETTO.map((row, i) => (
-                      <tr key={row.dimensione} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                        <td className="py-4 px-5 font-medium text-navy">{row.dimensione}</td>
-                        <td className="py-4 px-4 text-center text-gray-700">{row.base}</td>
-                        <td className="py-4 px-4 text-center text-gray-700">{row.standard}</td>
-                        <td className="py-4 px-4 text-center font-semibold text-navy">{row.premium}</td>
-                      </tr>
+                <div className="bg-gray-50 p-8 rounded-2xl">
+                  <h2 className="text-2xl font-bold text-navy mb-6">Cosa Include</h2>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {servizio.caratteristiche.map((car, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="h-6 w-6 rounded-full bg-orange/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check className="h-4 w-4 text-orange" />
+                        </div>
+                        <span className="text-gray-700">{car}</span>
+                      </div>
                     ))}
-                  </tbody>
-                </table>
-              </div>
-              <div className="md:hidden space-y-4 mb-4">
-                {COSTI_TETTO.map((row) => (
-                  <div key={row.dimensione} className="border border-gray-200 rounded-xl p-4">
-                    <p className="font-semibold text-navy mb-3">{row.dimensione}</p>
-                    <div className="grid grid-cols-3 gap-2 text-sm">
-                      <div className="bg-gray-50 rounded-lg p-2 text-center"><p className="text-gray-500 text-xs mb-1">Base</p><p className="font-medium text-gray-700">{row.base}</p></div>
-                      <div className="bg-blue-50 rounded-lg p-2 text-center"><p className="text-navy text-xs mb-1">Standard</p><p className="font-medium text-navy">{row.standard}</p></div>
-                      <div className="bg-orange-50 rounded-lg p-2 text-center"><p className="text-orange text-xs mb-1">Premium</p><p className="font-medium text-navy">{row.premium}</p></div>
-                    </div>
                   </div>
-                ))}
-              </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
-                <span className="text-amber-500 text-lg flex-shrink-0 mt-0.5">⚠</span>
-                <p className="text-sm text-amber-900">
-                  <strong>Questi valori non costituiscono un preventivo vincolante.</strong>{" "}
-                  La presenza di amianto, lo stato della struttura portante e l&apos;accessibilità del cantiere possono variare significativamente il costo finale. Il sopralluogo è l&apos;unico modo per definire un preventivo preciso.
-                </p>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Cosa cambia tra copertura Base, Standard e Premium?</h2>
-              <p className="text-gray-600 mb-6">La tipologia di materiale e lo spessore dell&apos;isolamento determinano prestazioni, durata e costo. Ecco le differenze concrete.</p>
-              <div className="grid md:grid-cols-3 gap-4">
-                {LIVELLI_FINITURA.map((lv) => (
-                  <div key={lv.livello} className={`rounded-xl p-5 ${lv.colore}`}>
-                    <p className="font-bold text-lg mb-2">{lv.livello}</p>
-                    <p className="text-sm leading-relaxed">{lv.descrizione}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Cosa include il rifacimento completo del tetto</h2>
-              <p className="text-gray-600 mb-6">Un tetto rifatto bene non è solo nuove tegole. Ecco cosa comprende un intervento eseguito a regola d&apos;arte.</p>
-              <div className="space-y-3">
-                {COSA_INCLUDE_RIFACIMENTO.map((item) => (
-                  <div key={item.voce} className={`flex items-start gap-3 p-4 rounded-xl ${item.incluso ? "bg-green-50" : "bg-gray-50"}`}>
-                    <span className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 ${item.incluso ? "bg-green-500 text-white" : "bg-gray-300 text-gray-600"}`}>
-                      {item.incluso ? "✓" : "○"}
-                    </span>
-                    <div>
-                      <p className={`text-sm font-medium ${item.incluso ? "text-gray-800" : "text-gray-500"}`}>{item.voce}</p>
-                      {item.nota && <p className="text-xs text-gray-400 mt-0.5">{item.nota}</p>}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Criticità tipiche degli immobili a {comune.nome}</h2>
-              <p className="text-gray-600 mb-6">{comune.tipoEdilizio}. Prima di ogni sopralluogo, teniamo conto delle caratteristiche specifiche del patrimonio edilizio locale.</p>
-              <div className="space-y-3">
-                {comune.criticalita.map((c, i) => (
-                  <div key={i} className="flex gap-3 items-start bg-amber-50 border border-amber-100 rounded-xl p-4">
-                    <span className="flex-shrink-0 text-amber-500 mt-0.5">▲</span>
-                    <p className="text-sm text-gray-800 leading-relaxed">{c}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-gray-500 mt-4">Queste criticità emergono spesso solo durante il sopralluogo. Il nostro tecnico le verifica sistematicamente prima di confermare il quadro economico definitivo.</p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Quanto dura il cantiere?</h2>
-              <p className="text-gray-600 mb-6">
-                Un tetto di 120–150 mq richiede mediamente <strong>2–4 settimane lavorative</strong>{" "}
-                inclusi ponteggi. I tempi dipendono fortemente dalle condizioni meteo e dallo stato della struttura portante.
-              </p>
-              <div className="space-y-2">
-                {TEMPISTICHE.map((t, i) => (
-                  <div key={i} className="flex items-center gap-4 py-3 border-b border-gray-100 last:border-0">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-navy text-white text-xs font-bold flex items-center justify-center">{i + 1}</span>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-800">{t.fase}</p>
-                      {t.nota && <p className="text-xs text-gray-400">{t.nota}</p>}
-                    </div>
-                    <span className="flex-shrink-0 text-sm font-semibold text-navy">{t.giorni}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-gray-500 mt-4">La bonifica amianto richiede ditte specializzate autorizzate e notifica all&apos;ASL. Questo processo può allungare i tempi di 2–4 settimane aggiuntive. Il programma definitivo viene definito al sopralluogo.</p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Come funziona con noi</h2>
-              <p className="text-gray-600 mb-8">Tre passaggi, nessuna sorpresa.</p>
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { step: "01", titolo: "Prima stima online", testo: "Inserisci la superficie del tetto nel modulo di stima o scrivici su WhatsApp per ricevere una prima stima online. È una prima indicazione utile per capire se la spesa è in linea con il budget, ma non sostituisce il sopralluogo tecnico." },
-                  { step: "02", titolo: "Sopralluogo tecnico", testo: "Il nostro tecnico sale sul tetto, verifica lo stato della struttura portante, la presenza di amianto e l'accessibilità per definire l'intervento necessario." },
-                  { step: "03", titolo: "Preventivo scritto", testo: "Ricevi un preventivo scritto con tipologia di copertura, spessori, tempistiche e condizioni di garanzia. Trasparente, senza voci generiche." },
-                ].map((s) => (
-                  <div key={s.step}>
-                    <p className="text-5xl font-black text-gray-100 mb-3 leading-none">{s.step}</p>
-                    <h3 className="text-base font-bold text-navy mb-2">{s.titolo}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{s.testo}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {comune.faq.length > 0 && (
-              <section>
-                <h2 className="text-2xl font-bold text-navy mb-2">Domande frequenti sul rifacimento tetto a {comune.nome}</h2>
-                <p className="text-gray-600 mb-6">Le domande che ci vengono poste più spesso da chi ci contatta da {comune.nome}.</p>
-                <div className="space-y-4">
-                  {comune.faq.map((faq, i) => (
-                    <details key={i} className="group border border-gray-200 rounded-xl overflow-hidden">
-                      <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none hover:bg-gray-50 transition-colors">
-                        <span className="font-medium text-navy text-sm leading-snug">{faq.domanda}</span>
-                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-orange/10 text-orange flex items-center justify-center text-sm group-open:rotate-45 transition-transform">+</span>
-                      </summary>
-                      <div className="px-5 pb-5 pt-1"><p className="text-sm text-gray-700 leading-relaxed">{faq.risposta}</p></div>
-                    </details>
-                  ))}
                 </div>
-              </section>
-            )}
 
-            {comune.vicini.length > 0 && (
-              <section>
-                <h2 className="text-xl font-bold text-navy mb-4">Rifacimento tetto nei comuni vicini a {comune.nome}</h2>
-                <div className="flex flex-wrap gap-3">
-                  {comune.vicini.map((slug) => {
-                    const vicino = getComuneBySlug(slug);
-                    if (!vicino) return null;
-                    return (
-                      <Link key={slug} href={`/comune/${slug}/rifacimento-tetto/`} className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-navy hover:text-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full transition-colors">
-                        Tetto a {vicino.nome}
+                <div>
+                  <h2 className="text-2xl font-bold text-navy mb-6">Perché Sceglierci</h2>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {servizio.vantaggi.map((vantaggio, i) => (
+                      <div key={i} className="bg-navy/5 p-4 rounded-xl border-l-4 border-orange">
+                        <p className="text-gray-700">{vantaggio}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h2 className="text-2xl font-bold text-navy mb-6">Prezzi Indicativi (Prezzario Regionale Campania)</h2>
+                  <div className="grid sm:grid-cols-3 gap-4">
+                    <div className="bg-white border-2 border-gray-200 p-6 rounded-xl text-center">
+                      <p className="text-sm text-gray-500 mb-2">Finitura Base</p>
+                      <p className="text-3xl font-bold text-navy">{servizio.prezzoMq.base} €</p>
+                      <p className="text-sm text-gray-400">/mq</p>
+                    </div>
+                    <div className="bg-white border-2 border-orange p-6 rounded-xl text-center relative">
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange text-white text-xs px-3 py-1 rounded-full">Più scelta</div>
+                      <p className="text-sm text-gray-500 mb-2">Finitura Standard</p>
+                      <p className="text-3xl font-bold text-orange">{servizio.prezzoMq.standard} €</p>
+                      <p className="text-sm text-gray-400">/mq</p>
+                    </div>
+                    <div className="bg-white border-2 border-gray-200 p-6 rounded-xl text-center">
+                      <p className="text-sm text-gray-500 mb-2">Finitura Premium</p>
+                      <p className="text-3xl font-bold text-navy">{servizio.prezzoMq.premium} €</p>
+                      <p className="text-sm text-gray-400">/mq</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-500 mt-4">* I prezzi sono indicativi e possono variare in base alle specifiche del progetto a {comune.nome}. Costi aggiornati a {dataAggiornamento}.</p>
+                </div>
+
+                <div>
+                  <h2 className="text-2xl font-bold text-navy mb-4">Criticità tipiche a {comune.nome}</h2>
+                  <div className="grid gap-4">
+                    {comune.criticalita.map((item, i) => (
+                      <div key={i} className="bg-amber-50 border border-amber-100 rounded-xl p-4">
+                        <p className="text-gray-700">{item}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {comune.faq.length > 0 && (
+                  <div>
+                    <h2 className="text-2xl font-bold text-navy mb-6">Domande frequenti su {comune.nome}</h2>
+                    <div className="space-y-4">
+                      {comune.faq.map((faq, i) => (
+                        <details key={i} className="group border border-gray-200 rounded-xl overflow-hidden">
+                          <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none hover:bg-gray-50 transition-colors">
+                            <span className="font-medium text-navy text-sm leading-snug">{faq.domanda}</span>
+                            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-orange/10 text-orange flex items-center justify-center text-sm group-open:rotate-45 transition-transform">+</span>
+                          </summary>
+                          <div className="px-5 pb-5 pt-1"><p className="text-sm text-gray-700 leading-relaxed">{faq.risposta}</p></div>
+                        </details>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div>
+                  <h2 className="text-2xl font-bold text-navy mb-4">Dove operiamo</h2>
+                  <p className="text-gray-600 mb-4">Offriamo il servizio di rifacimento tetto a {comune.nome} e nei comuni vicini:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {comune.vicini.map((slugVicino) => {
+                      const vicino = getComuneBySlug(slugVicino);
+                      if (!vicino) return null;
+                      return (
+                        <Link key={slugVicino} href={`/comune/${slugVicino}/rifacimento-tetto/`} className="bg-gray-100 hover:bg-navy hover:text-white text-navy px-3 py-1 rounded-lg text-sm transition-colors">{vicino.nome}</Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-8">
+                <ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} />
+
+                <div className="bg-navy p-6 rounded-2xl text-white">
+                  <h3 className="text-xl font-bold mb-4">Richiedi un preventivo per il tuo intervento</h3>
+                  <p className="text-white/80 mb-6">Contattaci su WhatsApp per capire il costo del tuo progetto di rifacimento tetto a {comune.nome}.</p>
+                  <a
+                    href={generaLinkWhatsApp(
+                      "Rifacimento Tetto",
+                      80,
+                      comune.nome,
+                      `${formatPrezzo(servizio.prezzoMq.standard * 80 * 0.9)} - ${formatPrezzo(servizio.prezzoMq.standard * 80 * 1.1)}`,
+                      "Standard"
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-orange hover:bg-orange-600 text-white py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
+                  >
+                    <MessageCircle className="h-5 w-5" /> Parla con noi su WhatsApp
+                  </a>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold text-navy mb-4">Altri servizi a {comune.nome}</h3>
+                  <div className="space-y-3">
+                    {[
+                      { label: "Ristrutturazione Appartamento", href: `/comune/${comune.slug}/` },
+                      { label: "Ristrutturazione Bagno", href: `/comune/${comune.slug}/ristrutturazione-bagno/` },
+                      { label: "Ristrutturazione Cucina", href: `/comune/${comune.slug}/ristrutturazione-cucina/` },
+                      { label: "Cappotto Termico", href: `/comune/${comune.slug}/cappotto-termico/` },
+                      { label: "Impianti", href: `/comune/${comune.slug}/impianti-elettrici-idraulici-termici/` },
+                      { label: "Pavimenti e Rivestimenti", href: `/comune/${comune.slug}/pavimenti-rivestimenti/` },
+                    ].map((s) => (
+                      <Link key={s.href} href={s.href} className="flex items-center justify-between text-sm text-gray-700 hover:text-navy py-2 border-b border-gray-200 last:border-0 transition-colors">
+                        {s.label}<span className="text-gray-400">→</span>
                       </Link>
-                    );
-                  })}
-                  <Link href={`/comune/${comune.slug}/`} className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-navy hover:text-white text-gray-700 text-sm font-medium px-4 py-2 rounded-full transition-colors">
-                    Tutti i servizi a {comune.nome} →
-                  </Link>
-                </div>
-              </section>
-            )}
-          </div>
-
-          <div className="hidden lg:block">
-            <div id="modulo di stima" className="sticky top-6 space-y-6">
-              <ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} />
-              <div className="bg-gray-50 rounded-2xl p-5">
-                <p className="text-sm font-semibold text-navy mb-3">Altri servizi a {comune.nome}</p>
-                <div className="space-y-2">
-                  {[
-                    { label: "Ristrutturazione Appartamento", href: `/comune/${comune.slug}/` },
-                    { label: "Ristrutturazione Bagno", href: `/comune/${comune.slug}/ristrutturazione-bagno/` },
-                    { label: "Ristrutturazione Cucina", href: `/comune/${comune.slug}/ristrutturazione-cucina/` },
-                    { label: "Cappotto Termico", href: `/comune/${comune.slug}/cappotto-termico/` },
-                    { label: "Impianti", href: `/comune/${comune.slug}/impianti-elettrici-idraulici-termici/` },
-                    { label: "Pavimenti e Rivestimenti", href: `/comune/${comune.slug}/pavimenti-rivestimenti/` },
-                  ].map((s) => (
-                    <Link key={s.href} href={s.href} className="flex items-center justify-between text-sm text-gray-700 hover:text-navy py-2 border-b border-gray-200 last:border-0 transition-colors">
-                      {s.label}<span className="text-gray-400">→</span>
-                    </Link>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <section className="bg-navy py-14 px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Vuoi sapere quanto costa rifare il tetto a {comune.nome}?</h2>
-            <p className="text-white/70 mb-8 text-lg">Richiedi una prima stima del tuo intervento. Se la stima è in linea con il tuo budget, organizziamo il sopralluogo e prepariamo il preventivo dettagliato.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={`https://wa.me/393339809319?text=Salve%2C%20vorrei%20un%20preventivo%20per%20il%20rifacimento%20del%20tetto%20a%20${encodeURIComponent(comune.nome)}`} target="_blank" rel="noopener noreferrer" className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center">
-                Parla con noi su WhatsApp
-              </a>
-              <a href="tel:+393339809319" className="bg-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors text-center">
-                Chiama +39 333 980 9319
-              </a>
-            </div>
-            <p className="text-white/40 text-xs mt-6">Russo FE Costruzione SRL · Lusciano (CE) · P.IVA 04836230617</p>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }
