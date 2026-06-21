@@ -62,8 +62,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
-  const title = `Ristrutturazione Cucina a ${comune.nome} | Costi Reali, Preventivo Immediato`;
-  const description = `Quanto costa ristrutturare la cucina a ${comune.nome}? Costi reali, preventivo immediato, criticità locali, tempistiche reali e sopralluogo tecnico.`;
+  const title = `Ristrutturazione Cucina a ${comune.nome}: preventivo immediato e costo reale`;
+  const description = `Richiedi un preventivo immediato per la ristrutturazione della cucina a ${comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-cucina/`;
   return {
     title,
@@ -164,11 +164,11 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
                   Ristrutturazione Cucina · {comune.nome}
                 </p>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
-                  Ristrutturazione Cucina a {comune.nome}:<br />
-                  <span className="text-orange">Costi reali, preventivo immediato</span>
+                  Ristrutturazione Cucina a {comune.nome}:{" "}
+                  <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Richiedi un preventivo per la ristrutturazione della cucina a {comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.
+                  Richiedi un preventivo immediato per la ristrutturazione della cucina a {comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>

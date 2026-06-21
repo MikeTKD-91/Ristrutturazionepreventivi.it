@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!comune) return {};
   const url = `https://ristrutturazionepreventivi.it/comune/${slug}/`;
   return {
-    title: `Ristrutturazione Casa e Appartamento Completo a ${comune.nome} | Costi reali e preventivo online`,
-    description: `Ristrutturazione casa e appartamento completo a ${comune.nome}: costi reali, livelli di finitura, criticità locali e possibilità di richiedere un preventivo online. Il quadro economico definitivo richiede sopralluogo e verifica tecnica.`,
+    title: `Ristrutturazione Casa a ${comune.nome}: preventivo immediato e costo reale`,
+    description: `Richiedi un preventivo immediato per la ristrutturazione di casa o appartamento a ${comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.`,
     alternates: { canonical: url },
     openGraph: {
-      title: `Ristrutturazione Casa e Appartamento Completo a ${comune.nome} | Costi reali e preventivo online`,
-      description: `Ristrutturazione casa e appartamento completo a ${comune.nome}: costi reali, livelli di finitura, criticità locali e possibilità di richiedere un preventivo online. Il quadro economico definitivo richiede sopralluogo e verifica tecnica.`,
+      title: `Ristrutturazione Casa a ${comune.nome}: preventivo immediato e costo reale`,
+      description: `Richiedi un preventivo immediato per la ristrutturazione di casa o appartamento a ${comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.`,
       url,
       type: "article",
       siteName: "ristrutturazionepreventivi.it",
@@ -129,11 +129,11 @@ export default async function ComunePage({ params }: PageProps) {
               {/* Testo */}
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
-                  Ristrutturazione Casa e Appartamento a {comune.nome}:{" "}
-                  <span className="text-orange">costi reali e richiedi preventivo online</span>
+                  Ristrutturazione Casa a {comune.nome}:{" "}
+                  <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Richiedi un preventivo online per la ristrutturazione completa della tua casa o del tuo appartamento a {comune.nome}. Il calcolo parte da costi reali e parametri tecnici coerenti con l’intervento, mentre il preventivo finale viene confermato dopo sopralluogo e verifica dell’immobile.
+                  Richiedi un preventivo immediato per la ristrutturazione di casa o appartamento a {comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {["Prezzario Regionale Campania", "Lavori concordati", "Bonus 50% applicabile"].map((t) => (

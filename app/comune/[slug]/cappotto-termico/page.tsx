@@ -62,8 +62,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
-  const title = `Cappotto Termico a ${comune.nome} | Costi Reali, Preventivo Immediato`;
-  const description = `Quanto costa il cappotto termico a ${comune.nome}? Costi reali, preventivo immediato, sistemi isolanti, tempistiche reali e sopralluogo tecnico.`;
+  const title = `Cappotto Termico a ${comune.nome}: preventivo immediato e costo reale`;
+  const description = `Quanto costa il cappotto termico a ${comune.nome}? preventivo immediato e costo reale, sistemi isolanti, tempistiche reali e sopralluogo tecnico.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/cappotto-termico/`;
   return {
     title,
@@ -154,8 +154,8 @@ export default async function CappottoTermicoPage({ params }: PageProps) {
               <div>
                 <p className="text-orange text-sm font-semibold uppercase tracking-widest mb-3">Cappotto Termico · {comune.nome}</p>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
-                  Cappotto Termico a {comune.nome}:<br />
-                  <span className="text-orange">Costi reali, preventivo immediato</span>
+                  Cappotto Termico a {comune.nome}:{" "}{" "}
+                  <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
                   Indicazioni di costo basate su riferimenti tecnici, sistemi isolanti,

@@ -62,8 +62,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
-  const title = `Pavimenti e Rivestimenti a ${comune.nome} | Costi Reali, Preventivo Immediato`;
-  const description = `Quanto costa la posa di pavimenti e rivestimenti a ${comune.nome}? Costi reali, preventivo immediato, materiali, formati, tempistiche reali e sopralluogo tecnico.`;
+  const title = `Pavimenti e Rivestimenti a ${comune.nome}: preventivo immediato e costo reale`;
+  const description = `Quanto costa la posa di pavimenti e rivestimenti a ${comune.nome}? preventivo immediato e costo reale, materiali, formati, tempistiche reali e sopralluogo tecnico.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/pavimenti-rivestimenti/`;
   return {
     title,
@@ -154,8 +154,8 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
               <div>
                 <p className="text-orange text-sm font-semibold uppercase tracking-widest mb-3">Pavimenti e Rivestimenti · {comune.nome}</p>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
-                  Pavimenti e Rivestimenti a {comune.nome}:<br />
-                  <span className="text-orange">Costi reali, preventivo immediato</span>
+                  Pavimenti e Rivestimenti a {comune.nome}:{" "}{" "}
+                  <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
                   Indicazioni di costo basate su riferimenti tecnici, materiale scelto,

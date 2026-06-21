@@ -155,7 +155,7 @@ export default async function ImpiantiPage({ params }: PageProps) {
                 <p className="text-orange text-sm font-semibold uppercase tracking-widest mb-3">Impianti · {comune.nome}</p>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Impianti a {comune.nome}:<br />
-                  <span className="text-orange">Costi reali, preventivo immediato</span>
+                  <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
                   Indicazioni di costo per impianti elettrici, idraulici e termici basate su

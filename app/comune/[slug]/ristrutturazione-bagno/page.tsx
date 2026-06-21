@@ -59,8 +59,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
 
-  const title = `Ristrutturazione Bagno a ${comune.nome} | Costi reali e preventivo immediato`;
-  const description = `Quanto costa rifare il bagno a ${comune.nome}? Costi reali, tempi di esecuzione e preventivo immediato basato sui dati dell'intervento. Il quadro economico definitivo si conferma dopo sopralluogo tecnico.`;
+  const title = `Ristrutturazione Bagno a ${comune.nome}: preventivo immediato e costo reale`;
+  const description = `Richiedi un preventivo immediato per la ristrutturazione del bagno a ${comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-bagno/`;
 
   return {
@@ -164,10 +164,10 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                 </div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Ristrutturazione Bagno a {comune.nome}:{" "}
-                  <span className="text-orange">Preventivo e costi</span>
+                  <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Richiedi un preventivo per la ristrutturazione del bagno a {comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.
+                  Richiedi un preventivo immediato per la ristrutturazione del bagno a {comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {["Prezzario Regionale Campania", "Sopralluogo tecnico", "Stima verificabile"].map((t) => (

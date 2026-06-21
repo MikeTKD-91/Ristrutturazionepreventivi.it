@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const servizio = getServizioBySlug("rifacimento-tetto");
   if (!comune || !servizio) return {};
 
-  const title = `Rifacimento Tetto a ${comune.nome} | Costi Reali, Preventivo Immediato`;
+  const title = `Rifacimento Tetto a ${comune.nome}: preventivo immediato e costo reale`;
   const description = `Rifacimento tetto a ${comune.nome}: costi indicativi, cosa include il servizio, vantaggi, zone servite e preventivo.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/rifacimento-tetto/`;
 
