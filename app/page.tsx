@@ -193,7 +193,7 @@ const servicePriceLabels: Record<string, string> = {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent" />
                   <div className="absolute bottom-3 left-4 right-4">
-                    <h3 className="text-white font-bold text-base leading-tight">{s.titolo}</h3>
+                    <h3 className="text-white font-bold text-base leading-tight">{s.slug === "ristrutturazione-appartamento-completo" ? "Ristrutturazione Casa e Appartamento" : s.titolo.split(":")[0]}</h3>
                   </div>
                 </div>
                 <div className="p-5">

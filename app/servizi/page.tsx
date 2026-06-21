@@ -98,7 +98,7 @@ const pricingLabels: Record<string, { top: string; value: string }> = {
             {servizi.map((servizio, index) => (
               <div
                 key={servizio.slug}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
               >
                 <div className="relative h-64">
                   <Image
@@ -118,7 +118,7 @@ const pricingLabels: Record<string, { top: string; value: string }> = {
                   </div>
                 </div>
                 
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <p className="text-gray-600 mb-6">{servizio.descrizione}</p>
                   
                   <div className="mb-6">
@@ -133,7 +133,7 @@ const pricingLabels: Record<string, { top: string; value: string }> = {
                     </ul>
                   </div>
                   
-                  <div className="flex items-center justify-between pt-4 border-t">
+                  <div className="flex flex-col gap-4 pt-4 border-t mt-auto sm:flex-row sm:items-center sm:justify-between">
                     <div>
                      <p className="text-sm text-gray-500">
   {pricingLabels[servizio.slug]?.top ?? "Preventivo"}
@@ -144,7 +144,7 @@ const pricingLabels: Record<string, { top: string; value: string }> = {
                     </div>
                     <Link
                       href={`/servizi/${servizio.slug}/`}
-                      className="bg-navy hover:bg-navy/90 text-white px-6 py-3 rounded-xl font-semibold transition-colors flex items-center gap-2"
+                      className="bg-navy hover:bg-navy/90 text-white px-6 py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2 w-full sm:w-auto"
                     >
                       Scopri di più
                       <ArrowRight className="h-4 w-4" />
