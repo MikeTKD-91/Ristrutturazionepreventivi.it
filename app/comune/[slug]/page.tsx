@@ -174,7 +174,7 @@ export default async function ComunePage({ params }: PageProps) {
             <section>
               <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione casa e appartamento completo a {comune.nome}</h2>
               <p className="text-gray-600">
-                Qui trovi un preventivo realistica dei costi di una ristrutturazione completa pensata per case o appartamenti da rifare in modo coordinato, con possibilità di richiedere un preventivo online e verifica tecnica finale solo dopo sopralluogo.
+                Qui trovi un preventivo realistico dei costi di una ristrutturazione completa pensata per case o appartamenti da rifare in modo coordinato, con possibilità di richiedere un preventivo online e verifica tecnica finale solo dopo sopralluogo.
               </p>
             </section>
 
