@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { ArrowRight, TriangleAlert, CheckCircle, Check, X } from "lucide-react";
+import { ArrowRight, CheckCircle, Check, X } from "lucide-react";
 import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
 import { comuni, getComuneBySlug } from "@/data/comuni";
 
@@ -303,17 +303,29 @@ export default async function ComunePage({ params }: PageProps) {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Cosa troviamo spesso a {comune.nome}</h2>
-              <p className="text-gray-600 mb-2"><strong>{comune.tipoEdilizio}.</strong></p>
-              <p className="text-gray-600 mb-6">Conoscere le criticità locali prima del sopralluogo permette costi più accurati e meno sorprese di cantiere.</p>
-              <div className="space-y-3">
-                {comune.criticalita.map((c, i) => (
-                  <div key={i} className="flex gap-3 items-start bg-amber-50 border border-amber-100 rounded-xl p-4">
-                    <TriangleAlert className="h-4 w-4 text-amber-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm text-gray-800 leading-relaxed">{c}</p>
+              {comune.seoSections?.length ? (
+                <div className="space-y-6">
+                  {comune.seoSections.map((section, i) => (
+                    <div key={i}>
+                      <h2 className="text-2xl font-bold text-navy mb-2">{section.title}</h2>
+                      <p className="text-gray-600 leading-relaxed">{section.text}</p>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <>
+                  <h2 className="text-2xl font-bold text-navy mb-2">{`Cosa troviamo spesso a ${comune.nome}`}</h2>
+                  <p className="text-gray-600 mb-2"><strong>{comune.tipoEdilizio}.</strong></p>
+                  <p className="text-gray-600 mb-6">Conoscere le criticità locali prima del sopralluogo permette costi più accurati e meno sorprese di cantiere.</p>
+                  <div className="space-y-3">
+                    {comune.criticalita.map((c, i) => (
+                      <div key={i} className="flex gap-3 items-start bg-amber-50 border border-amber-100 rounded-xl p-4">
+                        <p className="text-sm text-gray-800 leading-relaxed">{c}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </>
+              )}
             </section>
 
             <section>

@@ -26,6 +26,7 @@ export interface Comune {
   faqAppartamento?: ComuneFaq[];
   vicini: string[];
   immagine?: string;
+  seoSections?: { title: string; text: string }[];
 }
 
 // ─────────────────────────────────────────────
@@ -791,6 +792,20 @@ export const comuniNapoli: Comune[] = [
       },
     ],
     vicini: ["giugliano-in-campania", "mugnano-di-napoli", "melito-di-napoli"],
+    seoSections: [
+      {
+        title: "Costo Ristrutturazione Napoli",
+        text: "Il costo di una ristrutturazione a Napoli parte da 550 €/mq per interventi completi. Il prezzo finale dipende dalle caratteristiche dell'immobile, dalla tipologia dei lavori, dai materiali scelti e dal livello delle finiture. Che tu debba ristrutturare un appartamento, una villetta, un bagno o un'intera abitazione, conoscere il costo dell'intervento è il primo passo per organizzare il tuo investimento in modo consapevole. Su RistrutturazionePreventivi.it puoi richiedere un preventivo immediato e gratuito, personalizzato in base alle tue esigenze e ai lavori da eseguire. Riceverai un preventivo chiaro, dettagliato e senza impegno, con tutti i costi necessari per realizzare la tua ristrutturazione, così da poter prendere decisioni con la massima tranquillità e trasparenza.",
+      },
+      {
+        title: "Impresa di Ristrutturazioni a Napoli",
+        text: "Affidarsi a un’impresa di ristrutturazioni a Napoli significa scegliere un unico interlocutore in grado di gestire tutte le fasi del lavoro, dalla progettazione iniziale fino alla consegna finale dell’immobile. Una gestione coordinata permette di ottimizzare tempi, costi ed evitare imprevisti in cantiere. Le nostre squadre specializzate operano su interventi completi di ristrutturazione appartamenti, bagni e locali commerciali, garantendo esecuzione precisa, rispetto delle normative e utilizzo di materiali di qualità. Ogni progetto viene seguito con attenzione in ogni dettaglio, assicurando un risultato finale solido, funzionale e duraturo nel tempo.",
+      },
+      {
+        title: "Preventivo Ristrutturazione a Napoli",
+        text: "Richiedere un preventivo per la ristrutturazione a Napoli è il primo passo per pianificare in modo corretto i lavori e definire con precisione il budget necessario. Ogni intervento viene calcolato in base alla metratura dell’immobile, allo stato attuale degli ambienti, alla tipologia delle opere da eseguire e ai materiali scelti. In questo modo è possibile ottenere un quadro chiaro e completo dei costi, senza sorprese in corso d’opera. Su RistrutturazionePreventivi.it puoi richiedere un preventivo immediato e gratuito, con risposta rapida e dettagliata, studiata sulle reali esigenze del tuo immobile a Napoli e provincia.",
+      },
+    ],
   },
 
   {
