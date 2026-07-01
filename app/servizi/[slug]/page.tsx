@@ -30,16 +30,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const url = `https://ristrutturazionepreventivi.it/servizi/${slug}/`;
+
   return {
-    title: `${servizio.titolo} | Napoli Caserta`,
+    title: `${servizio.titolo} a Napoli, Caserta e Agro Aversano`,
     description: servizio.descrizione,
     alternates: {
-      canonical: `https://ristrutturazionepreventivi.it/servizi/${slug}/`,
+      canonical: url,
     },
     openGraph: {
-      title: `${servizio.titolo} | Napoli Caserta`,
+      title: `${servizio.titolo} a Napoli, Caserta e Agro Aversano`,
       description: servizio.descrizione,
-      url: `https://ristrutturazionepreventivi.it/servizi/${slug}/`,
+      url,
+      type: "website",
+      siteName: "RistrutturazionePreventivi.it",
+      locale: "it_IT",
       images: [
         {
           url: servizio.immagine,
