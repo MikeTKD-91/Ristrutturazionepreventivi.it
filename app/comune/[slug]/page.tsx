@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!comune) return {};
   const url = `https://ristrutturazionepreventivi.it/comune/${slug}/`;
   return {
-    title: `Ristrutturazione Casa a ${comune.nome}: preventivo immediato e costo reale`,
-    description: `Richiedi un preventivo immediato per la ristrutturazione di casa o appartamento a ${comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.`,
+    title: `Ristrutturazione Casa a ${comune.nome} | Preventivo e Costi`,
+    description: `Richiedi un preventivo per ristrutturare casa o appartamento a ${comune.nome}. Costi indicativi, sopralluogo e conferma finale del preventivo.`,
     alternates: { canonical: url },
     openGraph: {
-      title: `Ristrutturazione Casa a ${comune.nome}: preventivo immediato e costo reale`,
-      description: `Richiedi un preventivo immediato per la ristrutturazione di casa o appartamento a ${comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.`,
+      title: `Ristrutturazione Casa a ${comune.nome} | Preventivo e Costi`,
+      description: `Richiedi un preventivo per ristrutturare casa o appartamento a ${comune.nome}. Costi indicativi, sopralluogo e conferma finale del preventivo.`,
       url,
       type: "website",
       siteName: "RistrutturazionePreventivi.it",
