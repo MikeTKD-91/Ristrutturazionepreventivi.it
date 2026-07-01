@@ -69,6 +69,36 @@ export default async function ServizioPage({ params }: Props) {
 
   const altriServizi = servizi.filter(s => s.slug !== slug).slice(0, 3);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://ristrutturazionepreventivi.it/" },
+      { "@type": "ListItem", position: 2, name: "Servizi", item: "https://ristrutturazionepreventivi.it/servizi/" },
+      { "@type": "ListItem", position: 3, name: servizio.titolo, item: `https://ristrutturazionepreventivi.it/servizi/${slug}/` },
+    ],
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: servizio.titolo,
+    serviceType: servizio.titolo,
+    description: servizio.descrizione,
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Russo FE Costruzione SRL",
+      url: "https://ristrutturazionepreventivi.it",
+    },
+    areaServed: [
+      { "@type": "City", name: "Napoli" },
+      { "@type": "City", name: "Caserta" },
+      { "@type": "Place", name: "Agro Aversano" },
+    ],
+    url: `https://ristrutturazionepreventivi.it/servizi/${slug}/`,
+  };
+
+
   if (slug === "ristrutturazione-appartamento-completo") {
     const inclusioniStandard = [
         "Rifacimento impianto elettrico, idraulico e termico",
@@ -592,6 +622,8 @@ export default async function ServizioPage({ params }: Props) {
           </p>
         </div>
       </section>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
     </div>
   );
 }
