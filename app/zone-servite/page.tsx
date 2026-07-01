@@ -92,7 +92,7 @@ export default function ZoneServitePage() {
                   <ArrowRight className="h-5 w-5 text-gray-300 group-hover:text-orange transition-colors" />
                 </div>
                 <h3 className="font-semibold text-navy group-hover:text-orange transition-colors">
-                  {comune.nome}
+                  {`Ristrutturazione casa a ${comune.nome}`}
                 </h3>
                 <p className="text-sm text-gray-500 mt-1">Provincia di Napoli</p>
               </Link>
@@ -126,7 +126,7 @@ export default function ZoneServitePage() {
                   <ArrowRight className="h-5 w-5 text-gray-300 group-hover:text-orange transition-colors" />
                 </div>
                 <h3 className="font-semibold text-navy group-hover:text-orange transition-colors">
-                  {comune.nome}
+                  {`Ristrutturazione casa a ${comune.nome}`}
                 </h3>
                 <p className="text-sm text-gray-500 mt-1">Provincia di Caserta</p>
               </Link>
@@ -160,7 +160,7 @@ export default function ZoneServitePage() {
                   <ArrowRight className="h-5 w-5 text-gray-300 group-hover:text-orange transition-colors" />
                 </div>
                 <h3 className="font-semibold text-navy group-hover:text-orange transition-colors">
-                  {comune.nome}
+                  {`Ristrutturazione casa a ${comune.nome}`}
                 </h3>
                 <p className="text-sm text-gray-500 mt-1">Agro Aversano</p>
               </Link>
