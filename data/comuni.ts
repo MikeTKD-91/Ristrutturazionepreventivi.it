@@ -779,6 +779,24 @@ export const comuniAgroAversano: Comune[] = [
         risposta: "Sì, ma con le dovute cautele. Gli scarichi condivisi sono una caratteristica degli edifici storici più datati. Durante il sopralluogo verifichiamo la configurazione degli scarichi e progettiamo l'intervento in modo da non interferire con i vicini. In alcuni casi può essere necessario concordare i lavori con il proprietario dell'appartamento adiacente.",
       },
     ],
+    seoSections: [
+      {
+        title: "Ristrutturare casa a Villa di Briano: contesto edilizio e criticità",
+        text:
+          "A Villa di Briano la ristrutturazione varia molto tra il nucleo storico e le zone di espansione. Nelle abitazioni più datate troviamo spesso umidità di risalita, impianti fognari condivisi e distribuzioni interne poco efficienti; nelle villette e palazzine più recenti sono invece più frequenti verifiche su impianti, pratiche edilizie e conformità dello stato di fatto.",
+      },
+      {
+        title: "Bagni e cucine: cosa incide davvero sui costi",
+        text:
+          "Nei bagni piccoli delle palazzine storiche il costo dipende soprattutto dal rifacimento completo degli impianti e dalla gestione degli scarichi esistenti. Nelle cucine, oltre a rivestimenti e finiture, incidono adeguamento del gas, nuovi punti acqua e verifica delle colonne di scarico, soprattutto quando l'impianto originale è datato.",
+      },
+      {
+        title: "Perché serve un sopralluogo tecnico a Villa di Briano",
+        text:
+          "Un preventivo online è utile per avere un ordine di grandezza, ma a Villa di Briano il sopralluogo tecnico resta decisivo per controllare scarichi condivisi, eventuali irregolarità edilizie, presenza di materiali da verificare e condizioni reali degli impianti. Solo dopo questa verifica è possibile definire lavorazioni, tempi e costo finale in modo affidabile.",
+      },
+    ],
+
     faqBagno: [
       {
         domanda: "Quanto costa rifare il bagno a Villa di Briano?",
