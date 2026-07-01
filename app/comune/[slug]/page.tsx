@@ -142,7 +142,7 @@ export default async function ComunePage({ params }: PageProps) {
                 </div>
                 {/* Scroll verso modulo preventivo */}
                 <a
-                  href="#modulo preventivo"
+                  href="#modulo-preventivo"
                   className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
                 >
                   Richiedi un preventivo
@@ -383,7 +383,7 @@ export default async function ComunePage({ params }: PageProps) {
           {/* SIDEBAR STICKY */}
           <div className="hidden lg:block lg:col-span-1">
             <div className="sticky top-6 space-y-6">
-              <div id="modulo preventivo">
+              <div id="modulo-preventivo">
                 <CalcolatoreAppartamento comuneDefault={comune.nome} />
               </div>
               <div className="bg-gray-50 rounded-2xl p-5">

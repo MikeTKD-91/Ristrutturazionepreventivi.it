@@ -15,8 +15,8 @@ const footerLinks = {
     { label: "Cappotto Termico", href: "/servizi/cappotto-termico/" },
   ],
   zone: [
-    { label: "Napoli", href: "/napoli/" },
-    { label: "Caserta", href: "/caserta/" },
+    { label: "Napoli", href: "/comune/napoli/" },
+    { label: "Caserta", href: "/comune/caserta/" },
     { label: "Aversa", href: "/comune/aversa/" },
     { label: "Giugliano", href: "/comune/giugliano-in-campania/" },
     { label: "Zone Servite", href: "/zone-servite/" },

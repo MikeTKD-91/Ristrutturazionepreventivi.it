@@ -183,13 +183,13 @@ export default function ZoneServitePage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/napoli/"
+                href="/comune/napoli/"
                 className="bg-navy hover:bg-navy/90 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
               >
                 Scopri Napoli
               </Link>
               <Link
-                href="/caserta/"
+                href="/comune/caserta/"
                 className="bg-navy hover:bg-navy/90 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
               >
                 Scopri Caserta
