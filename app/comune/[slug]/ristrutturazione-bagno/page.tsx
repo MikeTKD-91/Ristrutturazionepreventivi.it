@@ -59,8 +59,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
 
-  const title = `Ristrutturazione Bagno a ${comune.nome}: preventivo immediato e costo reale`;
-  const description = `Richiedi un preventivo immediato per la ristrutturazione del bagno a ${comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.`;
+  const title = `Ristrutturazione Bagno a ${comune.nome} | Preventivo e Costi`;
+  const description = `Richiedi un preventivo per ristrutturare il bagno a ${comune.nome}. Costi indicativi, sopralluogo e conferma finale del preventivo.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/ristrutturazione-bagno/`;
 
   return {
@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       url,
-      siteName: "ristrutturazionepreventivi.it",
+      siteName: "RistrutturazionePreventivi.it",
       locale: "it_IT",
       type: "website",
       images: [
