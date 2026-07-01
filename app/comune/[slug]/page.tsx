@@ -76,6 +76,28 @@ export default async function ComunePage({ params }: PageProps) {
     areaServed: { "@type": "City", name: comune.nome },
   };
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: `Ristrutturazione casa e appartamento a ${comune.nome}`,
+    name: `Ristrutturazione Casa a ${comune.nome}`,
+    areaServed: { "@type": "City", name: comune.nome },
+    provider: {
+      "@type": "HomeAndConstructionBusiness",
+      name: "Russo FE Costruzione SRL",
+      url: "https://ristrutturazionepreventivi.it",
+      telephone: "+393339809319",
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "EUR",
+      price: "550",
+      url: `https://ristrutturazionepreventivi.it/comune/${slug}/`,
+      description: `Prezzo base indicativo da 550 €/mq per ristrutturazione completa a ${comune.nome}, da confermare dopo sopralluogo e verifica tecnica.`,
+    },
+    url: `https://ristrutturazionepreventivi.it/comune/${slug}/`,
+  };
+
   const faqSchema = comune.faq.length > 0
     ? {
         "@context": "https://schema.org",
@@ -117,6 +139,7 @@ export default async function ComunePage({ params }: PageProps) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
 
       <main className="min-h-screen bg-white">
