@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `Ristrutturazione Casa a ${comune.nome}: preventivo immediato e costo reale`,
       description: `Richiedi un preventivo immediato per la ristrutturazione di casa o appartamento a ${comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.`,
       url,
-      type: "article",
-      siteName: "ristrutturazionepreventivi.it",
+      type: "website",
+      siteName: "RistrutturazionePreventivi.it",
       locale: "it_IT",
       images: [
         {
