@@ -175,7 +175,6 @@ export default async function ComunePage({ params }: PageProps) {
                   className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
                 >
                   Richiedi un preventivo
-                  <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
 
@@ -193,7 +192,7 @@ export default async function ComunePage({ params }: PageProps) {
           </div>
         </section>
         {/* Modulo di preventivo mobile */}
-        <div className="lg:hidden px-4 pt-6">
+        <div id="modulo-preventivo" className="lg:hidden px-4 pt-6">
           <CalcolatoreAppartamento comuneDefault={comune.nome} />
         </div>
 
