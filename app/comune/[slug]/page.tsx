@@ -332,6 +332,31 @@ export default async function ComunePage({ params }: PageProps) {
                     <div key={i}>
                       <h2 className="text-2xl font-bold text-navy mb-2">{section.title}</h2>
                       <p className="text-gray-600 leading-relaxed">{section.text}</p>
+                      {section.title.startsWith("Costo Ristrutturazione") ? (
+                        <div className="mt-4 overflow-x-auto rounded-2xl border border-gray-200 bg-white">
+                          <table className="w-full text-sm">
+                            <thead className="bg-gray-50">
+                              <tr className="text-left text-navy">
+                                <th className="py-3 px-4 font-semibold">Superficie</th>
+                                <th className="py-3 px-4 font-semibold">Costo indicativo</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {[
+                                ["50 mq", "27.500 euro"],
+                                ["80 mq", "44.000 euro"],
+                                ["100 mq", "55.000 euro"],
+                                ["120 mq", "66.000 euro"],
+                              ].map((row) => (
+                                <tr key={row[0]} className="border-t border-gray-100">
+                                  <td className="py-3 px-4 text-gray-700">{row[0]}</td>
+                                  <td className="py-3 px-4 text-gray-700">{row[1]}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      ) : null}
                     </div>
                   ))}
                 </div>
