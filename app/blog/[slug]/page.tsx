@@ -74,6 +74,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: articolo.data,
       modifiedTime: articolo.updatedAt ?? articolo.data,
     },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [articolo.immagine],
+    },
   };
 }
 
