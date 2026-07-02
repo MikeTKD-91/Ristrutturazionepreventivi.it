@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "Indicazioni di costo per ristrutturazioni nell'Agro Aversano, con verifica tecnica e sopralluogo.",
     url: "https://ristrutturazionepreventivi.it/agro-aversano/",
-    siteName: "ristrutturazionepreventivi.it",
+    siteName: "RistrutturazionePreventivi.it",
     locale: "it_IT",
     images: [
       {
