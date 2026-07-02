@@ -56,6 +56,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `${servizio.titolo} | preventivo e costo reale`,
+      description: seoDescription,
+      images: [servizio.immagine],
+    },
   };
 }
 
