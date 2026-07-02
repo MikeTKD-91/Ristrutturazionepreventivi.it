@@ -62,8 +62,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
-  const title = `Impianti Elettrici, Idraulici e Termici a ${comune.nome} | Costi Reali, Preventivo Immediato`;
-  const description = `Quanto costano gli impianti a ${comune.nome}? Elettrico, idraulico e termico: costi reali, preventivo immediato, normative, certificazioni e sopralluogo tecnico.`;
+  const title = `Impianti a ${comune.nome} | Preventivo e Costi`;
+  const description = `Richiedi un preventivo per impianti elettrici, idraulici e termici a ${comune.nome}. Costi indicativi, sopralluogo e conferma finale del preventivo.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/impianti-elettrici-idraulici-termici/`;
   return {
     title,
@@ -73,9 +73,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       url,
-      siteName: "ristrutturazionepreventivi.it",
+      siteName: "RistrutturazionePreventivi.it",
       locale: "it_IT",
-      type: "article",
+      type: "website",
       images: [
         {
           url: `https://ristrutturazionepreventivi.it/images/servizi/impianti-elettrici-idraulici-termici.jpg`,
