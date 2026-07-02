@@ -159,7 +159,6 @@ export default async function ServizioPage({ params }: Props) {
                   className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
                 >
                   Richiedi un preventivo
-                  <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
 
@@ -373,7 +372,6 @@ export default async function ServizioPage({ params }: Props) {
                 className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
               >
                 Richiedi un preventivo
-                <ArrowRight className="h-4 w-4" />
               </a>
             </div>
 
