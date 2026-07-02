@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Home, Wrench, MapPin, Gift, Newspaper } from "lucide-react";
 
@@ -21,10 +22,13 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center">
-            <img
+            <Image
               src="/images/logo/logo.svg"
               alt="Ristrutturazione Preventivi"
+              width={220}
+              height={48}
               className="h-12 w-auto object-contain"
+              priority
             />
           </Link>
 
