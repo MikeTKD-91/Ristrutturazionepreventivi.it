@@ -62,8 +62,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) return {};
-  const title = `Cappotto Termico a ${comune.nome}: preventivo immediato e costo reale`;
-  const description = `Quanto costa il cappotto termico a ${comune.nome}? preventivo immediato e costo reale, sistemi isolanti, tempistiche reali e sopralluogo tecnico.`;
+  const title = `Cappotto Termico a ${comune.nome} | Preventivo e Costi`;
+  const description = `Richiedi un preventivo per il cappotto termico a ${comune.nome}. Costi indicativi, sopralluogo e conferma finale del preventivo.`;
   const url = `https://ristrutturazionepreventivi.it/comune/${comune.slug}/cappotto-termico/`;
   return {
     title,
@@ -73,9 +73,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       url,
-      siteName: "ristrutturazionepreventivi.it",
+      siteName: "RistrutturazionePreventivi.it",
       locale: "it_IT",
-      type: "article",
+      type: "website",
       images: [
         {
           url: `https://ristrutturazionepreventivi.it/images/servizi/cappotto-termico.jpg`,
