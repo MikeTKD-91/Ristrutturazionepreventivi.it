@@ -41,6 +41,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `Ristrutturazione Casa a ${comune.nome} | Preventivo e Costi`,
+      description: `Richiedi un preventivo per ristrutturare casa o appartamento a ${comune.nome}. Costi indicativi, sopralluogo e conferma finale del preventivo.`,
+      images: ["https://ristrutturazionepreventivi.it/images/servizi/ristrutturazione-appartamento-completo.jpg"],
+    },
   };
 }
 
