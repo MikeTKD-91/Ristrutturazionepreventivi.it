@@ -73,9 +73,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       url,
-      siteName: "ristrutturazionepreventivi.it",
+      siteName: "RistrutturazionePreventivi.it",
       locale: "it_IT",
-      type: "article",
+      type: "website",
       images: [
         {
           url: `https://ristrutturazionepreventivi.it/images/servizi/ristrutturazione-cucina.jpg`,
