@@ -336,6 +336,15 @@ export default function CalcolatoreAppartamento({
               </p>
             </div>
 
+            <a
+              href={generaLinkWhatsApp()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-orange hover:bg-orange/90 text-white py-4 px-6 rounded-xl font-semibold transition-colors flex items-center justify-center gap-3"
+            >
+              Invia richiesta
+            </a>
+
             <div className="rounded-2xl border border-gray-200 p-5">
               <h5 className="text-base font-bold text-navy mb-3">
                 Cosa comprende il preventivo online standard
@@ -372,14 +381,6 @@ export default function CalcolatoreAppartamento({
                 tecnicamente affidabile.
               </p>
             </div>
-
-            <a
-              href={generaLinkWhatsApp()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-orange hover:bg-orange/90 text-white py-4 px-6 rounded-xl font-semibold transition-colors flex items-center justify-center gap-3"
-            >              Invia richiesta per verifica compatibilità
-            </a>
 
             <button
               onClick={handleReset}

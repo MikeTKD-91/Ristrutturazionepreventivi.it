@@ -12,7 +12,6 @@ type Step = 1 | 2 | 3;
 
 const STEP_LABELS = ["Configura", "I tuoi dati", "Il tuo preventivo"];
 
-const PREZZO_BASE = 5000;
 const MIN_MQ = 4;
 const MAX_MQ = 20;
 const DEFAULT_MQ = 4;
@@ -45,12 +44,8 @@ export default function CalcolatoreBagno({
   const [disponibileAppuntamento, setDisponibileAppuntamento] = useState(false);
 
   const [isCalculating, setIsCalculating] = useState(false);
-
   const stima = useMemo(() => {
-    let totale = PREZZO_BASE;
-    const extraMq = Math.max(0, mq - 4);
-    if (extraMq >= 1) totale += Math.min(extraMq, 2) * 450;
-    if (extraMq >= 3) totale += (extraMq - 2) * 400;
+    const totale = mq <= 9 ? 5500 : 5500 + (mq - 9) * 150;
     return {
       min: totale,
       max: totale,
@@ -105,18 +100,12 @@ export default function CalcolatoreBagno({
       <div className="mb-6">
         <div>
           <h3 className="text-xl font-bold text-navy">
-            Costi reali e preventivo immediato per il tuo bagno
+            Preventivo bagno
           </h3>
           <p className="text-sm text-gray-600">
-            Preventivo online immediato basato sui dati del tuo intervento
+            In pochi passaggi, senza attese
           </p>
         </div>
-      </div>
-
-      <div className="mb-5 rounded-xl bg-orange/5 border border-orange/20 p-4">
-        <p className="text-sm text-navy leading-relaxed">
-          Il preventivo immediato si riferisce a un bagno standard con accesso comodo per carico materiali e smaltimento. Box doccia, finiture premium, lavorazioni speciali e criticità emerse in sopralluogo vengono conteggiati a parte.
-        </p>
       </div>
 
       <div className="mb-6">
@@ -270,7 +259,7 @@ export default function CalcolatoreBagno({
                 </>
               ) : (
                 <>
-                  Mostra il mio preventivo online immediato
+                  Mostra preventivo
                 </>
               )}
             </button>
@@ -295,7 +284,7 @@ export default function CalcolatoreBagno({
           >
             <div className="text-center">
               <h4 className="text-lg font-semibold text-navy">
-                Ecco il tuo preventivo online immediato, {nome}!
+                Ecco il tuo preventivo, {nome}!
               </h4>
               <p className="text-sm text-gray-500 mt-1">
                 Bagno {mq} mq · {comuneFinale}
@@ -311,6 +300,16 @@ export default function CalcolatoreBagno({
                 Calcolato su rifacimento bagno standard
               </p>
             </div>
+
+
+            <a
+              href={generaLinkWhatsApp()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-orange hover:bg-orange/90 text-white py-4 px-6 rounded-xl font-semibold transition-colors text-center"
+            >
+              Invia richiesta
+            </a>
 
             <div className="rounded-2xl border border-gray-200 p-5">
               <h5 className="text-base font-bold text-navy mb-3">
@@ -346,15 +345,6 @@ export default function CalcolatoreBagno({
                 tecnicamente affidabile.
               </p>
             </div>
-
-            <a
-              href={generaLinkWhatsApp()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full bg-orange hover:bg-orange/90 text-white py-4 px-6 rounded-xl font-semibold transition-colors text-center"
-            >
-              Invia richiesta per verifica compatibilità
-            </a>
 
             <button
               onClick={handleReset}
