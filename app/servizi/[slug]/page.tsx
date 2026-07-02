@@ -32,15 +32,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const url = `https://ristrutturazionepreventivi.it/servizi/${slug}/`;
 
+  const seoDescription = servizio.descrizioneCard ?? servizio.descrizione;
+
   return {
-    title: `${servizio.titolo} a Napoli, Caserta e Agro Aversano`,
-    description: servizio.descrizione,
+    title: `${servizio.titolo} | preventivo e costo reale a Napoli, Caserta e Agro Aversano`,
+    description: seoDescription,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: `${servizio.titolo} a Napoli, Caserta e Agro Aversano`,
-      description: servizio.descrizione,
+      title: `${servizio.titolo} | preventivo e costo reale`,
+      description: seoDescription,
       url,
       type: "website",
       siteName: "RistrutturazionePreventivi.it",
