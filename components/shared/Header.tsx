@@ -20,22 +20,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-navy shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="h-10 w-10 rounded-lg bg-orange flex items-center justify-center">
-              <Wrench className="h-6 w-6 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-white font-bold text-lg leading-tight">
-                Ristrutturazione
-              </span>
-              <span className="text-orange text-sm font-semibold leading-tight">
-                Preventivi.it
-              </span>
-            </div>
+          <Link href="/" className="flex items-center">
+            <img
+              src="/images/logo/logo.svg"
+              alt="Ristrutturazione Preventivi"
+              className="h-12 w-auto object-contain"
+            />
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
@@ -48,8 +40,6 @@ export default function Header() {
             ))}
           </nav>
 
-
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 text-white"
@@ -60,7 +50,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
