@@ -391,7 +391,7 @@ export default async function ImpiantiPage({ params }: PageProps) {
         <section className="bg-navy py-14 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Vuoi sapere quanto costano gli impianti a {comune.nome}?</h2>
-            <p className="text-white/70 mb-8 text-lg">Richiedi una primo preventivo del tuo intervento. Se il preventivo è in linea con il tuo budget, organizziamo il sopralluogo e prepariamo il preventivo dettagliato con tutte le certificazioni incluse.</p>
+            <p className="text-white/70 mb-8 text-lg">Richiedi un primo preventivo per il rifacimento degli impianti. Se il costo indicativo è compatibile con il tuo budget, organizziamo il sopralluogo e prepariamo il preventivo dettagliato con le certificazioni previste.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`https://wa.me/393339809319?text=Salve%2C%20vorrei%20un%20preventivo%20per%20il%20rifacimento%20impianti%20a%20${encodeURIComponent(comune.nome)}`} target="_blank" rel="noopener noreferrer" className="bg-orange text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-center">
                 Parla con noi su WhatsApp
@@ -400,7 +400,7 @@ export default async function ImpiantiPage({ params }: PageProps) {
                 Chiama +39 333 980 9319
               </a>
             </div>
-            <p className="text-white/40 text-xs mt-6">Russo FE Costruzione SRL · Lusciano (CE) · P.IVA 04836230617</p>
+            <p className="text-white/40 text-xs mt-6">Russo FE Costruzione SRL · Viale della Libertà 3, 81030 Lusciano (CE) · P.IVA 04836230617</p>
           </div>
         </section>
       </main>

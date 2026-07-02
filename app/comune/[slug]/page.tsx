@@ -156,7 +156,7 @@ export default async function ComunePage({ params }: PageProps) {
                   <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Richiedi un preventivo immediato per la ristrutturazione di casa o appartamento a {comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.
+                  Raccontaci il tuo progetto a {comune.nome}: ti diamo una prima stima utile e poi la confermiamo con verifica tecnica.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {["Prezzario Regionale Campania", "Lavori concordati", "Bonus 50% applicabile"].map((t) => (
@@ -473,7 +473,7 @@ export default async function ComunePage({ params }: PageProps) {
               Vuoi ottenere un preventivo immediato a {comune.nome}?
             </h2>
             <p className="text-white/70 mb-8">
-              Richiedi un preventivo online basato sui dati del tuo intervento. Dopo la verifica tecnica e il sopralluogo, confermiamo il preventivo finale.
+              Inviaci i dati del tuo intervento a {comune.nome}: ricevi una prima stima e la conferma finale dopo verifica tecnica.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
