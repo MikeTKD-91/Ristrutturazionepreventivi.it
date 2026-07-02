@@ -168,7 +168,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Bonus 50% applicabile</span>
                 </div>
                 <a href="#modulo preventivo" className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
-                  Richiedi una primo preventivo
+                  Richiedi un primo preventivo
                 </a>
               </div>
               <div className="hidden lg:block relative h-72 rounded-2xl overflow-hidden shadow-2xl">
