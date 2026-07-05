@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ArrowRight, CheckCircle, Check, X } from "lucide-react";
 import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
 import { comuni, getComuneBySlug } from "@/data/comuni";
+import { getAllArticoli } from "@/lib/blog";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -54,6 +55,8 @@ export default async function ComunePage({ params }: PageProps) {
   const { slug } = await params;
   const comune = getComuneBySlug(slug);
   if (!comune) notFound();
+
+  const articoliConsigliati = getAllArticoli().slice(0, 3);
 
   const breadcrumb = {
     "@context": "https://schema.org",
@@ -296,6 +299,27 @@ export default async function ComunePage({ params }: PageProps) {
                     <h3 className="text-base font-bold text-navy mb-2">{s[1]}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed">{s[2]}</p>
                   </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-navy mb-2">Articoli da leggere prima di ristrutturare</h2>
+              <p className="text-gray-600 mb-6">
+                Prima di chiedere il preventivo, può essere utile leggere alcune guide del blog su costi, errori da evitare e pianificazione dei lavori.
+              </p>
+              <div className="grid gap-4 md:grid-cols-3">
+                {articoliConsigliati.map((articolo) => (
+                  <Link
+                    key={articolo.slug}
+                    href={`/blog/${articolo.slug}/`}
+                    className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <h3 className="text-base font-bold text-navy mb-2">{articolo.titolo}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {articolo.estratto}
+                    </p>
+                  </Link>
                 ))}
               </div>
             </section>

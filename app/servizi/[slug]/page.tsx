@@ -9,6 +9,7 @@ import ScopriIlCostoDellaTuaRistrutturazione from "@/components/shared/ScopriIlC
 import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
 import CalcolatoreBagno from "@/components/shared/CalcolatoreBagno";
 import { getDataAggiornamento, formatPrezzo, generaLinkWhatsApp } from "@/lib/utils";
+import { getAllArticoli } from "@/lib/blog";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -74,6 +75,8 @@ export default async function ServizioPage({ params }: Props) {
   if (!servizio) {
     notFound();
   }
+
+  const articoliConsigliati = getAllArticoli().slice(0, 3);
 
   const altriServizi = servizi.filter(s => s.slug !== slug);
 
@@ -314,6 +317,26 @@ export default async function ServizioPage({ params }: Props) {
                 Parla con noi su WhatsApp
               </a>
             </div>
+
+            <section>
+              <h3 className="text-lg font-bold text-navy mb-4">Articoli da leggere prima di ristrutturare</h3>
+              <p className="text-gray-600 mb-4">Guide rapide e consigli pratici dal nostro blog per pianificare il cantiere senza sorprese.</p>
+              <div className="space-y-3">
+                {articoliConsigliati.map((articolo) => (
+                  <Link
+                    key={articolo.slug}
+                    href={`/blog/${articolo.slug}/`}
+                    className="flex items-start gap-3 p-3 rounded-xl border border-gray-100 bg-white hover:shadow-sm transition"
+                  >
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-navy">{articolo.titolo}</p>
+                      {articolo.estratto ? <p className="text-xs text-gray-500 mt-1 line-clamp-2">{articolo.estratto}</p> : null}
+                    </div>
+                    <span className="text-gray-400">→</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
 
             <div>
               <h3 className="text-lg font-bold text-navy mb-4">Altri Servizi</h3>
