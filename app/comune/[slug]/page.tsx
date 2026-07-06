@@ -407,7 +407,7 @@ export default async function ComunePage({ params }: PageProps) {
           </div>
 
           {/* SIDEBAR STICKY */}
-          <div className="hidden lg:block lg:col-span-1">
+          <div className="lg:col-span-1">
             <div className="sticky top-6 space-y-6">
               <div id="modulo-preventivo">
                 <CalcolatoreAppartamento comuneDefault={comune.nome} />
