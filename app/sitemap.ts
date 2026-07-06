@@ -10,7 +10,6 @@ const BASE_URL = "https://ristrutturazionepreventivi.it";
 const SERVIZI_PER_COMUNE = [
   "ristrutturazione-bagno",
   "ristrutturazione-cucina",
-  "ristrutturazione-appartamento-completo",
   "rifacimento-tetto",
   "cappotto-termico",
   "impianti-elettrici-idraulici-termici",
@@ -57,7 +56,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const prioritaServizio: Record<string, number> = {
     "ristrutturazione-bagno": 0.9,
     "ristrutturazione-cucina": 0.85,
-    "ristrutturazione-appartamento-completo": 0.9,
     "rifacimento-tetto": 0.85,
     "cappotto-termico": 0.8,
     "impianti-elettrici-idraulici-termici": 0.75,
