@@ -303,36 +303,6 @@ export default async function ComunePage({ params }: PageProps) {
               </div>
             </section>
 
-
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Servizi complementari a {comune.nome}</h2>
-              <p className="text-gray-600 mb-6">
-                Se il tuo intervento riguarda solo una parte dell'immobile, puoi approfondire i servizi specifici collegati.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  { label: "Ristrutturazione Bagno", prezzo: "da 5.000 € completo", href: `/comune/${slug}/ristrutturazione-bagno/`, attivo: true },
-                  { label: "Ristrutturazione Cucina", prezzo: "preventivo su sopralluogo", href: `/comune/${slug}/ristrutturazione-cucina/`, attivo: true },
-                  { label: "Rifacimento Tetto", prezzo: "preventivo su sopralluogo", href: `/comune/${slug}/rifacimento-tetto/`, attivo: true },
-                  { label: "Cappotto Termico", prezzo: "preventivo su sopralluogo", href: `/comune/${slug}/cappotto-termico/`, attivo: true },
-                  { label: "Impianti", prezzo: "preventivo dopo verifica tecnica", href: `/comune/${slug}/impianti-elettrici-idraulici-termici/`, attivo: true },
-                  { label: "Pavimenti e Rivestimenti", prezzo: "da 45 €/mq", href: `/comune/${slug}/pavimenti-rivestimenti/`, attivo: true },
-                ].map((s) =>
-                  s.attivo ? (
-                    <Link key={s.label} href={s.href}
-                      className="flex items-center justify-between p-4 rounded-xl border border-orange/30 bg-orange/5 hover:bg-orange/10 transition-colors group"
-                    >
-                      <div>
-                        <p className="font-semibold text-navy text-sm">{s.label}</p>
-                        <p className="text-xs text-gray-500 mt-0.5">{s.prezzo}</p>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-orange group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  ) : null
-                )}
-              </div>
-            </section>
-
             <section>
               {comune.seoSections?.length ? (
                 <div className="space-y-6">
