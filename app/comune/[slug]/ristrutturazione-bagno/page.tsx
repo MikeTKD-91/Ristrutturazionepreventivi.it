@@ -307,27 +307,15 @@ Ogni preventivo online ha valore orientativo: il sopralluogo serve a verificare 
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-navy mb-4">
-                Altri Servizi
-              </h3>
+              <h3 className="text-lg font-bold text-navy mb-4">Altri Servizi</h3>
               <div className="space-y-3">
                 {altriServizi.map((s) => (
                   <Link
                     key={s.slug}
-                    href={`/servizi/${s.slug}/`}
-                    className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl hover:bg-navy/5 transition-colors"
+                    href={`/comune/${comune.slug}/${s.slug}/`}
+                    className="flex items-center justify-between text-sm text-gray-700 hover:text-navy py-2 border-b border-gray-200 last:border-0 transition-colors"
                   >
-                    <div className="relative h-16 w-16 rounded-lg overflow-hidden flex-shrink-0">
-                      <Image
-                        src={s.immagine}
-                        alt={s.alt}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-navy text-sm">{s.titolo}</h4>
-                    </div>
+                    {s.titoloBreve || s.titolo}<span className="text-gray-400">→</span>
                   </Link>
                 ))}
               </div>
