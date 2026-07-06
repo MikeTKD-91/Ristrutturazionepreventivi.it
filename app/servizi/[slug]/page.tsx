@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowRight, Check, MessageCircle, X } from "lucide-react";
+import { Check, MessageCircle, X } from "lucide-react";
 import { servizi, getServizioBySlug } from "@/data/servizi";
 import { comuni } from "@/data/comuni";
 import ScopriIlCostoDellaTuaRistrutturazione from "@/components/shared/ScopriIlCostoDellaTuaRistrutturazione";
@@ -318,26 +318,6 @@ export default async function ServizioPage({ params }: Props) {
               </a>
             </div>
 
-            <section>
-              <h3 className="text-lg font-bold text-navy mb-4">Articoli da leggere prima di ristrutturare</h3>
-              <p className="text-gray-600 mb-4">Guide rapide e consigli pratici dal nostro blog per pianificare il cantiere senza sorprese.</p>
-              <div className="space-y-3">
-                {articoliConsigliati.map((articolo) => (
-                  <Link
-                    key={articolo.slug}
-                    href={`/blog/${articolo.slug}/`}
-                    className="flex items-start gap-3 p-3 rounded-xl border border-gray-100 bg-white hover:shadow-sm transition"
-                  >
-                    <div className="flex-1">
-                      <p className="text-sm font-semibold text-navy">{articolo.titolo}</p>
-                      {articolo.estratto ? <p className="text-xs text-gray-500 mt-1 line-clamp-2">{articolo.estratto}</p> : null}
-                    </div>
-                    <span className="text-gray-400">→</span>
-                  </Link>
-                ))}
-              </div>
-            </section>
-
             <div>
               <h3 className="text-lg font-bold text-navy mb-4">Altri Servizi</h3>
               <div className="space-y-3">
@@ -352,6 +332,35 @@ export default async function ServizioPage({ params }: Props) {
                 ))}
               </div>
             </div>
+
+            <section>
+              <h3 className="text-lg font-bold text-navy mb-4">Articoli da leggere prima di ristrutturare</h3>
+              <p className="text-gray-600 mb-4">Guide rapide e consigli pratici dal nostro blog per pianificare il cantiere senza sorprese.</p>
+              <div className="space-y-4">
+                {articoliConsigliati.map((articolo) => (
+                  <Link
+                    key={articolo.slug}
+                    href={`/blog/${articolo.slug}/`}
+                    className="block overflow-hidden rounded-2xl border border-gray-200 bg-white hover:shadow-md transition-shadow"
+                  >
+                    <div className="relative aspect-[16/10] w-full">
+                      <Image
+                        src={articolo.immagine}
+                        alt={articolo.titolo}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h4 className="text-sm font-bold text-navy leading-snug mb-2">{articolo.titolo}</h4>
+                      {articolo.estratto ? (
+                        <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">{articolo.estratto}</p>
+                      ) : null}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
           </div>
         </div>
       </div>

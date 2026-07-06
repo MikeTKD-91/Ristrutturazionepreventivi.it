@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowRight, Check, MessageCircle, X } from "lucide-react";
+import { Check, MessageCircle, X } from "lucide-react";
 import { comuni, getComuneBySlug } from "@/data/comuni";
 import { servizi } from "@/data/servizi";
 import CalcolatoreBagno from "@/components/shared/CalcolatoreBagno";
 import { getDataAggiornamento } from "@/lib/utils";
+import { getAllArticoli } from "@/lib/blog";
 import {
   buildBreadcrumb,
   buildLocalBusiness,
@@ -128,6 +129,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
   const jsonLd = buildJsonLd(comune);
   const dataAggiornamento = getDataAggiornamento();
   const altriServizi = servizi.filter((s) => s.slug !== "ristrutturazione-bagno").slice(0, 3);
+  const articoliConsigliati = getAllArticoli().slice(0, 3);
 
   return (
     <>
@@ -325,6 +327,34 @@ Ogni preventivo online ha valore orientativo: il sopralluogo serve a verificare 
                     </div>
                     <div>
                       <h4 className="font-semibold text-navy text-sm">{s.titolo}</h4>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-2xl p-5">
+              <p className="text-sm font-semibold text-navy mb-4">Articoli da leggere prima di ristrutturare</p>
+              <div className="space-y-4">
+                {articoliConsigliati.map((articolo) => (
+                  <Link
+                    key={articolo.slug}
+                    href={`/blog/${articolo.slug}/`}
+                    className="block overflow-hidden rounded-2xl border border-gray-200 bg-white hover:shadow-md transition-shadow"
+                  >
+                    <div className="relative aspect-[16/10] w-full">
+                      <Image
+                        src={articolo.immagine}
+                        alt={articolo.titolo}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-sm font-bold text-navy leading-snug mb-2">{articolo.titolo}</h3>
+                      <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">
+                        {articolo.estratto}
+                      </p>
                     </div>
                   </Link>
                 ))}

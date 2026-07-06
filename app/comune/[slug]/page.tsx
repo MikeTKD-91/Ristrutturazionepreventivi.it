@@ -303,26 +303,6 @@ export default async function ComunePage({ params }: PageProps) {
               </div>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-2">Articoli da leggere prima di ristrutturare</h2>
-              <p className="text-gray-600 mb-6">
-                Prima di chiedere il preventivo, può essere utile leggere alcune guide del blog su costi, errori da evitare e pianificazione dei lavori.
-              </p>
-              <div className="grid gap-4 md:grid-cols-3">
-                {articoliConsigliati.map((articolo) => (
-                  <Link
-                    key={articolo.slug}
-                    href={`/blog/${articolo.slug}/`}
-                    className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <h3 className="text-base font-bold text-navy mb-2">{articolo.titolo}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {articolo.estratto}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </section>
 
             <section>
               <h2 className="text-2xl font-bold text-navy mb-2">Servizi complementari a {comune.nome}</h2>
@@ -480,6 +460,33 @@ export default async function ComunePage({ params }: PageProps) {
                     {s.label} <ArrowRight className="h-4 w-4" />
                   </Link>
                 ))}
+              </div>
+              <div className="bg-white border border-gray-200 rounded-2xl p-5">
+                <p className="text-sm font-semibold text-navy mb-4">Articoli da leggere prima di ristrutturare</p>
+                <div className="space-y-4">
+                  {articoliConsigliati.map((articolo) => (
+                    <Link
+                      key={articolo.slug}
+                      href={`/blog/${articolo.slug}/`}
+                      className="block overflow-hidden rounded-2xl border border-gray-200 bg-white hover:shadow-md transition-shadow"
+                    >
+                      <div className="relative aspect-[16/10] w-full">
+                        <Image
+                          src={articolo.immagine}
+                          alt={articolo.titolo}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-sm font-bold text-navy leading-snug mb-2">{articolo.titolo}</h3>
+                        <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">
+                          {articolo.estratto}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
               <div className="bg-orange/5 border border-orange/20 rounded-2xl p-5">
                 <div className="space-y-2">
