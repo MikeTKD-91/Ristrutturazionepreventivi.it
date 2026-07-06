@@ -442,23 +442,19 @@ export default async function ComunePage({ params }: PageProps) {
               <div id="modulo-preventivo">
                 <CalcolatoreAppartamento comuneDefault={comune.nome} />
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-navy mb-4">Altri Servizi</h3>
-                <div className="space-y-3">
+              <div className="bg-gray-50 rounded-2xl p-5">
+                <p className="text-sm font-semibold text-navy mb-3">Altri servizi a {comune.nome}</p>
+                <div className="space-y-2">
                   {[
+                    { label: "Ristrutturazione Appartamento", href: `/comune/${slug}/` },
                     { label: "Ristrutturazione Bagno", href: `/comune/${slug}/ristrutturazione-bagno/` },
                     { label: "Ristrutturazione Cucina", href: `/comune/${slug}/ristrutturazione-cucina/` },
-                    { label: "Ristrutturazione Appartamento", href: `/comune/${slug}/` },
                     { label: "Rifacimento Tetto", href: `/comune/${slug}/rifacimento-tetto/` },
                     { label: "Cappotto Termico", href: `/comune/${slug}/cappotto-termico/` },
                     { label: "Impianti", href: `/comune/${slug}/impianti-elettrici-idraulici-termici/` },
                     { label: "Pavimenti e Rivestimenti", href: `/comune/${slug}/pavimenti-rivestimenti/` },
                   ].map((s) => (
-                    <Link
-                      key={s.label}
-                      href={s.href}
-                      className="flex items-center justify-between text-sm text-gray-700 hover:text-navy py-2 border-b border-gray-200 last:border-0 transition-colors"
-                    >
+                    <Link key={s.label} href={s.href} className="flex items-center justify-between text-sm text-gray-700 hover:text-navy py-2 border-b border-gray-200 last:border-0 transition-colors">
                       {s.label}<span className="text-gray-400">→</span>
                     </Link>
                   ))}
