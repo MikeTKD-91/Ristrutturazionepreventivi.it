@@ -6,6 +6,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { comuni, getComuneBySlug } from "@/data/comuni";
 import ScopriIlCostoDellaTuaRistrutturazione from "@/components/shared/ScopriIlCostoDellaTuaRistrutturazione";
+import { getAllArticoli } from "@/lib/blog";
 import {
   buildBreadcrumb,
   buildLocalBusiness,
@@ -131,6 +132,7 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
   const comune = getComuneBySlug(slug);
   if (!comune) notFound();
   const jsonLd = buildJsonLd(comune);
+  const articoliConsigliati = getAllArticoli().slice(0, 3);
 
   return (
     <>
@@ -389,6 +391,34 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
                   ].map((s) => (
                     <Link key={s.href} href={s.href} className="flex items-center justify-between text-sm text-gray-700 hover:text-navy py-2 border-b border-gray-200 last:border-0 transition-colors">
                       {s.label}<span className="text-gray-400">→</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-2xl p-5">
+                <p className="text-sm font-semibold text-navy mb-4">Articoli da leggere prima di ristrutturare</p>
+                <div className="space-y-4">
+                  {articoliConsigliati.map((articolo) => (
+                    <Link
+                      key={articolo.slug}
+                      href={`/blog/${articolo.slug}/`}
+                      className="block overflow-hidden rounded-2xl border border-gray-200 bg-white hover:shadow-md transition-shadow"
+                    >
+                      <div className="relative aspect-[16/10] w-full">
+                        <Image
+                          src={articolo.immagine}
+                          alt={articolo.titolo}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-sm font-bold text-navy leading-snug mb-2">{articolo.titolo}</h3>
+                        <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">
+                          {articolo.estratto}
+                        </p>
+                      </div>
                     </Link>
                   ))}
                 </div>
