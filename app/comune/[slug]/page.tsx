@@ -456,16 +456,6 @@ export default async function ComunePage({ params }: PageProps) {
                   ))}
                 </div>
               </div>
-              <div className="bg-orange/5 border border-orange/20 rounded-2xl p-5">
-                <div className="space-y-2">
-                  {["Lavori eseguiti come da accordi", "Materiali certificati CE", "Supporto pratiche Bonus 50%"].map((t) => (
-                    <div key={t} className="flex items-center gap-2 text-sm text-gray-700">
-                      <CheckCircle className="h-4 w-4 text-orange flex-shrink-0" />
-                      {t}
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>
