@@ -446,7 +446,6 @@ export default async function ComunePage({ params }: PageProps) {
                 <p className="text-sm font-semibold text-navy mb-3">Altri servizi a {comune.nome}</p>
                 <div className="space-y-2">
                   {[
-                    { label: "Ristrutturazione Appartamento", href: `/comune/${slug}/` },
                     { label: "Ristrutturazione Bagno", href: `/comune/${slug}/ristrutturazione-bagno/` },
                     { label: "Ristrutturazione Cucina", href: `/comune/${slug}/ristrutturazione-cucina/` },
                     { label: "Rifacimento Tetto", href: `/comune/${slug}/rifacimento-tetto/` },
