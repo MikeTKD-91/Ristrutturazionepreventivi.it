@@ -128,7 +128,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
 
   const jsonLd = buildJsonLd(comune);
   const dataAggiornamento = getDataAggiornamento();
-  const altriServizi = servizi.filter((s) => s.slug !== "ristrutturazione-bagno").slice(0, 3);
+  const altriServizi = servizi.filter((s) => s.slug !== "ristrutturazione-bagno");
   const articoliConsigliati = getAllArticoli().slice(0, 3);
 
   return (
