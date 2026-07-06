@@ -313,7 +313,6 @@ export default async function ComunePage({ params }: PageProps) {
                 {[
                   { label: "Ristrutturazione Bagno", prezzo: "da 5.000 € completo", href: `/comune/${slug}/ristrutturazione-bagno/`, attivo: true },
                   { label: "Ristrutturazione Cucina", prezzo: "preventivo su sopralluogo", href: `/comune/${slug}/ristrutturazione-cucina/`, attivo: true },
-                  { label: "Ristrutturazione Appartamento", prezzo: "da 550 €/mq", href: `/comune/${slug}/`, attivo: true },
                   { label: "Rifacimento Tetto", prezzo: "preventivo su sopralluogo", href: `/comune/${slug}/rifacimento-tetto/`, attivo: true },
                   { label: "Cappotto Termico", prezzo: "preventivo su sopralluogo", href: `/comune/${slug}/cappotto-termico/`, attivo: true },
                   { label: "Impianti", prezzo: "preventivo dopo verifica tecnica", href: `/comune/${slug}/impianti-elettrici-idraulici-termici/`, attivo: true },
