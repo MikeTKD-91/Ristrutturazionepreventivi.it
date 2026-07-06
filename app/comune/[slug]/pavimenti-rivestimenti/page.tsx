@@ -169,7 +169,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Lavori concordati</span>
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Bonus 50% applicabile</span>
                 </div>
-                <a href="#modulo preventivo" className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+                <a href="#modulo-preventivo" className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
                   Richiedi un primo preventivo
                 </a>
               </div>
@@ -180,9 +180,9 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
           </div>
         </section>
 
-        <div id="modulo preventivo" className="lg:hidden px-4 pt-6"><ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} /></div>
+        <div id="modulo-preventivo" className="lg:hidden px-4 pt-6"><ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} /></div>
 
-        <div className="max-w-6xl mx-auto px-4 py-12 grid lg:grid-cols-3 gap-10 items-start">
+        <div className="container mx-auto px-4 py-20 grid lg:grid-cols-3 gap-10 items-start">
           <div className="lg:col-span-2 space-y-16">
 
             <section>
@@ -360,7 +360,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
           </div>
 
           <div className="hidden lg:block">
-            <div id="modulo preventivo" className="sticky top-6 space-y-6">
+            <div id="modulo-preventivo" className="sticky top-6 space-y-6">
               <ScopriIlCostoDellaTuaRistrutturazione comuneDefault={comune.nome} />
               <div className="bg-gray-50 rounded-2xl p-5">
                 <p className="text-sm font-semibold text-navy mb-3">Altri servizi a {comune.nome}</p>
