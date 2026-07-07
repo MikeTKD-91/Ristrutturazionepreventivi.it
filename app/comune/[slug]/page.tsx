@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { ArrowRight, CheckCircle, Check, X } from "lucide-react";
+import { Check, X } from "lucide-react";
 import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
 import { comuni, getComuneBySlug } from "@/data/comuni";
 import { getAllArticoli } from "@/lib/blog";
@@ -23,12 +23,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!comune) return {};
   const url = `https://ristrutturazionepreventivi.it/comune/${slug}/`;
   return {
-    title: `Ristrutturazione Casa a ${comune.nome} | Preventivo e Costi`,
-    description: `Richiedi un preventivo per ristrutturare casa o appartamento a ${comune.nome}. Costi indicativi, sopralluogo e conferma finale del preventivo.`,
+    title: comune.metaTitle,
+    description: comune.metaDescription,
     alternates: { canonical: url },
     openGraph: {
-      title: `Ristrutturazione Casa a ${comune.nome} | Preventivo e Costi`,
-      description: `Richiedi un preventivo per ristrutturare casa o appartamento a ${comune.nome}. Costi indicativi, sopralluogo e conferma finale del preventivo.`,
+      title: comune.metaTitle,
+      description: comune.metaDescription,
       url,
       type: "website",
       siteName: "RistrutturazionePreventivi.it",
@@ -44,8 +44,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: `Ristrutturazione Casa a ${comune.nome} | Preventivo e Costi`,
-      description: `Richiedi un preventivo per ristrutturare casa o appartamento a ${comune.nome}. Costi indicativi, sopralluogo e conferma finale del preventivo.`,
+      title: comune.metaTitle,
+      description: comune.metaDescription,
       images: ["https://ristrutturazionepreventivi.it/images/servizi/ristrutturazione-appartamento-completo.jpg"],
     },
   };
@@ -165,7 +165,7 @@ export default async function ComunePage({ params }: PageProps) {
                   <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Raccontaci il tuo progetto a {comune.nome}: ti diamo una prima stima utile e poi la confermiamo con verifica tecnica.
+                  Raccontaci il tuo progetto di ristrutturazione a {comune.nome} e ricevi un preventivo chiaro e trasparente.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {["Prezzario Regionale Campania", "Lavori concordati", "Bonus 50% applicabile"].map((t) => (
@@ -205,7 +205,7 @@ export default async function ComunePage({ params }: PageProps) {
             <section>
               <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione casa e appartamento completo a {comune.nome}</h2>
               <p className="text-gray-600">
-                Qui trovi un preventivo realistico dei costi di una ristrutturazione completa pensata per case o appartamenti da rifare in modo coordinato, con possibilità di richiedere un preventivo online e verifica tecnica finale solo dopo sopralluogo.
+                Scopri quanto costa una ristrutturazione completa a {comune.nome} con un preventivo basato sui prezzi reali di mercato. Se devi ristrutturare una casa o un appartamento, puoi richiedere un preventivo online gratuito e ricevere una stima dettagliata dei costi. Il prezzo definitivo viene confermato solo dopo il sopralluogo tecnico, necessario per valutare lo stato dell'immobile e definire con precisione tutte le lavorazioni.
               </p>
             </section>
 
@@ -311,29 +311,34 @@ export default async function ComunePage({ params }: PageProps) {
                       <h2 className="text-2xl font-bold text-navy mb-2">{section.title}</h2>
                       <p className="text-gray-600 leading-relaxed">{section.text}</p>
                       {section.title.startsWith("Costo Ristrutturazione") ? (
-                        <div className="mt-4 overflow-x-auto rounded-2xl border border-gray-200 bg-white">
-                          <table className="w-full text-sm">
-                            <thead className="bg-gray-50">
-                              <tr className="text-left text-navy">
-                                <th className="py-3 px-4 font-semibold">Superficie</th>
-                                <th className="py-3 px-4 font-semibold">Costo indicativo</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {[
-                                ["50 mq", "27.500 euro"],
-                                ["80 mq", "44.000 euro"],
-                                ["100 mq", "55.000 euro"],
-                                ["120 mq", "66.000 euro"],
-                              ].map((row) => (
-                                <tr key={row[0]} className="border-t border-gray-100">
-                                  <td className="py-3 px-4 text-gray-700">{row[0]}</td>
-                                  <td className="py-3 px-4 text-gray-700">{row[1]}</td>
+                        <>
+                          <div className="mt-4 overflow-x-auto rounded-2xl border border-gray-200 bg-white">
+                            <table className="w-full text-sm">
+                              <thead className="bg-gray-50">
+                                <tr className="text-left text-navy">
+                                  <th className="py-3 px-4 font-semibold">Superficie</th>
+                                  <th className="py-3 px-4 font-semibold">Costo indicativo</th>
                                 </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
+                              </thead>
+                              <tbody>
+                                {[
+                                  ["50 mq", "27.500 euro"],
+                                  ["80 mq", "44.000 euro"],
+                                  ["100 mq", "55.000 euro"],
+                                  ["120 mq", "66.000 euro"],
+                                ].map((row) => (
+                                  <tr key={row[0]} className="border-t border-gray-100">
+                                    <td className="py-3 px-4 text-gray-700">{row[0]}</td>
+                                    <td className="py-3 px-4 text-gray-700">{row[1]}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                          {section.afterTableText ? (
+                            <p className="mt-4 text-gray-600 leading-relaxed">{section.afterTableText}</p>
+                          ) : null}
+                        </>
                       ) : null}
                     </div>
                   ))}
