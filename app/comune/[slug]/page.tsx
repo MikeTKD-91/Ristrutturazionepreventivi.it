@@ -12,6 +12,16 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+function renderSeoText(text: string, comuneNome: string) {
+  const escapedComune = comuneNome.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const regex = new RegExp(`(${escapedComune})`, "gi");
+  const parts = text.split(regex);
+
+  return parts.map((part, i) =>
+    part.toLowerCase() === comuneNome.toLowerCase() ? <strong key={i}>{part}</strong> : part
+  );
+}
+
 // Valori orientativi da Prezzario Regionale Campania — ristrutturazione appartamento completo
 export async function generateStaticParams() {
   return comuni.map((c) => ({ slug: c.slug }));
@@ -309,7 +319,7 @@ export default async function ComunePage({ params }: PageProps) {
                   {comune.seoSections.map((section, i) => (
                     <div key={i}>
                       <h2 className="text-2xl font-bold text-navy mb-2">{section.title}</h2>
-                      <p className="text-gray-600 leading-relaxed">{section.text}</p>
+                      <p className="text-gray-600 leading-relaxed whitespace-pre-line">{renderSeoText(section.text, comune.nome)}</p>
                       {section.title.startsWith("Costo Ristrutturazione") ? (
                         <>
                           <div className="mt-4 overflow-x-auto rounded-2xl border border-gray-200 bg-white">
