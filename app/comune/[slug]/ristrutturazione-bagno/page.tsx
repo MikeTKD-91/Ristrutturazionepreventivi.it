@@ -130,6 +130,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
   const dataAggiornamento = getDataAggiornamento();
   const altriServizi = servizi.filter((s) => s.slug !== "ristrutturazione-bagno");
   const articoliConsigliati = getAllArticoli().slice(0, 3);
+  const seoSectionsBagno = comune.seoSections?.filter((section) => section.tableType === "bagno" || section.title.includes("Bagno")) ?? [];
 
   return (
     <>
@@ -203,13 +204,13 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
             <div>
               <h2 className="text-2xl font-bold text-navy mb-4">Descrizione del Servizio</h2>
               <div className="prose prose-lg max-w-none text-gray-600 whitespace-pre-line">
-                {`La ristrutturazione completa del bagno a ${comune.nome} è un intervento tecnico che comprende demolizioni, rifacimento degli impianti, ripristino dei sottofondi, impermeabilizzazione e posa delle nuove finiture.
+                {`La ristrutturazione completa del bagno a ${comune.nome} comprende tutte le lavorazioni necessarie per trasformare il tuo ambiente in uno spazio moderno, funzionale e realizzato a regola d'arte: demolizioni, rifacimento degli impianti idraulici ed elettrici, ripristino dei sottofondi, impermeabilizzazione e posa delle nuove finiture.
 
-Il costo base da 5.000 € rappresenta un riferimento iniziale per bagni di dimensioni contenute o medie, con configurazione standard e senza criticità particolari. Il preventivo definitivo può aumentare in caso di bagno più grande, spostamenti impiantistici rilevanti, finiture fuori capitolato o problematiche emerse dopo la demolizione.
+Il costo per ristrutturare un bagno a ${comune.nome} parte da 5.500 € tutto incluso per interventi standard di dimensioni contenute o medie. Il prezzo finale varia in base alla metratura, allo stato degli impianti, agli eventuali spostamenti dei punti acqua e alla scelta dei materiali e delle finiture.
 
-Il nostro servizio comprende smontaggio dei sanitari esistenti, demolizione di pavimenti e rivestimenti, smaltimento dei materiali di risulta, realizzazione del nuovo impianto idrico-sanitario ed elettrico del bagno, formazione del massetto, impermeabilizzazione della zona doccia o vasca, posa di pavimenti e rivestimenti e installazione dei nuovi sanitari con rubinetteria.
+Il servizio comprende smontaggio dei sanitari esistenti, demolizione e smaltimento dei materiali, realizzazione del nuovo impianto bagno, posa di pavimenti e rivestimenti, installazione dei sanitari, rubinetteria e completamento delle opere di finitura.
 
-Ogni preventivo online ha valore orientativo: il sopralluogo serve a verificare misure, stato degli impianti, condizioni del supporto e reali necessità del cantiere a ${comune.nome}.`}
+Ogni preventivo per la ristrutturazione bagno a ${comune.nome} viene definito dopo un'attenta valutazione delle caratteristiche dell'immobile, per garantire un prezzo chiaro, trasparente e senza costi nascosti.`}
               </div>
             </div>
 
@@ -264,6 +265,46 @@ Ogni preventivo online ha valore orientativo: il sopralluogo serve a verificare 
                 </p>
               </div>
             </div>
+
+            {seoSectionsBagno.length ? (
+              <div className="space-y-8">
+                {seoSectionsBagno.map((section, i) => (
+                  <div key={i}>
+                    <h2 className="text-2xl font-bold text-navy mb-4">{section.title}</h2>
+                    <p className="text-gray-600 leading-relaxed whitespace-pre-line">{section.text}</p>
+                    {section.tableType === "bagno" ? (
+                      <>
+                        <div className="mt-4 overflow-x-auto rounded-2xl border border-gray-200 bg-white">
+                          <table className="w-full text-sm">
+                            <thead className="bg-gray-50">
+                              <tr className="text-left text-navy">
+                                <th className="py-3 px-4 font-semibold">Fascia</th>
+                                <th className="py-3 px-4 font-semibold">Costo indicativo</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {[
+                                ["Base", "da 5.500 €"],
+                                ["Medium", "da 6.800 €"],
+                                ["Lusso", "da 8.500 €"],
+                              ].map((row) => (
+                                <tr key={row[0]} className="border-t border-gray-100">
+                                  <td className="py-3 px-4 text-gray-700">{row[0]}</td>
+                                  <td className="py-3 px-4 text-gray-700">{row[1]}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                        {section.afterTableText ? (
+                          <p className="mt-4 text-gray-600 leading-relaxed">{section.afterTableText}</p>
+                        ) : null}
+                      </>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            ) : null}
 
             <div>
               <h2 className="text-2xl font-bold text-navy mb-4">Dove Operiamo</h2>
