@@ -67,6 +67,7 @@ export default async function ComunePage({ params }: PageProps) {
   if (!comune) notFound();
 
   const articoliConsigliati = getAllArticoli().slice(0, 3);
+  const seoSectionsCasa = comune.seoSections?.filter((section) => section.pageType !== "bagno") ?? [];
 
   const breadcrumb = {
     "@context": "https://schema.org",
@@ -213,10 +214,18 @@ export default async function ComunePage({ params }: PageProps) {
           <div className="lg:col-span-2 space-y-16">
 
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione casa e appartamento completo a {comune.nome}</h2>
-              <p className="text-gray-600">
-                Scopri quanto costa una ristrutturazione completa a {comune.nome} con un preventivo basato sui prezzi reali di mercato. Se devi ristrutturare una casa o un appartamento, puoi richiedere un preventivo online gratuito e ricevere una stima dettagliata dei costi. Il prezzo definitivo viene confermato solo dopo il sopralluogo tecnico, necessario per valutare lo stato dell'immobile e definire con precisione tutte le lavorazioni.
-              </p>
+              <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione Casa e Appartamento Completo a {comune.nome}</h2>
+              <div className="space-y-4 text-gray-600">
+                <p>
+                  La ristrutturazione completa di una casa o di un appartamento a {comune.nome} richiede una valutazione precisa dei lavori da eseguire, dei materiali da utilizzare e delle condizioni iniziali dell'immobile. Con il nostro servizio puoi richiedere un preventivo gratuito online e conoscere una stima dei costi basata sulle reali esigenze del tuo progetto.
+                </p>
+                <p>
+                  Il prezzo di una ristrutturazione varia in base alla metratura dell'abitazione, allo stato degli impianti, alla distribuzione degli ambienti, alle finiture scelte e alla complessità degli interventi. Il costo definitivo viene confermato dopo un sopralluogo tecnico, indispensabile per analizzare l'immobile e definire in modo dettagliato tutte le lavorazioni necessarie.
+                </p>
+                <p>
+                  Affidati a un'impresa specializzata nella ristrutturazione di appartamenti a {comune.nome} per seguire ogni fase del progetto: demolizioni, impianti, opere murarie, pavimenti, rivestimenti, tinteggiature e finiture finali, con un unico referente e un preventivo chiaro e trasparente.
+                </p>
+              </div>
             </section>
 
             <section>
@@ -314,9 +323,9 @@ export default async function ComunePage({ params }: PageProps) {
             </section>
 
             <section>
-              {comune.seoSections?.length ? (
+              {seoSectionsCasa.length ? (
                 <div className="space-y-6">
-                  {comune.seoSections.map((section, i) => (
+                  {seoSectionsCasa.map((section, i) => (
                     <div key={i}>
                       <h2 className="text-2xl font-bold text-navy mb-2">{section.title}</h2>
                       <p className="text-gray-600 leading-relaxed whitespace-pre-line">{renderSeoText(section.text, comune.nome)}</p>

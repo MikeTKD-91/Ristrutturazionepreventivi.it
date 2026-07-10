@@ -26,7 +26,7 @@ export interface Comune {
   faqAppartamento?: ComuneFaq[];
   vicini: string[];
   immagine?: string;
-  seoSections?: { title: string; text: string; afterTableText?: string; tableType?: "casa" | "bagno" }[];
+  seoSections?: { title: string; text: string; afterTableText?: string; tableType?: "casa" | "bagno"; pageType?: "casa" | "bagno" }[];
 }
 
 // ─────────────────────────────────────────────
@@ -900,14 +900,17 @@ export const comuniNapoli: Comune[] = [
         text: "Il costo di ristrutturazione del bagno a Napoli dipende da dimensioni, stato degli impianti e finiture scelte.\n\nPer un bagno standard (5-6 mq) in un condominio degli anni '60-'80, il costo base parte da circa 5.500 €, comprensivo di demolizioni, rifacimento impianti, impermeabilizzazione, posa di pavimenti e rivestimenti e installazione sanitari.\n\nPer bagni più grandi o con finiture più curate, si entra nella fascia media, mentre per soluzioni con materiali premium, sanitari di design e opere murarie più significative si arriva alla fascia lusso.",
         afterTableText: "Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dello stato degli impianti e delle condizioni del massetto. Richiedi un preventivo gratuito per la ristrutturazione del tuo bagno a Napoli.",
         tableType: "bagno",
+        pageType: "bagno",
       },
       {
         title: "Impresa di Ristrutturazioni Bagno a Napoli",
         text: "Scegliere un'impresa specializzata in ristrutturazioni bagno a Napoli significa avere un unico interlocutore per demolizioni, impianti, impermeabilizzazione, piastrellatura e installazione sanitari.\n\nNelle zone di Napoli più vicine alla nostra area operativa, come Secondigliano, Scampia, Piscinola, Miano, San Pietro a Patierno e i quartieri limitrofi, molti bagni si trovano in condomini costruiti tra gli anni '60 e '80, con impianti idrici ed elettrici spesso obsoleti e bagni di dimensioni ridotte.\n\nUn'impresa con esperienza nei bagni napoletani sa gestire al meglio le criticità tipiche: tubazioni in piombo o acciaio zincato da sostituire, scarichi condivisi, massetti da rifare, impermeabilizzazioni delicate e organizzazione del cantiere in spazi ristretti.\n\nCon RistrutturazionePreventivi.it puoi richiedere un preventivo gratuito per il tuo bagno a Napoli, con una prima valutazione online e conferma del quadro economico definitivo dopo il sopralluogo tecnico.",
+        pageType: "bagno",
       },
       {
         title: "Preventivo Ristrutturazione Bagno a Napoli",
         text: "Richiedere un preventivo per ristrutturare il bagno a Napoli è il primo passo per capire il costo reale del tuo intervento.\n\nIl prezzo finale dipende da: dimensioni del bagno, stato degli impianti esistenti, necessità di spostare scarichi o colonne, tipo di sanitari e finiture scelte, e dalle eventuali opere murarie aggiuntive.\n\nNelle zone di Napoli servite, molti bagni si trovano in condomini anni '60-'80: qui è frequente dover sostituire tubazioni in piombo o acciaio, rifare il massetto e curare molto l'impermeabilizzazione della zona doccia.\n\nSu RistrutturazionePreventivi.it puoi richiedere un preventivo gratuito e immediato per la ristrutturazione del tuo bagno a Napoli. Riceverai una prima stima online, con conferma del costo definitivo dopo il sopralluogo tecnico.",
+        pageType: "bagno",
       },
       {
         title: "Costo Ristrutturazione Napoli",
