@@ -180,11 +180,11 @@ export default async function ArticoloPage({ params }: Props) {
 
       {/* Body */}
       <section className="py-14">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-12 items-start">
+        <div className="container mx-auto max-w-full px-4 overflow-x-hidden">
+          <div className="grid max-w-full lg:grid-cols-3 gap-12 items-start">
 
             {/* Main */}
-            <div className="lg:col-span-2">
+            <div className="min-w-0 max-w-full lg:col-span-2">
 
               {/* Estratto */}
               <p className="text-lg text-gray-600 leading-relaxed border-l-4 border-orange pl-4 mb-10">
@@ -217,7 +217,7 @@ export default async function ArticoloPage({ params }: Props) {
               )}
 
               {/* Contenuto */}
-              <article className="max-w-none">
+              <article className="max-w-none min-w-0 max-w-full overflow-hidden break-words">
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={{
@@ -298,6 +298,20 @@ export default async function ArticoloPage({ params }: Props) {
                       <blockquote className="my-8 border-l-4 border-orange bg-orange/5 px-6 py-4 rounded-r-2xl text-gray-700">
                         {children}
                       </blockquote>
+                    ),
+                    pre: ({ children }) => (
+                      <pre className="my-8 max-w-full overflow-x-auto rounded-2xl bg-gray-900 p-4 text-sm text-white">
+                        {children}
+                      </pre>
+                    ),
+                    code: ({ children, className }) => (
+                      <code className={className ?? "break-words whitespace-pre-wrap"}>
+                        {children}
+                      </code>
+                    ),
+                    img: ({ src = "", alt = "" }) => (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={src} alt={alt} className="my-8 h-auto max-w-full rounded-2xl" />
                     ),
                   }}
                 >
