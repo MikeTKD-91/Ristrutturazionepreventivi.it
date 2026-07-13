@@ -319,6 +319,105 @@ export default async function ArticoloPage({ params }: Props) {
                 </ReactMarkdown>
               </article>
 
+              {/* Servizi disponibili Napoli */}
+              <section className="mt-12">
+                <div className="mb-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">Napoli</p>
+                  <h2 className="mt-3 text-2xl font-bold text-navy">Servizi disponibili a Napoli</h2>
+                  <p className="mt-3 text-gray-600">
+                    Se stai valutando un intervento a Napoli, qui trovi i principali servizi con pagina locale dedicata.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 gap-6">
+                  {[
+                    {
+                      title: "Ristrutturazione Casa e Appartamento",
+                      description: "Intervento completo con demolizioni, opere murarie, impianti, finiture e coordinamento delle lavorazioni.",
+                      href: "/comune/napoli/",
+                      image: "/images/servizi/ristrutturazione-appartamento-completo.jpg",
+                      alt: "Ristrutturazione casa e appartamento a Napoli",
+                    },
+                    {
+                      title: "Ristrutturazione Cucina",
+                      description: "Rifacimento cucina con impianti, rivestimenti, predisposizioni e finiture coordinate al progetto.",
+                      href: "/comune/napoli/ristrutturazione-cucina/",
+                      image: "/images/servizi/ristrutturazione-cucina.jpg",
+                      alt: "Ristrutturazione cucina a Napoli",
+                    },
+                    {
+                      title: "Ristrutturazione Bagno",
+                      description: "Demolizione, rifacimento impianti, posa rivestimenti, installazione sanitari e completamento delle finiture.",
+                      href: "/comune/napoli/ristrutturazione-bagno/",
+                      image: "/images/servizi/ristrutturazione-bagno.jpg",
+                      alt: "Ristrutturazione bagno a Napoli",
+                    },
+                    {
+                      title: "Rifacimento Tetto",
+                      description: "Interventi su copertura, impermeabilizzazione, isolamento e ripristino degli elementi ammalorati.",
+                      href: "/comune/napoli/rifacimento-tetto/",
+                      image: "/images/servizi/rifacimento-tetto.jpg",
+                      alt: "Rifacimento tetto a Napoli",
+                    },
+                    {
+                      title: "Pavimenti e Rivestimenti",
+                      description: "Posa di pavimenti e rivestimenti con preparazione dei supporti, allineamenti e finiture precise.",
+                      href: "/comune/napoli/pavimenti-rivestimenti/",
+                      image: "/images/servizi/pavimenti-rivestimenti.jpg",
+                      alt: "Pavimenti e rivestimenti a Napoli",
+                    },
+                    {
+                      title: "Impianti",
+                      description: "Rifacimento impianti elettrici, idraulici e termici con verifica tecnica e organizzazione delle opere.",
+                      href: "/comune/napoli/impianti-elettrici-idraulici-termici/",
+                      image: "/images/servizi/impianti-elettrici-idraulici-termici.jpg",
+                      alt: "Rifacimento impianti a Napoli",
+                    },
+                    {
+                      title: "Cappotto Termico",
+                      description: "Isolamento dell’involucro con posa del sistema cappotto, rasature, finiture e verifica del supporto.",
+                      href: "/comune/napoli/cappotto-termico/",
+                      image: "/images/servizi/cappotto-termico.jpg",
+                      alt: "Cappotto termico a Napoli",
+                    },
+                  ].map((servizio, index) => (
+                    <div
+                      key={servizio.href}
+                      className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col md:flex-row"
+                    >
+                      <div className="relative h-56 md:h-auto md:w-[320px] md:min-w-[320px]">
+                        <Image
+                          src={servizio.image}
+                          alt={servizio.alt}
+                          fill
+                          className="object-cover"
+                          priority={index === 0}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent md:bg-gradient-to-r md:from-transparent md:to-transparent" />
+                      </div>
+
+                      <div className="p-6 flex flex-col flex-1">
+                        <h3 className="text-2xl font-bold text-navy mb-3">
+                          {servizio.title}
+                        </h3>
+                        <p className="text-gray-600 mb-6">
+                          {servizio.description}
+                        </p>
+
+                        <div className="pt-4 border-t mt-auto">
+                          <Link
+                            href={servizio.href}
+                            className="inline-flex items-center gap-2 bg-navy hover:bg-navy/90 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
+                          >
+                            Scopri di più
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
               {/* Autore card */}
               <div className="mt-12 flex items-center gap-5 bg-gray-50 border border-gray-200 rounded-2xl p-6">
                 <div className="w-14 h-14 rounded-full bg-navy flex items-center justify-center shrink-0">
