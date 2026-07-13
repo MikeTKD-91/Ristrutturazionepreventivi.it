@@ -311,7 +311,7 @@ export default async function ArticoloPage({ params }: Props) {
                     ),
                     img: ({ src = "", alt = "" }) => (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={src} alt={alt} className="my-8 h-auto max-w-full rounded-2xl" />
+                      <img src={src} alt={alt} className="my-8 h-auto w-full max-w-full md:max-w-[520px] lg:max-w-[580px] rounded-2xl mx-auto" />
                     ),
                   }}
                 >
