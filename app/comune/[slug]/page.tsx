@@ -363,7 +363,7 @@ export default async function ComunePage({ params }: PageProps) {
                             </table>
                           </div>
                           {section.afterTableText ? (
-                            <p className="mt-4 text-gray-600 leading-relaxed">{section.afterTableText}</p>
+                            <p className="mt-4 text-gray-600 leading-relaxed whitespace-pre-line">{section.afterTableText}</p>
                           ) : null}
                         </>
                       ) : null}
