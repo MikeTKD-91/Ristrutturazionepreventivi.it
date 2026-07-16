@@ -5,8 +5,11 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Check, X } from "lucide-react";
 import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
+import GalleriaLavori from "@/components/shared/GalleriaLavori";
 import { comuni, getComuneBySlug } from "@/data/comuni";
 import { getAllArticoli } from "@/lib/blog";
+import { getComuneContent } from "@/lib/comune-content";
+import { getLavoriPerComune } from "@/lib/lavori";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -22,7 +25,6 @@ function renderSeoText(text: string, comuneNome: string) {
   );
 }
 
-// Valori orientativi da Prezzario Regionale Campania — ristrutturazione appartamento completo
 export async function generateStaticParams() {
   return comuni.map((c) => ({ slug: c.slug }));
 }
@@ -66,6 +68,8 @@ export default async function ComunePage({ params }: PageProps) {
   const comune = getComuneBySlug(slug);
   if (!comune) notFound();
 
+  const content = getComuneContent(slug);
+  const lavori = getLavoriPerComune(slug);
   const articoliConsigliati = getAllArticoli().slice(0, 3);
   const seoSectionsCasa = comune.seoSections?.filter((section) => section.pageType !== "bagno") ?? [];
 
@@ -111,9 +115,9 @@ export default async function ComunePage({ params }: PageProps) {
     offers: {
       "@type": "Offer",
       priceCurrency: "EUR",
-      price: "550",
+      price: String(content.prezzoMq),
       url: `https://ristrutturazionepreventivi.it/comune/${slug}/`,
-      description: `Prezzo base indicativo da 550 €/mq per ristrutturazione completa a ${comune.nome}, da confermare dopo sopralluogo e verifica tecnica.`,
+      description: `Prezzo base indicativo da ${content.prezzoMq} €/mq per ristrutturazione completa a ${comune.nome}, da confermare dopo sopralluogo e verifica tecnica.`,
     },
     url: `https://ristrutturazionepreventivi.it/comune/${slug}/`,
   };
@@ -131,18 +135,18 @@ export default async function ComunePage({ params }: PageProps) {
     : null;
 
   const inclusioniStandard = [
-        "Rifacimento impianto elettrico, idraulico e termico",
-        "Fornitura e installazione di termosifoni standard in alluminio",
-        "Fornitura e posa di infissi esterni in PVC",
-        "Fornitura e installazione di portoncino d'ingresso",
-        "Fornitura e posa di pavimenti e rivestimenti",
-        "Fornitura e posa di porte interne complete di telaio e bussole",
-        "Opere murarie, sottofondi, intonaci e rasature",
-        "Controsoffittatura liscia dove prevista dal progetto",
-        "Fornitura e installazione dei sanitari: wc, bidet, lavabo e piatto doccia",
-        "Tinteggiatura finale e finiture standard",
-        "Demolizioni e smaltimento delle rimozioni previste",
-      ];
+    "Rifacimento impianto elettrico, idraulico e termico",
+    "Fornitura e installazione di termosifoni standard in alluminio",
+    "Fornitura e installazione di infissi esterni in PVC",
+    "Fornitura e installazione di portoncino d'ingresso",
+    "Fornitura e posa di pavimenti e rivestimenti",
+    "Fornitura e posa di porte interne complete di telaio e bussole",
+    "Opere murarie, sottofondi, intonaci e rasature",
+    "Controsoffittatura liscia dove prevista dal progetto",
+    "Fornitura e installazione dei sanitari: wc, bidet, lavabo e piatto doccia",
+    "Tinteggiatura finale e finiture standard",
+    "Demolizioni e smaltimento delle rimozioni previste",
+  ];
 
   const esclusioniExtra = [
     "Pratiche edilizie, catastali e autorizzazioni eventualmente necessarie",
@@ -154,6 +158,12 @@ export default async function ComunePage({ params }: PageProps) {
     "Finiture fuori capitolato e forniture scelte dal cliente",
   ];
 
+  const prezziTabella = [
+    ["50 mq", `${(50 * content.prezzoMq).toLocaleString("it-IT")} euro`],
+    ["80 mq", `${(80 * content.prezzoMq).toLocaleString("it-IT")} euro`],
+    ["100 mq", `${(100 * content.prezzoMq).toLocaleString("it-IT")} euro`],
+    ["120 mq", `${(120 * content.prezzoMq).toLocaleString("it-IT")} euro`],
+  ];
 
   return (
     <>
@@ -167,23 +177,20 @@ export default async function ComunePage({ params }: PageProps) {
         {/* HERO */}
         <section className="bg-navy py-14 px-4">
           <div className="max-w-6xl mx-auto">
-
             <div className="grid lg:grid-cols-2 gap-10 items-center">
-              {/* Testo */}
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Ristrutturazione Casa a {comune.nome}:{" "}
                   <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Raccontaci il tuo progetto di ristrutturazione a {comune.nome} e ricevi un preventivo chiaro e trasparente.
+                  {content.testoIntro}
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
-                  {["Prezzario Regionale Campania", "Lavori concordati", "Bonus 50% applicabile"].map((t) => (
+                  {content.tagHero.map((t) => (
                     <span key={t} className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">{t}</span>
                   ))}
                 </div>
-                {/* Scroll verso modulo preventivo */}
                 <a
                   href="#modulo-preventivo"
                   className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
@@ -192,10 +199,9 @@ export default async function ComunePage({ params }: PageProps) {
                 </a>
               </div>
 
-              {/* Foto */}
               <div className="hidden lg:block relative h-72 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/servizi/ristrutturazione-appartamento-completo.jpg"
+                  src={content.immagineHero}
                   alt={`Ristrutturazione casa o appartamento a ${comune.nome}`}
                   fill
                   className="object-cover"
@@ -205,7 +211,7 @@ export default async function ComunePage({ params }: PageProps) {
             </div>
           </div>
         </section>
-        {/* Modulo di preventivo mobile */}
+
         <div id="modulo-preventivo" className="lg:hidden px-4 pt-6">
           <CalcolatoreAppartamento comuneDefault={comune.nome} />
         </div>
@@ -216,11 +222,10 @@ export default async function ComunePage({ params }: PageProps) {
             <section>
               <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione Casa e Appartamento Completo a {comune.nome}</h2>
               <div className="space-y-4 text-gray-600">
+                <p>{content.testoIntro}</p>
                 <p>
-                  La ristrutturazione completa di una casa o di un appartamento a {comune.nome} richiede una valutazione precisa dei lavori da eseguire, dei materiali da utilizzare e delle condizioni iniziali dell'immobile. Con il nostro servizio puoi richiedere un preventivo gratuito online e conoscere una stima dei costi basata sulle reali esigenze del tuo progetto.
-                </p>
-                <p>
-                  Il prezzo di una ristrutturazione varia in base alla metratura dell'abitazione, allo stato degli impianti, alla distribuzione degli ambienti, alle finiture scelte e alla complessità degli interventi. {comune.slug === "napoli" && (
+                  {content.testoCosti}{" "}
+                  {comune.slug === "napoli" && (
                     <>
                       Per una stima più orientativa puoi leggere anche{" "}
                       <Link href="/blog/quanto-costa-ristrutturare-appartamento-napoli-2026/" className="text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-orange">
@@ -228,7 +233,8 @@ export default async function ComunePage({ params }: PageProps) {
                       </Link>
                       , con una panoramica sui prezzi al mq e sui fattori che incidono di più sul costo finale.{" "}
                     </>
-                  )}Il costo definitivo viene confermato dopo un sopralluogo tecnico, indispensabile per analizzare l'immobile e definire in modo dettagliato tutte le lavorazioni necessarie.
+                  )}
+                  Il costo definitivo viene confermato dopo un sopralluogo tecnico, indispensabile per analizzare l'immobile e definire in modo dettagliato tutte le lavorazioni necessarie.
                 </p>
                 <p>
                   Affidati a un'impresa specializzata nella ristrutturazione di appartamenti a {comune.nome} per seguire ogni fase del progetto: demolizioni, impianti, opere murarie, pavimenti, rivestimenti, tinteggiature e finiture finali, con un unico referente e un preventivo chiaro e trasparente.
@@ -237,27 +243,27 @@ export default async function ComunePage({ params }: PageProps) {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-3">Costi reali</h2>
+              <h2 className="text-2xl font-bold text-navy mb-3">Costi reali a {comune.nome}</h2>
               <div className="rounded-3xl border border-gray-200 bg-gradient-to-br from-orange-50 via-white to-navy/5 p-6 md:p-8 shadow-lg">
                 <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-orange mb-3">Costo base reale</p>
                     <div className="flex items-end gap-3 flex-wrap">
-                      <span className="text-5xl md:text-7xl font-black text-navy leading-none">550</span>
+                      <span className="text-5xl md:text-7xl font-black text-navy leading-none">{content.prezzoMq}</span>
                       <span className="text-xl md:text-2xl font-bold text-orange pb-1">€/mq</span>
                     </div>
                     <p className="mt-4 text-sm text-gray-600 max-w-xl">
-                      Valore riferito a ristrutturazione completa standard, con accesso ordinario all'immobile e condizioni operative normali. Questo valore aiuta a capire se il progetto è in linea con il budget, ma non sostituisce il sopralluogo.
+                      Valore riferito a ristrutturazione completa standard a {comune.nome}, con accesso ordinario all'immobile e condizioni operative normali. Questo valore aiuta a capire se il progetto è in linea con il budget, ma non sostituisce il sopralluogo.
                     </p>
                   </div>
                   <div className="rounded-2xl bg-white border border-gray-200 p-5">
                     <div className="rounded-2xl border border-orange/20 bg-orange/5 p-4">
                       <p className="text-[11px] font-bold tracking-[0.14em] text-orange uppercase">Esempio reale</p>
-                      <p className="mt-2 text-sm font-medium text-gray-600">Appartamento 80 mq</p>
-                      <p className="mt-2 text-3xl font-black text-navy leading-none">46.750 euro</p>
+                      <p className="mt-2 text-sm font-medium text-gray-600">Appartamento {content.esempioMq} mq</p>
+                      <p className="mt-2 text-3xl font-black text-navy leading-none">{content.esempioPrezzo.toLocaleString("it-IT")} euro</p>
                     </div>
                     <p className="mt-4 text-xs text-gray-500">
-                      Il preventivo finale si conferma solo dopo verifica tecnica e sopralluogo.
+                      Il preventivo finale si conferma solo dopo verifica tecnica e sopralluogo a {comune.nome}.
                     </p>
                   </div>
                 </div>
@@ -289,10 +295,19 @@ export default async function ComunePage({ params }: PageProps) {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-navy mb-3">Quanto dura il cantiere?</h2>
+              <h2 className="text-2xl font-bold text-navy mb-3">Quanto dura il cantiere a {comune.nome}?</h2>
               <p className="text-gray-600 mb-5">
-                Per un appartamento medio la durata varia in base allo stato degli impianti, ai tempi di asciugatura e al livello di finitura scelto. In condizioni ordinarie siamo nell'ordine di 6–10 settimane lavorative.
+                Per un appartamento medio a {comune.nome} la durata varia in base allo stato degli impianti, ai tempi di asciugatura e al livello di finitura scelto. In condizioni ordinarie siamo nell'ordine di {content.durataCantiere} lavorative.
               </p>
+              {content.noteCantiere.length > 0 && (
+                <div className="mb-5 space-y-2">
+                  {content.noteCantiere.map((nota, i) => (
+                    <p key={i} className="text-sm text-amber-700 bg-amber-50 border border-amber-100 rounded-lg px-4 py-2">
+                      ⚠ {nota}
+                    </p>
+                  ))}
+                </div>
+              )}
               <div className="space-y-2">
                 {[
                   ["Demolizioni e rimozioni", "3–5 gg", ""],
@@ -317,7 +332,7 @@ export default async function ComunePage({ params }: PageProps) {
               <h2 className="text-2xl font-bold text-navy mb-3">Come funziona</h2>
               <div className="grid gap-4 md:grid-cols-3">
                 {[
-                  ["01", "Primo preventivo online", "Parti dallo strumento di stima con i mq dell'appartamento e ricevi una prima indicazione coerente con il livello standard da 550 €/mq."],
+                  ["01", "Primo preventivo online", `Parti dallo strumento di stima con i mq dell'appartamento a ${comune.nome} e ricevi una prima indicazione coerente con il livello standard da ${content.prezzoMq} €/mq.`],
                   ["02", "Verifica tecnica", "Controlliamo accessibilità, impianti, distribuzione interna e criticità locali per capire cosa incide davvero sul costo."],
                   ["03", "Preventivo scritto", "Ricevi il quadro economico definitivo con lavorazioni, tempi e condizioni operative prima di iniziare il cantiere."],
                 ].map((s) => (
@@ -329,6 +344,9 @@ export default async function ComunePage({ params }: PageProps) {
                 ))}
               </div>
             </section>
+
+            {/* GALLERIA LAVORI — appare solo se ci sono immagini */}
+            <GalleriaLavori comuneNome={comune.nome} lavori={lavori} />
 
             <section>
               {seoSectionsCasa.length ? (
@@ -344,16 +362,11 @@ export default async function ComunePage({ params }: PageProps) {
                               <thead className="bg-gray-50">
                                 <tr className="text-left text-navy">
                                   <th className="py-3 px-4 font-semibold">Superficie</th>
-                                  <th className="py-3 px-4 font-semibold">Costo indicativo</th>
+                                  <th className="py-3 px-4 font-semibold">Costo indicativo a {comune.nome}</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                {[
-                                  ["50 mq", "27.500 euro"],
-                                  ["80 mq", "44.000 euro"],
-                                  ["100 mq", "55.000 euro"],
-                                  ["120 mq", "66.000 euro"],
-                                ].map((row) => (
+                                {prezziTabella.map((row) => (
                                   <tr key={row[0]} className="border-t border-gray-100">
                                     <td className="py-3 px-4 text-gray-700">{row[0]}</td>
                                     <td className="py-3 px-4 text-gray-700">{row[1]}</td>
@@ -390,7 +403,6 @@ export default async function ComunePage({ params }: PageProps) {
               <h2 className="text-2xl font-bold text-navy mb-2">FAQ</h2>
             </section>
 
-            {/* FAQ DINAMICHE */}
             {comune.faq.length > 0 && (
               <section>
                 <h2 className="text-2xl font-bold text-navy mb-2">
@@ -416,7 +428,6 @@ export default async function ComunePage({ params }: PageProps) {
               </section>
             )}
 
-            {/* COMUNI VICINI */}
             {comune.vicini.length > 0 && (
               <section>
                 <h2 className="text-xl font-bold text-navy mb-4">Interveniamo anche nei comuni vicini</h2>
@@ -438,7 +449,6 @@ export default async function ComunePage({ params }: PageProps) {
 
           </div>
 
-          {/* SIDEBAR STICKY */}
           <div className="lg:col-span-1">
             <div className="sticky top-6 space-y-6">
               <div id="modulo-preventivo">
@@ -492,7 +502,6 @@ export default async function ComunePage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* CTA */}
         <section className="bg-navy py-14 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
@@ -521,4 +530,3 @@ export default async function ComunePage({ params }: PageProps) {
     </>
   );
 }
-
