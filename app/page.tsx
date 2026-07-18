@@ -7,7 +7,6 @@ import { ArrowRight, MapPin, Shield, Clock, Award, ChevronDown } from "lucide-re
 import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
 import { servizi } from "@/data/servizi";
 import { comuniNapoli, comuniCaserta, comuniAgroAversano } from "@/data/comuni";
-import { RecensioniClienti } from "@/components/shared/RecensioniClienti";
 
 const features = [
   {
