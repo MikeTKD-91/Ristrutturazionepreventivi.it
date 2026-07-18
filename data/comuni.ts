@@ -1273,7 +1273,21 @@ export const comuniNapoli: Comune[] = [
         risposta: "Un bagno di 4-5 mq con rifacimento completo richiede mediamente 2-3 settimane lavorative. I tempi si allungano se è necessaria la bonifica di impianti in amianto, la sostituzione delle colonne condominiali o se emergono criticità strutturali al sopralluogo.",
       },
     ],
-    faqBagno: [
+        seoSections: [
+      {
+        title: "Costo Ristrutturazione Casandrino",
+        text: "Il costo di una ristrutturazione a Casandrino parte da 540 €/mq per interventi completi nelle palazzine degli anni '60-'80 del centro. Il prezzo può salire a 650 €/mq se emergono criticità come canne fumarie in amianto da bonificare, umidità di risalita nei piani terra, o impianti condominiali obsoleti da aggiornare. Le zone di espansione recente con condomini di qualità media hanno costi più contenuti ma possono nascondere abusi edilizi non condonati. Su RistrutturazionePreventivi.it puoi richiedere una stima immediata e gratuita.",
+      },
+      {
+        title: "Impresa di Ristrutturazioni a Casandrino",
+        text: "A Casandrino, la prossimità a Napoli e a Giugliano in Campania ne fa un comune a forte vocazione residenziale. Le palazzine degli anni '60-'80 nel centro hanno spesso bagni compatti sotto i 5 mq, impianti da aggiornare e canne fumarie in amianto da bonificare. Le zone di espansione recente hanno invece condomini di qualità media con esigenze diverse. Realizziamo ristrutturazioni complete per ogni tipologia edilizia, con un unico referente tecnico che gestisce verifiche preliminari, pratiche burocratiche e cantiere.",
+      },
+      {
+        title: "Preventivo Ristrutturazione a Casandrino",
+        text: "Richiedere un preventivo per ristrutturare casa a Casandrino è il primo passo per conoscere in modo chiaro il costo dei lavori. Le variabili principali sono: metratura, stato degli impianti, eventuale bonifica amianto, umidità di risalita, e livello delle finiture desiderate. Su RistrutturazionePreventivi.it il preventivo è immediato e gratuito, calcolato sulle caratteristiche reali del tuo immobile, con conferma finale dopo sopralluogo tecnico.",
+      },
+    ],
+faqBagno: [
       {
         domanda: "Quanto costa rifare il bagno a Casandrino?",
         risposta: "In base al Prezzario Regionale Campania, per i bagni compatti delle palazzine anni '60-'70 (sotto i 5 mq) la forbice è 4.500-8.500 €. Per i bagni standard nelle costruzioni successive (5-6 mq) la forbice è 5.000-9.500 €. Nelle palazzine più vecchie con canne fumarie in amianto, la bonifica preventiva obbligatoria va inserita nel piano costi prima di qualsiasi intervento sulla cucina adiacente.",
@@ -1321,7 +1335,21 @@ export const comuniNapoli: Comune[] = [
         risposta: "La scelta tra rimozione e sovrapposa dipende da: spessore dei vecchi rivestimenti (se già sovrapposti una volta, una seconda volta può creare problemi di peso e planarità), adesione al supporto (se ci sono zone staccate, vanno rimosse), e tipo di intervento (se rifai anche gli impianti, è meglio rimuovere tutto). Al sopralluogo valutiamo la situazione e ti diciamo qual è la soluzione più conveniente.",
       },
     ],
-    faqBagno: [
+        seoSections: [
+      {
+        title: "Costo Ristrutturazione Grumo Nevano",
+        text: "Il costo di una ristrutturazione a Grumo Nevano parte da 530 €/mq per interventi completi nelle palazzine degli anni '70-'90. Il prezzo può salire a 620 €/mq se emergono criticità come canne fumarie in amianto, umidità di risalita nei piani terra, o impianti idrici vetusti nelle costruzioni più datate. La posizione al confine tra le province di Napoli e Caserta rende il comune con caratteristiche edilizie ibride: le palazzine napoletane degli anni '70-'80 e le costruzioni casertane più recenti. Su RistrutturazionePreventivi.it puoi richiedere una stima immediata e gratuita.",
+      },
+      {
+        title: "Impresa di Ristrutturazioni a Grumo Nevano",
+        text: "A Grumo Nevano, la posizione al confine tra le province di Napoli e Caserta crea un tessuto edilizio ibrido con caratteristiche diverse. Le palazzine degli anni '70-'90 hanno spesso tubazioni in acciaio zincato da sostituire, umidità di risalita e abusi edilizi non condonati. Le zone più recenti hanno invece costruzioni con impianti in buono stato ma esigenze di aggiornamento funzionale. Realizziamo ristrutturazioni complete per ogni tipologia edilizia, con un unico referente tecnico che gestisce verifiche preliminari e cantiere.",
+      },
+      {
+        title: "Preventivo Ristrutturazione a Grumo Nevano",
+        text: "Richiedere un preventivo per ristrutturare casa a Grumo Nevano è il primo passo per conoscere in modo chiaro il costo dei lavori. Le variabili principali sono: metratura, stato degli impianti, eventuale sostituzione tubazioni in acciaio zincato, umidità di risalita, e livello delle finiture desiderate. Su RistrutturazionePreventivi.it il preventivo è immediato e gratuito, calcolato sulle caratteristiche reali del tuo immobile, con conferma finale dopo sopralluogo tecnico.",
+      },
+    ],
+faqBagno: [
       {
         domanda: "Quanto costa rifare il bagno a Grumo Nevano?",
         risposta: "In base al Prezzario Regionale Campania, per le palazzine anni '70-'90 (bagni 5-6 mq) la forbice è 5.000-9.500 €. Grumo Nevano è al confine tra le province di Napoli e Caserta: le caratteristiche edilizie sono ibride tra i condomini napoli-nord degli anni '70-'80 e le palazzine casertane. Le tubazioni in acciaio zincato sono frequenti nelle costruzioni degli anni '70-'80 e richiedono spesso sostituzione.",
@@ -1610,7 +1638,21 @@ export const comuniCaserta: Comune[] = [
         risposta: "Puoi iniziare lavori di manutenzione ordinaria (sostituzione sanitari e rivestimenti) senza necessità di comunicazioni formali. Per lavori più invasivi con demolizioni e rumori continuativi, è buona pratica avvisare l'amministratore e i vicini con qualche giorno di anticipo. La maggior parte dei regolamenti condominiali limita i lavori rumorosi a determinati orari.",
       },
     ],
-    faqBagno: [
+        seoSections: [
+      {
+        title: "Costo Ristrutturazione Casapulla",
+        text: "Il costo di una ristrutturazione a Casapulla parte da 520 €/mq per interventi completi nelle palazzine degli anni '70-'80 del centro. Il prezzo può salire a 600 €/mq per le villette degli anni '90-2000 con finiture più richieste o se emergono criticità come canne fumarie in amianto, umidità di risalita nei piani terra, o impianti idrici vetusti. La posizione favorevole rispetto ai principali centri della provincia rende Casapulla un comune residenziale attrattivo con domanda costante di ristrutturazioni. Su RistrutturazionePreventivi.it puoi richiedere una stima immediata e gratuita.",
+      },
+      {
+        title: "Impresa di Ristrutturazioni a Casapulla",
+        text: "A Casapulla, il tessuto edilizio prevalentemente residenziale comprende palazzine degli anni '70-'80 nel centro e villette degli anni '90 nelle zone di espansione. Le palazzine più datate hanno spesso impianti obsoleti, canne fumarie in amianto e umidità di risalita. Le villette più recenti richiedono invece interventi di aggiornamento funzionale e miglioramento energetico. Realizziamo ristrutturazioni complete per ogni tipologia edilizia, con un unico referente tecnico che gestisce verifiche preliminari, pratiche burocratiche e cantiere.",
+      },
+      {
+        title: "Preventivo Ristrutturazione a Casapulla",
+        text: "Richiedere un preventivo per ristrutturare casa a Casapulla è il primo passo per conoscere in modo chiaro il costo dei lavori. Le variabili principali sono: metratura, stato degli impianti, eventuale bonifica amianto, umidità di risalita, e livello delle finiture desiderate. Su RistrutturazionePreventivi.it il preventivo è immediato e gratuito, calcolato sulle caratteristiche reali del tuo immobile, con conferma finale dopo sopralluogo tecnico.",
+      },
+    ],
+faqBagno: [
       {
         domanda: "Quanto costa rifare il bagno a Casapulla?",
         risposta: "In base al Prezzario Regionale Campania, per le palazzine anni '70-'80 (bagni 4-6 mq) la forbice è 4.500-9.500 €. Per le villette anni '90-2000 (bagni più ampi) la forbice è 5.000-13.000 €. Le canne fumarie in amianto nei condomini degli anni '70 vanno verificate prima di qualsiasi intervento sulla cucina adiacente al bagno.",
@@ -1702,7 +1744,21 @@ export const comuniCaserta: Comune[] = [
         risposta: "L'acqua della zona di Caserta è tendenzialmente calcarea. Per la rubinetteria, consigliamo modelli con rompigetto anticalcare intercambiabile. Per i rivestimenti, i gres porcellanati levigati mostrano il calcare più degli opachi: tenere presente la manutenzione. Per la doccia, i box con profili minimi (zero profili) sono più facili da pulire. Lo discutiamo in dettaglio durante la scelta dei materiali al sopralluogo.",
       },
     ],
-    faqBagno: [
+        seoSections: [
+      {
+        title: "Costo Ristrutturazione San Prisco",
+        text: "Il costo di una ristrutturazione a San Prisco parte da 530 €/mq per interventi completi nelle palazzine degli anni '70-'80 del centro. Il prezzo può salire a 610 €/mq per le villette degli anni '80-'00 nelle zone periferiche con finiture più richieste o se emergono criticità come canne fumarie in amianto, umidità di risalita, o impianti idrici vetusti. La presenza della Cattedrale di San Prisco, uno dei più importanti edifici paleocristiani della Campania, rende il centro storico un'area di interesse culturale. Su RistrutturazionePreventivi.it puoi richiedere una stima immediata e gratuita.",
+      },
+      {
+        title: "Impresa di Ristrutturazioni a San Prisco",
+        text: "A San Prisco, il tessuto edilizio comprende palazzine degli anni '70-'80 nel centro e villette negli anni '80-'00 nelle zone periferiche. Le palazzine più datate hanno spesso impianti obsoleti, canne fumarie in amianto e umidità di risalita. Le villette più recenti richiedono interventi di aggiornamento funzionale e miglioramento energetico. Il centro storico, con la Cattedrale paleocristiana, mantiene un'atmosfera di rilevanza culturale. Realizziamo ristrutturazioni complete per ogni tipologia edilizia, con un unico referente tecnico.",
+      },
+      {
+        title: "Preventivo Ristrutturazione a San Prisco",
+        text: "Richiedere un preventivo per ristrutturare casa a San Prisco è il primo passo per conoscere in modo chiaro il costo dei lavori. Le variabili principali sono: metratura, stato degli impianti, eventuale bonifica amianto, umidità di risalita, e livello delle finiture desiderate. Su RistrutturazionePreventivi.it il preventivo è immediato e gratuito, calcolato sulle caratteristiche reali del tuo immobile, con conferma finale dopo sopralluogo tecnico.",
+      },
+    ],
+faqBagno: [
       {
         domanda: "Quanto costa rifare il bagno a San Prisco?",
         risposta: "In base al Prezzario Regionale Campania, per le palazzine anni '70-'80 (bagni 5-6 mq) la forbice è 5.000-9.500 €. Per le villette con bagni più ampi la forbice è 5.500-13.000 €. L'acqua della zona di Caserta è calcarea: al sopralluogo consigliamo i materiali più adatti per ridurre la manutenzione.",
@@ -1804,6 +1860,22 @@ export const comuniCaserta: Comune[] = [
       {
         domanda: "Ho la guaina del tetto piatto esaurita a Casagiove. Conviene rifare anche l'isolamento termico?",
         risposta: "Se il tetto è già da aprire per la guaina, aggiungere lo strato isolante ha un costo marginale basso rispetto al costo totale dell'intervento. L'isolamento termico del tetto è uno degli interventi con il miglior rapporto costo/beneficio in termini energetici, e può beneficiare dell'Ecobonus. Lo valutiamo al sopralluogo insieme al rifacimento della guaina.",
+      },
+    ]
+    ,
+    seoSections: [
+      {
+        title: "Costo Ristrutturazione Casagiove",
+        text: "Il costo di una ristrutturazione a Casagiove è influenzato dal tenore abitativo mediamente più elevato rispetto agli altri comuni della zona. Il patrimonio edilizio è composto prevalentemente da villette unifamiliari e palazzine di qualità costruttiva medio-alta, edificate tra gli anni '80 e i primi anni 2000. Questo significa che le richieste dei clienti tendono verso finiture di livello superiore, materiali di qualità e interventi di design. Il prezzo parte da 600 €/mq per interventi completi standard, ma per le villette con finiture premium può salire a 800 €/mq. La presenza frequente di doppio bagno, cucine ampie e aperture verso il soggiorno aumenta il costo complessivo ma distribuisce i costi fissi del cantiere su più interventi. Su RistrutturazionePreventivi.it puoi richiedere una stima immediata e gratuita.",
+        afterTableText: "I valori riportati rappresentano prezzi medi di mercato. Il costo effettivo dipende dalle caratteristiche dell'immobile e dalle lavorazioni richieste.\n\nA Casagiove, le villette degli anni '80-'90 hanno spesso coperture piane con guaine esaurite da sostituire. Se il tetto è già da aprire per la guaina, aggiungere l'isolamento termico ha un costo marginale basso rispetto al totale dell'intervento.\n\nVuoi conoscere il costo della ristrutturazione del tuo appartamento o villetta a Casagiove? Compila il modulo online per ricevere un preventivo gratuito."
+      },
+      {
+        title: "Impresa di Ristrutturazioni a Casagiove",
+        text: "A Casagiove, il tenore abitativo elevato e la presenza di villette di qualità richiedono un'impresa di ristrutturazioni in grado di gestire interventi complessi con finiture di alto livello. Le richieste più frequenti includono: apertura cucina-soggiorno (verifica muro portante vs tramezza), rifacimento di entrambi i bagni in contemporanea, aggiornamento degli impianti con domotica, e sostituzione delle coperture con isolamento termico.\n\nRealizziamo ristrutturazioni complete a Casagiove per villette e appartamenti, con un unico referente tecnico che gestisce verifiche strutturali, pratiche burocratiche e cantiere. Ogni progetto viene pianificato in funzione delle esigenze specifiche del cliente e delle caratteristiche dell'immobile."
+      },
+      {
+        title: "Preventivo Ristrutturazione a Casagiove",
+        text: "Richiedere un preventivo per ristrutturare casa a Casagiove è il primo passo per pianificare un intervento di qualità. Le villette spesso richiedono verifiche multiple: stato della copertura, isolamento termico, apertura di spazi interni, aggiornamento degli impianti. Fare tutto insieme con un unico cantiere è più economico e meno invasivo che fare interventi separati nel tempo. Su RistrutturazionePreventivi.it il preventivo è immediato e gratuito, calcolato sulle caratteristiche reali del tuo immobile, con conferma finale dopo sopralluogo tecnico."
       },
     ],
     faqBagno: [

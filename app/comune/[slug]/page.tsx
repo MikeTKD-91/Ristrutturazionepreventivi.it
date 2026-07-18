@@ -9,6 +9,7 @@ import GalleriaLavori from "@/components/shared/GalleriaLavori";
 import { comuni, getComuneBySlug } from "@/data/comuni";
 import { getAllArticoli } from "@/lib/blog";
 import { getComuneContent } from "@/lib/comune-content";
+import { buildHowToSchema } from "@/lib/schema";
 import { getLavoriPerComune } from "@/lib/lavori";
 
 interface PageProps {
@@ -171,6 +172,16 @@ export default async function ComunePage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+
+      {/* HowTo Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildHowToSchema("Ristrutturazione Casa e Appartamento", comune.nome)
+          ),
+        }}
+      />
 
       <main className="min-h-screen bg-white">
 

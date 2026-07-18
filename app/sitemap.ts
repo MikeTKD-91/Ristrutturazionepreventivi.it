@@ -68,10 +68,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       // Agro-aversano ha boost di +0.05 essendo la zona core
-      priority: Math.min(
+      priority: parseFloat(Math.min(
         1.0,
         (prioritaServizio[servizio] ?? 0.8) + (c.zona === "agro-aversano" ? 0.05 : 0)
-      ),
+      ).toFixed(2)),
     }))
   );
 
@@ -79,7 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPages: MetadataRoute.Sitemap = articoli.map((p) => ({
     url: `${BASE_URL}/blog/${p.slug}/`,
     lastModified: p.updatedAt || p.data,
-    changeFrequency: "monthly" as const,
+    changeFrequency: "yearly" as const,
     priority: 0.6,
   }));
 

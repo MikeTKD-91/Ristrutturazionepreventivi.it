@@ -16,7 +16,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ristrutturazionepreventivi.it"),
   title: {
-    default: "Ristrutturazioni a Napoli, Caserta e Agro Aversano | Costo ristrutturazione e sopralluogo",
+    default: "Ristrutturazione Casa Napoli, Caserta | Preventivo Online",
     template: "%s | RistrutturazionePreventivi.it",
   },
   description:
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     locale: "it_IT",
     url: "https://ristrutturazionepreventivi.it",
     siteName: "RistrutturazionePreventivi.it",
-    title: "Ristrutturazioni a Napoli, Caserta e Agro Aversano | Costo ristrutturazione e sopralluogo",
+    title: "Ristrutturazione Casa Napoli, Caserta | Preventivo Online",
     description:
       "Richiedi un preventivo online per ristrutturazioni a Napoli, Caserta e Agro Aversano. 7 servizi, sopralluogo tecnico e proposta chiara da verificare sul posto. Russo FE Costruzione SRL.",
     images: [

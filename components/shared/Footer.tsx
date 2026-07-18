@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MapPin, Mail, Wrench } from "lucide-react";
+import { MapPin, Mail, Wrench, Star, ExternalLink } from "lucide-react";
 import { getDataAggiornamento } from "@/lib/utils";
 
 const footerLinks = {
@@ -74,6 +74,19 @@ export default function Footer() {
                   WhatsApp: 333 980 9319
                 </a>
               </div>
+              <div className="flex items-center gap-2 text-white/70">
+                <svg className="h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.333-.16-1.84H12.48z"/>
+                </svg>
+                <a 
+                  href="https://www.google.com/maps/place/Ristrutturazionepreventivi.it+%7C+Russo+FE+Costruzione+SRL/@40.9600688,14.1937059,17z/data=!3m1!4b1!4m6!3m5!1s0x64266e4be5602541:0x80f4066562aece1d"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-orange transition-colors"
+                >
+                  Google Business Profile
+                </a>
+              </div>
             </div>
           </div>
 
@@ -126,6 +139,27 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <div className="mt-6 space-y-3">
+              <a 
+                href="https://www.google.com/maps/place/Ristrutturazionepreventivi.it+%7C+Russo+FE+Costruzione+SRL/@40.9600688,14.1937059,17z/data=!3m1!4b1!4m6!3m5!1s0x64266e4be5602541:0x80f4066562aece1d"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-white/70 hover:text-orange transition-colors text-sm"
+              >
+                <MapPin className="h-4 w-4" />
+                <span>Vedi su Google Maps</span>
+                <ExternalLink className="h-3 w-3" />
+              </a>
+              <a 
+                href="https://search.google.com/local/writereview?placeid=ChIJQSVgS27mYkARHc6uYmUG9IA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-orange/20 hover:bg-orange/30 text-orange px-3 py-2 rounded-lg transition-colors text-sm font-medium"
+              >
+                <Star className="h-4 w-4 fill-orange" />
+                <span>Lascia una recensione su Google</span>
+              </a>
+            </div>
             <button
               onClick={() => {
                 localStorage.removeItem("cookieConsent");
