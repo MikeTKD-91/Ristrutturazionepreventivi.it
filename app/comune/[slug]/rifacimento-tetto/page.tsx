@@ -1,3 +1,4 @@
+import { getServiceIntro } from "@/lib/service-content";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -122,7 +123,7 @@ export default async function RifacimentoTettoComunePage({ params }: PageProps) 
                   <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  {servizio.sottotitolo}. Intervento calibrato sulle caratteristiche edilizie di {comune.nome}.
+                  {getServiceIntro(comune, "rifacimento-tetto")}
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {["Prezzario Regionale Campania", "Sopralluogo tecnico", "Stima verificabile"].map((t) => (
@@ -154,8 +155,8 @@ export default async function RifacimentoTettoComunePage({ params }: PageProps) 
                 <div>
                   <h2 className="text-2xl font-bold text-navy mb-4">Descrizione del Servizio</h2>
                   <div className="prose prose-lg max-w-none text-gray-600 whitespace-pre-line">
-                    {servizio.descrizioneLunga}
-                    {"\n\n"} A {comune.nome}, il sopralluogo tiene conto di questo contesto: {comune.tipoEdilizio}.
+                    {getServiceIntro(comune, "rifacimento-tetto")}
+                    
                   </div>
                 </div>
 

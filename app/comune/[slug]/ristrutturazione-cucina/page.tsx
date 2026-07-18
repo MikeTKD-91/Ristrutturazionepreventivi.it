@@ -1,5 +1,6 @@
 // app/comune/[slug]/ristrutturazione-cucina/page.tsx
 
+import { getServiceIntro } from "@/lib/service-content";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -169,9 +170,7 @@ export default async function RistrutturazioneCucinaPage({ params }: PageProps) 
                   Ristrutturazione Cucina a {comune.nome}:{" "}
                   <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
-                <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Richiedi un preventivo immediato per la ristrutturazione della cucina a {comune.nome} e ottieni un primo costo reale del tuo intervento. Il preventivo finale viene confermato dopo sopralluogo e verifica tecnica dell’immobile.
-                </p>
+                <p className="text-white/70 text-lg leading-relaxed mb-6">\n              {getServiceIntro(comune, "ristrutturazione-cucina")}\n            </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Lavori concordati</span>

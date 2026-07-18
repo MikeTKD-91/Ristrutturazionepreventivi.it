@@ -1,5 +1,6 @@
 // app/comune/[slug]/impianti-elettrici-idraulici-termici/page.tsx
 
+import { getServiceIntro } from "@/lib/service-content";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -159,11 +160,7 @@ export default async function ImpiantiPage({ params }: PageProps) {
                   Impianti a {comune.nome}:<br />
                   <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
-                <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Indicazioni di costo per impianti elettrici, idraulici e termici basate su
-                  riferimenti tecnici, stato dell'esistente, distribuzione interna e adeguamenti
-                  normativi. Il preventivo finale emerge dopo sopralluogo e verifica tecnica.
-                </p>
+                <p className="text-white/70 text-lg leading-relaxed mb-6">\n              {getServiceIntro(comune, "impianti-elettrici-idraulici-termici")}\n            </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Certificazioni incluse</span>

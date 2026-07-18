@@ -1,5 +1,6 @@
 // app/comune/[slug]/pavimenti-rivestimenti/page.tsx
 
+import { getServiceIntro } from "@/lib/service-content";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -159,11 +160,7 @@ export default async function PavimentiRivestimentiPage({ params }: PageProps) {
                   Pavimenti e Rivestimenti a {comune.nome}:{" "}{" "}
                   <span className="text-orange">preventivo immediato e costo reale</span>
                 </h1>
-                <p className="text-white/70 text-lg leading-relaxed mb-6">
-                  Indicazioni di costo basate su riferimenti tecnici, materiale scelto,
-                  formato, schema di posa e condizioni del supporto.
-                  Il preventivo finale emerge dopo sopralluogo e verifica tecnica.
-                </p>
+                <p className="text-white/70 text-lg leading-relaxed mb-6">\n              {getServiceIntro(comune, "pavimenti-rivestimenti")}\n            </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Prezzario Regionale Campania</span>
                   <span className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">Lavori concordati</span>

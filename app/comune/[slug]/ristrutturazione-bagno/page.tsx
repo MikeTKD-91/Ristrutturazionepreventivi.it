@@ -1,3 +1,4 @@
+import { getServiceIntro } from "@/lib/service-content";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -204,13 +205,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
             <div>
               <h2 className="text-2xl font-bold text-navy mb-4">Descrizione del Servizio</h2>
               <div className="prose prose-lg max-w-none text-gray-600 whitespace-pre-line">
-                {`La ristrutturazione completa del bagno a ${comune.nome} comprende tutte le lavorazioni necessarie per trasformare il tuo ambiente in uno spazio moderno, funzionale e realizzato a regola d'arte: demolizioni, rifacimento degli impianti idraulici ed elettrici, ripristino dei sottofondi, impermeabilizzazione e posa delle nuove finiture.
-
-Il costo per ristrutturare un bagno a ${comune.nome} parte da 5.500 € tutto incluso per interventi standard di dimensioni contenute o medie. Il prezzo finale varia in base alla metratura, allo stato degli impianti, agli eventuali spostamenti dei punti acqua e alla scelta dei materiali e delle finiture.
-
-Il servizio comprende smontaggio dei sanitari esistenti, demolizione e smaltimento dei materiali, realizzazione del nuovo impianto bagno, posa di pavimenti e rivestimenti, installazione dei sanitari, rubinetteria e completamento delle opere di finitura.
-
-Ogni preventivo per la ristrutturazione bagno a ${comune.nome} viene definito dopo un'attenta valutazione delle caratteristiche dell'immobile, per garantire un prezzo chiaro, trasparente e senza costi nascosti.`}
+                {getServiceIntro(comune, "ristrutturazione-bagno")}
               </div>
             </div>
 
