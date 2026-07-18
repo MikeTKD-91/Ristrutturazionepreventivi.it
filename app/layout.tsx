@@ -105,9 +105,9 @@ export default function RootLayout({
               email: "info@ristrutturazionepreventivi.it",
               sameAs: [
                 "https://wa.me/393339809319",
-                "https://www.google.com/maps/place/Ristrutturazionepreventivi.it+%7C+Russo+FE+Costruzione+SRL/@40.9600688,14.1937059,17z/data=!3m1!4b1!4m6!3m5!1s0x64266e4be5602541:0x80f4066562aece1d",
+                "https://maps.app.goo.gl/i8HxV8ScTGD5oM7o7",
               ],
-              hasMap: "https://www.google.com/maps/place/Ristrutturazionepreventivi.it+%7C+Russo+FE+Costruzione+SRL/@40.9600688,14.1937059,17z/data=!3m1!4b1!4m6!3m5!1s0x64266e4be5602541:0x80f4066562aece1d",
+              hasMap: "https://maps.app.goo.gl/i8HxV8ScTGD5oM7o7",
               identifier: {
                 "@type": "PropertyValue",
                 "propertyID": "Google Place ID",
