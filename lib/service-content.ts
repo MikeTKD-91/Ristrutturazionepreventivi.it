@@ -1,126 +1,63 @@
 // lib/service-content.ts
-// Testi introduttivi strategici per ogni combinazione comune + servizio
-// Intercettano le ricerche dei potenziali clienti
+// Testi introduttivi naturali e strategici per SEO
 
 import { Comune } from "@/data/comuni";
 
-// ─────────────────────────────────────────────
-// KEYWORDS TARGET PER SERVIZIO
-// ─────────────────────────────────────────────
-
-const KEYWORDS: Record<string, string[]> = {
-  "ristrutturazione-bagno": [
-    "costo bagno", "rifare bagno", "preventivo bagno",
-    "ristrutturazione bagno", "rifacimento bagno", "bagno nuovo"
-  ],
-  "ristrutturazione-cucina": [
-    "costo cucina", "rifare cucina", "preventivo cucina",
-    "ristrutturazione cucina", "rifacimento cucina"
-  ],
-  "rifacimento-tetto": [
-    "costo tetto", "rifare tetto", "preventivo tetto",
-    "rifacimento tetto", "copertura tetto", "tetto nuovo"
-  ],
-  "cappotto-termico": [
-    "costo cappotto termico", "preventivo cappotto",
-    "isolamento facciata", "cappotto esterno", "risparmio energetico"
-  ],
-  "impianti-elettrici-idraulici-termici": [
-    "costo impianto elettrico", "rifare impianto",
-    "preventivo impianti", "impianto idraulico", "impianto termico"
-  ],
-  "pavimenti-rivestimenti": [
-    "costo pavimenti", "posa pavimenti", "preventivo pavimenti",
-    "pavimenti nuovi", "rivestimenti bagno", "gres porcellanato"
-  ],
-  "ristrutturazione-appartamento-completo": [
-    "costo ristrutturazione casa", "preventivo ristrutturazione",
-    "ristrutturazione appartamento", "rifare casa", "costo al mq"
-  ],
-};
-
-// ─────────────────────────────────────────────
-// TESTI INTRODUTTIVI STRATEGICI (sotto H1)
-// Devono: intercettare ricerche, essere brevi, commerciali, con keyword
-// ─────────────────────────────────────────────
-
 export function getServiceIntro(comune: Comune, servizioSlug: string): string {
-  const kw = KEYWORDS[servizioSlug] || ["preventivo", "costo"];
-  const kw1 = kw[0];
-  const kw2 = kw[1] || kw[0];
+  const t = comune.tipoEdilizio.toLowerCase();
 
   const templates: Record<string, string> = {
     "ristrutturazione-bagno":
-      `Quanto costa ${kw1} a ${comune.nome}? Il ${kw2} parte da 5.500 euro tutto incluso per interventi standard. A ${comune.nome}, dove ${comune.tipoEdilizio.toLowerCase()}, ogni progetto richiede una verifica specifica prima di confermare il quadro economico definitivo.`,
+      `Preventivo bagno a ${comune.nome}: quanto costa rifare il bagno? Stima da 5.500 euro tutto incluso, prezzo finale dopo sopralluogo tecnico.`,
 
     "ristrutturazione-cucina":
-      `Quanto costa ${kw1} a ${comune.nome}? Il ${kw2} dipende dalla metratura, dalle modifiche murarie e dalle finiture scelte. A ${comune.nome}, dove ${comune.tipoEdilizio.toLowerCase()}, il sopralluogo tecnico è indispensabile per una stima accurata.`,
+      `Costo cucina a ${comune.nome}: preventivo su misura per ristrutturazione completa. Sopralluogo gratuito e stima accurata in base al progetto reale.`,
 
     "rifacimento-tetto":
-      `Quanto costa ${kw1} a ${comune.nome}? Il ${kw2} varia in base alla superficie, al materiale scelto e allo stato della struttura portante. A ${comune.nome}, dove ${comune.tipoEdilizio.toLowerCase()}, una verifica tecnica preventiva evita sorprese di cantiere.`,
+      `Rifacimento tetto a ${comune.nome}: preventivo immediato per copertura e isolamento. Verifica struttura portante inclusa, costo al mq da confermare in cantiere.`,
 
     "cappotto-termico":
-      `Quanto costa ${kw1} a ${comune.nome}? Il ${kw2} dipende dalla superficie della facciata e dallo spessore dell'isolante. A ${comune.nome}, dove ${comune.tipoEdilizio.toLowerCase()}, il cappotto riduce i consumi energetici fino al 30% e migliora il comfort abitativo.`,
+      `Cappotto termico a ${comune.nome}: preventivo isolamento facciata con detrazione fiscale 50%. Sopralluogo gratuito per verificare lo stato del supporto.`,
 
     "impianti-elettrici-idraulici-termici":
-      `Quanto costa ${kw1} a ${comune.nome}? Il ${kw2} dipende dall'estensione dell'intervento, dall'anno di costruzione dell'edificio e dallo stato degli impianti esistenti. A ${comune.nome}, dove ${comune.tipoEdilizio.toLowerCase()}, la verifica tecnica è obbligatoria per una stima conforme.`,
+      `Rifacimento impianti a ${comune.nome}: costo elettrico, idraulico e termico con certificazioni incluse. Preventivo dopo verifica tecnica dell'immobile.`,
 
     "pavimenti-rivestimenti":
-      `Quanto costa ${kw1} a ${comune.nome}? Il ${kw2} dipende dal materiale scelto, dal formato e dallo stato del massetto esistente. A ${comune.nome}, dove ${comune.tipoEdilizio.toLowerCase()}, la posa professionale richiede una verifica del supporto prima di confermare il preventivo.`,
+      `Posa pavimenti a ${comune.nome}: preventivo gres, parquet e rivestimenti. Verifica massetto gratuita prima di confermare il costo definitivo.`,
 
     "ristrutturazione-appartamento-completo":
-      `Quanto costa ${kw1} a ${comune.nome}? Il ${kw2} parte da 550 euro al mq per condizioni standard. A ${comune.nome}, dove ${comune.tipoEdilizio.toLowerCase()}, il costo definitivo si conferma solo dopo sopralluogo e verifica tecnica dell'immobile.`,
+      `Ristrutturazione casa a ${comune.nome}: costo da 550 euro al mq per condizioni standard. Preventivo completo dopo sopralluogo e verifica tecnica.`,
   };
 
-  return templates[servizioSlug] || `Richiedi un preventivo a ${comune.nome}. Il costo indicativo viene definito dopo una verifica tecnica e un sopralluogo.`;
+  return templates[servizioSlug] || `Preventivo a ${comune.nome}: costo indicativo e sopralluogo gratuito.`;
 }
 
-// ─────────────────────────────────────────────
-// TESTI DESCRITTIVI (blocco "Descrizione del Servizio")
-// Più tecnici, richiamano il contesto locale
-// ─────────────────────────────────────────────
-
 export function getServiceDescription(comune: Comune, servizioSlug: string): string {
+  const t = comune.tipoEdilizio.toLowerCase();
+  const c = comune.criticalita.slice(0, 2).join(" e ");
+
   const templates: Record<string, string> = {
     "ristrutturazione-bagno":
-      `A ${comune.nome}, la ristrutturazione del bagno deve considerare il contesto edilizio locale: ${comune.tipoEdilizio.toLowerCase()}. ${comune.caratteristicheBagni || ""} Tra le criticità più comuni: ${comune.criticalita.slice(0, 2).join(" e ")}. Il preventivo definitivo emerge dal sopralluogo, dove si verificano misure, stato degli impianti e condizioni del supporto.`,
+      `A ${comune.nome}, la ristrutturazione del bagno deve considerare il contesto edilizio locale: ${t}. ${comune.caratteristicheBagni || ""} Tra le criticità più comuni: ${c}. Il preventivo definitivo emerge dal sopralluogo.`,
 
     "ristrutturazione-cucina":
-      `A ${comune.nome}, la ristrutturazione della cucina si confronta con un tessuto edilizio dove ${comune.tipoEdilizio.toLowerCase()}. ${comune.caratteristicheCucine || ""} Le criticità più frequenti includono: ${comune.criticalita.slice(0, 2).join(" e ")}. Ogni preventivo viene calibrato sul progetto reale dopo verifica tecnica.`,
+      `A ${comune.nome}, la ristrutturazione della cucina si confronta con un tessuto edilizio dove ${t}. ${comune.caratteristicheCucine || ""} Le criticità più frequenti: ${c}. Ogni preventivo viene calibrato sul progetto reale.`,
 
     "rifacimento-tetto":
-      `A ${comune.nome}, il rifacimento del tetto richiede attenzione alle caratteristiche del patrimonio edilizio: ${comune.tipoEdilizio.toLowerCase()}. Le criticità locali più rilevanti: ${comune.criticalita.slice(0, 2).join(" e ")}. La scelta del materiale e la verifica strutturale sono passaggi fondamentali prima di formulare il preventivo.`,
+      `A ${comune.nome}, il rifacimento del tetto richiede attenzione alle caratteristiche del patrimonio edilizio: ${t}. Le criticità locali più rilevanti: ${c}. La scelta del materiale e la verifica strutturale sono passaggi fondamentali.`,
 
     "cappotto-termico":
-      `A ${comune.nome}, l'isolamento a cappotto termico risponde alle esigenze di un tessuto edilizio dove ${comune.tipoEdilizio.toLowerCase()}. Le criticità più comuni: ${comune.criticalita.slice(0, 2).join(" e ")}. L'intervento riduce i consumi, elimina i ponti termici e protegge la struttura dagli agenti atmosferici.`,
+      `A ${comune.nome}, l'isolamento a cappotto termico risponde alle esigenze di un tessuto edilizio dove ${t}. Le criticità più comuni: ${c}. L'intervento riduce i consumi e protegge la struttura.`,
 
     "impianti-elettrici-idraulici-termici":
-      `A ${comune.nome}, il rifacimento degli impianti è spesso l'intervento più urgente in un contesto dove ${comune.tipoEdilizio.toLowerCase()}. Le criticità più frequenti: ${comune.criticalita.slice(0, 2).join(" e ")}. La progettazione ad hoc e le certificazioni obbligatorie (DM 37/2008) garantiscono sicurezza e conformità.`,
+      `A ${comune.nome}, il rifacimento degli impianti è spesso l'intervento più urgente in un contesto dove ${t}. Le criticità più frequenti: ${c}. La progettazione ad hoc garantisce sicurezza e conformità.`,
 
     "pavimenti-rivestimenti":
-      `A ${comune.nome}, la posa di pavimenti e rivestimenti non è mai un'operazione banale in un comune dove ${comune.tipoEdilizio.toLowerCase()}. Le criticità più comuni: ${comune.criticalita.slice(0, 2).join(" e ")}. La scelta del materiale e la preparazione del supporto determinano la durata e la qualità del risultato.`,
+      `A ${comune.nome}, la posa di pavimenti e rivestimenti non è mai banale in un comune dove ${t}. Le criticità più comuni: ${c}. La scelta del materiale e la preparazione del supporto determinano la qualità del risultato.`,
 
     "ristrutturazione-appartamento-completo":
-      `A ${comune.nome}, la ristrutturazione completa dell'appartamento coordina demolizioni, impianti, opere murarie e finiture in un contesto dove ${comune.tipoEdilizio.toLowerCase()}. Le criticità più rilevanti: ${comune.criticalita.slice(0, 2).join(" e ")}. Il costo al mq di 550 euro è un riferimento per condizioni standard, da confermare dopo sopralluogo.`,
+      `A ${comune.nome}, la ristrutturazione completa coordina demolizioni, impianti, opere murarie e finiture in un contesto dove ${t}. Le criticità più rilevanti: ${c}. Il costo al mq è un riferimento da confermare dopo sopralluogo.`,
   };
 
   return templates[servizioSlug] || getServiceIntro(comune, servizioSlug);
-}
-
-// ─────────────────────────────────────────────
-// META DESCRIPTION
-// ─────────────────────────────────────────────
-
-export function getServiceMetaDescription(comune: Comune, servizioSlug: string): string {
-  const nomi: Record<string, string> = {
-    "ristrutturazione-bagno": "ristrutturazione del bagno",
-    "ristrutturazione-cucina": "ristrutturazione della cucina",
-    "rifacimento-tetto": "rifacimento del tetto",
-    "cappotto-termico": "cappotto termico",
-    "impianti-elettrici-idraulici-termici": "rifacimento degli impianti",
-    "pavimenti-rivestimenti": "posa di pavimenti e rivestimenti",
-    "ristrutturazione-appartamento-completo": "ristrutturazione completa dell'appartamento",
-  };
-  const nome = nomi[servizioSlug] || servizioSlug.replace(/-/g, " ");
-  return `Quanto costa ${nome} a ${comune.nome}? Preventivo immediato, costi indicativi e sopralluogo tecnico per confermare il quadro economico.`;
 }
