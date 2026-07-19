@@ -296,10 +296,39 @@ export default async function ServizioPage({ params }: Props) {
               </div>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-3">Quanto dura il cantiere</h2>
-              <p className="text-gray-600 mb-5">
-                Per un appartamento medio, in condizioni ordinarie, la durata del cantiere si colloca in genere tra 6 e 10 settimane lavorative. Tempi più precisi dipendono dalla logistica del fabbricato, dalle attese tecniche e dal livello di finitura richiesto.
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-navy">Quanto dura il cantiere</h2>
+              <p className="text-gray-600 leading-relaxed">
+                Capire quanto tempo serve per ristrutturare casa è importante quanto conoscere il costo dei lavori. Per questo abbiamo riassunto le principali fasi del cantiere, così puoi avere un riferimento chiaro sui tempi medi di una ristrutturazione completa.
+              </p>
+              <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white">
+                <table className="w-full text-sm">
+                  <thead className="bg-gray-50">
+                    <tr className="text-left text-navy">
+                      <th className="py-3 px-4 font-semibold">Fase lavori</th>
+                      <th className="py-3 px-4 font-semibold">Tempo indicativo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ["Demolizioni e smaltimento", "4-7 giorni"],
+                      ["Nuova distribuzione interna e opere murarie", "5-10 giorni"],
+                      ["Realizzazione nuovi impianti", "7-12 giorni"],
+                      ["Massetti, sottofondi e preparazioni", "3-5 giorni"],
+                      ["Posa pavimenti e rivestimenti", "6-10 giorni"],
+                      ["Rasature, tinteggiatura e finiture", "5-8 giorni"],
+                      ["Montaggi finali e chiusura lavori", "3-8 giorni"],
+                    ].map((row) => (
+                      <tr key={row[0]} className="border-t border-gray-100">
+                        <td className="py-3 px-4 text-gray-700">{row[0]}</td>
+                        <td className="py-3 px-4 text-gray-700">{row[1]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                In un appartamento standard, la durata complessiva dei lavori è in genere compresa tra 45 e 60 giorni lavorativi. I tempi effettivi possono cambiare in base allo stato dell’immobile, alla nuova distribuzione interna, agli impianti da rifare e al livello di finitura richiesto.
               </p>
             </section>
 
