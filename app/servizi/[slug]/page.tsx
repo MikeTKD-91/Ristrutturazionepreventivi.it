@@ -109,7 +109,6 @@ export default async function ServizioPage({ params }: Props) {
     url: `https://ristrutturazionepreventivi.it/servizi/${slug}/`,
   };
 
-
   if (slug === "ristrutturazione-appartamento-completo") {
     const inclusioniStandard = [
         "Rifacimento impianto elettrico, idraulico e termico",
@@ -134,6 +133,62 @@ export default async function ServizioPage({ params }: Props) {
       "Spese condominiali, occupazione suolo pubblico e costi logistici straordinari",
       "Finiture fuori capitolato e forniture scelte dal cliente",
     ];
+
+    const faqAppartamento = [
+      {
+        domanda: "Quanto costa ristrutturare un appartamento completo?",
+        risposta: "Il costo per ristrutturare un appartamento completo dipende da metratura, condizioni iniziali dell’immobile, distribuzione interna, stato degli impianti e livello delle finiture scelte. Per casi standard, il riferimento da 550 euro al mq è utile per avere un primo orientamento sul budget, mentre il preventivo definitivo viene confermato dopo sopralluogo tecnico.",
+      },
+      {
+        domanda: "Il costo da 550 euro al mq è reale?",
+        risposta: "Sì, 550 euro al mq è un riferimento reale per ristrutturazioni complete in condizioni standard, con accesso agevole, impianti rifacibili senza criticità straordinarie e finiture in fascia ordinaria. Se emergono demolizioni complesse, umidità, problemi impiantistici o richieste fuori capitolato, il costo finale può cambiare dopo verifica tecnica.",
+      },
+      {
+        domanda: "Cosa include una ristrutturazione completa di appartamento?",
+        risposta: "In genere una ristrutturazione completa comprende demolizioni, rifacimento degli impianti, eventuale nuova distribuzione interna, sottofondi, posa di pavimenti e rivestimenti, tinteggiatura, installazioni finali e finiture principali. Il contenuto preciso dei lavori dipende però dal capitolato e dal tipo di immobile, quindi ogni preventivo va costruito sulle reali necessità della casa.",
+      },
+      {
+        domanda: "Quanto dura una ristrutturazione completa?",
+        risposta: "Per un appartamento standard, una ristrutturazione completa richiede in genere tra 45 e 60 giorni lavorativi. I tempi possono allungarsi in presenza di pratiche edilizie, modifiche murarie importanti, lavorazioni straordinarie, ritardi di fornitura o criticità emerse durante le demolizioni.",
+      },
+      {
+        domanda: "Da cosa dipende il costo finale dei lavori?",
+        risposta: "Il costo finale dipende soprattutto da stato dell’immobile, accessibilità del fabbricato, presenza di umidità o difetti nascosti, impianti da rifare, modifiche alla distribuzione interna e livello delle finiture richieste. Per questo il sopralluogo tecnico è fondamentale: serve a trasformare un prezzo indicativo in un preventivo coerente con il cantiere reale.",
+      },
+      {
+        domanda: "Quando serve la CILA per ristrutturare casa?",
+        risposta: "La CILA serve in molti interventi di manutenzione straordinaria, soprattutto quando si modificano impianti, tramezzi o distribuzione interna senza coinvolgere parti strutturali. Se invece i lavori interessano elementi strutturali o casi particolari, può essere necessaria una pratica diversa, come la SCIA, da verificare sempre con un tecnico prima di iniziare.",
+      },
+      {
+        domanda: "Si può ristrutturare un appartamento in condominio?",
+        risposta: "Sì, un appartamento in condominio può essere ristrutturato, ma bisogna considerare accessi, orari di lavoro, tutela delle parti comuni, rumori, gestione dei materiali e regolamento condominiale. Quando il cantiere è organizzato bene fin dall’inizio, si riducono ritardi, contestazioni e problemi logistici durante i lavori.",
+      },
+      {
+        domanda: "Il preventivo cambia dopo il sopralluogo?",
+        risposta: "Il sopralluogo serve proprio a confermare il preventivo sulle condizioni reali dell’immobile. Il prezzo può cambiare solo se emergono elementi non visibili prima, come impianti molto datati, umidità, opere murarie aggiuntive, problemi strutturali o richieste extra rispetto al capitolato iniziale.",
+      },
+      {
+        domanda: "Si possono usare le detrazioni fiscali per ristrutturare casa nel 2026?",
+        risposta: "Sì, nel 2026 restano previste detrazioni fiscali per diversi interventi di ristrutturazione, con regole che dipendono dal tipo di immobile, dalla natura dei lavori e dai requisiti previsti dalla normativa aggiornata. Prima di iniziare conviene verificare con precisione quali spese rientrano e quale aliquota è applicabile al proprio caso.",
+      },
+      {
+        domanda: "Come vengono gestiti pagamenti e avanzamento lavori?",
+        risposta: "Di solito i pagamenti vengono organizzati per fasi di avanzamento lavori, con importi collegati alle lavorazioni effettivamente eseguite. Questo sistema permette di mantenere maggiore controllo sul cantiere, coordinare meglio tempi e forniture e procedere in modo trasparente fino alla chiusura dei lavori.",
+      },
+    ];
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqAppartamento.map((faq) => ({
+        "@type": "Question",
+        name: faq.domanda,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.risposta,
+        },
+      })),
+    };
 
     return (
       <div className="min-h-screen bg-white">
@@ -187,7 +242,7 @@ export default async function ServizioPage({ params }: Props) {
             <section>
               <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione appartamento completo</h2>
               <p className="text-gray-600">
-                Questa pagina fornisce un riferimento tecnico utile per capire se il tuo intervento rientra in un caso standard o se richiede una valutazione economica diversa per logistica, impianti, accessibilità o finiture.
+                Richiedi un preventivo per ristrutturare il tuo appartamento completo e scopri costi, lavori inclusi, tempi di esecuzione e fattori che incidono sul prezzo finale della ristrutturazione.
               </p>
             </section>
 
@@ -335,7 +390,7 @@ export default async function ServizioPage({ params }: Props) {
             <section>
               <h2 className="text-2xl font-bold text-navy mb-3">Dove operiamo</h2>
               <p className="text-gray-600 mb-4">
-                Seguiamo lavori di ristrutturazione appartamenti e case a Napoli, Caserta e nei comuni dell’Agro Aversano, con sopralluoghi tecnici e preventivi costruiti sulle condizioni reali dell’immobile. Ogni intervento viene valutato considerando accessi, impianti esistenti, opere murarie, finiture e complessità del cantiere, per offrire un costo chiaro e tempi di lavoro realistici.
+                Seguiamo lavori di ristrutturazione appartamenti e case a Napoli, Caserta e nei comuni dell’Agro Aversano, con sopralluoghi tecnici e preventivi costruiti sulle condizioni reali dell’immobile. Ogni intervento viene valutato considerando accessi, impianti esistenti, opere murarie, finiture e complessità del cantiere, per offrire un costo chiaro e tempi di lavoro realistici nelle principali <Link href="/zone-servite/" className="text-navy underline underline-offset-2 hover:text-orange transition-colors">zone servite</Link>.
               </p>
               <div className="flex flex-wrap gap-2">
                 {[
@@ -358,6 +413,30 @@ export default async function ServizioPage({ params }: Props) {
                   </Link>
                 ))}
                 <span className="text-gray-400 px-3 py-1 text-sm">e altri comuni serviti</span>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-navy mb-4">Domande frequenti sulla ristrutturazione completa</h2>
+              <div className="space-y-4">
+                {faqAppartamento.map((faq, i) => (
+                  <div key={i} className="rounded-2xl border border-gray-200 bg-white p-5">
+                    <h3 className="text-base font-semibold text-navy mb-2">{faq.domanda}</h3>
+                    <p className="text-sm text-gray-700 leading-relaxed">{faq.risposta}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-navy mb-4">Come valutare davvero un preventivo di ristrutturazione appartamento</h2>
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  Un preventivo di ristrutturazione appartamento va letto oltre il solo prezzo al mq, perché il costo finale dipende sempre dalle condizioni reali dell’immobile, dalla facilità di accesso al cantiere, dallo stato degli impianti e dal livello delle finiture richieste. Il riferimento indicativo è utile per orientarsi, ma diventa davvero affidabile solo quando viene confermato da un sopralluogo tecnico capace di verificare demolizioni, distribuzione interna, opere murarie e possibili criticità non visibili in fase iniziale.
+                </p>
+                <p>
+                  Quando si confrontano più preventivi per ristrutturare casa, conviene verificare con attenzione cosa è compreso e cosa resta escluso, quali lavorazioni sono già previste nel capitolato e se il prezzo include elementi importanti come impianti, pavimenti, rivestimenti, infissi o finiture finali. Per questo può essere utile approfondire anche interventi specifici come la <Link href="/servizi/ristrutturazione-bagno/" className="text-navy underline underline-offset-2 hover:text-orange transition-colors">ristrutturazione bagno</Link>, la <Link href="/servizi/ristrutturazione-cucina/" className="text-navy underline underline-offset-2 hover:text-orange transition-colors">ristrutturazione cucina</Link> o il rifacimento di <Link href="/servizi/impianti-elettrici-idraulici-termici/" className="text-navy underline underline-offset-2 hover:text-orange transition-colors">impianti elettrici, idraulici e termici</Link>, così da capire meglio come si forma il costo complessivo dei lavori.
+                </p>
               </div>
             </section>
           </div>
@@ -740,6 +819,7 @@ export default async function ServizioPage({ params }: Props) {
       </section>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+
     </div>
   );
 }
