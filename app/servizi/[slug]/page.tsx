@@ -335,10 +335,20 @@ export default async function ServizioPage({ params }: Props) {
             <section>
               <h2 className="text-2xl font-bold text-navy mb-3">Dove operiamo</h2>
               <p className="text-gray-600 mb-4">
-                Operiamo tra Napoli, Caserta e Agro Aversano, con sopralluoghi e preventivi tecnici calibrati sulle condizioni reali dell'immobile.
+                Seguiamo lavori di ristrutturazione appartamenti e case a Napoli, Caserta e nei comuni dell’Agro Aversano, con sopralluoghi tecnici e preventivi costruiti sulle condizioni reali dell’immobile. Ogni intervento viene valutato considerando accessi, impianti esistenti, opere murarie, finiture e complessità del cantiere, per offrire un costo chiaro e tempi di lavoro realistici.
               </p>
               <div className="flex flex-wrap gap-2">
-                {comuni.slice(0, 15).map((comune) => (
+                {[
+                  { slug: "napoli", nome: "Napoli" },
+                  { slug: "caserta", nome: "Caserta" },
+                  { slug: "aversa", nome: "Aversa" },
+                  { slug: "giugliano-in-campania", nome: "Giugliano in Campania" },
+                  { slug: "teverola", nome: "Teverola" },
+                  { slug: "trentola-ducenta", nome: "Trentola Ducenta" },
+                  { slug: "melito-di-napoli", nome: "Melito di Napoli" },
+                  { slug: "marcianise", nome: "Marcianise" },
+                  { slug: "carinaro", nome: "Carinaro" },
+                ].map((comune) => (
                   <Link
                     key={comune.slug}
                     href={`/comune/${comune.slug}/`}
@@ -347,7 +357,7 @@ export default async function ServizioPage({ params }: Props) {
                     {comune.nome}
                   </Link>
                 ))}
-                <span className="text-gray-400 px-3 py-1 text-sm">e altri...</span>
+                <span className="text-gray-400 px-3 py-1 text-sm">e altri comuni serviti</span>
               </div>
             </section>
           </div>
