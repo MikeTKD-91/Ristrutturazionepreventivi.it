@@ -10,6 +10,8 @@ import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento
 import CalcolatoreBagno from "@/components/shared/CalcolatoreBagno";
 import { getDataAggiornamento, formatPrezzo, generaLinkWhatsApp } from "@/lib/utils";
 import { getAllArticoli } from "@/lib/blog";
+import GalleriaLavori from "@/components/shared/GalleriaLavori";
+import { getLavoriPerServizio } from "@/lib/lavori";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -77,6 +79,7 @@ export default async function ServizioPage({ params }: Props) {
   }
 
   const articoliConsigliati = getAllArticoli().slice(0, 3);
+  const lavori = getLavoriPerServizio(slug);
 
   const altriServizi = servizi.filter(s => s.slug !== slug);
 
@@ -177,18 +180,6 @@ export default async function ServizioPage({ params }: Props) {
       },
     ];
 
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqAppartamento.map((faq) => ({
-        "@type": "Question",
-        name: faq.domanda,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.risposta,
-        },
-      })),
-    };
 
     return (
       <div className="min-h-screen bg-white">
@@ -415,6 +406,13 @@ export default async function ServizioPage({ params }: Props) {
                 <span className="text-gray-400 px-3 py-1 text-sm">e altri comuni serviti</span>
               </div>
             </section>
+
+            <GalleriaLavori
+              titolo="I nostri lavori a Napoli, Caserta e provincia"
+              intro={`Una selezione di lavori reali legati alla ${servizio.titoloBreve || servizio.titolo.toLowerCase()}, eseguiti a Napoli, Caserta e nei comuni vicini. Le immagini aiutano a capire il tipo di intervento, le finiture e le fasi di lavorazione.`}
+              outro="Alcune foto possono avere una qualità diversa perché sono scatti reali di cantiere, presi durante le fasi di lavorazione."
+              lavori={lavori}
+            />
 
             <section>
               <h2 className="text-2xl font-bold text-navy mb-4">Domande frequenti sulla ristrutturazione completa</h2>

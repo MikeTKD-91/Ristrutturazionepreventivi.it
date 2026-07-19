@@ -9,6 +9,8 @@ import { servizi } from "@/data/servizi";
 import CalcolatoreBagno from "@/components/shared/CalcolatoreBagno";
 import { getDataAggiornamento } from "@/lib/utils";
 import { getAllArticoli } from "@/lib/blog";
+import GalleriaLavori from "@/components/shared/GalleriaLavori";
+import { getLavoriPerServizio } from "@/lib/lavori";
 import {
   buildBreadcrumb,
   buildLocalBusiness,
@@ -131,6 +133,7 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
   const dataAggiornamento = getDataAggiornamento();
   const altriServizi = servizi.filter((s) => s.slug !== "ristrutturazione-bagno");
   const articoliConsigliati = getAllArticoli().slice(0, 3);
+  const lavori = getLavoriPerServizio("ristrutturazione-bagno");
   const seoSectionsBagno = comune.seoSections?.filter((section) => section.tableType === "bagno" || section.title.includes("Bagno")) ?? [];
 
   return (
@@ -260,6 +263,14 @@ export default async function RistrutturazioneBagnoPage({ params }: PageProps) {
                 </p>
               </div>
             </div>
+
+            <GalleriaLavori
+              comuneNome={comune.nome}
+              titolo={`I nostri lavori a ${comune.nome} e nei comuni vicini`}
+              intro={`Una selezione di lavori reali di ristrutturazione bagno eseguiti a ${comune.nome} e nelle aree vicine. Le foto aiutano a capire finiture, lavorazioni e qualità del risultato finale.`}
+              outro="Alcune immagini possono essere di qualità diversa perché sono scatti reali di cantiere, fatti durante le fasi di lavorazione."
+              lavori={lavori}
+            />
 
             {seoSectionsBagno.length ? (
               <div className="space-y-8">

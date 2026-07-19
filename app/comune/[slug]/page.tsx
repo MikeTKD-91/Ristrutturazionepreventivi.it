@@ -10,7 +10,7 @@ import { comuni, getComuneBySlug } from "@/data/comuni";
 import { getAllArticoli } from "@/lib/blog";
 import { getComuneContent } from "@/lib/comune-content";
 import { buildHowToSchema } from "@/lib/schema";
-import { getLavoriPerComune } from "@/lib/lavori";
+import { getLavoriPerServizio } from "@/lib/lavori";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -70,7 +70,7 @@ export default async function ComunePage({ params }: PageProps) {
   if (!comune) notFound();
 
   const content = getComuneContent(slug);
-  const lavori = getLavoriPerComune(slug);
+  const lavori = getLavoriPerServizio("ristrutturazione-appartamento-completo");
   const articoliConsigliati = getAllArticoli().slice(0, 3);
   const seoSectionsCasa = comune.seoSections?.filter((section) => section.pageType !== "bagno") ?? [];
 
