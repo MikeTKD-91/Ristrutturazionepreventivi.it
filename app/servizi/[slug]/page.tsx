@@ -220,6 +220,40 @@ export default async function ServizioPage({ params }: Props) {
               </div>
             </section>
 
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-navy">Costo ristrutturazione appartamento al mq: esempi pratici</h2>
+              <p className="text-gray-600 leading-relaxed">
+                Se stai cercando quanto costa ristrutturare un appartamento, partire da 550 €/mq è il modo più semplice per orientarti subito. Ecco alcuni esempi di costo per diverse superfici, utili per capire la fascia di spesa e avere un primo riferimento chiaro.
+              </p>
+              <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white">
+                <table className="w-full text-sm">
+                  <thead className="bg-gray-50">
+                    <tr className="text-left text-navy">
+                      <th className="py-3 px-4 font-semibold">Superficie appartamento</th>
+                      <th className="py-3 px-4 font-semibold">Costo indicativo da 550 €/mq</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ["50 mq", "27.500 €"],
+                      ["80 mq", "44.000 €"],
+                      ["100 mq", "55.000 €"],
+                      ["120 mq", "66.000 €"],
+                      ["150 mq", "82.500 €"],
+                    ].map((row) => (
+                      <tr key={row[0]} className="border-t border-gray-100">
+                        <td className="py-3 px-4 text-gray-700">{row[0]}</td>
+                        <td className="py-3 px-4 text-gray-700">{row[1]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                La tabella ti dà un’idea concreta del costo di ristrutturazione appartamento per metrature comuni, ma il prezzo definitivo dipende sempre dal caso reale. Accessibilità, impianti, demolizioni, umidità e livello delle finiture possono incidere sul preventivo finale dopo verifica tecnica.
+              </p>
+            </section>
+
             <section>
               <h2 className="text-2xl font-bold text-navy mb-3">Cosa include la ristrutturazione completa</h2>
               <div className="grid gap-3 md:grid-cols-2">
