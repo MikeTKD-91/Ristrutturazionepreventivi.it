@@ -26,7 +26,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   napoli: {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 46400,
+    esempioPrezzo: 44000,
     durataCantiere: "8–14 settimane",
     durataRange: "8–14",
     tagHero: ["Prezzario Regione Campania", "Centro storico e periferia", "Bonus 50% applicabile", "Case popolari e signorili"],
@@ -38,7 +38,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   "giugliano-in-campania": {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 46400,
+    esempioPrezzo: 44000,
     durataCantiere: "7–12 settimane",
     durataRange: "7–12",
     tagHero: ["Prezzario Regione Campania", "Napoli Nord", "Bonus 50% applicabile", "Espansione residenziale"],
@@ -50,7 +50,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   "melito-di-napoli": {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 46400,
+    esempioPrezzo: 44000,
     durataCantiere: "7–12 settimane",
     durataRange: "7–12",
     tagHero: ["Prezzario Regione Campania", "Napoli Nord", "Bonus 50% applicabile", "Palazzine e condomini"],
@@ -62,7 +62,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   "mugnano-di-napoli": {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 46400,
+    esempioPrezzo: 44000,
     durataCantiere: "7–12 settimane",
     durataRange: "7–12",
     tagHero: ["Prezzario Regione Campania", "Napoli Nord", "Bonus 50% applicabile", "Residenziale"],
@@ -74,7 +74,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   casandrino: {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 46400,
+    esempioPrezzo: 44000,
     durataCantiere: "7–12 settimane",
     durataRange: "7–12",
     tagHero: ["Prezzario Regione Campania", "Napoli Nord", "Bonus 50% applicabile", "Palazzine anni '60-'80"],
@@ -86,7 +86,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   "grumo-nevano": {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 46400,
+    esempioPrezzo: 44000,
     durataCantiere: "7–12 settimane",
     durataRange: "7–12",
     tagHero: ["Prezzario Regione Campania", "Confine Caserta", "Bonus 50% applicabile", "Palazzine e villette"],
@@ -98,7 +98,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   "sant-antimo": {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 46400,
+    esempioPrezzo: 44000,
     durataCantiere: "7–12 settimane",
     durataRange: "7–12",
     tagHero: ["Prezzario Regione Campania", "Napoli Nord", "Bonus 50% applicabile", "Residenziale"],
@@ -222,7 +222,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   aversa: {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Palazzine e villette"],
@@ -234,7 +234,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   lusciano: {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Residenziale"],
@@ -246,7 +246,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   carinaro: {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Residenziale"],
@@ -258,7 +258,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   "casal-di-principe": {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Residenziale"],
@@ -270,7 +270,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   casaluce: {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Residenziale"],
@@ -282,7 +282,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   cesa: {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Residenziale"],
@@ -294,7 +294,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   frignano: {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Residenziale"],
@@ -306,7 +306,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   "gricignano-di-aversa": {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Residenziale"],
@@ -318,7 +318,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   parete: {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Residenziale"],
@@ -330,7 +330,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   teverola: {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Residenziale"],
@@ -342,7 +342,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   "trentola-ducenta": {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Residenziale"],
@@ -354,7 +354,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   "villa-di-briano": {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Residenziale"],
@@ -366,7 +366,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
   villaricca: {
     prezzoMq: 550,
     esempioMq: 80,
-    esempioPrezzo: 42400,
+    esempioPrezzo: 44000,
     durataCantiere: "6–10 settimane",
     durataRange: "6–10",
     tagHero: ["Prezzario Regione Campania", "Agro Aversano", "Bonus 50% applicabile", "Residenziale"],
