@@ -197,11 +197,6 @@ export default async function ComunePage({ params }: PageProps) {
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
                   {content.testoIntro}
                 </p>
-                <div className="flex flex-wrap gap-3 mb-8">
-                  {content.tagHero.map((t) => (
-                    <span key={t} className="bg-white/10 text-white/80 text-sm px-3 py-1 rounded-full">{t}</span>
-                  ))}
-                </div>
                 <a
                   href="#modulo-preventivo"
                   className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
