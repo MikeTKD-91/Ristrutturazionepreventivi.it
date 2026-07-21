@@ -16,15 +16,15 @@ export interface ComuneContent {
 
 // ─────────────────────────────────────────────
 // PREZZI PER ZONA
-// Agro Aversano: 530 €/mq
+// Agro Aversano: 550 €/mq
 // Caserta/Provincia: 550 €/mq
-// Napoli/Provincia: 580 €/mq
+// Napoli/Provincia: 550 €/mq
 // ─────────────────────────────────────────────
 
 const contenutiBase: Record<string, Partial<ComuneContent>> = {
-  // ZONA: NAPOLI / PROVINCIA — 580 €/mq
+  // ZONA: NAPOLI / PROVINCIA — 550 €/mq
   napoli: {
-    prezzoMq: 580,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 46400,
     durataCantiere: "8–14 settimane",
@@ -36,7 +36,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Accesso e logistica in centro storico possono allungare i tempi", "Smaltimento macerie in ZTL soggetto a vincoli orari", "Palazzine popolari: spesso necessaria verifica amianto"],
   },
   "giugliano-in-campania": {
-    prezzoMq: 580,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 46400,
     durataCantiere: "7–12 settimane",
@@ -48,7 +48,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Espansione residenziale: verificare regolarità edilizia", "Palazzine anni '70-'80: amianto frequente", "Traffico intenso: pianificare orari di cantiere"],
   },
   "melito-di-napoli": {
-    prezzoMq: 580,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 46400,
     durataCantiere: "7–12 settimane",
@@ -60,7 +60,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '60-'80: verificare amianto e umidità", "Densità abitativa: coordinare accesso e orari con il condominio", "Parcheggio limitato: pianificare logistica materiali"],
   },
   "mugnano-di-napoli": {
-    prezzoMq: 580,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 46400,
     durataCantiere: "7–12 settimane",
@@ -72,7 +72,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '70: amianto nelle canne fumarie", "Espansione recente: verificare regolarità edilizia", "Posizione strategica: logistica agevole"],
   },
   casandrino: {
-    prezzoMq: 580,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 46400,
     durataCantiere: "7–12 settimane",
@@ -84,7 +84,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Canne fumarie in amianto nei condomini anni '60-'70", "Umidità di risalita nei piani terra", "Impianti condominiali obsoleti nelle palazzine più vecchie"],
   },
   "grumo-nevano": {
-    prezzoMq: 580,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 46400,
     durataCantiere: "7–12 settimane",
@@ -96,7 +96,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Posizione di confine: maestranze disponibili da Napoli e Caserta", "Palazzine anni '70: tubazioni in acciaio zincato", "Umidità di risalita nei piani terra"],
   },
   "sant-antimo": {
-    prezzoMq: 580,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 46400,
     durataCantiere: "7–12 settimane",
@@ -218,9 +218,9 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Villette anni '80: verificare guaine e coperture piane", "Palazzine anni '70: tubazioni in acciaio zincato", "Aperture cucina-soggiorno: verificare natura muro divisorio"],
   },
 
-  // ZONA: AGRO AVERSANO — 530 €/mq
+  // ZONA: AGRO AVERSANO — 550 €/mq
   aversa: {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
@@ -232,7 +232,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Espansione residenziale: verificare abusi edilizi", "Palazzine anni '70: amianto frequente nelle canne fumarie", "Zone periferiche: accesso semplificato, tempi ridotti"],
   },
   lusciano: {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
@@ -244,7 +244,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '70-'80: amianto e umidità", "Espansione recente: verificare regolarità edilizia", "Posizione centrale: logistica agevole"],
   },
   carinaro: {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
@@ -256,7 +256,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '70: amianto e impianti obsoleti", "Umidità di risalita nei piani terra", "Prossimità SS7: possibili vibrazioni da traffico"],
   },
   "casal-di-principe": {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
@@ -268,7 +268,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '70-'80: verificare amianto e umidità", "Espansione residenziale: verificare regolarità edilizia", "Densità abitativa: coordinare accesso cantiere"],
   },
   casaluce: {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
@@ -280,7 +280,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '70: amianto nelle canne fumarie", "Umidità di risalita nei piani terra", "Espansione recente: verificare regolarità edilizia"],
   },
   cesa: {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
@@ -292,7 +292,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '70-'80: amianto e impianti obsoleti", "Villette: verificare stato coperture e isolamento", "Prossimità Aversa: logistica agevole"],
   },
   frignano: {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
@@ -304,7 +304,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '70: amianto e umidità", "Espansione residenziale: verificare regolarità edilizia", "Logistica semplificata rispetto ai grandi centri"],
   },
   "gricignano-di-aversa": {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
@@ -316,7 +316,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '70-'80: amianto e impianti obsoleti", "Prossimità base NATO: verificare eventuali vincoli", "Logistica agevole per accesso materiali"],
   },
   parete: {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
@@ -328,7 +328,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '70: amianto e umidità", "Villette: verificare stato coperture", "Logistica semplificata"],
   },
   teverola: {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
@@ -340,7 +340,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '70-'80: amianto e impianti obsoleti", "Espansione residenziale: verificare regolarità edilizia", "Prossimità SS7: possibili vibrazioni da traffico"],
   },
   "trentola-ducenta": {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
@@ -352,7 +352,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '70: amianto e umidità", "Villette: verificare stato coperture e isolamento", "Logistica agevole"],
   },
   "villa-di-briano": {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
@@ -364,7 +364,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     noteCantiere: ["Palazzine anni '70-'80: amianto e impianti obsoleti", "Umidità di risalita nei piani terra", "Logistica semplificata"],
   },
   villaricca: {
-    prezzoMq: 530,
+    prezzoMq: 550,
     esempioMq: 80,
     esempioPrezzo: 42400,
     durataCantiere: "6–10 settimane",
