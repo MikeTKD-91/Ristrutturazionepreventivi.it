@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/bonus-ristrutturazione/`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/blog/`,                   lastModified: now, changeFrequency: "weekly",  priority: 0.6 },
     { url: `${BASE_URL}/agro-aversano/`,          lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/chi-siamo/`,             lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${BASE_URL}/privacy-policy/`,         lastModified: now, changeFrequency: "yearly",  priority: 0.2 },
     { url: `${BASE_URL}/cookie-policy/`,          lastModified: now, changeFrequency: "yearly",  priority: 0.2 },
     // ⚠️ /napoli/ e /caserta/ ESCLUSE: redirect 301 verso /comune/napoli/ e /comune/caserta/
