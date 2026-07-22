@@ -4,10 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Home, Wrench, MapPin, Gift, Newspaper } from "lucide-react";
+import { Menu, X, Home, Wrench, MapPin, Gift, Newspaper, Building2 } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home", icon: Home },
+  { href: "/chi-siamo/", label: "Chi siamo", icon: Building2 },
   { href: "/servizi/", label: "Servizi", icon: Wrench },
   { href: "/zone-servite/", label: "Zone Servite", icon: MapPin },
   { href: "/bonus-ristrutturazione/", label: "Bonus", icon: Gift },
