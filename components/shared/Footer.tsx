@@ -22,6 +22,7 @@ const footerLinks = {
     { label: "Zone Servite", href: "/zone-servite/" },
   ],
   informazioni: [
+    { label: "Chi siamo", href: "/chi-siamo/" },
     { label: "Blog", href: "/blog/" },
     { label: "Bonus Ristrutturazione", href: "/bonus-ristrutturazione/" },
     { label: "Privacy Policy", href: "/privacy-policy/" },

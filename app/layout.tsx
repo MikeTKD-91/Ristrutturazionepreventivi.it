@@ -104,8 +104,9 @@ export default function RootLayout({
               telephone: "+393339809319",
               email: "info@ristrutturazionepreventivi.it",
               sameAs: [
-                "https://wa.me/393339809319",
-                "https://maps.app.goo.gl/i8HxV8ScTGD5oM7o7",
+                "https://www.facebook.com/p/Russo-FE-Costruzione-Srl-100094663447335/",
+                "https://www.tiktok.com/@russocostruzione",
+                "https://share.google/ClhNE103NG7hhMwPt",
               ],
               hasMap: "https://maps.app.goo.gl/i8HxV8ScTGD5oM7o7",
               identifier: {
