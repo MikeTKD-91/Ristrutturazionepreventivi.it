@@ -110,13 +110,13 @@ const servicePriceLabels: Record<string, string> = {
               <div className="flex flex-wrap gap-4 mb-8">
                 <Link
                   href="/servizi/"
-                  className="w-full justify-center text-center bg-white/10 hover:bg-white/20 text-white px-7 py-3.5 rounded-xl font-semibold transition-colors"
+                  className="inline-flex w-full items-center justify-center text-center bg-orange hover:bg-orange-600 text-white px-7 py-4 rounded-xl font-semibold shadow-lg shadow-orange/20 transition-colors"
                 >
                   Vedi i Servizi
                 </Link>
               </div>
-              <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-3">
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+              <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-3 lg:gap-4">
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                   <p className="text-2xl font-bold text-orange leading-none">550 €/mq</p>
                   <p className="mt-2 text-sm font-semibold text-white">Ristrutturazione completa</p>
                   <p className="mt-1 text-xs leading-relaxed text-white/65">
@@ -124,7 +124,7 @@ const servicePriceLabels: Record<string, string> = {
                   </p>
                 </div>
 
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                   <p className="text-2xl font-bold text-orange leading-none">Costi reali</p>
                   <p className="mt-2 text-sm font-semibold text-white">Niente prezzi civetta</p>
                   <p className="mt-1 text-xs leading-relaxed text-white/65">
@@ -132,7 +132,7 @@ const servicePriceLabels: Record<string, string> = {
                   </p>
                 </div>
 
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                   <p className="text-2xl font-bold text-orange leading-none">Online</p>
                   <p className="mt-2 text-sm font-semibold text-white">Preventivo immediato</p>
                   <p className="mt-1 text-xs leading-relaxed text-white/65">
