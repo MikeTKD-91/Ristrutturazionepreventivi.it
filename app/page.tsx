@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, MapPin, Shield, Clock, Award, ChevronDown } from "lucide-react";
 import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
+import { RecensioniClienti } from "@/components/shared/RecensioniClienti";
 import { servizi } from "@/data/servizi";
 import { comuniNapoli, comuniCaserta, comuniAgroAversano } from "@/data/comuni";
 
@@ -164,6 +165,8 @@ const servicePriceLabels: Record<string, string> = {
           </div>
         </div>
       </section>
+
+      <RecensioniClienti />
 
       {/* ── SERVIZI ── */}
       <section className="py-20">
