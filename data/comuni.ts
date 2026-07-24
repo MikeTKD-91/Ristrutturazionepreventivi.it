@@ -845,9 +845,9 @@ export const comuniNapoli: Comune[] = [
     nome: "Napoli",
     provincia: "napoli",
     zona: "napoli",
-    metaTitle: "Ristrutturazione Casa a Napoli | Costi reali e preventivo",
-    metaDescription: "Ristrutturazione a Napoli: costi reali per appartamenti nei quartieri serviti. Criticità locali e preventivo online immediato. Il preventivo definitivo richiede sopralluogo tecnico.",
-    descrizione: "Napoli è servita nelle zone periferiche nord e nord-ovest, con un tessuto edilizio prevalentemente condominiale degli anni '60-'80. Le caratteristiche edilizie variano significativamente da quartiere a quartiere: il nostro servizio copre principalmente le zone di Secondigliano, Piscinola e le aree limitrofe.",
+    metaTitle: "Ristrutturazione Casa Napoli da 550 €/mq | Preventivo Immediato",
+    metaDescription: "Ristrutturazione casa a Napoli con preventivo immediato, sopralluogo tecnico e lavori chiavi in mano a partire da 550 €/mq.",
+    descrizione: "Ristrutturiamo casa e appartamento a Napoli con preventivo immediato, sopralluogo tecnico e gestione completa dei lavori.",
     tipoEdilizio: "Condomini anni '60-'80 nelle periferie nord; edilizia popolare IACP; palazzine anni '50 nei quartieri più centrali dell'area servita",
     criticalita: [
       "Impianti idrici condominiali obsoleti: spesso le colonne montanti non sono state aggiornate dalla costruzione",
@@ -859,12 +859,12 @@ export const comuniNapoli: Comune[] = [
     caratteristicheCucine: "Cucine separate e compatte nei condomini degli anni '60-'70. Frequente presenza di canna fumaria condominiale in amianto collegata alle cucine.",
     faq: [
       {
-        domanda: "Devo chiedere al condominio per ristrutturare il mio bagno a Napoli?",
-        risposta: "Se l'intervento è interno al tuo appartamento e non tocca parti comuni, non serve una delibera. Devi però rispettare il regolamento condominiale per orari e modalità dei lavori. Se l'intervento richiede di collegare o modificare impianti condominiali, è necessario informare l'amministratore e in alcuni casi ottenere l'approvazione assembleare.",
+        domanda: "Devo chiedere al condominio per ristrutturare il mio appartamento a Napoli?",
+        risposta: "Se i lavori restano interni al tuo appartamento e non coinvolgono parti comuni, in genere non serve una delibera. Devi però rispettare regolamento condominiale, orari di cantiere e accessi per materiali e macerie. Se l'intervento coinvolge impianti o elementi comuni, è necessario informare l'amministratore e verificare eventuali autorizzazioni.",
       },
       {
-        domanda: "Quanto costa ristrutturare la cucina a Napoli?",
-        risposta: "In base al Prezzario Regionale Campania, i costi orientativi per un bagno 4-5 mq vanno da circa 4.500 € (base) a 8.500 € (premium). I condomini degli anni '60-'70 con impianti obsoleti tendono al limite superiore. Il sopralluogo è il momento in cui emergono le variabili specifiche.",
+        domanda: "Quanto costa ristrutturare un appartamento a Napoli?",
+        risposta: "Per una ristrutturazione completa a Napoli il costo indicativo parte da 550 €/mq, ma il prezzo reale dipende da metratura, stato degli impianti, distribuzione interna, accessibilità del cantiere e livello delle finiture. Il sopralluogo tecnico serve a confermare il quadro economico e ridurre gli imprevisti.",
       },
       {
         domanda: "Posso usare il Bonus 50% per un appartamento in condominio a Napoli?",
@@ -914,16 +914,16 @@ export const comuniNapoli: Comune[] = [
       },
       {
         title: "Costo Ristrutturazione Napoli",
-        text: "Il costo di una ristrutturazione a Napoli parte da 550 €/mq per interventi completi nelle situazioni più semplici.\n\nIl prezzo finale può però variare in base allo stato dell'immobile, agli impianti esistenti, alla distribuzione degli ambienti, alla logistica del condominio e alla tipologia costruttiva dell'edificio. Nelle zone di Napoli più vicine alla nostra area operativa, come Secondigliano, Scampia, Piscinola, Miano, San Pietro a Patierno e i quartieri limitrofi, si trovano spesso condomini costruiti tra gli anni '50 e '80 con caratteristiche molto diverse tra loro.\n\nIn questi immobili è frequente dover intervenire su impianti elettrici e idraulici obsoleti, colonne montanti datate, bagni di dimensioni ridotte, canne fumarie, infiltrazioni o opere murarie non più conformi agli standard attuali. Per questo motivo una stima accurata del costo di una ristrutturazione a Napoli non può basarsi esclusivamente sui metri quadrati, ma deve considerare le reali condizioni dell'immobile e le eventuali criticità tecniche.",
-        afterTableText: "Su RistrutturazionePreventivi.it puoi richiedere un preventivo gratuito e immediato per la ristrutturazione della tua casa o del tuo appartamento a Napoli. Riceverai una stima personalizzata basata sulle caratteristiche del tuo immobile, con conferma del costo definitivo dopo il sopralluogo tecnico.",
+        text: "Il costo indicativo per ristrutturare casa a Napoli parte da 550 €/mq nelle situazioni più semplici. Il prezzo reale dipende da metratura, stato degli impianti, distribuzione interna, accessibilità del cantiere e livello delle finiture.\n\nNegli appartamenti in condominio è importante verificare subito eventuali criticità tecniche e vincoli di cantiere, così da avere una stima più affidabile e ridurre gli imprevisti.",
+        afterTableText: "Puoi richiedere un preventivo immediato per la ristrutturazione del tuo appartamento a Napoli e confermare costi e lavorazioni con il sopralluogo tecnico.",
       },
       {
         title: "Impresa di Ristrutturazioni a Napoli",
-        text: "Affidarsi a un'impresa di ristrutturazioni a Napoli significa scegliere un unico interlocutore in grado di gestire ogni fase dei lavori, dalla demolizione agli impianti, dalle opere murarie alle finiture, fino allo smaltimento dei materiali.\n\nNelle zone di Napoli più vicine alla nostra area operativa, come Secondigliano, Scampia, Piscinola, Miano, San Pietro a Patierno e i quartieri limitrofi, gli immobili presentano spesso caratteristiche costruttive differenti che richiedono competenze tecniche specifiche. Nelle ristrutturazioni di case e appartamenti a Napoli è spesso necessario verificare preventivamente lo stato degli impianti elettrici e idraulici, delle colonne montanti, degli scarichi, delle canne fumarie, oltre al rispetto del regolamento condominiale e delle eventuali prescrizioni edilizie.\n\nMolti edifici costruiti tra gli anni '50 e '80 richiedono interventi di adeguamento che possono incidere sull'organizzazione del cantiere e sui tempi di esecuzione. Un'impresa edile specializzata nelle ristrutturazioni a Napoli consente di coordinare tutte le lavorazioni con una pianificazione precisa, riducendo gli imprevisti, ottimizzando i tempi e garantendo un cantiere più efficiente. Con RistrutturazionePreventivi.it puoi richiedere un preventivo gratuito per la ristrutturazione della tua casa o del tuo appartamento a Napoli, con sopralluogo tecnico e una valutazione personalizzata in base alle caratteristiche dell'immobile.",
+        text: "Per ristrutturare un appartamento a Napoli è utile avere un unico referente che coordini demolizioni, impianti, opere murarie, finiture e smaltimento.\n\nUna gestione organizzata del cantiere aiuta a controllare tempi, costi e criticità condominiali, soprattutto negli edifici costruiti tra gli anni '50 e '80.",
       },
       {
         title: "Preventivo Ristrutturazione a Napoli",
-        text: "Richiedere un preventivo per ristrutturare casa a Napoli è il primo passo per pianificare correttamente un intervento, ma una valutazione realmente affidabile deve considerare tutte le caratteristiche dell'immobile e le condizioni del cantiere, non una semplice cifra calcolata solo sui metri quadrati.\n\nIl costo di una ristrutturazione a Napoli può cambiare in base alla superficie dell'appartamento, allo stato degli impianti, alla necessità di rifare bagno e cucina, alla qualità dei materiali scelti, alla presenza di opere murarie aggiuntive e alla facilità di accesso per il trasporto e lo smaltimento dei materiali. Nelle zone di Napoli più vicine alla nostra area operativa, come Secondigliano, Scampia, Piscinola, Miano, San Pietro a Patierno e i quartieri limitrofi, è importante valutare anche aspetti specifici come l'organizzazione del cantiere, gli orari consentiti dal regolamento condominiale, lo stato delle colonne montanti, degli scarichi e degli impianti comuni.\n\nQuesti elementi possono incidere sui tempi di esecuzione e sul costo complessivo dei lavori. Su RistrutturazionePreventivi.it puoi richiedere un preventivo gratuito per la ristrutturazione della tua casa a Napoli, con una prima valutazione online e una verifica tecnica finale tramite sopralluogo. In questo modo il progetto viene definito sulle reali condizioni dell'immobile, evitando stime generiche e costi imprevisti durante la realizzazione dei lavori.",
+        text: "Un buon preventivo di ristrutturazione a Napoli non si basa solo sui metri quadrati, ma sulle condizioni reali dell'immobile e sul tipo di intervento richiesto.\n\nLa prima stima online serve per orientarti sul budget, mentre il sopralluogo tecnico permette di definire con più precisione costi, tempi e lavorazioni.",
       },
     ],
   },
