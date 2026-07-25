@@ -30,7 +30,7 @@ const contenutiBase: Record<string, Partial<ComuneContent>> = {
     durataCantiere: "8–14 settimane",
     durataRange: "8–14",
     tagHero: ["Preventivo immediato", "Sopralluogo tecnico", "Costo trasparente", "Chiavi in mano"],
-    testoIntro: "Ristrutturare casa a Napoli richiede un preventivo chiaro, tempi definiti e un unico referente per seguire impianti, opere murarie e finiture senza sorprese.",
+    testoIntro: "Devi ristrutturare casa a Napoli? Ristrutturiamo il tuo appartamento completo a partire da 550 €/mq. Compila i campi, scopri immediatamente il costo della tua ristrutturazione e ricevi il tuo preventivo.",
     testoCosti: "Il costo reale dipende soprattutto da metratura, stato degli impianti, accessibilità del cantiere e livello delle finiture. Il preventivo online è una prima stima utile, mentre il prezzo definitivo si conferma dopo sopralluogo tecnico.",
     immagineHero: "/images/comuni/napoli-hero.jpg",
     noteCantiere: ["Accesso e logistica in centro possono allungare i tempi", "Smaltimento macerie e permessi condominiali da verificare", "Impianti vecchi e distribuzioni interne da controllare prima del preventivo"],

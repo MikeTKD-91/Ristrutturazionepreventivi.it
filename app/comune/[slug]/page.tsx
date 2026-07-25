@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Check, X } from "lucide-react";
 import CalcolatoreAppartamento from "@/components/shared/CalcolatoreAppartamento";
 import GalleriaLavori from "@/components/shared/GalleriaLavori";
+import { RecensioniClienti } from "@/components/shared/RecensioniClienti";
 import { comuni, getComuneBySlug } from "@/data/comuni";
 import { getAllArticoli } from "@/lib/blog";
 import { getComuneContent } from "@/lib/comune-content";
@@ -72,7 +73,7 @@ export default async function ComunePage({ params }: PageProps) {
   const content = getComuneContent(slug);
   const lavori = getLavoriPerServizio("ristrutturazione-appartamento-completo");
   const articoliConsigliati = getAllArticoli().slice(0, 3);
-  const seoSectionsCasa = comune.seoSections?.filter((section) => section.pageType !== "bagno") ?? [];
+  const seoSectionsCasa = comune.seoSections?.filter((section) => section.pageType !== "bagno" && !section.title.startsWith("Costo Ristrutturazione")) ?? [];
 
   const breadcrumb = {
     "@context": "https://schema.org",
@@ -192,7 +193,7 @@ export default async function ComunePage({ params }: PageProps) {
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                   Ristrutturazione Casa a {comune.nome}:{" "}
-                  <span className="text-orange">preventivo immediato e costo reale</span>
+                  <span className="text-orange">preventivo Lavori e costo Ristrutturazione</span>
                 </h1>
                 <p className="text-white/70 text-lg leading-relaxed mb-6">
                   {content.testoIntro}
@@ -225,31 +226,8 @@ export default async function ComunePage({ params }: PageProps) {
         <div className="container mx-auto px-4 py-20 grid lg:grid-cols-3 gap-10 items-start">
           <div className="lg:col-span-2 space-y-16">
 
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione Casa e Appartamento Completo a {comune.nome}</h2>
-              <div className="space-y-4 text-gray-600">
-                <p>{content.testoIntro}</p>
-                <p>
-                  {content.testoCosti}{" "}
-                  {comune.slug === "napoli" && (
-                    <>
-                      Per una stima più orientativa puoi leggere anche{" "}
-                      <Link href="/blog/quanto-costa-ristrutturare-appartamento-napoli-2026/" className="text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-orange">
-                        quanto costa ristrutturare un appartamento a Napoli nel 2026
-                      </Link>
-                      , con una panoramica sui prezzi al mq e sui fattori che incidono di più sul costo finale.{" "}
-                    </>
-                  )}
-                  Il costo definitivo viene confermato dopo un sopralluogo tecnico, indispensabile per analizzare l'immobile e definire in modo dettagliato tutte le lavorazioni necessarie.
-                </p>
-                <p>
-                  Affidati a un'impresa specializzata nella ristrutturazione di appartamenti a {comune.nome} per seguire ogni fase del progetto: demolizioni, impianti, opere murarie, pavimenti, rivestimenti, tinteggiature e finiture finali, con un unico referente e un preventivo chiaro e trasparente.
-                </p>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-navy mb-3">Costi reali a {comune.nome}</h2>
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-navy mb-3">Costo Ristrutturazione a {comune.nome}</h2>
               <div className="rounded-3xl border border-gray-200 bg-gradient-to-br from-orange-50 via-white to-navy/5 p-6 md:p-8 shadow-lg">
                 <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
                   <div>
@@ -273,6 +251,55 @@ export default async function ComunePage({ params }: PageProps) {
                     </p>
                   </div>
                 </div>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Se stai cercando il costo ristrutturazione a {comune.nome}, partire da {content.prezzoMq} €/mq è il modo più semplice per avere un primo riferimento concreto. Qui sotto trovi alcuni esempi indicativi in base alla metratura, utili per capire subito la fascia di spesa di una ristrutturazione completa.
+              </p>
+              <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white">
+                <table className="w-full text-sm">
+                  <thead className="bg-gray-50">
+                    <tr className="text-left text-navy">
+                      <th className="py-3 px-4 font-semibold">Superficie appartamento</th>
+                      <th className="py-3 px-4 font-semibold">Costo indicativo a {comune.nome}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {prezziTabella.map((row) => (
+                      <tr key={row[0]} className="border-t border-gray-100">
+                        <td className="py-3 px-4 text-gray-700">{row[0]}</td>
+                        <td className="py-3 px-4 text-gray-700">{row[1]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                La tabella ti aiuta a stimare il costo di ristrutturazione appartamento a {comune.nome} per metrature comuni, ma il prezzo definitivo va sempre verificato sul caso reale. Accessibilità, impianti, demolizioni, distribuzione interna, umidità e finiture possono incidere sul preventivo finale dopo sopralluogo tecnico.
+              </p>
+            </section>
+
+            <RecensioniClienti />
+
+            <section>
+              <h2 className="text-2xl font-bold text-navy mb-3">Ristrutturazione Casa e Appartamento Completo a {comune.nome}</h2>
+              <div className="space-y-4 text-gray-600">
+                <p>{content.testoIntro}</p>
+                <p>
+                  {content.testoCosti}{" "}
+                  {comune.slug === "napoli" && (
+                    <>
+                      Per una stima più orientativa puoi leggere anche{" "}
+                      <Link href="/blog/quanto-costa-ristrutturare-appartamento-napoli-2026/" className="text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-orange">
+                        quanto costa ristrutturare un appartamento a Napoli nel 2026
+                      </Link>
+                      , con una panoramica sui prezzi al mq e sui fattori che incidono di più sul costo finale.{" "}
+                    </>
+                  )}
+                  Il costo definitivo viene confermato dopo un sopralluogo tecnico, indispensabile per analizzare l'immobile e definire in modo dettagliato tutte le lavorazioni necessarie.
+                </p>
+                <p>
+                  Affidati a un'impresa specializzata nella ristrutturazione di appartamenti a {comune.nome} per seguire ogni fase del progetto: demolizioni, impianti, opere murarie, pavimenti, rivestimenti, tinteggiature e finiture finali, con un unico referente e un preventivo chiaro e trasparente.
+                </p>
               </div>
             </section>
 
@@ -300,10 +327,13 @@ export default async function ComunePage({ params }: PageProps) {
               </div>
             </section>
 
+            {/* GALLERIA LAVORI — appare solo se ci sono immagini */}
+            <GalleriaLavori comuneNome={comune.nome} lavori={lavori} />
+
             <section>
               <h2 className="text-2xl font-bold text-navy mb-3">Quanto dura il cantiere a {comune.nome}?</h2>
               <p className="text-gray-600 mb-5">
-                Per un appartamento medio a {comune.nome} la durata varia in base allo stato degli impianti, ai tempi di asciugatura e al livello di finitura scelto. In condizioni ordinarie siamo nell'ordine di {content.durataCantiere} lavorative.
+                Capire quanto tempo serve per ristrutturare casa a {comune.nome} è importante quanto conoscere il costo dei lavori. Per questo abbiamo riassunto le principali fasi del cantiere, così puoi avere un riferimento più chiaro sui tempi medi di una ristrutturazione completa a {comune.nome}.
               </p>
               {content.noteCantiere.length > 0 && (
                 <div className="mb-5 space-y-2">
@@ -316,11 +346,13 @@ export default async function ComunePage({ params }: PageProps) {
               )}
               <div className="space-y-2">
                 {[
-                  ["Demolizioni e rimozioni", "3–5 gg", ""],
-                  ["Impianti elettrico, idraulico e termico", "7–10 gg", ""],
-                  ["Intonaci, rasature e massetti", "8–12 gg", "incluse le attese tecniche"],
-                  ["Pavimenti, rivestimenti e porte", "7–12 gg", ""],
-                  ["Tinteggiatura, sanitari e collaudi", "4–7 gg", ""],
+                  ["Demolizioni e smaltimento", "4–7 gg", ""],
+                  ["Nuova distribuzione interna e opere murarie", "5–10 gg", ""],
+                  ["Realizzazione nuovi impianti", "7–12 gg", ""],
+                  ["Massetti, sottofondi e preparazioni", "3–5 gg", ""],
+                  ["Posa pavimenti e rivestimenti", "6–10 gg", ""],
+                  ["Rasature, tinteggiatura e finiture", "5–8 gg", ""],
+                  ["Montaggi finali e chiusura lavori", "3–8 gg", ""],
                 ].map((t, i) => (
                   <div key={i} className="flex items-center gap-4 py-3 border-b border-gray-100 last:border-0">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-navy text-white text-xs font-bold flex items-center justify-center">{i + 1}</span>
@@ -332,6 +364,9 @@ export default async function ComunePage({ params }: PageProps) {
                   </div>
                 ))}
               </div>
+              <p className="text-gray-600 mt-5">
+                Per un appartamento standard a {comune.nome}, la durata complessiva dei lavori è in genere compresa tra 45 e 60 giorni lavorativi. I tempi effettivi possono cambiare in base allo stato dell'immobile, alla distribuzione interna, agli impianti da rifare, all'accessibilità del cantiere e al livello di finitura richiesto.
+              </p>
             </section>
 
             <section>
@@ -351,9 +386,6 @@ export default async function ComunePage({ params }: PageProps) {
               </div>
             </section>
 
-            {/* GALLERIA LAVORI — appare solo se ci sono immagini */}
-            <GalleriaLavori comuneNome={comune.nome} lavori={lavori} />
-
             <section>
               {seoSectionsCasa.length ? (
                 <div className="space-y-6">
@@ -361,6 +393,11 @@ export default async function ComunePage({ params }: PageProps) {
                     <div key={i}>
                       <h2 className="text-2xl font-bold text-navy mb-2">{section.title}</h2>
                       <p className="text-gray-600 leading-relaxed whitespace-pre-line">{renderSeoText(section.text, comune.nome)}</p>
+                  {section.title.startsWith("Impresa di Ristrutturazioni") && (
+                    <p className="mt-4 text-sm text-gray-600">
+                      Vuoi conoscere meglio il nostro metodo? <Link href="/chi-siamo/" className="text-navy underline underline-offset-2 hover:text-orange transition-colors">Scopri chi siamo</Link>.
+                    </p>
+                  )}
                       {section.title.startsWith("Costo Ristrutturazione") ? (
                         <>
                           <div className="mt-4 overflow-x-auto rounded-2xl border border-gray-200 bg-white">

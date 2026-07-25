@@ -113,7 +113,7 @@ export const comuniAgroAversano: Comune[] = [
       },
       {
         title: "Impresa di Ristrutturazioni ad Aversa",
-        text: "Scegliere un'impresa di ristrutturazioni ad Aversa significa affidare i lavori a un interlocutore capace di leggere bene il contesto del fabbricato. In un comune dove convivono palazzi storici, condomini anni '60-'70 e zone di espansione più recenti, ogni cantiere richiede una sequenza precisa: verifica tecnica iniziale, coordinamento delle opere, gestione degli impianti e chiusura delle finiture senza improvvisazioni. Una regia unica aiuta a contenere tempi, costi e imprevisti, soprattutto quando emergono criticità non visibili a prima vista.",
+        text: "Affidarsi a un'impresa di ristrutturazioni ad Aversa significa avere un solo referente che segue il lavoro dall'impostazione iniziale fino alla realizzazione finale. Coordinare sopralluogo, demolizioni, impianti, opere murarie e finiture con una regia unica aiuta a ridurre stress, tempi morti e costi poco chiari. Operando tra Agro Aversano, Napoli e Caserta, lavoriamo con un approccio pratico e con una rete di professionisti del territorio per rendere il cantiere più lineare, concreto e gestibile.",
       },
       {
         title: "Preventivo Ristrutturazione ad Aversa",
@@ -845,9 +845,9 @@ export const comuniNapoli: Comune[] = [
     nome: "Napoli",
     provincia: "napoli",
     zona: "napoli",
-    metaTitle: "Ristrutturazione Casa Napoli da 550 €/mq | Preventivo Immediato",
-    metaDescription: "Ristrutturazione casa a Napoli con preventivo immediato, sopralluogo tecnico e lavori chiavi in mano a partire da 550 €/mq.",
-    descrizione: "Ristrutturiamo casa e appartamento a Napoli con preventivo immediato, sopralluogo tecnico e gestione completa dei lavori.",
+    metaTitle: "Ristrutturazione Casa a Napoli da 550 €/mq | Preventivo e Sopralluogo",
+    metaDescription: "Ristrutturazione casa a Napoli con costi da 550 €/mq, preventivo immediato, sopralluogo tecnico e gestione completa dei lavori.",
+    descrizione: "Ristrutturiamo casa e appartamento a Napoli con preventivo immediato, sopralluogo tecnico e gestione completa del cantiere.",
     tipoEdilizio: "Condomini anni '60-'80 nelle periferie nord; edilizia popolare IACP; palazzine anni '50 nei quartieri più centrali dell'area servita",
     criticalita: [
       "Impianti idrici condominiali obsoleti: spesso le colonne montanti non sono state aggiornate dalla costruzione",
@@ -859,20 +859,44 @@ export const comuniNapoli: Comune[] = [
     caratteristicheCucine: "Cucine separate e compatte nei condomini degli anni '60-'70. Frequente presenza di canna fumaria condominiale in amianto collegata alle cucine.",
     faq: [
       {
+        domanda: "Quanto costa ristrutturare casa a Napoli?",
+        risposta: "Il costo di una ristrutturazione casa a Napoli dipende da metratura, stato reale dell'immobile, impianti, livello delle finiture e complessità del cantiere. Per una ristrutturazione completa il prezzo indicativo può partire da circa 550 €/mq nei casi più semplici, ma aumenta quando ci sono impianti da rifare, demolizioni più estese, materiali di fascia superiore o difficoltà logistiche nel palazzo. Nei condomini più datati, nei quartieri con edilizia più vecchia o negli appartamenti con criticità nascoste, il sopralluogo tecnico è il passaggio che permette di capire davvero il costo realistico dell'intervento.",
+      },
+      {
+        domanda: "Da cosa dipende il prezzo finale di una ristrutturazione a Napoli?",
+        risposta: "Il prezzo finale non dipende solo dai metri quadri, ma anche da come è messo l'appartamento prima dell'inizio dei lavori. Contano molto lo stato degli impianti, la distribuzione degli ambienti, la necessità di rifare bagno e cucina, la qualità dei materiali scelti e la facilità di accesso al cantiere. A Napoli incidono spesso anche variabili pratiche come regolamento condominiale, trasporto materiali, smaltimento, presenza di umidità, colonne montanti vecchie o altri problemi che emergono solo quando si apre il cantiere.",
+      },
+      {
         domanda: "Devo chiedere al condominio per ristrutturare il mio appartamento a Napoli?",
-        risposta: "Se i lavori restano interni al tuo appartamento e non coinvolgono parti comuni, in genere non serve una delibera. Devi però rispettare regolamento condominiale, orari di cantiere e accessi per materiali e macerie. Se l'intervento coinvolge impianti o elementi comuni, è necessario informare l'amministratore e verificare eventuali autorizzazioni.",
+        risposta: "Se i lavori restano interni al tuo appartamento e non coinvolgono parti comuni, in genere non serve una delibera condominiale. Devi però rispettare regolamento, orari di cantiere, modalità di carico e scarico dei materiali e gestione delle macerie. Se invece l'intervento tocca impianti comuni, scarichi condominiali, colonne montanti o altri elementi condivisi, è necessario informare l'amministratore e verificare prima se servono comunicazioni o autorizzazioni specifiche.",
       },
       {
-        domanda: "Quanto costa ristrutturare un appartamento a Napoli?",
-        risposta: "Per una ristrutturazione completa a Napoli il costo indicativo parte da 550 €/mq, ma il prezzo reale dipende da metratura, stato degli impianti, distribuzione interna, accessibilità del cantiere e livello delle finiture. Il sopralluogo tecnico serve a confermare il quadro economico e ridurre gli imprevisti.",
+        domanda: "Quando serve una pratica edilizia come CILA o SCIA?",
+        risposta: "La pratica edilizia dipende dal tipo di lavori che vuoi fare. Per alcuni interventi interni semplici può bastare una gestione più leggera, mentre per modifiche più rilevanti alla distribuzione degli spazi o per lavori più complessi può servire una pratica come CILA o SCIA. La cosa più importante è non partire mai a intuito: prima si verifica tecnicamente l'intervento, poi si definisce la pratica corretta, così si evitano problemi burocratici e rallentamenti durante il cantiere.",
       },
       {
-        domanda: "Posso usare il Bonus 50% per un appartamento in condominio a Napoli?",
-        risposta: "Sì, la detrazione IRPEF al 50% si applica agli interventi di manutenzione straordinaria sulle unità residenziali, indipendentemente dalla tipologia condominiale. Servono pagamenti tracciati con bonifico parlante e fatture in regola.",
+        domanda: "Quanto dura una ristrutturazione completa di un appartamento a Napoli?",
+        risposta: "La durata varia in base a dimensione dell'appartamento, stato iniziale, numero di lavorazioni e tempi di approvvigionamento dei materiali. Un intervento semplice può chiudersi in meno tempo, mentre una ristrutturazione completa con rifacimento impianti, demolizioni, finiture e possibili imprevisti richiede una pianificazione più lunga. La tempistica reale si definisce bene solo dopo il sopralluogo tecnico, perché è lì che si capisce se l'immobile nasconde criticità che possono allungare il lavoro.",
+      },
+      {
+        domanda: "Posso usare il Bonus 50% per ristrutturare un appartamento a Napoli?",
+        risposta: "In molti casi sì, soprattutto per interventi di manutenzione straordinaria su abitazioni residenziali. Però il bonus va verificato sempre caso per caso, perché contano il tipo di lavoro, la corretta impostazione della pratica, i pagamenti con bonifico parlante e le fatture emesse in modo regolare. Prima di inserirlo nel budget conviene accertarsi che l'intervento rientri davvero nelle agevolazioni disponibili, così eviti di basare la spesa su una detrazione che poi non puoi utilizzare.",
+      },
+      {
+        domanda: "Conviene ristrutturare un appartamento vecchio a Napoli?",
+        risposta: "Sì, ma conviene farlo partendo prima dalla parte tecnica e non solo da quella estetica. Negli appartamenti più vecchi di Napoli capita spesso di trovare impianti obsoleti, umidità, scarichi datati, canne fumarie da verificare o una distribuzione interna poco funzionale rispetto alle esigenze di oggi. Se queste criticità vengono affrontate bene all'inizio, la ristrutturazione diventa molto più solida, più duratura e più adatta a valorizzare davvero la casa.",
+      },
+      {
+        domanda: "Cosa bisogna verificare prima di iniziare una ristrutturazione?",
+        risposta: "Prima di iniziare conviene verificare stato reale dell'immobile, impianti, eventuali problemi condominiali, budget disponibile, obiettivo dell'intervento e tempi di cantiere. Questa fase serve a evitare preventivi troppo generici e a ridurre il rischio di scoprire problemi importanti quando i lavori sono già partiti. Più la verifica iniziale è completa, più il preventivo e l'organizzazione del cantiere diventano affidabili.",
       },
       {
         domanda: "Ho un appartamento IACP a Napoli. Posso ristrutturare anche se non sono proprietario?",
-        risposta: "La ristrutturazione degli appartamenti IACP è soggetta a regole specifiche che dipendono dal tipo di contratto (locazione semplice, riscatto, piena proprietà). Se sei in fase di riscatto o già proprietario, hai piena libertà di intervento sugli interni. Se sei locatario, è necessaria l'autorizzazione dell'ente gestore per lavori di manutenzione straordinaria.",
+        risposta: "Dipende dal tipo di rapporto che hai con l'immobile. Se sei già proprietario o sei in una fase che ti consente piena disponibilità dell'appartamento, gli interventi interni sono più semplici da gestire. Se invece sei locatario o l'immobile è ancora soggetto a vincoli dell'ente gestore, per i lavori di manutenzione straordinaria può essere necessaria un'autorizzazione preventiva. In questi casi la parte burocratica va verificata prima ancora di parlare di tempi e costi.",
+      },
+      {
+        domanda: "Perché serve un sopralluogo tecnico prima del preventivo?",
+        risposta: "Perché solo vedendo l'immobile dal vivo si possono capire davvero criticità, quantità di lavoro e soluzioni possibili. Un preventivo senza sopralluogo può essere utile come stima iniziale, ma non basta per programmare una ristrutturazione completa in modo serio. Il sopralluogo serve proprio a trasformare una cifra indicativa in un quadro più realistico, con meno margine di errore su costi, tempi e organizzazione del cantiere.",
       },
     ],
     faqBagno: [
